@@ -121,7 +121,7 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
   </video>
   <div class="bg"></div>
 <nav><div class="brand"><span class="mark"></span>fyndset<i>.</i></div><div class="links"><span data-i18n="nav.talent">For Talent</span><span data-i18n="nav.employers">For Employers</span><span data-i18n="nav.about">About</span><span data-i18n="nav.resources">Resources</span></div><div class="links push"><button class="lang-switch" type="button" aria-label="Change language">🌐 &nbsp; <span id="lang-label">EN</span>⌄</button></div><div class="signin" data-i18n="nav.signin">Sign in</div></nav>
-<section class="copy"><div class="eyebrow" data-i18n-html="hero.eyebrow">Hospitality <b>talent.</b> Reimagined.</div><h1 data-i18n-html="hero.title">Don’t apply.<span>Get found.</span></h1><div class="lead" data-i18n="hero.lead">The private, intelligent way for hospitality professionals and employers to connect.</div><div class="actions"><button class="btn"><span data-i18n="hero.beFound">Be found</span> <b>→</b></button><button class="btn"><span data-i18n="hero.findTalent">Find talent</span> <b>→</b></button></div><div class="metrics"><div class="metric"><small data-i18n="metrics.people">People</small><strong>12K+</strong></div><div class="metric"><small data-i18n="metrics.groups">Hotel & restaurant groups</small><strong>850+</strong></div><div class="metric"><small data-i18n="metrics.countries">Countries</small><strong>15</strong></div></div></section>
+<section class="copy"><div class="eyebrow" data-i18n-html="hero.eyebrow">Hospitality <b>talent.</b> Reimagined.</div><h1 data-i18n-html="hero.title">Don’t apply.<span>Get found.</span></h1><div class="lead" data-i18n="hero.lead">The private, intelligent way for hospitality professionals and employers to connect.</div><div class="actions"><button class="btn"><span data-i18n="hero.beFound">Be found</span> <b>→</b></button><button class="btn"><span data-i18n="hero.findTalent">Find talent</span> <b>→</b></button></div><div class="pillars"><div><small data-i18n="pillar.skills">SKILLS</small><strong data-i18n="pillar.skillsText">What you can do</strong></div><div><small data-i18n="pillar.exp">EXPERIENCE</small><strong data-i18n="pillar.expText">Where you’ve proved it</strong></div><div><small data-i18n="pillar.intent">INTENT</small><strong data-i18n="pillar.intentText">What you want next</strong></div></div></section>
 <section class="talent talent-final">
 <div class="identity pedro-id">
  <div class="profile-bubble"><img class="face" src="./pedro.png"><div><div class="nm">Pedro <span>✓</span></div><div class="role" data-i18n="profile.pedro.role">Waiter</div><div class="loc">⌖ Porto, Portugal</div><div class="status available" data-i18n="profile.available">Open to opportunities</div></div></div>
@@ -132,7 +132,7 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
  <div class="line"></div><div class="radar"><i></i><i></i><i></i><b></b></div>
 </div>
 <div class="identity miguel-id">
- <div class="profile-bubble"><img class="face" src="./miguel.png"><div><div class="nm">Miguel <span>✓</span></div><div class="role" data-i18n="profile.miguel.role">CEO</div><div class="loc">⌖ Aveiro, Portugal</div><div class="status hiring" data-i18n="profile.hiring">Looking for talent</div></div></div>
+ <div class="profile-bubble"><img class="face" src="./miguel.png"><div><div class="nm">Miguel <span>✓</span></div><div class="role" data-i18n="profile.miguel.role">F&amp;B Director</div><div class="loc">⌖ Aveiro, Portugal</div><div class="status hiring" data-i18n="profile.hiring">Looking for talent</div></div></div>
  <div class="line"></div><div class="radar"><i></i><i></i><i></i><b></b></div>
 </div>
 <div class="real" data-i18n-html="hero.real">REAL PEOPLE.<br>REAL OPPORTUNITIES.</div>
@@ -361,8 +361,8 @@ document.addEventListener('DOMContentLoaded', () => {
       'hero.lead':'A forma privada e inteligente de ligar profissionais de hospitality às empresas certas.',
       'hero.beFound':'Ser encontrado','hero.findTalent':'Encontrar talento','hero.real':'PESSOAS REAIS.<br>OPORTUNIDADES REAIS.',
       'metrics.people':'Profissionais','metrics.groups':'Grupos hoteleiros e restauração','metrics.countries':'Países',
-      'profile.pedro.role':'Empregado de Mesa','profile.sofia.role':'Diretora de Operações','profile.miguel.role':'CEO',
-      'profile.available':'Disponível para oportunidades','profile.hiring':'À procura de talento','mobile.title':'O que te traz ao Fyndset?'
+      'profile.pedro.role':'Head Waiter','profile.sofia.role':'Restaurant Manager','profile.miguel.role':'CEO',
+      'profile.available':'Open to opportunities','profile.hiring':'Open to opportunities','mobile.title':'O que te traz ao Fyndset?'
     }
   };
   const htmlKeys = new Set(['hero.eyebrow','hero.title','hero.real']);
@@ -387,4 +387,78 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 })();
 </script>
+
+<style>
+/* V4.17 — product-focused hero refinement */
+.copy{width:40vw;max-width:650px}
+h1{font-weight:560}
+h1 span{font-weight:650}
+.lead{max-width:540px;font-size:16px;line-height:1.55}
+.sublead{font-size:11px;color:#d1dcda;margin-top:8px;letter-spacing:.015em}
+.actions{align-items:flex-end}
+.cta-wrap{display:flex;flex-direction:column;gap:7px}
+.cta-wrap small{font-size:7px;letter-spacing:.13em;text-transform:uppercase;color:#c8d6d4;padding-left:4px}
+.pillars{display:flex;gap:44px;margin-top:34px}
+.pillars div{min-width:112px}
+.pillars small{display:block;font-size:6.5px;letter-spacing:.15em;color:#a9c0bd}
+.pillars strong{display:block;font-size:10px;font-weight:500;margin-top:5px;color:#fff}
+.search-teaser{position:absolute;right:1.4%;bottom:7%;width:230px;padding:13px 15px;border:1px solid #ffffff42;border-radius:14px;background:rgba(3,28,31,.58);backdrop-filter:blur(16px)}
+.search-teaser small{display:block;font-size:6px;letter-spacing:.18em;color:#9fc5c0}
+.search-teaser strong{display:block;font-size:10px;margin:5px 0 7px}
+.search-teaser span{font-size:7.5px;color:var(--cyan)}
+@media(max-width:760px){
+  .sublead{font-size:10px;max-width:290px;margin:8px auto 0}
+  .pillars,.search-teaser{display:none}
+  .cta-wrap small{display:none}
+}
+</style>
+
+
+<script>
+/* V4.17 bilingual content layer */
+(() => {
+  const T = {
+    en: {
+      "nav.pro":"For Professionals","nav.company":"For Companies","nav.how":"How it works",
+      "hero.lead":"Build your Fyndset. Get discovered for what you can actually do — not just what’s on your CV.",
+      "hero.sublead":"For hospitality professionals and the companies looking for them.",
+      "cta.proLabel":"I’m a professional","cta.pro":"Be found","cta.companyLabel":"I’m hiring","cta.company":"Find talent",
+      "pillar.skills":"SKILLS","pillar.skillsText":"What you can do","pillar.exp":"EXPERIENCE","pillar.expText":"Where you’ve proved it","pillar.intent":"INTENT","pillar.intentText":"What you want next",
+      "teaser.label":"LOOKING FOR","teaser.role":"Restaurant Manager · Lisbon","teaser.matches":"18 matching professionals →"
+    },
+    pt: {
+      "nav.pro":"Para Profissionais","nav.company":"Para Empresas","nav.how":"Como funciona",
+      "hero.lead":"Constrói o teu Fyndset. Sê descoberto pelo que realmente sabes fazer — não apenas pelo que está no teu CV.",
+      "hero.sublead":"Para profissionais de hospitality e para as empresas que os procuram.",
+      "cta.proLabel":"Sou profissional","cta.pro":"Ser encontrado","cta.companyLabel":"Estou a contratar","cta.company":"Encontrar talento",
+      "pillar.skills":"COMPETÊNCIAS","pillar.skillsText":"O que sabes fazer","pillar.exp":"EXPERIÊNCIA","pillar.expText":"Onde já o demonstraste","pillar.intent":"OBJETIVO","pillar.intentText":"O que procuras a seguir",
+      "teaser.label":"À PROCURA DE","teaser.role":"Restaurant Manager · Lisboa","teaser.matches":"18 profissionais correspondem →"
+    }
+  };
+  const apply = lang => {
+    lang = lang === 'pt' ? 'pt' : 'en';
+    document.documentElement.lang = lang;
+    localStorage.setItem('fyndset-lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const v=T[lang][el.dataset.i18n]; if(v) el.textContent=v;
+    });
+    // Existing language control
+    const candidates=[...document.querySelectorAll('.links.push, [data-lang-switch], .lang-switch')];
+    candidates.forEach(el => { el.innerHTML='🌐 &nbsp; '+lang.toUpperCase()+'⌄'; el.style.cursor='pointer'; });
+    // Profile content
+    const roles = document.querySelectorAll('.identity .role');
+    const statuses = document.querySelectorAll('.identity .status');
+    if(roles[0]) roles[0].textContent=lang==='pt'?'Chefe de Mesa':'Head Waiter';
+    if(roles[1]) roles[1].textContent=lang==='pt'?'Restaurant Manager':'Restaurant Manager';
+    if(roles[2]) roles[2].textContent=lang==='pt'?'Diretor de F&B':'F&B Director';
+    statuses.forEach(s => { s.textContent=lang==='pt'?'Disponível para oportunidades':'Open to opportunities'; s.classList.remove('hiring'); s.classList.add('available'); });
+  };
+  document.addEventListener('DOMContentLoaded', () => {
+    apply(localStorage.getItem('fyndset-lang') || 'en');
+    const btn=document.querySelector('.links.push, [data-lang-switch], .lang-switch');
+    if(btn) btn.addEventListener('click', e => { e.stopImmediatePropagation(); apply(document.documentElement.lang==='pt'?'en':'pt'); }, true);
+  });
+})();
+</script>
+
 </body></html>
