@@ -270,4 +270,59 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 </style>
 
+
+<style>
+/* V4.13 — Miguel congelado. Sofia: só +30px para baixo. */
+.sofia-id .line{
+  left:calc(50% - 132px) !important;
+  height:120px !important;
+}
+.sofia-id .radar{
+  left:calc(50% - 132px) !important;
+  top:calc(100% + 120px) !important;
+}
+/* Miguel V4.12 permanece exatamente como está. */
+</style>
+
+<script>
+/* Correção APENAS no último segundo do tracking do Pedro.
+   Mantém o tracking V4.8 durante todo o resto do vídeo. */
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.querySelector('.hero-video');
+  const pedro = document.querySelector('.pedro-id');
+  if(!video || !pedro) return;
+
+  function lateFix(){
+    const d = video.duration || 8;
+    const t = video.currentTime || 0;
+    if(t >= Math.max(0,d-1)){
+      /* No último frame mostrado, o radar estava no mar (~155,94)
+         e a cabeça do empregado está ~266,132): deslocação visual +111,+38.
+         Aplicada progressivamente só no último segundo. */
+      const p = Math.max(0,Math.min(1,(t-(d-1))));
+      pedro.style.marginLeft = (111*p) + 'px';
+      pedro.style.marginTop  = (38*p) + 'px';
+    } else {
+      pedro.style.marginLeft = '0px';
+      pedro.style.marginTop = '0px';
+    }
+    requestAnimationFrame(lateFix);
+  }
+  requestAnimationFrame(lateFix);
+});
+</script>
+
+
+<style>
+/* V4.14 — Sofia sobe 28px. Miguel e Pedro ficam como na V4.13. */
+.sofia-id .line{
+  left:calc(50% - 132px) !important;
+  height:92px !important;
+}
+.sofia-id .radar{
+  left:calc(50% - 132px) !important;
+  top:calc(100% + 92px) !important;
+}
+</style>
+
 </body></html>
