@@ -120,8 +120,8 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
     <source src="./fyndset-hero.mp4" type="video/mp4">
   </video>
   <div class="bg"></div>
-<nav><div class="brand"><span class="mark"></span>fyndset<i>.</i></div><div class="links"><span data-i18n="nav.talent">For Talent</span><span data-i18n="nav.employers">For Employers</span><span data-i18n="nav.about">About</span><span data-i18n="nav.resources">Resources</span></div><div class="links push"><button class="lang-switch" type="button" aria-label="Change language">🌐 &nbsp; <span id="lang-label">EN</span>⌄</button></div><div class="signin" data-i18n="nav.signin">Sign in</div></nav>
-<section class="copy"><div class="eyebrow" data-i18n-html="hero.eyebrow">Hospitality <b>talent.</b> Reimagined.</div><h1 data-i18n-html="hero.title">Don’t apply.<span>Get found.</span></h1><div class="lead" data-i18n="hero.lead">The private, intelligent way for hospitality professionals and employers to connect.</div><div class="actions"><button class="btn"><span data-i18n="hero.beFound">Be found</span> <b>→</b></button><button class="btn"><span data-i18n="hero.findTalent">Find talent</span> <b>→</b></button></div><div class="pillars"><div><small data-i18n="pillar.skills">SKILLS</small><strong data-i18n="pillar.skillsText">What you can do</strong></div><div><small data-i18n="pillar.exp">EXPERIENCE</small><strong data-i18n="pillar.expText">Where you’ve proved it</strong></div><div><small data-i18n="pillar.intent">INTENT</small><strong data-i18n="pillar.intentText">What you want next</strong></div></div></section>
+<nav><div class="brand"><span class="mark"></span>fyndset<i>.</i></div><div class="links main-nav"><span data-i18n-v418="nav.pro">For Professionals</span><span data-i18n-v418="nav.company">For Companies</span><span data-i18n-v418="nav.how">How it works</span></div><div class="links push"><button class="lang-switch" type="button" aria-label="Change language">🌐 &nbsp; <span id="lang-label">EN</span>⌄</button></div><div class="signin" data-i18n="nav.signin">Sign in</div></nav>
+<section class="copy"><div class="eyebrow" data-i18n-html="hero.eyebrow">Hospitality <b>talent.</b> Reimagined.</div><h1 data-i18n-html="hero.title">Don’t apply.<span>Get found.</span></h1><div class="lead" data-i18n="hero.lead">The private, intelligent way for hospitality professionals and employers to connect.</div><div class="sublead v418-sublead" data-i18n-v418="hero.sublead">For hospitality professionals and the companies looking for them.</div><div class="actions v418-actions"><div class="v418-cta-label pro-label" data-i18n-v418="cta.proLabel">I’m a professional</div><div class="v418-cta-label company-label" data-i18n-v418="cta.companyLabel">I’m hiring</div><button class="btn"><span data-i18n="hero.beFound">Be found</span> <b>→</b></button><button class="btn"><span data-i18n="hero.findTalent">Find talent</span> <b>→</b></button></div><div class="pillars"><div><small data-i18n="pillar.skills">SKILLS</small><strong data-i18n="pillar.skillsText">What you can do</strong></div><div><small data-i18n="pillar.exp">EXPERIENCE</small><strong data-i18n="pillar.expText">Where you’ve proved it</strong></div><div><small data-i18n="pillar.intent">INTENT</small><strong data-i18n="pillar.intentText">What you want next</strong></div></div></section>
 <section class="talent talent-final">
 <div class="identity pedro-id">
  <div class="profile-bubble"><img class="face" src="./pedro.png"><div><div class="nm">Pedro <span>✓</span></div><div class="role" data-i18n="profile.pedro.role">Waiter</div><div class="loc">⌖ Porto, Portugal</div><div class="status available" data-i18n="profile.available">Open to opportunities</div></div></div>
@@ -459,6 +459,69 @@ h1 span{font-weight:650}
     if(btn) btn.addEventListener('click', e => { e.stopImmediatePropagation(); apply(document.documentElement.lang==='pt'?'en':'pt'); }, true);
   });
 })();
+</script>
+
+
+<style>
+/* V4.18 — homepage final polish */
+.main-nav{display:flex!important;gap:34px!important}
+.copy h1{font-size:clamp(54px,5.45vw,86px)!important;line-height:.91!important}
+.copy h1 span{font-size:1.04em}
+.v418-sublead{font-size:11px!important;line-height:1.45!important;color:#c9d8d5!important;margin-top:7px!important}
+.actions{position:relative!important;margin-top:30px!important}
+.v418-cta-label{position:absolute;top:-16px;font-size:6.5px;letter-spacing:.14em;text-transform:uppercase;color:#b9ccca}
+.v418-cta-label.pro-label{left:4px}
+.v418-cta-label.company-label{left:194px}
+.v418-teaser{position:absolute!important;right:1.5%!important;bottom:6.5%!important;width:245px!important;padding:14px 16px!important;border:1px solid #ffffff45!important;border-radius:15px!important;background:rgba(3,28,31,.66)!important;backdrop-filter:blur(18px)!important;box-shadow:0 14px 38px #0003!important}
+.v418-teaser small{display:block!important;font-size:6px!important;letter-spacing:.18em!important;color:#9fc5c0!important}
+.v418-teaser strong{display:block!important;font-size:10.5px!important;margin:6px 0 8px!important;color:#fff!important}
+.v418-teaser span{display:block!important;font-size:8px!important;color:var(--cyan)!important}
+@media(max-width:760px){
+  .main-nav{display:none!important}
+  .v418-cta-label,.v418-teaser,.v418-sublead{display:none!important}
+}
+</style>
+
+<script>
+/* V4.18 — definitive EN/PT homepage copy */
+document.addEventListener('DOMContentLoaded', () => {
+  const COPY = {
+    en: {
+      "nav.pro":"For Professionals","nav.company":"For Companies","nav.how":"How it works",
+      "hero.sublead":"For hospitality professionals and the companies looking for them.",
+      "cta.proLabel":"I’m a professional","cta.companyLabel":"I’m hiring",
+      "teaser.label":"LOOKING FOR","teaser.role":"Restaurant Manager · Lisbon","teaser.matches":"18 matching professionals →"
+    },
+    pt: {
+      "nav.pro":"Para Profissionais","nav.company":"Para Empresas","nav.how":"Como funciona",
+      "hero.sublead":"Para profissionais de hospitality e para as empresas que os procuram.",
+      "cta.proLabel":"SOU PROFISSIONAL","cta.companyLabel":"ESTOU A CONTRATAR",
+      "teaser.label":"À PROCURA DE","teaser.role":"Restaurant Manager · Lisboa","teaser.matches":"18 profissionais correspondem →"
+    }
+  };
+
+  function polish(){
+    const lang = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('pt') ? 'pt' : 'en';
+    document.querySelectorAll('[data-i18n-v418]').forEach(el => {
+      const value = COPY[lang][el.dataset.i18nV418];
+      if(value) el.textContent = value;
+    });
+    const statuses = document.querySelectorAll('.identity .status');
+    statuses.forEach(s => {
+      s.textContent = lang === 'pt' ? 'Disponível para oportunidades' : 'Open to opportunities';
+      s.classList.remove('hiring'); s.classList.add('available');
+    });
+  }
+
+  polish();
+  // Re-polish after the existing language switcher has updated the document language.
+  document.addEventListener('click', e => {
+    if(e.target.closest('.links.push, [data-lang-switch], .lang-switch')){
+      setTimeout(polish, 0);
+      setTimeout(polish, 60);
+    }
+  }, true);
+});
 </script>
 
 </body></html>
