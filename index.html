@@ -83,87 +83,34 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
 }
 
 
-/* V4.6 — exact 3-person Fyndset story over the existing video */
-.talent-final{left:40%;right:1%;top:9%;bottom:7%;overflow:visible;pointer-events:none}
+/* V4.7: calibrated against the actual 1694×846 live screenshot */
+.talent-final{position:absolute;left:0!important;right:0!important;top:0!important;bottom:0!important;z-index:7;pointer-events:none}
 .identity{position:absolute}
-.profile-bubble{
- display:flex;align-items:center;gap:10px;
- min-width:245px;padding:9px 13px 9px 9px;
- border:1px solid rgba(255,255,255,.34);border-radius:17px;
- background:linear-gradient(135deg,rgba(23,37,43,.88),rgba(6,77,77,.58));
- backdrop-filter:blur(17px) saturate(1.25);
- box-shadow:0 16px 44px rgba(0,0,0,.30);
- animation:fyndFloat 5.8s ease-in-out infinite;
-}
-.mini-avatar{
- width:49px;height:49px;flex:0 0 49px;border-radius:50%;
- display:grid;place-items:center;
- background:linear-gradient(145deg,#59696d,#17252b);
- border:1px solid rgba(255,255,255,.58);
- color:white;font-weight:800;font-size:17px;
-}
-.profile-info{line-height:1.25}
-.profile-name{font-size:11px;font-weight:800;display:flex;align-items:center;gap:5px}
-.verified{
- display:inline-grid;place-items:center;width:14px;height:14px;border-radius:50%;
- background:#20B8B2;color:white;font-size:9px;font-weight:900;
-}
-.profile-role{font-size:8px;margin-top:2px;color:#fff}
-.profile-location{font-size:7px;margin-top:3px;color:#d8e1df}
-.profile-status{
- display:inline-block;margin-top:5px;padding:4px 8px;border-radius:999px;
- font-size:6.7px;white-space:nowrap;border:1px solid rgba(255,255,255,.16)
-}
-.available{background:rgba(42,164,96,.72);color:#fff}
-.hiring{background:rgba(193,128,7,.76);color:#fff}
-.connector{
- position:absolute;left:50%;top:100%;width:1px;height:54px;
- background:linear-gradient(#fff,rgba(255,255,255,.14));
- transform:translateX(-50%);
-}
-.head-radar{
- position:absolute;left:50%;top:calc(100% + 54px);width:92px;height:92px;
- transform:translate(-50%,-50%);border-radius:50%;
-}
-.head-radar i{position:absolute;border:1px solid rgba(255,255,255,.38);border-radius:50%}
-.head-radar i:nth-child(1){inset:30px}
-.head-radar i:nth-child(2){inset:17px}
-.head-radar i:nth-child(3){inset:4px;border-color:rgba(32,184,178,.34)}
-.head-radar b{
- position:absolute;left:50%;top:50%;width:7px;height:7px;border-radius:50%;
- transform:translate(-50%,-50%);background:#fff;box-shadow:0 0 14px #20B8B2;
-}
-.head-radar:after{
- content:"";position:absolute;inset:4px;border-radius:50%;
- border:1px solid rgba(32,184,178,.24);animation:radarPing 2.8s ease-out infinite;
-}
-@keyframes radarPing{0%{transform:scale(.55);opacity:.9}100%{transform:scale(1.28);opacity:0}}
-@keyframes fyndFloat{0%,100%{translate:0 0}50%{translate:0 -5px}}
+.profile-bubble{display:flex;align-items:center;gap:10px;min-width:250px;padding:8px 12px 8px 8px;border:1px solid #ffffff55;border-radius:17px;background:linear-gradient(135deg,rgba(23,37,43,.90),rgba(6,77,77,.68));backdrop-filter:blur(18px);box-shadow:0 16px 44px #0005;animation:floatProfile 6s ease-in-out infinite}
+.face{width:52px;height:52px;object-fit:cover;border-radius:50%;border:1px solid #ffffffaa}
+.nm{font-size:12px;font-weight:800}.nm span{display:inline-grid;place-items:center;width:15px;height:15px;border-radius:50%;background:#20B8B2;font-size:9px}
+.role{font-size:8px;margin-top:2px}.loc{font-size:7px;color:#d8e1df;margin-top:3px}
+.status{display:inline-block;margin-top:5px;padding:4px 8px;border-radius:999px;font-size:6.8px;color:white}
+.available{background:#268f58}.hiring{background:#a66c05}
+.line{position:absolute;left:50%;top:100%;width:1px;background:linear-gradient(#fff,#ffffff33);transform:translateX(-50%)}
+.radar{position:absolute;left:50%;width:92px;height:92px;transform:translate(-50%,-50%);border-radius:50%}
+.radar i{position:absolute;border:1px solid #ffffff66;border-radius:50%}.radar i:nth-child(1){inset:31px}.radar i:nth-child(2){inset:18px}.radar i:nth-child(3){inset:5px;border-color:#20b8b277}
+.radar b{position:absolute;left:50%;top:50%;width:7px;height:7px;border-radius:50%;transform:translate(-50%,-50%);background:white;box-shadow:0 0 13px #20B8B2}
+.radar:after{content:"";position:absolute;inset:5px;border:1px solid #20b8b255;border-radius:50%;animation:ping 2.8s ease-out infinite}
+@keyframes ping{from{transform:scale(.6);opacity:.9}to{transform:scale(1.25);opacity:0}}
+@keyframes floatProfile{50%{translate:0 -4px}}
 
-/* positions matched to the three people in the current hero video */
-.identity-pedro{left:31%;top:2%}
-.identity-pedro .connector{height:72px}
-.identity-pedro .head-radar{top:calc(100% + 72px)}
+/* Exact desktop positions from the screenshot:
+   waiter head ≈ 950,315; woman ≈ 1190,438; man ≈ 1300,445 */
+.pedro-id{left:49.8%;top:7.4%}.pedro-id .line{height:154px}.pedro-id .radar{top:calc(100% + 154px)}
+.sofia-id{left:63.5%;top:31.0%}.sofia-id .line{height:74px}.sofia-id .radar{top:calc(100% + 74px)}
+.miguel-id{right:1.0%;top:26.0%}.miguel-id .line{height:103px}.miguel-id .radar{top:calc(100% + 103px)}
+.sofia-id .profile-bubble{animation-delay:-2s}.miguel-id .profile-bubble{animation-delay:-4s}
 
-.identity-sofia{left:57%;top:31%}
-.identity-sofia .connector{height:56px}
-.identity-sofia .head-radar{top:calc(100% + 56px)}
-
-.identity-miguel{right:0;top:25%}
-.identity-miguel .connector{height:94px}
-.identity-miguel .head-radar{top:calc(100% + 94px)}
-
-.identity-sofia .profile-bubble{animation-delay:-1.7s}
-.identity-miguel .profile-bubble{animation-delay:-3.1s}
-
-/* On mobile keep the idea clean: show Pedro prominently, employers as compact cards */
 @media(max-width:760px){
- .talent-final{left:0;right:0;top:auto;bottom:205px;height:250px}
- .identity-pedro{left:50%;top:52px;transform:translateX(-50%)}
- .identity-pedro .profile-bubble{min-width:260px}
- .identity-pedro .connector{height:34px}
- .identity-pedro .head-radar{top:calc(100% + 34px);width:70px;height:70px}
- .identity-sofia,.identity-miguel{display:none}
+ .sofia-id,.miguel-id{display:none}
+ .pedro-id{left:50%;top:54%;transform:translate(-50%,-50%)}
+ .pedro-id .line,.pedro-id .radar{display:none}
 }
 
 </style></head><body>
@@ -174,51 +121,18 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
 <nav><div class="brand"><span class="mark"></span>fyndset<i>.</i></div><div class="links"><span>For Talent</span><span>For Employers</span><span>About</span><span>Resources</span></div><div class="links push">🌐 &nbsp; EN⌄</div><div class="signin">Sign in</div></nav>
 <section class="copy"><div class="eyebrow">Hospitality <b>talent.</b> Reimagined.</div><h1>Don’t apply.<span>Get found.</span></h1><div class="lead">The private, intelligent way for hospitality professionals and employers to connect.</div><div class="actions"><button class="btn">Be found <b>→</b></button><button class="btn">Find talent <b>→</b></button></div><div class="metrics"><div class="metric"><small>People</small><strong>12K+</strong></div><div class="metric"><small>Hotel & restaurant groups</small><strong>850+</strong></div><div class="metric"><small>Countries</small><strong>15</strong></div></div></section>
 <section class="talent talent-final">
-  <!-- PEDRO: waiter -->
-  <div class="identity identity-pedro">
-    <div class="profile-bubble">
-      <div class="mini-avatar avatar-pedro">P</div>
-      <div class="profile-info">
-        <div class="profile-name">Pedro <span class="verified">✓</span></div>
-        <div class="profile-role">Empregado de Mesa</div>
-        <div class="profile-location">⌖ Porto, Portugal</div>
-        <div class="profile-status available">Disponível para oportunidades</div>
-      </div>
-    </div>
-    <div class="connector"></div>
-    <div class="head-radar"><i></i><i></i><i></i><b></b></div>
-  </div>
-
-  <!-- SOFIA: woman seated at table -->
-  <div class="identity identity-sofia">
-    <div class="profile-bubble">
-      <div class="mini-avatar avatar-sofia">S</div>
-      <div class="profile-info">
-        <div class="profile-name">Sofia <span class="verified">✓</span></div>
-        <div class="profile-role">Diretora de Operações</div>
-        <div class="profile-location">⌖ Aveiro, Portugal</div>
-        <div class="profile-status hiring">À procura de talento</div>
-      </div>
-    </div>
-    <div class="connector"></div>
-    <div class="head-radar"><i></i><i></i><i></i><b></b></div>
-  </div>
-
-  <!-- MIGUEL: man seated at table -->
-  <div class="identity identity-miguel">
-    <div class="profile-bubble">
-      <div class="mini-avatar avatar-miguel">M</div>
-      <div class="profile-info">
-        <div class="profile-name">Miguel <span class="verified">✓</span></div>
-        <div class="profile-role">CEO</div>
-        <div class="profile-location">⌖ Aveiro, Portugal</div>
-        <div class="profile-status hiring">À procura de talento</div>
-      </div>
-    </div>
-    <div class="connector"></div>
-    <div class="head-radar"><i></i><i></i><i></i><b></b></div>
-  </div>
-
-  <div class="real">REAL PEOPLE.<br>REAL OPPORTUNITIES.</div>
+<div class="identity pedro-id">
+ <div class="profile-bubble"><img class="face" src="./pedro.png"><div><div class="nm">Pedro <span>✓</span></div><div class="role">Empregado de Mesa</div><div class="loc">⌖ Porto, Portugal</div><div class="status available">Disponível para oportunidades</div></div></div>
+ <div class="line"></div><div class="radar"><i></i><i></i><i></i><b></b></div>
+</div>
+<div class="identity sofia-id">
+ <div class="profile-bubble"><img class="face" src="./sofia.png"><div><div class="nm">Sofia <span>✓</span></div><div class="role">Diretora de Operações</div><div class="loc">⌖ Aveiro, Portugal</div><div class="status hiring">À procura de talento</div></div></div>
+ <div class="line"></div><div class="radar"><i></i><i></i><i></i><b></b></div>
+</div>
+<div class="identity miguel-id">
+ <div class="profile-bubble"><img class="face" src="./miguel.png"><div><div class="nm">Miguel <span>✓</span></div><div class="role">CEO</div><div class="loc">⌖ Aveiro, Portugal</div><div class="status hiring">À procura de talento</div></div></div>
+ <div class="line"></div><div class="radar"><i></i><i></i><i></i><b></b></div>
+</div>
+<div class="real">REAL PEOPLE.<br>REAL OPPORTUNITIES.</div>
 </section>
 <section class="mobile"><h2>What brings you here?</h2><button>Be found <b>→</b></button><button>Find talent <b>→</b></button></section></main></body></html>
