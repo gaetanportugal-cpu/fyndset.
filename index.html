@@ -1,6 +1,6 @@
 <!doctype html><html lang="pt"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Fyndset — Hero v4</title>
+<title>Fyndset — Hero v4.16</title>
 <style>
 :root{--bg:#031c1f;--cyan:#3fe0da;--white:#f8fbfa;--glass:rgba(11,35,37,.56)}
 *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -113,29 +113,31 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
  .pedro-id .line,.pedro-id .radar{display:none}
 }
 
+
+.lang-switch{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;letter-spacing:inherit}.lang-switch:hover{color:var(--cyan)}
 </style></head><body>
 <main class="hero"><video class="hero-video" autoplay muted loop playsinline preload="auto" poster="./fyndset-hero-bg.png" aria-hidden="true">
     <source src="./fyndset-hero.mp4" type="video/mp4">
   </video>
   <div class="bg"></div>
-<nav><div class="brand"><span class="mark"></span>fyndset<i>.</i></div><div class="links"><span>For Talent</span><span>For Employers</span><span>About</span><span>Resources</span></div><div class="links push">🌐 &nbsp; EN⌄</div><div class="signin">Sign in</div></nav>
-<section class="copy"><div class="eyebrow">Hospitality <b>talent.</b> Reimagined.</div><h1>Don’t apply.<span>Get found.</span></h1><div class="lead">The private, intelligent way for hospitality professionals and employers to connect.</div><div class="actions"><button class="btn">Be found <b>→</b></button><button class="btn">Find talent <b>→</b></button></div><div class="metrics"><div class="metric"><small>People</small><strong>12K+</strong></div><div class="metric"><small>Hotel & restaurant groups</small><strong>850+</strong></div><div class="metric"><small>Countries</small><strong>15</strong></div></div></section>
+<nav><div class="brand"><span class="mark"></span>fyndset<i>.</i></div><div class="links"><span data-i18n="nav.talent">For Talent</span><span data-i18n="nav.employers">For Employers</span><span data-i18n="nav.about">About</span><span data-i18n="nav.resources">Resources</span></div><div class="links push"><button class="lang-switch" type="button" aria-label="Change language">🌐 &nbsp; <span id="lang-label">EN</span>⌄</button></div><div class="signin" data-i18n="nav.signin">Sign in</div></nav>
+<section class="copy"><div class="eyebrow" data-i18n-html="hero.eyebrow">Hospitality <b>talent.</b> Reimagined.</div><h1 data-i18n-html="hero.title">Don’t apply.<span>Get found.</span></h1><div class="lead" data-i18n="hero.lead">The private, intelligent way for hospitality professionals and employers to connect.</div><div class="actions"><button class="btn"><span data-i18n="hero.beFound">Be found</span> <b>→</b></button><button class="btn"><span data-i18n="hero.findTalent">Find talent</span> <b>→</b></button></div><div class="metrics"><div class="metric"><small data-i18n="metrics.people">People</small><strong>12K+</strong></div><div class="metric"><small data-i18n="metrics.groups">Hotel & restaurant groups</small><strong>850+</strong></div><div class="metric"><small data-i18n="metrics.countries">Countries</small><strong>15</strong></div></div></section>
 <section class="talent talent-final">
 <div class="identity pedro-id">
- <div class="profile-bubble"><img class="face" src="./pedro.png"><div><div class="nm">Pedro <span>✓</span></div><div class="role">Empregado de Mesa</div><div class="loc">⌖ Porto, Portugal</div><div class="status available">Disponível para oportunidades</div></div></div>
+ <div class="profile-bubble"><img class="face" src="./pedro.png"><div><div class="nm">Pedro <span>✓</span></div><div class="role" data-i18n="profile.pedro.role">Waiter</div><div class="loc">⌖ Porto, Portugal</div><div class="status available" data-i18n="profile.available">Open to opportunities</div></div></div>
  <div class="line"></div><div class="radar"><i></i><i></i><i></i><b></b></div>
 </div>
 <div class="identity sofia-id">
- <div class="profile-bubble"><img class="face" src="./sofia.png"><div><div class="nm">Sofia <span>✓</span></div><div class="role">Diretora de Operações</div><div class="loc">⌖ Aveiro, Portugal</div><div class="status hiring">À procura de talento</div></div></div>
+ <div class="profile-bubble"><img class="face" src="./sofia.png"><div><div class="nm">Sofia <span>✓</span></div><div class="role" data-i18n="profile.sofia.role">Director of Operations</div><div class="loc">⌖ Aveiro, Portugal</div><div class="status hiring" data-i18n="profile.hiring">Looking for talent</div></div></div>
  <div class="line"></div><div class="radar"><i></i><i></i><i></i><b></b></div>
 </div>
 <div class="identity miguel-id">
- <div class="profile-bubble"><img class="face" src="./miguel.png"><div><div class="nm">Miguel <span>✓</span></div><div class="role">CEO</div><div class="loc">⌖ Aveiro, Portugal</div><div class="status hiring">À procura de talento</div></div></div>
+ <div class="profile-bubble"><img class="face" src="./miguel.png"><div><div class="nm">Miguel <span>✓</span></div><div class="role" data-i18n="profile.miguel.role">CEO</div><div class="loc">⌖ Aveiro, Portugal</div><div class="status hiring" data-i18n="profile.hiring">Looking for talent</div></div></div>
  <div class="line"></div><div class="radar"><i></i><i></i><i></i><b></b></div>
 </div>
-<div class="real">REAL PEOPLE.<br>REAL OPPORTUNITIES.</div>
+<div class="real" data-i18n-html="hero.real">REAL PEOPLE.<br>REAL OPPORTUNITIES.</div>
 </section>
-<section class="mobile"><h2>What brings you here?</h2><button>Be found <b>→</b></button><button>Find talent <b>→</b></button></section></main>
+<section class="mobile"><h2 data-i18n="mobile.title">What brings you here?</h2><button><span data-i18n="hero.beFound">Be found</span> <b>→</b></button><button><span data-i18n="hero.findTalent">Find talent</span> <b>→</b></button></section></main>
 <style>
 /* V4.8 — exact concept: professional portraits + corrected targets + Pedro tracks video motion */
 .identity .profile-bubble{animation:none}
@@ -339,4 +341,50 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 </style>
 
+
+<script>
+/* V4.16 — EN/PT language system. Keeps the visual/video/tracking logic intact. */
+(() => {
+  const translations = {
+    en: {
+      'nav.talent':'For Talent','nav.employers':'For Employers','nav.about':'About','nav.resources':'Resources','nav.signin':'Sign in',
+      'hero.eyebrow':'Hospitality <b>talent.</b> Reimagined.','hero.title':'Don’t apply.<span>Get found.</span>',
+      'hero.lead':'The private, intelligent way for hospitality professionals and employers to connect.',
+      'hero.beFound':'Be found','hero.findTalent':'Find talent','hero.real':'REAL PEOPLE.<br>REAL OPPORTUNITIES.',
+      'metrics.people':'People','metrics.groups':'Hotel & restaurant groups','metrics.countries':'Countries',
+      'profile.pedro.role':'Waiter','profile.sofia.role':'Director of Operations','profile.miguel.role':'CEO',
+      'profile.available':'Open to opportunities','profile.hiring':'Looking for talent','mobile.title':'What brings you here?'
+    },
+    pt: {
+      'nav.talent':'Para Profissionais','nav.employers':'Para Empresas','nav.about':'Sobre nós','nav.resources':'Recursos','nav.signin':'Entrar',
+      'hero.eyebrow':'Talento em <b>hospitality.</b> Reinventado.','hero.title':'Não te candidates.<span>Sê encontrado.</span>',
+      'hero.lead':'A forma privada e inteligente de ligar profissionais de hospitality às empresas certas.',
+      'hero.beFound':'Ser encontrado','hero.findTalent':'Encontrar talento','hero.real':'PESSOAS REAIS.<br>OPORTUNIDADES REAIS.',
+      'metrics.people':'Profissionais','metrics.groups':'Grupos hoteleiros e restauração','metrics.countries':'Países',
+      'profile.pedro.role':'Empregado de Mesa','profile.sofia.role':'Diretora de Operações','profile.miguel.role':'CEO',
+      'profile.available':'Disponível para oportunidades','profile.hiring':'À procura de talento','mobile.title':'O que te traz ao Fyndset?'
+    }
+  };
+  const htmlKeys = new Set(['hero.eyebrow','hero.title','hero.real']);
+  function setLanguage(lang){
+    if(!translations[lang]) lang='en';
+    document.documentElement.lang = lang === 'pt' ? 'pt-PT' : 'en';
+    document.querySelectorAll('[data-i18n],[data-i18n-html]').forEach(el => {
+      const key = el.dataset.i18n || el.dataset.i18nHtml;
+      const value = translations[lang][key];
+      if(value == null) return;
+      if(htmlKeys.has(key) || el.hasAttribute('data-i18n-html')) el.innerHTML=value; else el.textContent=value;
+    });
+    const label=document.getElementById('lang-label'); if(label) label.textContent=lang.toUpperCase();
+    try{ localStorage.setItem('fyndset-lang',lang); }catch(e){}
+  }
+  document.addEventListener('DOMContentLoaded',()=>{
+    let lang='en';
+    try{ lang=localStorage.getItem('fyndset-lang') || 'en'; }catch(e){}
+    setLanguage(lang);
+    const btn=document.querySelector('.lang-switch');
+    if(btn) btn.addEventListener('click',()=>setLanguage(document.documentElement.lang.startsWith('pt')?'en':'pt'));
+  });
+})();
+</script>
 </body></html>
