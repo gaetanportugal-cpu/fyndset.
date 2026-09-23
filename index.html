@@ -1,6 +1,6 @@
 <!doctype html><html lang="pt"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Fyndset — Hero v4.16</title>
+<title>Fyndset — Hero v4</title>
 <style>
 :root{--bg:#031c1f;--cyan:#3fe0da;--white:#f8fbfa;--glass:rgba(11,35,37,.56)}
 *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -113,36 +113,58 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
  .pedro-id .line,.pedro-id .radar{display:none}
 }
 
-
-.lang-switch{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;letter-spacing:inherit}.lang-switch:hover{color:var(--cyan)}
 </style></head><body>
 <main class="hero"><video class="hero-video" autoplay muted loop playsinline preload="auto" poster="./fyndset-hero-bg.png" aria-hidden="true">
     <source src="./fyndset-hero.mp4" type="video/mp4">
   </video>
   <div class="bg"></div>
-<nav><div class="brand"><span class="mark"></span>fyndset<i>.</i></div><div class="links main-nav"><span data-i18n-v418="nav.pro">For Professionals</span><span data-i18n-v418="nav.company">For Companies</span><span data-i18n-v418="nav.how">How it works</span></div><div class="links push"><button class="lang-switch" type="button" aria-label="Change language">🌐 &nbsp; <span id="lang-label">EN</span>⌄</button></div><div class="signin" data-i18n="nav.signin">Sign in</div></nav>
-<section class="copy"><div class="eyebrow" data-i18n-html="hero.eyebrow">Hospitality <b>talent.</b> Reimagined.</div><h1 data-i18n-html="hero.title">Don’t apply.<span>Get found.</span></h1><div class="lead" data-i18n="hero.lead">The private, intelligent way for hospitality professionals and employers to connect.</div><div class="sublead v418-sublead" data-i18n-v418="hero.sublead">For hospitality professionals and the companies looking for them.</div><div class="actions v418-actions"><div class="v418-cta-label pro-label" data-i18n-v418="cta.proLabel">I’m a professional</div><div class="v418-cta-label company-label" data-i18n-v418="cta.companyLabel">I’m hiring</div><button class="btn"><span data-i18n="hero.beFound">Be found</span> <b>→</b></button><button class="btn"><span data-i18n="hero.findTalent">Find talent</span> <b>→</b></button></div><div class="pillars"><div><small data-i18n="pillar.skills">SKILLS</small><strong data-i18n="pillar.skillsText">What you can do</strong></div><div><small data-i18n="pillar.exp">EXPERIENCE</small><strong data-i18n="pillar.expText">Where you’ve proved it</strong></div><div><small data-i18n="pillar.intent">INTENT</small><strong data-i18n="pillar.intentText">What you want next</strong></div></div></section>
+<nav>
+<div class="brand"><span class="mark"></span>fyndset<i>.</i></div>
+<div class="links main-nav">
+  <span data-t="navPro">For Professionals</span>
+  <span data-t="navCompany">For Companies</span>
+  <span data-t="navHow">How it works</span>
+</div>
+<button class="lang-switch push" type="button" aria-label="Change language">🌐 &nbsp; <span id="lang-code">EN</span>⌄</button>
+<div class="signin" data-t="signIn">Sign in</div>
+</nav>
+<section class="copy">
+<div class="eyebrow" data-t-html="eyebrow">Hospitality <b>talent.</b> Reimagined.</div>
+<h1 data-t-html="headline">Don’t apply.<span>Get found.</span></h1>
+<div class="lead" data-t="lead">Build your Fyndset. Get discovered for what you can actually do, not just what’s on your CV.</div>
+<div class="sublead" data-t="sublead">For hospitality professionals and the companies looking for them.</div>
+<div class="actions">
+  <div class="cta-wrap"><small data-t="proLabel">I’M A PROFESSIONAL</small><button class="btn"><span data-t="beFound">Be found</span><b>→</b></button></div>
+  <div class="cta-wrap"><small data-t="hireLabel">I’M HIRING</small><button class="btn"><span data-t="findTalent">Find talent</span><b>→</b></button></div>
+</div>
+<div class="pillars">
+  <div><small data-t="p1">SKILLS</small><strong data-t="p1t">What you can do</strong></div>
+  <div><small data-t="p2">EXPERIENCE</small><strong data-t="p2t">Where you’ve proved it</strong></div>
+  <div><small data-t="p3">INTENT</small><strong data-t="p3t">What you want next</strong></div>
+</div>
+</section>
 <section class="talent talent-final">
 <div class="identity pedro-id">
- <div class="profile-bubble"><img class="face" src="./pedro.png"><div><div class="nm">Pedro <span>✓</span></div><div class="role" data-i18n="profile.pedro.role">Waiter</div><div class="loc">⌖ Porto, Portugal</div><div class="status available" data-i18n="profile.available">Open to opportunities</div></div></div>
+ <div class="profile-bubble"><img class="face" src="./pedro.png"><div><div class="nm">Pedro <span>✓</span></div><div class="role" data-profile-role="pedro">Head Waiter</div><div class="loc">⌖ Porto, Portugal</div><div class="status available" data-profile-status="pedro">Open to opportunities</div></div></div>
  <div class="line"></div><div class="radar"><i></i><i></i><i></i><b></b></div>
 </div>
 <div class="identity sofia-id">
- <div class="profile-bubble"><img class="face" src="./sofia.png"><div><div class="nm">Sofia <span>✓</span></div><div class="role" data-i18n="profile.sofia.role">Director of Operations</div><div class="loc">⌖ Aveiro, Portugal</div><div class="status hiring" data-i18n="profile.hiring">Looking for talent</div></div></div>
+ <div class="profile-bubble"><img class="face" src="./sofia.png"><div><div class="nm">Sofia <span>✓</span></div><div class="role" data-profile-role="sofia">Restaurant Manager</div><div class="loc">⌖ Aveiro, Portugal</div><div class="status available" data-profile-status="sofia">Open to opportunities</div></div></div>
  <div class="line"></div><div class="radar"><i></i><i></i><i></i><b></b></div>
 </div>
 <div class="identity miguel-id">
- <div class="profile-bubble"><img class="face" src="./miguel.png"><div><div class="nm">Miguel <span>✓</span></div><div class="role" data-i18n="profile.miguel.role">F&amp;B Director</div><div class="loc">⌖ Aveiro, Portugal</div><div class="status hiring" data-i18n="profile.hiring">Looking for talent</div></div></div>
+ <div class="profile-bubble"><img class="face" src="./miguel.png"><div><div class="nm">Miguel <span>✓</span></div><div class="role" data-profile-role="miguel">Hospitality Group CEO</div><div class="loc">⌖ Aveiro, Portugal</div><div class="status hiring" data-profile-status="miguel">Looking for talent</div></div></div>
  <div class="line"></div><div class="radar"><i></i><i></i><i></i><b></b></div>
 </div>
-<div class="real" data-i18n-html="hero.real">REAL PEOPLE.<br>REAL OPPORTUNITIES.</div>
-<div class="v419-teaser">
-<small data-v419="teaser.label">LOOKING FOR</small>
-<strong data-v419="teaser.role">Restaurant Manager · Lisbon</strong>
-<span data-v419="teaser.matches">18 matching professionals →</span>
+<div class="search-teaser">
+<small data-t="searchLabel">LOOKING FOR</small>
+<strong data-t="searchRole">Restaurant Manager · Lisbon</strong>
+<span data-t="searchMatches">18 matching professionals →</span>
 </div>
 </section>
-<section class="mobile"><h2 data-i18n="mobile.title">What brings you here?</h2><button><span data-i18n="hero.beFound">Be found</span> <b>→</b></button><button><span data-i18n="hero.findTalent">Find talent</span> <b>→</b></button></section></main>
+<section class="mobile"><h2 data-t="mobileTitle">What brings you here?</h2>
+<button><span data-t="beFound">Be found</span> <b>→</b></button>
+<button><span data-t="findTalent">Find talent</span> <b>→</b></button></section></main>
 <style>
 /* V4.8 — exact concept: professional portraits + corrected targets + Pedro tracks video motion */
 .identity .profile-bubble{animation:none}
@@ -347,400 +369,109 @@ document.addEventListener('DOMContentLoaded', () => {
 </style>
 
 
-<script>
-/* V4.16 — EN/PT language system. Keeps the visual/video/tracking logic intact. */
-(() => {
-  const translations = {
-    en: {
-      'nav.talent':'For Talent','nav.employers':'For Employers','nav.about':'About','nav.resources':'Resources','nav.signin':'Sign in',
-      'hero.eyebrow':'Hospitality <b>talent.</b> Reimagined.','hero.title':'Don’t apply.<span>Get found.</span>',
-      'hero.lead':'The private, intelligent way for hospitality professionals and employers to connect.',
-      'hero.beFound':'Be found','hero.findTalent':'Find talent','hero.real':'REAL PEOPLE.<br>REAL OPPORTUNITIES.',
-      'metrics.people':'People','metrics.groups':'Hotel & restaurant groups','metrics.countries':'Countries',
-      'profile.pedro.role':'Waiter','profile.sofia.role':'Director of Operations','profile.miguel.role':'CEO',
-      'profile.available':'Open to opportunities','profile.hiring':'Looking for talent','mobile.title':'What brings you here?'
-    },
-    pt: {
-      'nav.talent':'Para Profissionais','nav.employers':'Para Empresas','nav.about':'Sobre nós','nav.resources':'Recursos','nav.signin':'Entrar',
-      'hero.eyebrow':'Talento em <b>hospitality.</b> Reinventado.','hero.title':'Não te candidates.<span>Sê encontrado.</span>',
-      'hero.lead':'A forma privada e inteligente de ligar profissionais de hospitality às empresas certas.',
-      'hero.beFound':'Ser encontrado','hero.findTalent':'Encontrar talento','hero.real':'PESSOAS REAIS.<br>OPORTUNIDADES REAIS.',
-      'metrics.people':'Profissionais','metrics.groups':'Grupos hoteleiros e restauração','metrics.countries':'Países',
-      'profile.pedro.role':'Head Waiter','profile.sofia.role':'Restaurant Manager','profile.miguel.role':'CEO',
-      'profile.available':'Open to opportunities','profile.hiring':'Open to opportunities','mobile.title':'O que te traz ao Fyndset?'
-    }
-  };
-  const htmlKeys = new Set(['hero.eyebrow','hero.title','hero.real']);
-  function setLanguage(lang){
-    if(!translations[lang]) lang='en';
-    document.documentElement.lang = lang === 'pt' ? 'pt-PT' : 'en';
-    document.querySelectorAll('[data-i18n],[data-i18n-html]').forEach(el => {
-      const key = el.dataset.i18n || el.dataset.i18nHtml;
-      const value = translations[lang][key];
-      if(value == null) return;
-      if(htmlKeys.has(key) || el.hasAttribute('data-i18n-html')) el.innerHTML=value; else el.textContent=value;
-    });
-    const label=document.getElementById('lang-label'); if(label) label.textContent=lang.toUpperCase();
-    try{ localStorage.setItem('fyndset-lang',lang); }catch(e){}
-  }
-  document.addEventListener('DOMContentLoaded',()=>{
-    let lang='en';
-    try{ lang=localStorage.getItem('fyndset-lang') || 'en'; }catch(e){}
-    setLanguage(lang);
-    const btn=document.querySelector('.lang-switch');
-    if(btn) btn.addEventListener('click',()=>setLanguage(document.documentElement.lang.startsWith('pt')?'en':'pt'));
-  });
-})();
-</script>
-
 <style>
-/* V4.17 — product-focused hero refinement */
+/* V4.22 — clean bilingual rebuild from v4.15 */
+.lang-switch{margin-left:auto;border:0;background:transparent;color:#fff;font:inherit;font-size:11px;cursor:pointer;padding:10px 4px}
+.main-nav{display:flex;gap:34px;font-size:11px}
 .copy{width:40vw;max-width:650px}
-h1{font-weight:560}
-h1 span{font-weight:650}
-.lead{max-width:540px;font-size:16px;line-height:1.55}
-.sublead{font-size:11px;color:#d1dcda;margin-top:8px;letter-spacing:.015em}
-.actions{align-items:flex-end}
+.copy h1{font-size:clamp(50px,4.95vw,78px)!important;line-height:.92!important;font-weight:560!important}
+.copy h1 span{font-weight:650!important}
+.lead{max-width:550px;font-size:16px;line-height:1.55}
+.sublead{font-size:11px;line-height:1.45;color:#c9d8d5;margin-top:7px}
+.actions{display:flex;gap:14px;margin-top:30px;align-items:flex-end}
 .cta-wrap{display:flex;flex-direction:column;gap:7px}
-.cta-wrap small{font-size:7px;letter-spacing:.13em;text-transform:uppercase;color:#c8d6d4;padding-left:4px}
+.cta-wrap small{font-size:6.5px;letter-spacing:.14em;text-transform:uppercase;color:#b9ccca;padding-left:4px}
+.actions .cta-wrap:first-child .btn{background:#fff;color:#092629;border-color:#fff}
 .pillars{display:flex;gap:44px;margin-top:34px}
 .pillars div{min-width:112px}
 .pillars small{display:block;font-size:6.5px;letter-spacing:.15em;color:#a9c0bd}
 .pillars strong{display:block;font-size:10px;font-weight:500;margin-top:5px;color:#fff}
-.search-teaser{position:absolute;right:1.4%;bottom:7%;width:230px;padding:13px 15px;border:1px solid #ffffff42;border-radius:14px;background:rgba(3,28,31,.58);backdrop-filter:blur(16px)}
+.search-teaser{position:absolute;right:1.5%;bottom:6.5%;z-index:25;width:250px;padding:14px 16px;border:1px solid #ffffff45;border-radius:15px;background:rgba(3,28,31,.68);backdrop-filter:blur(18px);box-shadow:0 14px 38px #0003}
 .search-teaser small{display:block;font-size:6px;letter-spacing:.18em;color:#9fc5c0}
-.search-teaser strong{display:block;font-size:10px;margin:5px 0 7px}
-.search-teaser span{font-size:7.5px;color:var(--cyan)}
+.search-teaser strong{display:block;font-size:10.5px;margin:6px 0 8px;color:#fff}
+.search-teaser span{display:block;font-size:8px;color:var(--cyan)}
 @media(max-width:760px){
-  .sublead{font-size:10px;max-width:290px;margin:8px auto 0}
-  .pillars,.search-teaser{display:none}
-  .cta-wrap small{display:none}
+  .main-nav,.signin{display:none!important}
+  .lang-switch{margin-left:auto}
+  .copy{left:20px;right:20px;width:auto}
+  .sublead,.pillars,.search-teaser,.actions{display:none!important}
 }
 </style>
 
-
 <script>
-/* V4.17 bilingual content layer */
+/* V4.22 — single source of truth for EN/PT */
 (() => {
-  const T = {
-    en: {
-      "nav.pro":"For Professionals","nav.company":"For Companies","nav.how":"How it works",
-      "hero.lead":"Build your Fyndset. Get discovered for what you can actually do — not just what’s on your CV.",
-      "hero.sublead":"For hospitality professionals and the companies looking for them.",
-      "cta.proLabel":"I’m a professional","cta.pro":"Be found","cta.companyLabel":"I’m hiring","cta.company":"Find talent",
-      "pillar.skills":"SKILLS","pillar.skillsText":"What you can do","pillar.exp":"EXPERIENCE","pillar.expText":"Where you’ve proved it","pillar.intent":"INTENT","pillar.intentText":"What you want next",
-      "teaser.label":"LOOKING FOR","teaser.role":"Restaurant Manager · Lisbon","teaser.matches":"18 matching professionals →"
-    },
-    pt: {
-      "nav.pro":"Para Profissionais","nav.company":"Para Empresas","nav.how":"Como funciona",
-      "hero.lead":"Constrói o teu Fyndset. Sê descoberto pelo que realmente sabes fazer — não apenas pelo que está no teu CV.",
-      "hero.sublead":"Para profissionais de hospitality e para as empresas que os procuram.",
-      "cta.proLabel":"Sou profissional","cta.pro":"Ser encontrado","cta.companyLabel":"Estou a contratar","cta.company":"Encontrar talento",
-      "pillar.skills":"COMPETÊNCIAS","pillar.skillsText":"O que sabes fazer","pillar.exp":"EXPERIÊNCIA","pillar.expText":"Onde já o demonstraste","pillar.intent":"OBJETIVO","pillar.intentText":"O que procuras a seguir",
-      "teaser.label":"À PROCURA DE","teaser.role":"Restaurant Manager · Lisboa","teaser.matches":"18 profissionais correspondem →"
-    }
-  };
-  const apply = lang => {
-    lang = lang === 'pt' ? 'pt' : 'en';
-    document.documentElement.lang = lang;
-    localStorage.setItem('fyndset-lang', lang);
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const v=T[lang][el.dataset.i18n]; if(v) el.textContent=v;
-    });
-    // Existing language control
-    const candidates=[...document.querySelectorAll('.links.push, [data-lang-switch], .lang-switch')];
-    candidates.forEach(el => { el.innerHTML='🌐 &nbsp; '+lang.toUpperCase()+'⌄'; el.style.cursor='pointer'; });
-    // Profile content
-    const roles = document.querySelectorAll('.identity .role');
-    const statuses = document.querySelectorAll('.identity .status');
-    if(roles[0]) roles[0].textContent=lang==='pt'?'Chefe de Mesa':'Head Waiter';
-    if(roles[1]) roles[1].textContent=lang==='pt'?'Restaurant Manager':'Restaurant Manager';
-    if(roles[2]) roles[2].textContent=lang==='pt'?'Diretor de F&B':'F&B Director';
-    statuses.forEach(s => { s.textContent=lang==='pt'?'Disponível para oportunidades':'Open to opportunities'; s.classList.remove('hiring'); s.classList.add('available'); });
-  };
-  document.addEventListener('DOMContentLoaded', () => {
-    apply(localStorage.getItem('fyndset-lang') || 'en');
-    const btn=document.querySelector('.links.push, [data-lang-switch], .lang-switch');
-    if(btn) btn.addEventListener('click', e => { e.stopImmediatePropagation(); apply(document.documentElement.lang==='pt'?'en':'pt'); }, true);
-  });
-})();
-</script>
-
-
-<style>
-/* V4.18 — homepage final polish */
-.main-nav{display:flex!important;gap:34px!important}
-.copy h1{font-size:clamp(54px,5.45vw,86px)!important;line-height:.91!important}
-.copy h1 span{font-size:1.04em}
-.v418-sublead{font-size:11px!important;line-height:1.45!important;color:#c9d8d5!important;margin-top:7px!important}
-.actions{position:relative!important;margin-top:30px!important}
-.v418-cta-label{position:absolute;top:-16px;font-size:6.5px;letter-spacing:.14em;text-transform:uppercase;color:#b9ccca}
-.v418-cta-label.pro-label{left:4px}
-.v418-cta-label.company-label{left:194px}
-.v418-teaser{position:absolute!important;right:1.5%!important;bottom:6.5%!important;width:245px!important;padding:14px 16px!important;border:1px solid #ffffff45!important;border-radius:15px!important;background:rgba(3,28,31,.66)!important;backdrop-filter:blur(18px)!important;box-shadow:0 14px 38px #0003!important}
-.v418-teaser small{display:block!important;font-size:6px!important;letter-spacing:.18em!important;color:#9fc5c0!important}
-.v418-teaser strong{display:block!important;font-size:10.5px!important;margin:6px 0 8px!important;color:#fff!important}
-.v418-teaser span{display:block!important;font-size:8px!important;color:var(--cyan)!important}
-@media(max-width:760px){
-  .main-nav{display:none!important}
-  .v418-cta-label,.v418-teaser,.v418-sublead{display:none!important}
-}
-</style>
-
-<script>
-/* V4.18 — definitive EN/PT homepage copy */
-document.addEventListener('DOMContentLoaded', () => {
   const COPY = {
     en: {
-      "nav.pro":"For Professionals","nav.company":"For Companies","nav.how":"How it works",
-      "hero.sublead":"For hospitality professionals and the companies looking for them.",
-      "cta.proLabel":"I’m a professional","cta.companyLabel":"I’m hiring",
-      "teaser.label":"LOOKING FOR","teaser.role":"Restaurant Manager · Lisbon","teaser.matches":"18 matching professionals →"
+      navPro:"For Professionals", navCompany:"For Companies", navHow:"How it works", signIn:"Sign in",
+      eyebrow:"Hospitality <b>talent.</b> Reimagined.",
+      headline:"Don’t apply.<span>Get found.</span>",
+      lead:"Build your Fyndset. Get discovered for what you can actually do, not just what’s on your CV.",
+      sublead:"For hospitality professionals and the companies looking for them.",
+      proLabel:"I’M A PROFESSIONAL", hireLabel:"I’M HIRING", beFound:"Be found", findTalent:"Find talent",
+      p1:"SKILLS", p1t:"What you can do", p2:"EXPERIENCE", p2t:"Where you’ve proved it", p3:"INTENT", p3t:"What you want next",
+      searchLabel:"LOOKING FOR", searchRole:"Restaurant Manager · Lisbon", searchMatches:"18 matching professionals →",
+      mobileTitle:"What brings you here?",
+      pedroRole:"Head Waiter", sofiaRole:"Restaurant Manager", miguelRole:"Hospitality Group CEO",
+      available:"Open to opportunities", hiring:"Looking for talent"
     },
     pt: {
-      "nav.pro":"Para Profissionais","nav.company":"Para Empresas","nav.how":"Como funciona",
-      "hero.sublead":"Para profissionais de hospitality e para as empresas que os procuram.",
-      "cta.proLabel":"SOU PROFISSIONAL","cta.companyLabel":"ESTOU A CONTRATAR",
-      "teaser.label":"À PROCURA DE","teaser.role":"Restaurant Manager · Lisboa","teaser.matches":"18 profissionais correspondem →"
+      navPro:"Para Profissionais", navCompany:"Para Empresas", navHow:"Como funciona", signIn:"Entrar",
+      eyebrow:"Talento em <b>hospitalidade.</b> Reinventado.",
+      headline:"Não te candidates.<span>Sê encontrado.</span>",
+      lead:"Constrói o teu Fyndset. Sê descoberto pelo que realmente sabes fazer, não apenas pelo que está no teu CV.",
+      sublead:"Para profissionais de hospitalidade e para as empresas que os procuram.",
+      proLabel:"SOU PROFISSIONAL", hireLabel:"ESTOU A CONTRATAR", beFound:"Ser encontrado", findTalent:"Encontrar talento",
+      p1:"COMPETÊNCIAS", p1t:"O que sabes fazer", p2:"EXPERIÊNCIA", p2t:"Onde já o demonstraste", p3:"OBJETIVO", p3t:"O que procuras a seguir",
+      searchLabel:"À PROCURA DE", searchRole:"Restaurant Manager · Lisboa", searchMatches:"18 profissionais correspondem →",
+      mobileTitle:"O que te traz ao Fyndset?",
+      pedroRole:"Chefe de Mesa", sofiaRole:"Restaurant Manager", miguelRole:"CEO de Grupo Hoteleiro",
+      available:"Disponível para oportunidades", hiring:"À procura de talento"
     }
   };
-
-  function polish(){
-    const lang = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('pt') ? 'pt' : 'en';
-    document.querySelectorAll('[data-i18n-v418]').forEach(el => {
-      const value = COPY[lang][el.dataset.i18nV418];
-      if(value) el.textContent = value;
-    });
-    const statuses = document.querySelectorAll('.identity .status');
-    statuses.forEach(s => {
-      s.textContent = lang === 'pt' ? 'Disponível para oportunidades' : 'Open to opportunities';
-      s.classList.remove('hiring'); s.classList.add('available');
-    });
-  }
-
-  polish();
-  // Re-polish after the existing language switcher has updated the document language.
-  document.addEventListener('click', e => {
-    if(e.target.closest('.links.push, [data-lang-switch], .lang-switch')){
-      setTimeout(polish, 0);
-      setTimeout(polish, 60);
-    }
-  }, true);
-});
-</script>
-
-
-<style>
-/* V4.19 — homepage freeze candidate */
-.copy h1{
-  font-size:clamp(50px,4.95vw,78px)!important;
-  line-height:.92!important;
-}
-.actions .btn:first-of-type{
-  background:#fff!important;
-  color:#092629!important;
-  border-color:#fff!important;
-}
-.actions .btn:first-of-type b{color:#092629!important}
-
-/* Definitive product teaser; hide the old legacy tagline if still present */
-.real{display:none!important}
-.v419-teaser{
-  position:absolute;right:1.5%;bottom:6.5%;z-index:25;width:250px;
-  padding:14px 16px;border:1px solid #ffffff45;border-radius:15px;
-  background:rgba(3,28,31,.68);backdrop-filter:blur(18px);
-  box-shadow:0 14px 38px #0003;pointer-events:auto
-}
-.v419-teaser small{display:block;font-size:6px;letter-spacing:.18em;color:#9fc5c0}
-.v419-teaser strong{display:block;font-size:10.5px;margin:6px 0 8px;color:#fff}
-.v419-teaser span{display:block;font-size:8px;color:var(--cyan)}
-@media(max-width:760px){.v419-teaser{display:none!important}}
-</style>
-
-<script>
-/* V4.19 — final hero semantics: two talent profiles + one employer */
-document.addEventListener('DOMContentLoaded', () => {
-  const COPY419 = {
-    en:{
-      label:'LOOKING FOR', role:'Restaurant Manager · Lisbon', matches:'18 matching professionals →',
-      miguelRole:'Hospitality Group CEO', miguelStatus:'Looking for talent',
-      pedroStatus:'Open to opportunities', sofiaStatus:'Open to opportunities'
-    },
-    pt:{
-      label:'À PROCURA DE', role:'Restaurant Manager · Lisboa', matches:'18 profissionais correspondem →',
-      miguelRole:'CEO de Grupo Hoteleiro', miguelStatus:'À procura de talento',
-      pedroStatus:'Disponível para oportunidades', sofiaStatus:'Disponível para oportunidades'
-    }
-  };
-
-  function apply419(){
-    const pt=(document.documentElement.lang||'').toLowerCase().startsWith('pt');
-    const c=COPY419[pt?'pt':'en'];
-
-    const teaser=document.querySelector('.v419-teaser');
-    if(teaser){
-      teaser.querySelector('[data-v419="teaser.label"]').textContent=c.label;
-      teaser.querySelector('[data-v419="teaser.role"]').textContent=c.role;
-      teaser.querySelector('[data-v419="teaser.matches"]').textContent=c.matches;
-    }
-
-    const pedro=document.querySelector('.pedro-id');
-    const sofia=document.querySelector('.sofia-id');
-    const miguel=document.querySelector('.miguel-id');
-
-    if(pedro){
-      const s=pedro.querySelector('.status'); if(s){s.textContent=c.pedroStatus;s.classList.remove('hiring');s.classList.add('available')}
-    }
-    if(sofia){
-      const s=sofia.querySelector('.status'); if(s){s.textContent=c.sofiaStatus;s.classList.remove('hiring');s.classList.add('available')}
-    }
-    if(miguel){
-      const r=miguel.querySelector('.role'); if(r) r.textContent=c.miguelRole;
-      const s=miguel.querySelector('.status'); if(s){s.textContent=c.miguelStatus;s.classList.remove('available');s.classList.add('hiring')}
-    }
-  }
-
-  apply419();
-  document.addEventListener('click', e=>{
-    if(e.target.closest('.links.push,[data-lang-switch],.lang-switch')){
-      setTimeout(apply419,0); setTimeout(apply419,80);
-    }
-  },true);
-});
-</script>
-
-
-<script>
-/* V4.20 — Portuguese terminology/copy polish */
-document.addEventListener('DOMContentLoaded', () => {
-  function applyV420(){
-    const pt=(document.documentElement.lang||'').toLowerCase().startsWith('pt');
-    if(!pt) return;
-
-    const eyebrow=document.querySelector('.eyebrow');
-    if(eyebrow) eyebrow.innerHTML='TALENTO EM <b>HOSPITALIDADE.</b> REINVENTADO.';
-
-    const lead=document.querySelector('.lead');
-    if(lead) lead.textContent='Constrói o teu Fyndset. Sê descoberto pelo que realmente sabes fazer, não apenas pelo que está no teu CV.';
-
-    const sublead=document.querySelector('.sublead');
-    if(sublead) sublead.textContent='Para profissionais de hospitalidade e para as empresas que os procuram.';
-  }
-
-  applyV420();
-  document.addEventListener('click', e=>{
-    if(e.target.closest('.links.push,[data-lang-switch],.lang-switch')){
-      setTimeout(applyV420,0);
-      setTimeout(applyV420,80);
-    }
-  },true);
-});
-</script>
-
-
-<script>
-/* V4.21 — authoritative bilingual controller */
-document.addEventListener('DOMContentLoaded', () => {
-  const C = {
-    en: {
-      navPro:'For Professionals', navCompany:'For Companies', navHow:'How it works', signIn:'Sign in',
-      eyebrow:'Hospitality <b>talent.</b> Reimagined.',
-      title:'Don’t apply.<span>Get found.</span>',
-      lead:'Build your Fyndset. Get discovered for what you can actually do, not just what’s on your CV.',
-      sublead:'For hospitality professionals and the companies looking for them.',
-      proLabel:'I’M A PROFESSIONAL', hireLabel:'I’M HIRING', beFound:'Be found', findTalent:'Find talent',
-      p1:'SKILLS', p1t:'What you can do', p2:'EXPERIENCE', p2t:'Where you’ve proved it', p3:'INTENT', p3t:'What you want next',
-      pedroRole:'Head Waiter', sofiaRole:'Restaurant Manager', miguelRole:'Hospitality Group CEO',
-      available:'Open to opportunities', hiring:'Looking for talent',
-      teaserLabel:'LOOKING FOR', teaserRole:'Restaurant Manager · Lisbon', teaserMatches:'18 matching professionals →',
-      mobileTitle:'What brings you here?'
-    },
-    pt: {
-      navPro:'Para Profissionais', navCompany:'Para Empresas', navHow:'Como funciona', signIn:'Entrar',
-      eyebrow:'Talento em <b>hospitalidade.</b> Reinventado.',
-      title:'Não te candidates.<span>Sê encontrado.</span>',
-      lead:'Constrói o teu Fyndset. Sê descoberto pelo que realmente sabes fazer, não apenas pelo que está no teu CV.',
-      sublead:'Para profissionais de hospitalidade e para as empresas que os procuram.',
-      proLabel:'SOU PROFISSIONAL', hireLabel:'ESTOU A CONTRATAR', beFound:'Ser encontrado', findTalent:'Encontrar talento',
-      p1:'COMPETÊNCIAS', p1t:'O que sabes fazer', p2:'EXPERIÊNCIA', p2t:'Onde já o demonstraste', p3:'OBJETIVO', p3t:'O que procuras a seguir',
-      pedroRole:'Chefe de Mesa', sofiaRole:'Restaurant Manager', miguelRole:'CEO de Grupo Hoteleiro',
-      available:'Disponível para oportunidades', hiring:'À procura de talento',
-      teaserLabel:'À PROCURA DE', teaserRole:'Restaurant Manager · Lisboa', teaserMatches:'18 profissionais correspondem →',
-      mobileTitle:'O que te traz ao Fyndset?'
-    }
-  };
-
-  function setText(sel, value, html=false){
-    document.querySelectorAll(sel).forEach(el => html ? el.innerHTML=value : el.textContent=value);
-  }
 
   function render(lang){
-    lang = lang === 'pt' ? 'pt' : 'en';
-    const c=C[lang];
-    document.documentElement.lang=lang;
-    localStorage.setItem('fyndset-lang',lang);
+    lang = lang === "pt" ? "pt" : "en";
+    const c = COPY[lang];
+    document.documentElement.lang = lang;
+    localStorage.setItem("fyndset-lang", lang);
 
-    const nav=document.querySelectorAll('.main-nav span');
-    if(nav[0]) nav[0].textContent=c.navPro;
-    if(nav[1]) nav[1].textContent=c.navCompany;
-    if(nav[2]) nav[2].textContent=c.navHow;
-    setText('.signin',c.signIn);
+    document.querySelectorAll("[data-t]").forEach(el => {
+      const key = el.getAttribute("data-t");
+      if (c[key] !== undefined) el.textContent = c[key];
+    });
+    document.querySelectorAll("[data-t-html]").forEach(el => {
+      const key = el.getAttribute("data-t-html");
+      if (c[key] !== undefined) el.innerHTML = c[key];
+    });
 
-    setText('.eyebrow',c.eyebrow,true);
-    setText('.copy h1',c.title,true);
-    setText('.lead',c.lead);
-    setText('.sublead',c.sublead);
+    const roles = {
+      pedro:c.pedroRole, sofia:c.sofiaRole, miguel:c.miguelRole
+    };
+    Object.entries(roles).forEach(([id,value]) => {
+      const el=document.querySelector(`[data-profile-role="${id}"]`);
+      if(el) el.textContent=value;
+    });
 
-    setText('.pro-label',c.proLabel);
-    setText('.company-label',c.hireLabel);
-    const desktopBtns=document.querySelectorAll('.actions .btn span');
-    if(desktopBtns[0]) desktopBtns[0].textContent=c.beFound;
-    if(desktopBtns[1]) desktopBtns[1].textContent=c.findTalent;
+    ["pedro","sofia"].forEach(id => {
+      const el=document.querySelector(`[data-profile-status="${id}"]`);
+      if(el){ el.textContent=c.available; el.classList.remove("hiring"); el.classList.add("available"); }
+    });
+    const miguel=document.querySelector('[data-profile-status="miguel"]');
+    if(miguel){ miguel.textContent=c.hiring; miguel.classList.remove("available"); miguel.classList.add("hiring"); }
 
-    const pillars=document.querySelectorAll('.pillars > div');
-    if(pillars[0]){pillars[0].querySelector('small').textContent=c.p1;pillars[0].querySelector('strong').textContent=c.p1t}
-    if(pillars[1]){pillars[1].querySelector('small').textContent=c.p2;pillars[1].querySelector('strong').textContent=c.p2t}
-    if(pillars[2]){pillars[2].querySelector('small').textContent=c.p3;pillars[2].querySelector('strong').textContent=c.p3t}
-
-    const pedro=document.querySelector('.pedro-id'), sofia=document.querySelector('.sofia-id'), miguel=document.querySelector('.miguel-id');
-    if(pedro){pedro.querySelector('.role').textContent=c.pedroRole;pedro.querySelector('.status').textContent=c.available}
-    if(sofia){sofia.querySelector('.role').textContent=c.sofiaRole;sofia.querySelector('.status').textContent=c.available}
-    if(miguel){
-      miguel.querySelector('.role').textContent=c.miguelRole;
-      const s=miguel.querySelector('.status'); s.textContent=c.hiring;s.classList.remove('available');s.classList.add('hiring');
-    }
-
-    const teaser=document.querySelector('.v419-teaser');
-    if(teaser){
-      teaser.querySelector('small').textContent=c.teaserLabel;
-      teaser.querySelector('strong').textContent=c.teaserRole;
-      teaser.querySelector('span').textContent=c.teaserMatches;
-    }
-
-    const mob=document.querySelector('.mobile');
-    if(mob){
-      mob.querySelector('h2').textContent=c.mobileTitle;
-      const spans=mob.querySelectorAll('button span');
-      if(spans[0]) spans[0].textContent=c.beFound;
-      if(spans[1]) spans[1].textContent=c.findTalent;
-    }
-
-    const label=document.querySelector('#lang-label');
-    if(label) label.textContent=lang.toUpperCase();
+    const code=document.getElementById("lang-code");
+    if(code) code.textContent=lang.toUpperCase();
   }
 
-  // Override the old switch behavior in capture phase.
-  const switcher=document.querySelector('.lang-switch');
-  if(switcher){
-    switcher.addEventListener('click', e=>{
-      e.preventDefault(); e.stopImmediatePropagation();
-      const current=(document.documentElement.lang||'en').toLowerCase().startsWith('pt')?'pt':'en';
-      render(current==='pt'?'en':'pt');
-    }, true);
-  }
-
-  render(localStorage.getItem('fyndset-lang')==='pt'?'pt':'en');
-});
+  document.addEventListener("DOMContentLoaded", () => {
+    render(localStorage.getItem("fyndset-lang") === "pt" ? "pt" : "en");
+    const btn=document.querySelector(".lang-switch");
+    if(btn) btn.addEventListener("click", () => {
+      render(document.documentElement.lang === "pt" ? "en" : "pt");
+    });
+  });
+})();
 </script>
 
 </body></html>
