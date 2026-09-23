@@ -135,4 +135,80 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
 </div>
 <div class="real">REAL PEOPLE.<br>REAL OPPORTUNITIES.</div>
 </section>
-<section class="mobile"><h2>What brings you here?</h2><button>Be found <b>→</b></button><button>Find talent <b>→</b></button></section></main></body></html>
+<section class="mobile"><h2>What brings you here?</h2><button>Be found <b>→</b></button><button>Find talent <b>→</b></button></section></main>
+<style>
+/* V4.8 — exact concept: professional portraits + corrected targets + Pedro tracks video motion */
+.identity .profile-bubble{animation:none}
+.pedro-id{left:0!important;top:0!important;will-change:transform}
+.pedro-id .profile-bubble{transform:translate(-50%,-100%);margin-top:-145px}
+.pedro-id .line{left:0;top:auto;bottom:45px;height:145px}
+.pedro-id .radar{left:0;top:0!important}
+
+.sofia-id{left:72.4%!important;top:31%!important}
+.sofia-id .profile-bubble{transform:translateX(-50%)}
+.sofia-id .line{height:94px}
+.sofia-id .radar{top:calc(100% + 94px)!important}
+
+.miguel-id{left:80.8%!important;right:auto!important;top:25%!important}
+.miguel-id .profile-bubble{transform:translateX(-8%)}
+.miguel-id .line{left:38%;height:126px}
+.miguel-id .radar{left:38%;top:calc(100% + 126px)!important}
+
+.face{background:#17252b}
+@media(max-width:760px){
+  .pedro-id{display:none!important}
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.querySelector('.hero-video');
+  const pedro = document.querySelector('.pedro-id');
+  if(!video || !pedro) return;
+
+  // Head position measured frame-by-frame from the actual Kling video.
+  // x/y are percentages in the original 16:9 video.
+  const track = [
+    [0.0,57.4,38.2],
+    [1.0,56.8,38.0],
+    [2.0,54.5,38.2],
+    [3.0,52.3,37.8],
+    [4.0,49.2,37.8],
+    [5.0,50.8,37.8],
+    [6.0,52.2,37.8],
+    [7.0,54.0,38.0],
+    [8.0,55.7,38.1]
+  ];
+
+  function interpolate(t){
+    const duration = video.duration || 8;
+    t = t % duration;
+    let a=track[0], b=track[track.length-1];
+    for(let i=0;i<track.length-1;i++){
+      if(t>=track[i][0] && t<=track[i+1][0]) { a=track[i]; b=track[i+1]; break; }
+    }
+    const d=(b[0]-a[0])||1, p=Math.max(0,Math.min(1,(t-a[0])/d));
+    return [a[1]+(b[1]-a[1])*p, a[2]+(b[2]-a[2])*p];
+  }
+
+  function videoPoint(px,py){
+    const hero = document.querySelector('.hero').getBoundingClientRect();
+    const vw=16, vh=9, boxW=hero.width, boxH=hero.height;
+    const scale=Math.max(boxW/vw,boxH/vh);
+    const rw=vw*scale, rh=vh*scale;
+    const ox=(boxW-rw)/2, oy=(boxH-rh)/2;
+    return [ox + (px/100)*rw, oy + (py/100)*rh];
+  }
+
+  function tick(){
+    if(window.innerWidth>760){
+      const [px,py]=interpolate(video.currentTime||0);
+      const [x,y]=videoPoint(px,py);
+      pedro.style.transform=`translate(${x}px,${y}px)`;
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+});
+</script>
+
+</body></html>
