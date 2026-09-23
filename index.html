@@ -135,7 +135,7 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
 <div class="sublead" data-t="sublead">For hospitality professionals and the companies looking for them.</div>
 <div class="actions">
   <div class="cta-wrap"><small data-t="proLabel">I’M A PROFESSIONAL</small><button class="btn"><span data-t="beFound">Be found</span><b>→</b></button></div>
-  <div class="cta-wrap"><small data-t="hireLabel">I’M HIRING</small><button class="btn" id="open-world"><span data-t="findTalent">Find talent</span><b>→</b></button></div>
+  <div class="cta-wrap"><small data-t="hireLabel">I’M HIRING</small><button class="btn" id="open-fynd-world"><span data-t="findTalent">Find talent</span><b>→</b></button></div>
 </div>
 <div class="pillars">
   <div><small data-t="p1">SKILLS</small><strong data-t="p1t">What you can do</strong></div>
@@ -476,135 +476,104 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 <style>
-/* FYNDSET V5.3 — immersive Talent World */
-.tw{position:fixed;inset:0;z-index:1800;display:none;overflow:hidden;background:#031b1e;color:#fff}
-.tw.open{display:block}
-.tw-bg{position:absolute;inset:0;background:
- radial-gradient(circle at 62% 46%,rgba(40,155,151,.15),transparent 22%),
- radial-gradient(circle at 78% 18%,rgba(63,224,218,.08),transparent 26%),
- linear-gradient(125deg,#021719 0%,#042326 55%,#031b1e 100%)}
-.tw-grain{position:absolute;inset:0;opacity:.16;pointer-events:none;background-image:
- linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),
- linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:58px 58px;
- mask-image:radial-gradient(circle at 60% 50%,black,transparent 82%)}
-.tw-nav{height:74px;display:flex;align-items:center;padding:0 3.2vw;position:relative;z-index:20;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(2,23,25,.5);backdrop-filter:blur(18px)}
-.tw-logo{font-size:28px;font-weight:850;letter-spacing:-1.6px}.tw-logo i{font-style:normal;color:var(--cyan)}
-.tw-mode{margin-left:28px;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#78928f}
-.tw-close{margin-left:auto;border:1px solid rgba(255,255,255,.15);border-radius:999px;background:rgba(255,255,255,.025);color:#fff;padding:9px 15px;cursor:pointer}
-.tw-body{height:calc(100vh - 74px);position:relative;z-index:3;display:grid;grid-template-columns:315px 1fr}
-.tw-filter{padding:32px 24px 25px 3.2vw;border-right:1px solid rgba(255,255,255,.07);background:linear-gradient(90deg,rgba(2,23,25,.88),rgba(2,23,25,.66));backdrop-filter:blur(18px);overflow:auto;z-index:8}
-.tw-kicker{font-size:8px;letter-spacing:.18em;color:var(--cyan);text-transform:uppercase;margin-bottom:10px}
-.tw-filter h2{font-size:33px;line-height:1;letter-spacing:-.04em;margin:0 0 10px}.tw-sub{font-size:10.5px;line-height:1.55;color:#8ca4a1;margin-bottom:27px}
-.tw-group{margin-bottom:21px}.tw-label{font-size:7.5px;letter-spacing:.14em;color:#66817e;text-transform:uppercase;margin-bottom:9px}
-.tw-chips{display:flex;gap:7px;flex-wrap:wrap}.tw-chip{border:1px solid rgba(255,255,255,.13);border-radius:999px;background:rgba(255,255,255,.028);color:#cbd9d7;padding:7px 10px;font-size:9px;cursor:pointer;transition:.2s}
-.tw-chip:hover{border-color:rgba(63,224,218,.5)}.tw-chip.on{background:rgba(63,224,218,.11);border-color:rgba(63,224,218,.7);color:#fff}.tw-chip.on:before{content:"● ";font-size:6px;color:var(--cyan)}
-.tw-discover{width:100%;border:0;border-radius:999px;background:var(--cyan);color:#052326;padding:12px;font-weight:750;cursor:pointer;margin-top:2px}
-.tw-world{position:relative;overflow:hidden}
-.tw-radar{position:absolute;left:54%;top:51%;width:min(68vw,790px);aspect-ratio:1;transform:translate(-50%,-50%);border:1px solid rgba(63,224,218,.11);border-radius:50%}
-.tw-radar:before,.tw-radar:after{content:"";position:absolute;border:1px solid rgba(63,224,218,.085);border-radius:50%;inset:18%}.tw-radar:after{inset:36%}
-.tw-axis-x,.tw-axis-y{position:absolute;background:rgba(63,224,218,.055)}.tw-axis-x{height:1px;left:8%;right:8%;top:50%}.tw-axis-y{width:1px;top:8%;bottom:8%;left:50%}
-.tw-sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 25deg,transparent 0 80%,rgba(63,224,218,.075) 92%,transparent 100%);animation:twsweep 9s linear infinite}@keyframes twsweep{to{transform:rotate(360deg)}}
-.tw-core{position:absolute;left:54%;top:51%;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 25px rgba(63,224,218,.85)}
-.tw-head{position:absolute;left:32px;top:27px;z-index:6}.tw-head .small{font-size:8px;letter-spacing:.17em;color:#718b88;text-transform:uppercase}.tw-head strong{display:block;font-size:35px;letter-spacing:-.045em;margin-top:4px}.tw-head p{font-size:9.5px;color:#819a97;margin:5px 0 0}
-.tw-fynd{position:absolute;right:26px;top:25px;width:245px;padding:15px 16px;border:1px solid rgba(255,255,255,.11);border-radius:16px;background:rgba(3,29,32,.58);backdrop-filter:blur(14px);z-index:6}
-.tw-fynd-label{font-size:7px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase}.tw-fynd-role{font-size:13px;font-weight:700;margin:8px 0 3px}.tw-fynd-loc{font-size:8.5px;color:#809a97}.tw-fynd-signals{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}.tw-mini{font-size:7.5px;padding:5px 7px;border:1px solid rgba(63,224,218,.18);border-radius:999px;color:#bad1ce;background:rgba(63,224,218,.05)}
-.tw-person{position:absolute;transform:translate(-50%,-50%);z-index:4;cursor:pointer;transition:left .7s cubic-bezier(.2,.8,.2,1),top .7s cubic-bezier(.2,.8,.2,1),opacity .5s,filter .5s,transform .5s}
-.tw-person.fade{opacity:.10;filter:blur(2px);transform:translate(-50%,-50%) scale(.72);pointer-events:none}.tw-person.focus{transform:translate(-50%,-50%) scale(1.1)}
-.tw-person img{display:block;width:64px;height:64px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.55);box-shadow:0 15px 45px rgba(0,0,0,.35)}
-.tw-person .halo{position:absolute;left:32px;top:32px;width:78px;height:78px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(63,224,218,.28);animation:twpulse 3s ease-out infinite}@keyframes twpulse{0%{transform:translate(-50%,-50%) scale(.72);opacity:.8}100%{transform:translate(-50%,-50%) scale(1.55);opacity:0}}
-.tw-person .name{position:absolute;left:50%;top:72px;transform:translateX(-50%);white-space:nowrap;text-align:center;padding:6px 9px;border-radius:9px;background:rgba(2,23,25,.8);border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(10px)}
-.tw-person .name b{display:block;font-size:9px}.tw-person .name span{font-size:7px;color:#819a97}
-.tw-person .traits{display:none;position:absolute;left:50%;top:112px;transform:translateX(-50%);white-space:nowrap;gap:4px}.tw-person:hover .traits{display:flex}.tw-person .traits i{font-style:normal;font-size:6.5px;border:1px solid rgba(63,224,218,.18);border-radius:999px;padding:4px 6px;background:rgba(3,29,32,.85);color:#a9c6c2}
-.tw-card{position:absolute;right:25px;bottom:23px;width:335px;border:1px solid rgba(255,255,255,.14);border-radius:19px;background:rgba(3,29,32,.91);backdrop-filter:blur(22px);padding:18px;z-index:12;opacity:0;transform:translateY(12px);pointer-events:none;transition:.25s}.tw-card.show{opacity:1;transform:none;pointer-events:auto}
-.tw-card-top{display:flex;align-items:center;gap:11px}.tw-card-top img{width:48px;height:48px;border-radius:50%;object-fit:cover}.tw-card h3{font-size:15px;margin:0}.tw-card-role{font-size:8.5px;color:#8da5a2;margin-top:3px}.tw-why{font-size:7px;letter-spacing:.15em;color:var(--cyan);margin:15px 0 9px}.tw-proof{display:grid;gap:6px;font-size:9px;color:#d1dfdd}.tw-proof div:before{content:"◎";color:var(--cyan);margin-right:7px}.tw-momentum{margin-top:13px;padding:10px;border-radius:10px;background:rgba(255,255,255,.035)}.tw-momentum label{display:block;font-size:6.5px;letter-spacing:.12em;color:#6f8986;text-transform:uppercase;margin-bottom:5px}.tw-momentum div{font-size:8.5px;color:#b7cac7}.tw-momentum b{color:#fff}.tw-open{font-size:8px;color:#829b98;margin-top:10px}.tw-open span{color:#c6d7d4}.tw-view{margin-top:13px;padding-top:11px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;font-size:9px}.tw-view b{color:var(--cyan)}
-.tw-note{position:absolute;left:28px;bottom:22px;font-size:7px;color:#597471}
-@media(max-width:820px){.tw{overflow:auto}.tw-body{height:auto;grid-template-columns:1fr}.tw-filter{padding:26px 5vw;border-right:0}.tw-world{height:650px}.tw-fynd{right:4vw;top:20px}.tw-card{right:4vw;width:calc(92vw - 36px)}.tw-mode{display:none}}
+/* FYNDSET V5.4 — Discovery Engine */
+.fw{position:fixed;inset:0;z-index:2000;display:none;overflow:hidden;background:#02191c;color:#fff}
+.fw.open{display:block}
+.fw-bg{position:absolute;inset:0;background:radial-gradient(circle at 63% 47%,rgba(38,178,171,.14),transparent 24%),radial-gradient(circle at 88% 12%,rgba(63,224,218,.07),transparent 24%),linear-gradient(125deg,#021719,#042326 58%,#02191c)}
+.fw-nav{height:70px;position:relative;z-index:30;display:flex;align-items:center;padding:0 2.8vw;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(2,23,25,.64);backdrop-filter:blur(18px)}
+.fw-logo{font-size:27px;font-weight:850;letter-spacing:-1.5px}.fw-logo i{font-style:normal;color:var(--cyan)}
+.fw-mode{margin-left:27px;font-size:7.5px;letter-spacing:.17em;color:#78918f;text-transform:uppercase}
+.fw-close{margin-left:auto;border:1px solid rgba(255,255,255,.15);border-radius:999px;background:transparent;color:#fff;padding:9px 15px;cursor:pointer}
+.fw-layout{height:calc(100vh - 70px);display:grid;grid-template-columns:320px 1fr;position:relative;z-index:3}
+.fw-builder{z-index:10;padding:28px 22px 25px 2.8vw;border-right:1px solid rgba(255,255,255,.07);overflow:auto;background:rgba(2,24,27,.77);backdrop-filter:blur(18px)}
+.fw-kicker{font-size:7.5px;letter-spacing:.17em;color:var(--cyan);text-transform:uppercase;margin-bottom:9px}.fw-builder h2{font-size:30px;line-height:1;letter-spacing:-.04em;margin:0 0 9px}.fw-intro{font-size:10px;color:#8ba3a0;line-height:1.5;margin-bottom:22px}
+.fw-group{margin-bottom:18px}.fw-label{font-size:7px;letter-spacing:.14em;color:#65807d;text-transform:uppercase;margin-bottom:8px}.fw-chips{display:flex;flex-wrap:wrap;gap:6px}
+.fw-chip{border:1px solid rgba(255,255,255,.13);border-radius:999px;background:rgba(255,255,255,.025);color:#c9d8d6;padding:7px 9px;font-size:8.5px;cursor:pointer;transition:.18s}.fw-chip:hover{border-color:rgba(63,224,218,.48)}.fw-chip.on{border-color:rgba(63,224,218,.72);background:rgba(63,224,218,.1);color:#fff}.fw-chip.on:before{content:"● ";font-size:5px;color:var(--cyan)}
+.fw-thought{width:100%;box-sizing:border-box;min-height:62px;resize:none;border:1px solid rgba(255,255,255,.1);border-radius:12px;background:rgba(255,255,255,.025);color:#fff;padding:10px;font:inherit;font-size:9px;line-height:1.45;outline:none}.fw-thought::placeholder{color:#627b78}
+.fw-btn{width:100%;border:0;border-radius:999px;background:var(--cyan);color:#042326;padding:11px;font-weight:750;cursor:pointer}
+.fw-world{position:relative;overflow:hidden}.fw-grid{position:absolute;inset:0;opacity:.13;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:58px 58px}
+.orbit{position:absolute;left:55%;top:52%;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(63,224,218,.1)}.orbit.core{width:260px;height:260px}.orbit.adj{width:520px;height:520px}.orbit.disc{width:780px;height:780px}
+.orbit-label{position:absolute;left:50%;top:-9px;transform:translateX(-50%);font-size:6.5px;letter-spacing:.18em;color:#63817d;background:#042225;padding:3px 8px;text-transform:uppercase}
+.fw-sweep{position:absolute;left:55%;top:52%;width:780px;height:780px;transform:translate(-50%,-50%);border-radius:50%;background:conic-gradient(from 0deg,transparent 0 82%,rgba(63,224,218,.055) 94%,transparent 100%);animation:fwsweep 11s linear infinite}@keyframes fwsweep{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.fw-core{position:absolute;left:55%;top:52%;width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 24px var(--cyan)}
+.fw-summary{position:absolute;left:25px;top:23px;z-index:7}.fw-summary span{font-size:7px;letter-spacing:.16em;color:#718c89;text-transform:uppercase}.fw-summary strong{display:block;font-size:32px;letter-spacing:-.05em;margin-top:3px}.fw-summary p{font-size:8.5px;color:#78928f;margin:3px 0}
+.fw-ai{position:absolute;left:25px;bottom:24px;width:285px;z-index:9;border:1px solid rgba(63,224,218,.15);border-radius:14px;background:rgba(3,29,32,.82);backdrop-filter:blur(16px);padding:12px}.fw-ai-top{font-size:6.5px;letter-spacing:.15em;color:var(--cyan);text-transform:uppercase}.fw-ai p{font-size:9px;line-height:1.45;color:#b8cbc8;margin:7px 0 9px}.fw-ai-actions{display:flex;gap:6px}.fw-ai button{border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.03);color:#d6e2e0;font-size:7.5px;padding:6px 8px;cursor:pointer}
+.fw-fynd{position:absolute;right:23px;top:22px;width:245px;z-index:8;border:1px solid rgba(255,255,255,.11);border-radius:15px;background:rgba(3,29,32,.67);backdrop-filter:blur(16px);padding:14px}.fw-fynd small{font-size:6.5px;letter-spacing:.16em;color:var(--cyan)}.fw-fynd h3{font-size:13px;margin:7px 0 2px}.fw-fynd-loc{font-size:8px;color:#7f9996}.fw-dna{display:grid;gap:5px;margin-top:11px}.dna-row{display:grid;grid-template-columns:63px 1fr;gap:7px;align-items:center}.dna-row label{font-size:6.5px;color:#718c89;text-transform:uppercase}.dna-line{height:3px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}.dna-line i{display:block;height:100%;border-radius:99px;background:var(--cyan)}
+.fw-person{position:absolute;transform:translate(-50%,-50%);z-index:5;cursor:pointer;transition:.45s}.fw-person:hover{transform:translate(-50%,-50%) scale(1.08)}.fw-person img{width:55px;height:55px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.5);box-shadow:0 12px 35px rgba(0,0,0,.34)}.fw-person.private img{filter:blur(5px) brightness(.7)}
+.fw-person .ring{position:absolute;left:27px;top:27px;width:67px;height:67px;transform:translate(-50%,-50%);border:1px solid rgba(63,224,218,.26);border-radius:50%;animation:fwpulse 3.2s ease-out infinite}@keyframes fwpulse{0%{transform:translate(-50%,-50%) scale(.7);opacity:.8}100%{transform:translate(-50%,-50%) scale(1.5);opacity:0}}
+.fw-person .tag{position:absolute;top:62px;left:50%;transform:translateX(-50%);white-space:nowrap;text-align:center;background:rgba(2,24,27,.86);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:5px 7px}.fw-person .tag b{display:block;font-size:8.5px}.fw-person .tag span{font-size:6.5px;color:#78928f}.fw-badge{position:absolute;right:-5px;top:-4px;font-size:6px;padding:4px 5px;border-radius:999px;background:#08393a;border:1px solid rgba(63,224,218,.4);color:var(--cyan)}
+.fw-detail{position:absolute;right:22px;bottom:20px;width:345px;z-index:15;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:rgba(3,28,31,.94);backdrop-filter:blur(22px);padding:17px;opacity:0;transform:translateY(10px);pointer-events:none;transition:.23s}.fw-detail.show{opacity:1;transform:none;pointer-events:auto}.fd-top{display:flex;align-items:center;gap:10px}.fd-top img{width:47px;height:47px;border-radius:50%;object-fit:cover}.fd-top h3{font-size:14px;margin:0}.fd-role{font-size:8px;color:#819a97;margin-top:3px}.fd-orbit{margin-left:auto;font-size:6.5px;letter-spacing:.12em;color:var(--cyan);border:1px solid rgba(63,224,218,.22);border-radius:999px;padding:5px 7px}
+.fd-title{font-size:6.5px;letter-spacing:.15em;color:var(--cyan);margin:14px 0 8px}.fd-proof{display:grid;gap:6px;font-size:8.8px;color:#d0dedd}.fd-proof div:before{content:"◎";color:var(--cyan);margin-right:6px}.fd-proof em{font-style:normal;color:#79928f}.fd-momentum{margin-top:11px;border-radius:9px;background:rgba(255,255,255,.035);padding:9px}.fd-momentum label{display:block;font-size:6px;letter-spacing:.12em;color:#6d8784;margin-bottom:5px}.fd-momentum div{font-size:8px}.fd-momentum b{color:var(--cyan)}.fd-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}.fd-actions button{border-radius:999px;padding:8px;border:1px solid rgba(255,255,255,.12);background:transparent;color:#fff;font-size:7.5px;cursor:pointer}.fd-actions button:first-child{background:var(--cyan);color:#042326;border-color:var(--cyan);font-weight:700}
+.fw-different{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:8;border:1px solid rgba(255,255,255,.13);border-radius:999px;background:rgba(3,29,32,.78);backdrop-filter:blur(12px);color:#dbe6e4;padding:9px 13px;font-size:8px;cursor:pointer}.fw-different:hover{border-color:rgba(63,224,218,.5)}
+@media(max-width:850px){.fw{overflow:auto}.fw-layout{height:auto;grid-template-columns:1fr}.fw-builder{padding:25px 5vw}.fw-world{height:720px}.fw-fynd{right:4vw}.fw-ai{left:4vw}.fw-detail{right:4vw;width:calc(92vw - 34px)}.fw-mode{display:none}}
 </style>
 
-<section class="tw" id="tw" aria-hidden="true">
-<div class="tw-bg"></div><div class="tw-grain"></div>
-<header class="tw-nav"><div class="tw-logo">fyndset<i>.</i></div><div class="tw-mode" data-w="mode">TALENT WORLD · LIVE DISCOVERY</div><button class="tw-close" id="tw-close">← <span data-w="back">Back</span></button></header>
-<div class="tw-body">
- <aside class="tw-filter">
-  <div class="tw-kicker" data-w="tune">TUNE THE RADAR</div>
-  <h2 data-w="title">Who matters?</h2>
-  <div class="tw-sub" data-w="sub">Describe the person through signals. The world rearranges around your Fynd.</div>
-
-  <div class="tw-group"><div class="tw-label" data-w="role">ROLE</div><div class="tw-chips" id="tw-roles"><button class="tw-chip">Restaurant Manager</button><button class="tw-chip">F&B Manager</button><button class="tw-chip">Head Chef</button><button class="tw-chip">Bar Manager</button></div></div>
-  <div class="tw-group"><div class="tw-label" data-w="where">WHERE</div><div class="tw-chips" id="tw-locs"><button class="tw-chip" data-en="Lisbon" data-pt="Lisboa">Lisbon</button><button class="tw-chip">Porto</button><button class="tw-chip">Algarve</button></div></div>
-  <div class="tw-group"><div class="tw-label" data-w="must">ESSENTIAL SIGNALS</div><div class="tw-chips" id="tw-signals"></div></div>
-  <div class="tw-group"><div class="tw-label" data-w="bonus">BONUS SIGNALS</div><div class="tw-chips" id="tw-bonus"></div></div>
-  <button class="tw-discover" id="tw-discover"><span data-w="discover">Surface people</span> →</button>
+<section class="fw" id="fw" aria-hidden="true">
+<div class="fw-bg"></div>
+<header class="fw-nav"><div class="fw-logo">fyndset<i>.</i></div><div class="fw-mode" data-f="mode">DISCOVERY ENGINE · LIVE TALENT WORLD</div><button class="fw-close" id="fw-close">← <span data-f="back">Back</span></button></header>
+<div class="fw-layout">
+ <aside class="fw-builder">
+  <div class="fw-kicker" data-f="build">BUILD YOUR FYND</div><h2 data-f="who">Who matters?</h2><div class="fw-intro" data-f="intro">Build the person, not the vacancy. Fyndset explores direct, adjacent and unexpected talent.</div>
+  <div class="fw-group"><div class="fw-label" data-f="role">ROLE</div><div class="fw-chips" id="fw-role"><button class="fw-chip on">Restaurant Manager</button><button class="fw-chip">F&B Manager</button><button class="fw-chip">Head Chef</button></div></div>
+  <div class="fw-group"><div class="fw-label" data-f="where">WHERE</div><div class="fw-chips" id="fw-loc"><button class="fw-chip on" data-en="Lisbon" data-pt="Lisboa">Lisbon</button><button class="fw-chip">Porto</button><button class="fw-chip">Algarve</button></div></div>
+  <div class="fw-group"><div class="fw-label" data-f="essential">ESSENTIAL</div><div class="fw-chips" id="fw-essential"></div></div>
+  <div class="fw-group"><div class="fw-label" data-f="value">I'D VALUE</div><div class="fw-chips" id="fw-value"></div></div>
+  <div class="fw-group"><div class="fw-label" data-f="hard">SOMETHING HARDER TO DESCRIBE</div><textarea class="fw-thought" id="fw-thought"></textarea></div>
+  <button class="fw-btn" id="fw-surface"><span data-f="surface">Discover people</span> →</button>
  </aside>
+ <main class="fw-world">
+  <div class="fw-grid"></div><div class="fw-sweep"></div>
+  <div class="orbit disc"><span class="orbit-label" data-f="discovery">DISCOVERY</span></div><div class="orbit adj"><span class="orbit-label" data-f="adjacent">ADJACENT</span></div><div class="orbit core"><span class="orbit-label" data-f="core">CORE</span></div><div class="fw-core"></div>
+  <div class="fw-summary"><span data-f="surfaced">PEOPLE SURFACED</span><strong id="fw-count">8</strong><p data-f="summary">3 core · 3 adjacent · 2 discovery</p></div>
+  <section class="fw-fynd"><small data-f="your">YOUR FYND DNA</small><h3>Restaurant Manager</h3><div class="fw-fynd-loc">Lisboa</div><div class="fw-dna"><div class="dna-row"><label>Craft</label><div class="dna-line"><i style="width:82%"></i></div></div><div class="dna-row"><label>Leadership</label><div class="dna-line"><i style="width:94%"></i></div></div><div class="dna-row"><label>Environment</label><div class="dna-line"><i style="width:74%"></i></div></div><div class="dna-row"><label>Momentum</label><div class="dna-line"><i style="width:68%"></i></div></div><div class="dna-row"><label>Intent</label><div class="dna-line"><i style="width:77%"></i></div></div></div></section>
 
- <main class="tw-world">
-  <div class="tw-radar"><div class="tw-axis-x"></div><div class="tw-axis-y"></div><div class="tw-sweep"></div></div><div class="tw-core"></div>
-  <div class="tw-head"><span class="small" data-w="surfaced">PEOPLE SURFACED</span><strong><span id="tw-count">18</span></strong><p data-w="range">from 114 people currently in range</p></div>
-  <div class="tw-fynd"><div class="tw-fynd-label" data-w="your">YOUR FYND</div><div class="tw-fynd-role" id="tw-fynd-role">Restaurant Manager</div><div class="tw-fynd-loc" id="tw-fynd-loc">Lisboa</div><div class="tw-fynd-signals" id="tw-fynd-signals"></div></div>
+  <div class="fw-person" data-i="0" style="left:55%;top:43%"><span class="ring"></span><img src="sofia.png"><div class="tag"><b>Marta Silva</b><span>Restaurant Manager</span></div></div>
+  <div class="fw-person" data-i="1" style="left:61%;top:56%"><span class="ring"></span><img src="pedro.png"><div class="tag"><b>Tiago Costa</b><span>Assistant F&B Manager</span></div><span class="fw-badge" data-f="emerging">EMERGING</span></div>
+  <div class="fw-person" data-i="2" style="left:48%;top:57%"><span class="ring"></span><img src="sofia.png"><div class="tag"><b>Inês Ferreira</b><span>Restaurant Manager</span></div></div>
+  <div class="fw-person" data-i="3" style="left:72%;top:37%"><span class="ring"></span><img src="pedro.png"><div class="tag"><b>André Ramos</b><span>Operations Manager</span></div></div>
+  <div class="fw-person private" data-i="4" style="left:38%;top:36%"><span class="ring"></span><img src="sofia.png"><div class="tag"><b data-f="private">Private profile</b><span>Restaurant Manager · Lisboa</span></div></div>
+  <div class="fw-person" data-i="5" style="left:75%;top:66%"><span class="ring"></span><img src="pedro.png"><div class="tag"><b>Rui Neves</b><span>F&B Supervisor</span></div><span class="fw-badge" data-f="emerging">EMERGING</span></div>
+  <div class="fw-person" data-i="6" style="left:28%;top:62%"><span class="ring"></span><img src="sofia.png"><div class="tag"><b>Sara Lopes</b><span>Luxury Retail Ops</span></div><span class="fw-badge" data-f="unexpected">UNEXPECTED</span></div>
+  <div class="fw-person" data-i="7" style="left:86%;top:49%"><span class="ring"></span><img src="pedro.png"><div class="tag"><b>João Martins</b><span>Bar Operations</span></div><span class="fw-badge" data-f="unexpected">UNEXPECTED</span></div>
 
-  <div class="tw-person" data-p="0" style="left:52%;top:48%"><span class="halo"></span><img src="sofia.png"><div class="name"><b>Marta Silva</b><span>Restaurant Manager</span></div><div class="traits"><i>Leadership</i><i>Fine dining</i><i>Wine</i></div></div>
-  <div class="tw-person" data-p="1" style="left:68%;top:35%"><span class="halo"></span><img src="pedro.png"><div class="name"><b>Tiago Costa</b><span>Assistant F&B Manager</span></div><div class="traits"><i>Luxury</i><i>Leadership</i></div></div>
-  <div class="tw-person" data-p="2" style="left:38%;top:31%"><span class="halo"></span><img src="sofia.png"><div class="name"><b>Inês Ferreira</b><span>Restaurant Manager</span></div><div class="traits"><i>Volume</i><i>Opening</i></div></div>
-  <div class="tw-person" data-p="3" style="left:76%;top:59%"><span class="halo"></span><img src="pedro.png"><div class="name"><b>André Ramos</b><span>Operations Manager</span></div><div class="traits"><i>Scale</i><i>Teams</i></div></div>
-  <div class="tw-person" data-p="4" style="left:43%;top:69%"><span class="halo"></span><img src="sofia.png"><div class="name"><b>Sara Lopes</b><span>F&B Manager</span></div><div class="traits"><i>Luxury</i><i>Wine</i></div></div>
-  <div class="tw-person" data-p="5" style="left:85%;top:78%"><span class="halo"></span><img src="pedro.png"><div class="name"><b>João Martins</b><span>Bar Manager</span></div><div class="traits"><i>Wine</i><i>Opening</i></div></div>
-  <div class="tw-person" data-p="6" style="left:27%;top:55%"><span class="halo"></span><img src="sofia.png"><div class="name"><b>Leonor Alves</b><span>Restaurant Manager</span></div><div class="traits"><i>Fine dining</i><i>Teams</i></div></div>
-  <div class="tw-person" data-p="7" style="left:61%;top:76%"><span class="halo"></span><img src="pedro.png"><div class="name"><b>Rui Neves</b><span>F&B Supervisor</span></div><div class="traits"><i>Growth</i><i>Luxury</i></div></div>
+  <section class="fw-ai"><div class="fw-ai-top">FYNDSET SIGNAL</div><p id="fw-ai-copy" data-f="ai">You're searching heavily by past title. 7 Assistant Restaurant Managers show similar leadership signals.</p><div class="fw-ai-actions"><button id="fw-include" data-f="include">Include emerging talent</button><button id="fw-keep" data-f="keep">Keep current Fynd</button></div></section>
+  <button class="fw-different" id="fw-different" data-f="different">↗ Show me someone different</button>
 
-  <section class="tw-card" id="tw-card">
-   <div class="tw-card-top"><img id="tw-card-img" src="sofia.png"><div><h3 id="tw-card-name">Marta Silva ✓</h3><div class="tw-card-role" id="tw-card-role">Restaurant Manager · Lisboa</div></div></div>
-   <div class="tw-why" data-w="why">WHY MARTA SURFACED</div>
-   <div class="tw-proof"><div data-w="proof1">Leadership — proven across 2 roles</div><div data-w="proof2">Fine dining — 4 years</div><div data-w="proof3">Wine — WSET Level 2</div><div data-w="proof4">Opening — 2 concepts</div></div>
-   <div class="tw-momentum"><label data-w="momentum">CAREER MOMENTUM</label><div>Waiter → Head Waiter → Assistant RM → <b>Restaurant Manager</b></div></div>
-   <div class="tw-open"><span data-w="open">Open privately to:</span> <span data-w="intent">F&B leadership · Boutique luxury</span></div>
-   <div class="tw-view"><span data-w="explore">Explore Marta's Fyndset</span><b>→</b></div>
+  <section class="fw-detail" id="fw-detail">
+   <div class="fd-top"><img id="fd-img" src="sofia.png"><div><h3 id="fd-name">Marta Silva ✓</h3><div class="fd-role" id="fd-role">Restaurant Manager · Lisboa</div></div><span class="fd-orbit" id="fd-orbit">CORE</span></div>
+   <div class="fd-title" data-f="why">WHY THIS PERSON IS HERE</div><div class="fd-proof"><div data-f="p1">Leadership <em>· verified</em></div><div data-f="p2">Fine dining <em>· demonstrated · 4 years</em></div><div data-f="p3">Wine <em>· WSET Level 2</em></div><div data-f="p4">Opening experience <em>· 2 concepts</em></div></div>
+   <div class="fd-momentum"><label data-f="momentum">CAREER MOMENTUM</label><div>Waiter → Head Waiter → Assistant RM → <b>Restaurant Manager</b></div></div>
+   <div class="fd-actions"><button data-f="explore">Explore Fyndset</button><button data-f="invite">Invite to talk</button></div>
   </section>
-  <div class="tw-note" data-w="demo">Prototype people and market counts are illustrative.</div>
  </main>
 </div>
 </section>
 
 <script>
 (()=>{
- const D={
- en:{mode:"TALENT WORLD · LIVE DISCOVERY",back:"Back",tune:"TUNE THE RADAR",title:"Who matters?",sub:"Describe the person through signals. The world rearranges around your Fynd.",role:"ROLE",where:"WHERE",must:"ESSENTIAL SIGNALS",bonus:"BONUS SIGNALS",discover:"Surface people",surfaced:"PEOPLE SURFACED",range:"from 114 people currently in range",your:"YOUR FYND",why:"WHY MARTA SURFACED",proof1:"Leadership — proven across 2 roles",proof2:"Fine dining — 4 years",proof3:"Wine — WSET Level 2",proof4:"Opening — 2 concepts",momentum:"CAREER MOMENTUM",open:"Open privately to:",intent:"F&B leadership · Boutique luxury",explore:"Explore Marta's Fyndset",demo:"Prototype people and market counts are illustrative.",signals:["Team leadership","Fine dining","High volume","Wine knowledge","Opening experience"],bonusSignals:["Luxury hospitality","International","Cost control","Boutique concepts"]},
- pt:{mode:"MUNDO DE TALENTO · DESCOBERTA AO VIVO",back:"Voltar",tune:"AFINA O RADAR",title:"Quem importa?",sub:"Define a pessoa através de sinais. O mundo reorganiza-se à volta do teu Fynd.",role:"FUNÇÃO",where:"ONDE",must:"SINAIS ESSENCIAIS",bonus:"SINAIS BÓNUS",discover:"Descobrir pessoas",surfaced:"PESSOAS ENCONTRADAS",range:"entre 114 pessoas atualmente no radar",your:"O TEU FYND",why:"PORQUE A MARTA APARECEU",proof1:"Liderança — demonstrada em 2 funções",proof2:"Fine dining — 4 anos",proof3:"Vinhos — WSET Level 2",proof4:"Aberturas — 2 conceitos",momentum:"PROGRESSÃO DE CARREIRA",open:"Disponível em privado para:",intent:"Liderança F&B · Luxo boutique",explore:"Explorar o Fyndset da Marta",demo:"Pessoas e números de mercado fictícios para demonstração.",signals:["Liderança de equipas","Fine dining","Grande volume","Conhecimento de vinhos","Abertura de restaurantes"],bonusSignals:["Hotelaria de luxo","Internacional","Controlo de custos","Conceitos boutique"]}
- };
- let state={role:"Restaurant Manager",loc:"Lisboa",signals:[],bonus:[]};
- const lang=()=>document.documentElement.lang==="pt"?"pt":"en", d=()=>D[lang()];
- function mk(id,arr,key){let el=document.getElementById(id);el.innerHTML="";arr.forEach((v,i)=>{let b=document.createElement("button");b.className="tw-chip";b.textContent=v;b.onclick=()=>{b.classList.toggle("on");let a=state[key],p=a.indexOf(i);p>=0?a.splice(p,1):a.push(i);update()};el.appendChild(b)})}
- function tr(){
-   document.querySelectorAll("[data-w]").forEach(x=>{let k=x.dataset.w;if(d()[k])x.textContent=d()[k]});
-   document.querySelectorAll("[data-en]").forEach(x=>x.textContent=x.dataset[lang()]);
-   mk("tw-signals",d().signals,"signals");mk("tw-bonus",d().bonusSignals,"bonus");
-   state.signals=[];state.bonus=[];update();
- }
- function update(){
-   document.getElementById("tw-fynd-role").textContent=state.role;
-   document.getElementById("tw-fynd-loc").textContent=state.loc;
-   let s=document.getElementById("tw-fynd-signals");s.innerHTML="";
-   state.signals.forEach(i=>{let x=document.createElement("span");x.className="tw-mini";x.textContent=d().signals[i];s.appendChild(x)});
-   state.bonus.forEach(i=>{let x=document.createElement("span");x.className="tw-mini";x.textContent=d().bonusSignals[i];s.appendChild(x)});
-   let selected=state.signals.length+state.bonus.length;
-   let visible=Math.max(3,8-Math.floor(state.signals.length*1.2)-Math.floor(state.bonus.length*.55));
-   document.getElementById("tw-count").textContent=selected?visible:18;
-   const pts=[[52,48],[68,35],[38,31],[76,59],[43,69],[85,78],[27,55],[61,76]];
-   document.querySelectorAll(".tw-person").forEach((p,i)=>{
-      p.classList.toggle("fade",selected>0 && i>=visible);
-      p.classList.toggle("focus",selected>=2 && i<Math.min(3,visible));
-      if(selected>=2 && i<visible){let dx=(pts[i][0]-54)*.72,dy=(pts[i][1]-51)*.72;p.style.left=(54+dx)+"%";p.style.top=(51+dy)+"%"}else{p.style.left=pts[i][0]+"%";p.style.top=pts[i][1]+"%"}
-   });
- }
- document.addEventListener("DOMContentLoaded",()=>{
-  tr();
-  document.getElementById("open-world")?.addEventListener("click",()=>{document.getElementById("tw").classList.add("open");document.body.style.overflow="hidden";tr()});
-  document.getElementById("tw-close").onclick=()=>{document.getElementById("tw").classList.remove("open");document.body.style.overflow=""};
-  document.querySelectorAll("#tw-roles .tw-chip").forEach(b=>b.onclick=()=>{document.querySelectorAll("#tw-roles .tw-chip").forEach(x=>x.classList.remove("on"));b.classList.add("on");state.role=b.textContent;update()});
-  document.querySelectorAll("#tw-locs .tw-chip").forEach(b=>b.onclick=()=>{document.querySelectorAll("#tw-locs .tw-chip").forEach(x=>x.classList.remove("on"));b.classList.add("on");state.loc=b.textContent;update()});
-  document.querySelectorAll(".tw-person").forEach((p,i)=>p.onclick=()=>{if(p.classList.contains("fade"))return;let names=["Marta Silva ✓","Tiago Costa ✓","Inês Ferreira ✓","André Ramos ✓","Sara Lopes ✓","João Martins ✓","Leonor Alves ✓","Rui Neves ✓"];let roles=["Restaurant Manager · Lisboa","Assistant F&B Manager · Cascais","Restaurant Manager · Lisboa","Operations Manager · Lisboa","F&B Manager · Porto","Bar Manager · Lisboa","Restaurant Manager · Cascais","F&B Supervisor · Lisboa"];document.getElementById("tw-card-name").textContent=names[i];document.getElementById("tw-card-role").textContent=roles[i];document.getElementById("tw-card-img").src=p.querySelector("img").src;document.getElementById("tw-card").classList.add("show")});
-  document.getElementById("tw-discover").onclick=()=>document.querySelector(".tw-person:not(.fade)")?.click();
-  document.querySelector(".lang-switch")?.addEventListener("click",()=>setTimeout(()=>{state.loc=lang()==="pt"?"Lisboa":"Lisbon";tr()},0));
- });
+const X={
+en:{mode:"DISCOVERY ENGINE · LIVE TALENT WORLD",back:"Back",build:"BUILD YOUR FYND",who:"Who matters?",intro:"Build the person, not the vacancy. Fyndset explores direct, adjacent and unexpected talent.",role:"ROLE",where:"WHERE",essential:"ESSENTIAL",value:"I'D VALUE",hard:"SOMETHING HARDER TO DESCRIBE",thought:"Someone who can bring structure without killing the personality of the restaurant…",surface:"Discover people",discovery:"DISCOVERY",adjacent:"ADJACENT",core:"CORE",surfaced:"PEOPLE SURFACED",summary:"3 core · 3 adjacent · 2 discovery",your:"YOUR FYND DNA",emerging:"EMERGING",unexpected:"UNEXPECTED",private:"Private profile",ai:"You're searching heavily by past title. 7 Assistant Restaurant Managers show similar leadership signals.",include:"Include emerging talent",keep:"Keep current Fynd",different:"↗ Show me someone different",why:"WHY THIS PERSON IS HERE",p1:"Leadership · verified",p2:"Fine dining · demonstrated · 4 years",p3:"Wine · WSET Level 2",p4:"Opening experience · 2 concepts",momentum:"CAREER MOMENTUM",explore:"Explore Fyndset",invite:"Invite to talk",traits:["Team leadership","Fine dining","High volume","Wine knowledge"],values:["Opening experience","Luxury hospitality","International","Cost control"]},
+pt:{mode:"MOTOR DE DESCOBERTA · MUNDO DE TALENTO",back:"Voltar",build:"CONSTRÓI O TEU FYND",who:"Quem importa?",intro:"Constrói a pessoa, não a vaga. O Fyndset explora talento direto, adjacente e inesperado.",role:"FUNÇÃO",where:"ONDE",essential:"ESSENCIAL",value:"VALORIZARIA",hard:"ALGO MAIS DIFÍCIL DE DESCREVER",thought:"Alguém que consiga trazer estrutura sem matar a personalidade do restaurante…",surface:"Descobrir pessoas",discovery:"DESCOBERTA",adjacent:"ADJACENTE",core:"CORE",surfaced:"PESSOAS DESCOBERTAS",summary:"3 core · 3 adjacentes · 2 descoberta",your:"DNA DO TEU FYND",emerging:"EMERGENTE",unexpected:"INESPERADO",private:"Perfil privado",ai:"Estás a procurar muito pelo cargo anterior. Há 7 Assistant Restaurant Managers com sinais de liderança semelhantes.",include:"Incluir talento emergente",keep:"Manter o Fynd atual",different:"↗ Mostrar alguém diferente",why:"PORQUE ESTA PESSOA ESTÁ AQUI",p1:"Liderança · validada",p2:"Fine dining · demonstrado · 4 anos",p3:"Vinhos · WSET Level 2",p4:"Experiência em aberturas · 2 conceitos",momentum:"PROGRESSÃO DE CARREIRA",explore:"Explorar Fyndset",invite:"Convidar para conversar",traits:["Liderança de equipas","Fine dining","Grande volume","Conhecimento de vinhos"],values:["Experiência em aberturas","Hotelaria de luxo","Internacional","Controlo de custos"]}};
+const L=()=>document.documentElement.lang==="pt"?"pt":"en",x=()=>X[L()];
+function chips(id,a){let e=document.getElementById(id);e.innerHTML="";a.forEach(v=>{let b=document.createElement("button");b.className="fw-chip";b.textContent=v;b.onclick=()=>b.classList.toggle("on");e.appendChild(b)})}
+function tr(){document.querySelectorAll("[data-f]").forEach(e=>{let k=e.dataset.f;if(x()[k])e.textContent=x()[k]});document.querySelectorAll("[data-en]").forEach(e=>e.textContent=e.dataset[L()]);document.getElementById("fw-thought").placeholder=x().thought;chips("fw-essential",x().traits);chips("fw-value",x().values)}
+function openPerson(i){
+ let names=["Marta Silva ✓","Tiago Costa ✓","Inês Ferreira ✓","André Ramos ✓",L()==="pt"?"Perfil privado":"Private profile","Rui Neves ✓","Sara Lopes ✓","João Martins ✓"];
+ let roles=["Restaurant Manager · Lisboa","Assistant F&B Manager · Cascais","Restaurant Manager · Lisboa","Operations Manager · Lisboa","Restaurant Manager · Lisboa","F&B Supervisor · Lisboa","Luxury Retail Operations · Lisboa","Bar Operations · Lisboa"];
+ let orbit=i<3?"CORE":i<6?(L()==="pt"?"ADJACENTE":"ADJACENT"):(L()==="pt"?"DESCOBERTA":"DISCOVERY");
+ let p=document.querySelector(`.fw-person[data-i="${i}"]`);document.getElementById("fd-name").textContent=names[i];document.getElementById("fd-role").textContent=roles[i];document.getElementById("fd-img").src=p.querySelector("img").src;document.getElementById("fd-img").style.filter=i===4?"blur(5px)":"none";document.getElementById("fd-orbit").textContent=orbit;document.getElementById("fw-detail").classList.add("show")
+}
+document.addEventListener("DOMContentLoaded",()=>{tr();
+ document.getElementById("open-fynd-world")?.addEventListener("click",()=>{document.getElementById("fw").classList.add("open");document.body.style.overflow="hidden";tr()});
+ document.getElementById("fw-close").onclick=()=>{document.getElementById("fw").classList.remove("open");document.body.style.overflow=""};
+ document.querySelectorAll("#fw-role .fw-chip,#fw-loc .fw-chip").forEach(b=>b.onclick=()=>{[...b.parentElement.children].forEach(z=>z.classList.remove("on"));b.classList.add("on")});
+ document.querySelectorAll(".fw-person").forEach(p=>p.onclick=()=>openPerson(+p.dataset.i));
+ document.getElementById("fw-different").onclick=()=>openPerson(Math.random()>.5?6:7);
+ document.getElementById("fw-include").onclick=()=>{document.getElementById("fw-ai-copy").textContent=L()==="pt"?"Talento emergente incluído. O radar passou a considerar trajetória, não apenas cargo.":"Emerging talent included. The radar now considers trajectory, not just title.";openPerson(1)};
+ document.getElementById("fw-keep").onclick=()=>document.querySelector(".fw-ai").style.opacity=".45";
+ document.getElementById("fw-surface").onclick=()=>openPerson(0);
+ document.querySelector(".lang-switch")?.addEventListener("click",()=>setTimeout(tr,0));
+});
 })();
 </script>
 
