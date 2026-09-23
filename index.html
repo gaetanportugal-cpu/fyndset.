@@ -637,4 +637,110 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+
+<script>
+/* V4.21 — authoritative bilingual controller */
+document.addEventListener('DOMContentLoaded', () => {
+  const C = {
+    en: {
+      navPro:'For Professionals', navCompany:'For Companies', navHow:'How it works', signIn:'Sign in',
+      eyebrow:'Hospitality <b>talent.</b> Reimagined.',
+      title:'Don’t apply.<span>Get found.</span>',
+      lead:'Build your Fyndset. Get discovered for what you can actually do, not just what’s on your CV.',
+      sublead:'For hospitality professionals and the companies looking for them.',
+      proLabel:'I’M A PROFESSIONAL', hireLabel:'I’M HIRING', beFound:'Be found', findTalent:'Find talent',
+      p1:'SKILLS', p1t:'What you can do', p2:'EXPERIENCE', p2t:'Where you’ve proved it', p3:'INTENT', p3t:'What you want next',
+      pedroRole:'Head Waiter', sofiaRole:'Restaurant Manager', miguelRole:'Hospitality Group CEO',
+      available:'Open to opportunities', hiring:'Looking for talent',
+      teaserLabel:'LOOKING FOR', teaserRole:'Restaurant Manager · Lisbon', teaserMatches:'18 matching professionals →',
+      mobileTitle:'What brings you here?'
+    },
+    pt: {
+      navPro:'Para Profissionais', navCompany:'Para Empresas', navHow:'Como funciona', signIn:'Entrar',
+      eyebrow:'Talento em <b>hospitalidade.</b> Reinventado.',
+      title:'Não te candidates.<span>Sê encontrado.</span>',
+      lead:'Constrói o teu Fyndset. Sê descoberto pelo que realmente sabes fazer, não apenas pelo que está no teu CV.',
+      sublead:'Para profissionais de hospitalidade e para as empresas que os procuram.',
+      proLabel:'SOU PROFISSIONAL', hireLabel:'ESTOU A CONTRATAR', beFound:'Ser encontrado', findTalent:'Encontrar talento',
+      p1:'COMPETÊNCIAS', p1t:'O que sabes fazer', p2:'EXPERIÊNCIA', p2t:'Onde já o demonstraste', p3:'OBJETIVO', p3t:'O que procuras a seguir',
+      pedroRole:'Chefe de Mesa', sofiaRole:'Restaurant Manager', miguelRole:'CEO de Grupo Hoteleiro',
+      available:'Disponível para oportunidades', hiring:'À procura de talento',
+      teaserLabel:'À PROCURA DE', teaserRole:'Restaurant Manager · Lisboa', teaserMatches:'18 profissionais correspondem →',
+      mobileTitle:'O que te traz ao Fyndset?'
+    }
+  };
+
+  function setText(sel, value, html=false){
+    document.querySelectorAll(sel).forEach(el => html ? el.innerHTML=value : el.textContent=value);
+  }
+
+  function render(lang){
+    lang = lang === 'pt' ? 'pt' : 'en';
+    const c=C[lang];
+    document.documentElement.lang=lang;
+    localStorage.setItem('fyndset-lang',lang);
+
+    const nav=document.querySelectorAll('.main-nav span');
+    if(nav[0]) nav[0].textContent=c.navPro;
+    if(nav[1]) nav[1].textContent=c.navCompany;
+    if(nav[2]) nav[2].textContent=c.navHow;
+    setText('.signin',c.signIn);
+
+    setText('.eyebrow',c.eyebrow,true);
+    setText('.copy h1',c.title,true);
+    setText('.lead',c.lead);
+    setText('.sublead',c.sublead);
+
+    setText('.pro-label',c.proLabel);
+    setText('.company-label',c.hireLabel);
+    const desktopBtns=document.querySelectorAll('.actions .btn span');
+    if(desktopBtns[0]) desktopBtns[0].textContent=c.beFound;
+    if(desktopBtns[1]) desktopBtns[1].textContent=c.findTalent;
+
+    const pillars=document.querySelectorAll('.pillars > div');
+    if(pillars[0]){pillars[0].querySelector('small').textContent=c.p1;pillars[0].querySelector('strong').textContent=c.p1t}
+    if(pillars[1]){pillars[1].querySelector('small').textContent=c.p2;pillars[1].querySelector('strong').textContent=c.p2t}
+    if(pillars[2]){pillars[2].querySelector('small').textContent=c.p3;pillars[2].querySelector('strong').textContent=c.p3t}
+
+    const pedro=document.querySelector('.pedro-id'), sofia=document.querySelector('.sofia-id'), miguel=document.querySelector('.miguel-id');
+    if(pedro){pedro.querySelector('.role').textContent=c.pedroRole;pedro.querySelector('.status').textContent=c.available}
+    if(sofia){sofia.querySelector('.role').textContent=c.sofiaRole;sofia.querySelector('.status').textContent=c.available}
+    if(miguel){
+      miguel.querySelector('.role').textContent=c.miguelRole;
+      const s=miguel.querySelector('.status'); s.textContent=c.hiring;s.classList.remove('available');s.classList.add('hiring');
+    }
+
+    const teaser=document.querySelector('.v419-teaser');
+    if(teaser){
+      teaser.querySelector('small').textContent=c.teaserLabel;
+      teaser.querySelector('strong').textContent=c.teaserRole;
+      teaser.querySelector('span').textContent=c.teaserMatches;
+    }
+
+    const mob=document.querySelector('.mobile');
+    if(mob){
+      mob.querySelector('h2').textContent=c.mobileTitle;
+      const spans=mob.querySelectorAll('button span');
+      if(spans[0]) spans[0].textContent=c.beFound;
+      if(spans[1]) spans[1].textContent=c.findTalent;
+    }
+
+    const label=document.querySelector('#lang-label');
+    if(label) label.textContent=lang.toUpperCase();
+  }
+
+  // Override the old switch behavior in capture phase.
+  const switcher=document.querySelector('.lang-switch');
+  if(switcher){
+    switcher.addEventListener('click', e=>{
+      e.preventDefault(); e.stopImmediatePropagation();
+      const current=(document.documentElement.lang||'en').toLowerCase().startsWith('pt')?'pt':'en';
+      render(current==='pt'?'en':'pt');
+    }, true);
+  }
+
+  render(localStorage.getItem('fyndset-lang')==='pt'?'pt':'en');
+});
+</script>
+
 </body></html>
