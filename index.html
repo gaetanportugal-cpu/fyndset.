@@ -135,7 +135,7 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
 <div class="sublead" data-t="sublead">For hospitality professionals and the companies looking for them.</div>
 <div class="actions">
   <div class="cta-wrap"><small data-t="proLabel">I’M A PROFESSIONAL</small><button class="btn"><span data-t="beFound">Be found</span><b>→</b></button></div>
-  <div class="cta-wrap"><small data-t="hireLabel">I’M HIRING</small><button class="btn" id="open-builder"><span data-t="findTalent">Find talent</span><b>→</b></button></div>
+  <div class="cta-wrap"><small data-t="hireLabel">I’M HIRING</small><button class="btn" id="open-radar"><span data-t="findTalent">Find talent</span><b>→</b></button></div>
 </div>
 <div class="pillars">
   <div><small data-t="p1">SKILLS</small><strong data-t="p1t">What you can do</strong></div>
@@ -476,192 +476,132 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 <style>
-/* V5.1 — Build your ideal person */
-.builder{position:fixed;inset:0;z-index:1200;display:none;overflow:auto;background:#041c1f;color:#fff}
-.builder.open{display:block}
-.b-glow{position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 80% 10%,rgba(63,224,218,.13),transparent 30%),radial-gradient(circle at 10% 90%,rgba(255,255,255,.045),transparent 28%)}
-.b-nav{height:76px;padding:0 4vw;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,.08);position:relative;z-index:2;background:rgba(4,28,31,.7);backdrop-filter:blur(18px)}
-.b-logo{font-size:27px;font-weight:800;letter-spacing:-1.5px}.b-logo i{font-style:normal;color:var(--cyan)}
-.b-nav-title{margin-left:38px;font-size:10px;color:#87a09d;letter-spacing:.12em;text-transform:uppercase}
-.b-close{margin-left:auto;border:1px solid rgba(255,255,255,.18);background:transparent;color:#fff;border-radius:999px;padding:10px 16px;cursor:pointer}
-.b-shell{position:relative;z-index:2;width:min(1180px,92vw);margin:0 auto;padding:54px 0 90px;display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:52px}
-.b-kicker{font-size:9px;letter-spacing:.17em;color:var(--cyan);text-transform:uppercase;margin-bottom:14px}
-.b-main h2{font-size:clamp(43px,5vw,68px);line-height:.96;letter-spacing:-.045em;margin:0 0 14px}
-.b-desc{color:#9eb4b1;font-size:14px;line-height:1.55;margin-bottom:35px;max-width:650px}
-.b-stage{display:none;animation:fadein .25s ease}.b-stage.active{display:block}@keyframes fadein{from{opacity:.25;transform:translateY(5px)}to{opacity:1;transform:none}}
-.b-question{font-size:18px;font-weight:650;margin-bottom:15px}
-.b-options{display:flex;flex-wrap:wrap;gap:10px}
-.b-option{border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.045);color:#e9f1ef;border-radius:14px;padding:13px 16px;font:inherit;font-size:12px;cursor:pointer;transition:.18s}
-.b-option:hover,.b-option.selected{border-color:var(--cyan);background:rgba(63,224,218,.11);color:#fff;transform:translateY(-1px)}
-.b-option.selected:before{content:"✓ ";color:var(--cyan)}
-.b-next{display:inline-flex;align-items:center;gap:14px;margin-top:28px;border:0;border-radius:999px;background:var(--cyan);color:#062326;padding:14px 21px;font-weight:750;cursor:pointer}
-.b-next:disabled{opacity:.35;cursor:not-allowed}
-.b-secondary{border:0;background:none;color:#91aaa7;font-size:11px;margin-left:14px;cursor:pointer}
-.b-location{display:flex;gap:10px;flex-wrap:wrap}
-.b-free{width:min(620px,100%);margin-top:18px;border:1px solid rgba(255,255,255,.14);border-radius:16px;background:rgba(255,255,255,.035);padding:15px}
-.b-free textarea{width:100%;height:72px;border:0;outline:0;resize:none;background:transparent;color:#fff;font:inherit;font-size:12px;line-height:1.5}
-.b-free textarea::placeholder{color:#708a87}
-.b-priority{display:grid;gap:8px;max-width:620px}
-.b-priority-row{display:flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.04);padding:12px 14px}
-.b-num{color:var(--cyan);font-size:10px;width:22px}.b-priority-row strong{font-size:12px;font-weight:550}.b-arrows{margin-left:auto;color:#6e8986;font-size:11px}
-.b-side{position:sticky;top:105px;height:max-content;border:1px solid rgba(255,255,255,.14);border-radius:22px;background:rgba(255,255,255,.055);backdrop-filter:blur(18px);padding:22px;box-shadow:0 25px 70px rgba(0,0,0,.18)}
-.b-side-label{font-size:7px;letter-spacing:.19em;color:#7e9996;text-transform:uppercase}.b-ideal-role{font-size:21px;font-weight:700;margin:10px 0 3px}.b-ideal-loc{font-size:11px;color:#9db2af}
-.b-selected{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0}.b-mini{font-size:9px;padding:7px 9px;border-radius:999px;background:rgba(63,224,218,.09);border:1px solid rgba(63,224,218,.22);color:#dffbf8}
-.b-market{margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.09)}
-.b-market-label{font-size:8px;color:#819b98;text-transform:uppercase;letter-spacing:.13em}
-.b-count{font-size:44px;letter-spacing:-.05em;font-weight:700;margin-top:4px}.b-count span{font-size:11px;color:#9ab0ad;letter-spacing:0;font-weight:400}
-.b-meter{height:4px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden;margin:13px 0 9px}.b-meter i{display:block;height:100%;width:100%;background:var(--cyan);transition:.35s}
-.b-insight{font-size:10px;color:#8ea6a3;line-height:1.45}
-.b-results{display:none}.b-results.show{display:block}
-.b-results-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:17px}.b-results-head h3{font-size:27px;margin:0}.b-results-head span{font-size:10px;color:#7e9794}
-.b-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
-.b-card{border:1px solid rgba(255,255,255,.13);border-radius:19px;background:rgba(255,255,255,.045);padding:19px}
-.b-person{display:flex;align-items:center;gap:11px}.b-person img{width:46px;height:46px;border-radius:50%;object-fit:cover}.b-name{font-weight:700;font-size:14px}.b-role{font-size:10px;color:#9bb0ad;margin-top:3px}
-.b-surfaced{font-size:8px;letter-spacing:.14em;color:var(--cyan);margin:18px 0 10px}.b-proof{display:grid;gap:7px;font-size:10.5px;color:#d4e1df}.b-proof div:before{content:"✓";color:var(--cyan);margin-right:7px}
-.b-gap{margin-top:14px;border-radius:10px;background:rgba(255,255,255,.035);padding:10px;font-size:9px;color:#91aaa7}.b-gap b{color:#c7d7d5;font-weight:600}
-.b-view{margin-top:16px;padding-top:13px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;font-size:10px}.b-view i{font-style:normal;color:var(--cyan)}
-.b-demo{font-size:8px;color:#68817e;margin-top:12px}
-@media(max-width:850px){.b-shell{grid-template-columns:1fr;gap:28px;padding-top:35px}.b-side{position:relative;top:auto;order:-1}.b-nav-title{display:none}.b-cards{grid-template-columns:1fr}.b-main h2{font-size:45px}}
+/* V5.2 — Talent Radar */
+.radar-app{position:fixed;inset:0;z-index:1500;display:none;overflow:hidden;background:#031c1f;color:#fff}
+.radar-app.open{display:block}
+.ra-bg{position:absolute;inset:0;background:radial-gradient(circle at 72% 48%,rgba(63,224,218,.08),transparent 33%),linear-gradient(120deg,#031c1f,#052528 58%,#031c1f)}
+.ra-nav{height:72px;padding:0 3.5vw;display:flex;align-items:center;position:relative;z-index:8;border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(14px)}
+.ra-logo{font-size:27px;font-weight:800;letter-spacing:-1.4px}.ra-logo i{color:var(--cyan);font-style:normal}
+.ra-mode{margin-left:30px;font-size:8px;letter-spacing:.17em;color:#789390;text-transform:uppercase}
+.ra-close{margin-left:auto;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.03);color:#fff;border-radius:999px;padding:9px 15px;cursor:pointer}
+.ra-layout{position:relative;z-index:2;height:calc(100vh - 72px);display:grid;grid-template-columns:365px 1fr}
+.ra-controls{padding:38px 28px 30px 3.5vw;border-right:1px solid rgba(255,255,255,.08);overflow:auto;background:rgba(3,28,31,.76);backdrop-filter:blur(18px)}
+.ra-kicker{font-size:8px;letter-spacing:.18em;color:var(--cyan);text-transform:uppercase;margin-bottom:11px}
+.ra-controls h2{font-size:37px;line-height:.98;letter-spacing:-.04em;margin:0 0 10px}.ra-copy{font-size:11px;line-height:1.5;color:#8fa7a4;margin-bottom:27px}
+.ra-group{margin-bottom:23px}.ra-label{font-size:8px;letter-spacing:.12em;color:#6f8986;text-transform:uppercase;margin-bottom:9px}
+.ra-options{display:flex;flex-wrap:wrap;gap:7px}.ra-chip{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.035);color:#d7e3e1;border-radius:999px;padding:8px 11px;font-size:9.5px;cursor:pointer;transition:.18s}
+.ra-chip:hover{border-color:rgba(63,224,218,.5)}.ra-chip.on{background:rgba(63,224,218,.13);border-color:var(--cyan);color:#fff}.ra-chip.on:before{content:"✓ ";color:var(--cyan)}
+.ra-tier{display:none}.ra-tier.show{display:block;animation:raIn .25s ease}@keyframes raIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.ra-text{width:100%;box-sizing:border-box;border:1px solid rgba(255,255,255,.11);border-radius:12px;background:rgba(255,255,255,.025);color:#fff;padding:11px;font:inherit;font-size:10px;outline:none}
+.ra-discover{width:100%;border:0;border-radius:999px;background:var(--cyan);color:#052326;font-weight:750;padding:13px 17px;cursor:pointer;margin-top:3px}
+.ra-world{position:relative;overflow:hidden;min-width:0}
+.ra-grid{position:absolute;inset:0;opacity:.15;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(circle at center,#000,transparent 75%)}
+.ra-rings{position:absolute;left:54%;top:49%;width:min(64vw,720px);aspect-ratio:1;transform:translate(-50%,-50%);border:1px solid rgba(63,224,218,.15);border-radius:50%}
+.ra-rings:before,.ra-rings:after{content:"";position:absolute;border:1px solid rgba(63,224,218,.12);border-radius:50%;inset:15%}.ra-rings:after{inset:32%}
+.ra-sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 78%,rgba(63,224,218,.12) 92%,transparent 100%);animation:sweep 6s linear infinite}@keyframes sweep{to{transform:rotate(360deg)}}
+.ra-center{position:absolute;left:54%;top:49%;width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 22px var(--cyan)}
+.ra-status{position:absolute;left:32px;top:28px}.ra-status b{display:block;font-size:35px;letter-spacing:-.05em}.ra-status span{font-size:8px;letter-spacing:.14em;color:#7d9693;text-transform:uppercase}
+.ra-person{position:absolute;transform:translate(-50%,-50%);transition:opacity .45s,filter .45s,transform .45s;cursor:pointer}
+.ra-person.dim{opacity:.10;filter:blur(2px);transform:translate(-50%,-50%) scale(.82)}.ra-person.hot{transform:translate(-50%,-50%) scale(1.08)}
+.ra-avatar{width:58px;height:58px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.55);box-shadow:0 8px 30px rgba(0,0,0,.32)}
+.ra-pulse{position:absolute;width:72px;height:72px;border-radius:50%;border:1px solid rgba(63,224,218,.35);left:50%;top:29px;transform:translate(-50%,-50%);animation:pulse 2.6s ease-out infinite}@keyframes pulse{0%{transform:translate(-50%,-50%) scale(.65);opacity:.8}100%{transform:translate(-50%,-50%) scale(1.5);opacity:0}}
+.ra-tag{position:absolute;left:50%;top:66px;transform:translateX(-50%);white-space:nowrap;text-align:center;background:rgba(3,28,31,.88);border:1px solid rgba(255,255,255,.13);border-radius:10px;padding:6px 8px;backdrop-filter:blur(8px)}
+.ra-tag b{font-size:9.5px;display:block}.ra-tag span{font-size:7.5px;color:#8fa8a5}
+.ra-detail{position:absolute;right:25px;bottom:24px;width:310px;border:1px solid rgba(255,255,255,.15);border-radius:18px;background:rgba(4,31,34,.9);backdrop-filter:blur(20px);padding:18px;opacity:0;transform:translateY(10px);pointer-events:none;transition:.25s;z-index:7}
+.ra-detail.show{opacity:1;transform:none;pointer-events:auto}.ra-detail-top{display:flex;gap:11px;align-items:center}.ra-detail img{width:46px;height:46px;border-radius:50%;object-fit:cover}.ra-detail h3{font-size:14px;margin:0}.ra-detail .role{font-size:9px;color:#8ea5a2;margin-top:3px}.ra-why{font-size:7px;letter-spacing:.14em;color:var(--cyan);margin:15px 0 9px}.ra-proof{display:grid;gap:6px;font-size:9.5px;color:#d2dfdd}.ra-proof div:before{content:"✓";color:var(--cyan);margin-right:6px}.ra-explore{font-size:8.5px;color:#839b98;margin-top:12px;padding:9px;border-radius:9px;background:rgba(255,255,255,.035)}.ra-view{display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.08);margin-top:13px;padding-top:11px;font-size:9px}.ra-view i{font-style:normal;color:var(--cyan)}
+.ra-legend{position:absolute;left:30px;bottom:25px;font-size:8px;color:#68827f}.ra-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--cyan);margin-right:6px}
+@media(max-width:800px){.radar-app{overflow:auto}.ra-layout{height:auto;min-height:calc(100vh - 72px);grid-template-columns:1fr}.ra-controls{border-right:0;padding:28px 5vw}.ra-world{height:620px}.ra-detail{right:4vw;width:calc(92vw - 36px)}.ra-mode{display:none}}
 </style>
 
-<section class="builder" id="builder" aria-hidden="true">
-<div class="b-glow"></div>
-<header class="b-nav">
- <div class="b-logo">fyndset<i>.</i></div>
- <div class="b-nav-title" data-b="navtitle">Talent discovery</div>
- <button class="b-close" id="b-close">← <span data-b="back">Back</span></button>
-</header>
+<section class="radar-app" id="radar-app" aria-hidden="true">
+<div class="ra-bg"></div>
+<header class="ra-nav"><div class="ra-logo">fyndset<i>.</i></div><div class="ra-mode" data-r="mode">LIVE TALENT DISCOVERY</div><button class="ra-close" id="ra-close">← <span data-r="back">Back</span></button></header>
+<div class="ra-layout">
+ <aside class="ra-controls">
+  <div class="ra-kicker" data-r="kicker">TUNE YOUR RADAR</div>
+  <h2 data-r="title">Who are you looking for?</h2>
+  <div class="ra-copy" data-r="copy">Build the person you have in mind. Watch the talent world respond.</div>
 
-<div class="b-shell">
- <main class="b-main">
-  <div id="b-build">
-   <div class="b-kicker" data-b="kicker">BUILD YOUR IDEAL PERSON</div>
-   <h2 data-b="title">Who would you like to find?</h2>
-   <div class="b-desc" data-b="desc">Build the person you have in mind. Fyndset will show how the talent market responds as you go.</div>
-
-   <div class="b-stage active" data-stage="1">
-    <div class="b-question" data-b="qrole">Start with a role</div>
-    <div class="b-options" id="roles">
-     <button class="b-option">Restaurant Manager</button><button class="b-option">F&B Manager</button><button class="b-option">Head Chef</button><button class="b-option">Sous Chef</button><button class="b-option">Bar Manager</button><button class="b-option" data-b="other">Other +</button>
-    </div>
-    <button class="b-next" id="role-next" disabled><span data-b="continue">Continue</span> →</button>
-   </div>
-
-   <div class="b-stage" data-stage="2">
-    <div class="b-question" data-b="qloc">Where should they be?</div>
-    <div class="b-location b-options" id="locations">
-     <button class="b-option" data-val-en="Lisbon" data-val-pt="Lisboa">Lisbon</button><button class="b-option">Porto</button><button class="b-option">Algarve</button><button class="b-option" data-val-en="Anywhere" data-val-pt="Qualquer localização">Anywhere</button>
-    </div>
-    <button class="b-next" id="loc-next" disabled><span data-b="continue">Continue</span> →</button>
-    <button class="b-secondary" data-prev="1" data-b="previous">Previous</button>
-   </div>
-
-   <div class="b-stage" data-stage="3">
-    <div class="b-question" data-b="qtraits">What would make this person stand out?</div>
-    <div class="b-options" id="traits"></div>
-    <div class="b-free"><textarea id="b-note"></textarea></div>
-    <button class="b-next" id="traits-next" disabled><span data-b="prioritize">Prioritize what matters</span> →</button>
-    <button class="b-secondary" data-prev="2" data-b="previous">Previous</button>
-   </div>
-
-   <div class="b-stage" data-stage="4">
-    <div class="b-question" data-b="qpriority">What matters most?</div>
-    <div class="b-desc" style="margin-bottom:17px" data-b="prioritydesc">Your priorities influence who surfaces first.</div>
-    <div class="b-priority" id="priorities"></div>
-    <button class="b-next" id="find-people"><span data-b="find">Find my people</span> →</button>
-    <button class="b-secondary" data-prev="3" data-b="previous">Previous</button>
-   </div>
+  <div class="ra-group">
+   <div class="ra-label" data-r="role">ROLE</div>
+   <div class="ra-options" id="ra-roles"><button class="ra-chip">Restaurant Manager</button><button class="ra-chip">F&B Manager</button><button class="ra-chip">Head Chef</button><button class="ra-chip">Bar Manager</button></div>
   </div>
-
-  <section class="b-results" id="b-results">
-   <div class="b-kicker" data-b="discovery">YOUR DISCOVERY</div>
-   <div class="b-results-head"><h3 data-b="found">People worth knowing</h3><span data-b="explain">Shown for a reason, not a score</span></div>
-   <div class="b-cards">
-    <article class="b-card">
-     <div class="b-person"><img src="sofia.png"><div><div class="b-name">Marta Silva ✓</div><div class="b-role">Restaurant Manager · Lisboa</div></div></div>
-     <div class="b-surfaced" data-b="why1">WHY MARTA SURFACED</div>
-     <div class="b-proof"><div data-b="m1">Led teams of 20+</div><div data-b="m2">4 years in premium fine dining</div><div data-b="m3">Restaurant opening experience</div><div>WSET Level 2 · PT · EN · ES</div></div>
-     <div class="b-gap"><b data-b="explore">One thing to explore:</b> <span data-b="gap1">no luxury-hotel experience verified yet.</span></div>
-     <div class="b-view"><span data-b="view">View Fyndset</span><i>→</i></div>
-    </article>
-    <article class="b-card">
-     <div class="b-person"><img src="pedro.png"><div><div class="b-name">Tiago Costa ✓</div><div class="b-role">Assistant F&B Manager · Cascais</div></div></div>
-     <div class="b-surfaced" data-b="why2">WHY TIAGO SURFACED</div>
-     <div class="b-proof"><div data-b="t1">Luxury hotel restaurant background</div><div data-b="t2">Team leadership and service training</div><div data-b="t3">Strong wine knowledge</div><div>PT · EN</div></div>
-     <div class="b-gap"><b data-b="explore">One thing to explore:</b> <span data-b="gap2">less direct restaurant-opening experience.</span></div>
-     <div class="b-view"><span data-b="view">View Fyndset</span><i>→</i></div>
-    </article>
-   </div>
-   <div class="b-demo" data-b="demo">Prototype profiles and market counts are illustrative.</div>
-  </section>
- </main>
-
- <aside class="b-side">
-  <div class="b-side-label" data-b="ideal">YOUR FYND</div>
-  <div class="b-ideal-role" id="ideal-role">—</div>
-  <div class="b-ideal-loc" id="ideal-loc" data-b="chooseLoc">Choose a location</div>
-  <div class="b-selected" id="ideal-traits"></div>
-  <div class="b-market">
-   <div class="b-market-label" data-b="market">TALENT MARKET</div>
-   <div class="b-count"><b id="market-count">184</b> <span data-b="people">people</span></div>
-   <div class="b-meter"><i id="market-meter"></i></div>
-   <div class="b-insight" id="market-insight" data-b="marketStart">Start building your ideal person to explore the market.</div>
+  <div class="ra-group ra-tier" id="ra-location">
+   <div class="ra-label" data-r="where">WHERE</div>
+   <div class="ra-options"><button class="ra-chip" data-en="Lisbon" data-pt="Lisboa">Lisbon</button><button class="ra-chip">Porto</button><button class="ra-chip">Algarve</button></div>
   </div>
+  <div class="ra-group ra-tier" id="ra-must">
+   <div class="ra-label" data-r="must">MUST HAVE</div>
+   <div class="ra-options" id="ra-traits"></div>
+  </div>
+  <div class="ra-group ra-tier" id="ra-nice">
+   <div class="ra-label" data-r="nice">NICE TO HAVE</div>
+   <div class="ra-options" id="ra-nice-traits"></div>
+  </div>
+  <div class="ra-group ra-tier" id="ra-words">
+   <div class="ra-label" data-r="words">IN YOUR OWN WORDS · OPTIONAL</div>
+   <input class="ra-text" id="ra-note">
+  </div>
+  <button class="ra-discover ra-tier" id="ra-discover"><span data-r="discover">Discover people</span> →</button>
  </aside>
+
+ <main class="ra-world">
+  <div class="ra-grid"></div><div class="ra-rings"><div class="ra-sweep"></div></div><div class="ra-center"></div>
+  <div class="ra-status"><b id="ra-count">184</b><span data-r="signals">people in range</span></div>
+
+  <div class="ra-person" data-i="0" style="left:29%;top:27%"><div class="ra-pulse"></div><img class="ra-avatar" src="sofia.png"><div class="ra-tag"><b>Marta</b><span>Restaurant Manager</span></div></div>
+  <div class="ra-person" data-i="1" style="left:67%;top:24%"><div class="ra-pulse"></div><img class="ra-avatar" src="pedro.png"><div class="ra-tag"><b>Tiago</b><span>Assistant F&B Manager</span></div></div>
+  <div class="ra-person" data-i="2" style="left:76%;top:58%"><div class="ra-pulse"></div><img class="ra-avatar" src="sofia.png"><div class="ra-tag"><b>Inês</b><span>Restaurant Manager</span></div></div>
+  <div class="ra-person" data-i="3" style="left:39%;top:67%"><div class="ra-pulse"></div><img class="ra-avatar" src="pedro.png"><div class="ra-tag"><b>André</b><span>Operations Manager</span></div></div>
+  <div class="ra-person" data-i="4" style="left:56%;top:44%"><div class="ra-pulse"></div><img class="ra-avatar" src="sofia.png"><div class="ra-tag"><b>Sara</b><span>F&B Manager</span></div></div>
+  <div class="ra-person" data-i="5" style="left:86%;top:78%"><div class="ra-pulse"></div><img class="ra-avatar" src="pedro.png"><div class="ra-tag"><b>João</b><span>Bar Manager</span></div></div>
+
+  <div class="ra-detail" id="ra-detail">
+   <div class="ra-detail-top"><img id="rd-img" src="sofia.png"><div><h3 id="rd-name">Marta Silva ✓</h3><div class="role" id="rd-role">Restaurant Manager · Lisboa</div></div></div>
+   <div class="ra-why" data-r="surfaced">WHY THIS PERSON SURFACED</div>
+   <div class="ra-proof"><div data-r="p1">Led teams of 20+</div><div data-r="p2">Premium dining experience</div><div data-r="p3">Strong wine knowledge</div></div>
+   <div class="ra-explore"><b data-r="explore">Worth exploring:</b> <span data-r="gap">career progression and next-step intent.</span></div>
+   <div class="ra-view"><span data-r="view">Explore Fyndset</span><i>→</i></div>
+  </div>
+  <div class="ra-legend"><span class="ra-dot"></span><span data-r="legend">Each signal is a person, not an application.</span></div>
+ </main>
 </div>
 </section>
 
 <script>
 (()=>{
- const C={
- en:{navtitle:"Talent discovery",back:"Back",kicker:"BUILD YOUR IDEAL PERSON",title:"Who would you like to find?",desc:"Build the person you have in mind. Fyndset will show how the talent market responds as you go.",qrole:"Start with a role",other:"Other +",continue:"Continue",qloc:"Where should they be?",previous:"Previous",qtraits:"What would make this person stand out?",note:"Can't describe it with choices? Tell Fyndset in your own words…",prioritize:"Prioritize what matters",qpriority:"What matters most?",prioritydesc:"Your priorities influence who surfaces first.",find:"Find my people",ideal:"YOUR FYND",chooseLoc:"Choose a location",market:"TALENT MARKET",people:"people",marketStart:"Start building your ideal person to explore the market.",discovery:"YOUR DISCOVERY",found:"People worth knowing",explain:"Shown for a reason, not a score",why1:"WHY MARTA SURFACED",why2:"WHY TIAGO SURFACED",m1:"Led teams of 20+",m2:"4 years in premium fine dining",m3:"Restaurant opening experience",t1:"Luxury hotel restaurant background",t2:"Team leadership and service training",t3:"Strong wine knowledge",explore:"One thing to explore:",gap1:"no luxury-hotel experience verified yet.",gap2:"less direct restaurant-opening experience.",view:"View Fyndset",demo:"Prototype profiles and market counts are illustrative.",
- traits:["Leads teams","Fine dining","High volume","Strong in wine","Opened restaurants","Luxury hospitality","Cost control","International experience"],
- insights:["A broad talent pool. Add what matters to you.","Location narrows the market while keeping options open.","Good signal. Add another trait to make the search more distinctive.","Your ideal profile is becoming specific.","This combination is rare — a strong discovery opportunity."]},
- pt:{navtitle:"Descoberta de talento",back:"Voltar",kicker:"CONSTRÓI A PESSOA IDEAL",title:"Quem gostarias de encontrar?",desc:"Constrói a pessoa que tens em mente. O Fyndset mostra como o mercado de talento responde à medida que escolhes.",qrole:"Começa por uma função",other:"Outra +",continue:"Continuar",qloc:"Onde deve estar?",previous:"Anterior",qtraits:"O que faria esta pessoa destacar-se?",note:"Não consegues descrever só com escolhas? Explica ao Fyndset pelas tuas palavras…",prioritize:"Priorizar o que importa",qpriority:"O que é mais importante?",prioritydesc:"As tuas prioridades influenciam quem aparece primeiro.",find:"Encontrar as minhas pessoas",ideal:"O TEU FYND",chooseLoc:"Escolhe uma localização",market:"MERCADO DE TALENTO",people:"pessoas",marketStart:"Começa a construir a pessoa ideal para explorar o mercado.",discovery:"A TUA DESCOBERTA",found:"Pessoas que vale a pena conhecer",explain:"Mostradas por uma razão, não por uma pontuação",why1:"PORQUE A MARTA APARECEU",why2:"PORQUE O TIAGO APARECEU",m1:"Liderou equipas com mais de 20 pessoas",m2:"4 anos em fine dining premium",m3:"Experiência em abertura de restaurantes",t1:"Experiência em restauração de hotel de luxo",t2:"Liderança de equipas e formação de serviço",t3:"Forte conhecimento de vinhos",explore:"Algo a explorar:",gap1:"ainda sem experiência validada em hotelaria de luxo.",gap2:"menos experiência direta em abertura de restaurantes.",view:"Ver Fyndset",demo:"Perfis e números de mercado fictícios para demonstração.",
- traits:["Lidera equipas","Fine dining","Grande volume","Forte em vinhos","Abriu restaurantes","Hotelaria de luxo","Controlo de custos","Experiência internacional"],
- insights:["Um mercado amplo. Adiciona o que realmente importa.","A localização reduz o mercado mantendo boas opções.","Bom sinal. Adiciona outra característica para tornar a procura mais distinta.","O perfil ideal está a tornar-se específico.","Esta combinação é rara — uma boa oportunidade de descoberta."]}
+ const T={
+ en:{mode:"LIVE TALENT DISCOVERY",back:"Back",kicker:"TUNE YOUR RADAR",title:"Who are you looking for?",copy:"Build the person you have in mind. Watch the talent world respond.",role:"ROLE",where:"WHERE",must:"MUST HAVE",nice:"NICE TO HAVE",words:"IN YOUR OWN WORDS · OPTIONAL",note:"e.g. calm under pressure, modern service style…",discover:"Discover people",signals:"people in range",surfaced:"WHY THIS PERSON SURFACED",p1:"Led teams of 20+",p2:"Premium dining experience",p3:"Strong wine knowledge",explore:"Worth exploring:",gap:"career progression and next-step intent.",view:"Explore Fyndset",legend:"Each signal is a person, not an application.",traits:["Team builder","Fine dining","High volume","Wine knowledge","Opening experience","Luxury hospitality"],niceTraits:["International experience","Cost control","Boutique concepts","Hotel background"]},
+ pt:{mode:"DESCOBERTA DE TALENTO AO VIVO",back:"Voltar",kicker:"AFINA O TEU RADAR",title:"Quem procuras?",copy:"Constrói a pessoa que tens em mente. Vê o mundo de talento responder.",role:"FUNÇÃO",where:"ONDE",must:"ESSENCIAL",nice:"BÓNUS",words:"PELAS TUAS PALAVRAS · OPCIONAL",note:"ex.: calma sob pressão, estilo de serviço moderno…",discover:"Descobrir pessoas",signals:"pessoas no radar",surfaced:"PORQUE ESTA PESSOA APARECEU",p1:"Liderou equipas com mais de 20 pessoas",p2:"Experiência em restauração premium",p3:"Forte conhecimento de vinhos",explore:"Vale a pena explorar:",gap:"progressão de carreira e o que procura a seguir.",view:"Explorar Fyndset",legend:"Cada sinal é uma pessoa, não uma candidatura.",traits:["Lidera equipas","Fine dining","Grande volume","Conhecimento de vinhos","Abertura de restaurantes","Hotelaria de luxo"],niceTraits:["Experiência internacional","Controlo de custos","Conceitos boutique","Experiência em hotelaria"]}
  };
- const state={role:"",loc:"",traits:[]};
- const L=()=>document.documentElement.lang==="pt"?"pt":"en";
- const c=()=>C[L()];
- function renderLang(){
-  document.querySelectorAll("[data-b]").forEach(el=>{let k=el.dataset.b;if(c()[k])el.textContent=c()[k]});
-  document.getElementById("b-note").placeholder=c().note;
-  document.querySelectorAll("#locations .b-option").forEach(b=>{if(b.dataset["val"+(L()==="pt"?"Pt":"En")]) b.textContent=b.dataset["val"+(L()==="pt"?"Pt":"En")]});
-  renderTraits(); renderSide();
+ let state={role:false,loc:false,must:0,nice:0};
+ const lang=()=>document.documentElement.lang==="pt"?"pt":"en", c=()=>T[lang()];
+ function makeTraits(id,arr,type){let box=document.getElementById(id);box.innerHTML="";arr.forEach(x=>{let b=document.createElement("button");b.className="ra-chip";b.textContent=x;b.onclick=()=>{b.classList.toggle("on");state[type]+=b.classList.contains("on")?1:-1;update()};box.appendChild(b)})}
+ function translate(){
+  document.querySelectorAll("[data-r]").forEach(el=>{let k=el.dataset.r;if(c()[k])el.textContent=c()[k]});
+  document.getElementById("ra-note").placeholder=c().note;
+  document.querySelectorAll("[data-en]").forEach(b=>b.textContent=b.dataset[lang()]);
+  makeTraits("ra-traits",c().traits,"must");makeTraits("ra-nice-traits",c().niceTraits,"nice");
  }
- function renderTraits(){
-  const box=document.getElementById("traits"); box.innerHTML="";
-  c().traits.forEach((t,i)=>{let b=document.createElement("button");b.className="b-option"+(state.traits.includes(i)?" selected":"");b.textContent=t;b.onclick=()=>{state.traits.includes(i)?state.traits=state.traits.filter(x=>x!==i):state.traits.push(i);renderTraits();renderSide();document.getElementById("traits-next").disabled=!state.traits.length};box.appendChild(b)});
- }
- function stage(n){document.querySelectorAll(".b-stage").forEach(x=>x.classList.toggle("active",x.dataset.stage==n))}
- function renderSide(){
-  document.getElementById("ideal-role").textContent=state.role||"—";
-  document.getElementById("ideal-loc").textContent=state.loc||c().chooseLoc;
-  const box=document.getElementById("ideal-traits");box.innerHTML="";
-  state.traits.forEach(i=>{let s=document.createElement("span");s.className="b-mini";s.textContent=c().traits[i];box.appendChild(s)});
-  let count=184;if(state.role)count=126;if(state.loc)count=76;count=Math.max(3,Math.round(count*Math.pow(.62,state.traits.length)));
-  document.getElementById("market-count").textContent=count;
-  document.getElementById("market-meter").style.width=Math.max(7,Math.min(100,count/184*100))+"%";
-  let ix=!state.role?0:!state.loc?0:Math.min(4,1+state.traits.length);
-  document.getElementById("market-insight").textContent=c().insights[ix];
- }
- function priorities(){
-  const box=document.getElementById("priorities");box.innerHTML="";
-  state.traits.slice(0,5).forEach((i,n)=>{let d=document.createElement("div");d.className="b-priority-row";d.innerHTML=`<span class="b-num">0${n+1}</span><strong>${c().traits[i]}</strong><span class="b-arrows">↕</span>`;box.appendChild(d)})
+ function update(){
+  if(state.role)document.getElementById("ra-location").classList.add("show");
+  if(state.loc)document.getElementById("ra-must").classList.add("show");
+  if(state.must)document.getElementById("ra-nice").classList.add("show");
+  if(state.must>=2){document.getElementById("ra-words").classList.add("show");document.getElementById("ra-discover").classList.add("show")}
+  let n=184;if(state.role)n=112;if(state.loc)n=68;n=Math.max(4,Math.round(n*Math.pow(.69,state.must)*Math.pow(.86,state.nice)));
+  document.getElementById("ra-count").textContent=n;
+  let keep=Math.max(1,6-Math.floor(state.must*.9)-Math.floor(state.nice*.4));
+  document.querySelectorAll(".ra-person").forEach((p,i)=>{p.classList.toggle("dim",i>=keep);p.classList.toggle("hot",i<Math.min(3,keep)&&state.must>=2)});
  }
  document.addEventListener("DOMContentLoaded",()=>{
-  renderLang();
-  document.getElementById("open-builder")?.addEventListener("click",()=>{document.getElementById("builder").classList.add("open");document.body.style.overflow="hidden";renderLang()});
-  document.getElementById("b-close").onclick=()=>{document.getElementById("builder").classList.remove("open");document.body.style.overflow=""};
-  document.querySelectorAll("#roles .b-option").forEach(b=>b.onclick=()=>{document.querySelectorAll("#roles .b-option").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");state.role=b.textContent.replace(" +","");document.getElementById("role-next").disabled=false;renderSide()});
-  document.getElementById("role-next").onclick=()=>stage(2);
-  document.querySelectorAll("#locations .b-option").forEach(b=>b.onclick=()=>{document.querySelectorAll("#locations .b-option").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");state.loc=b.textContent;document.getElementById("loc-next").disabled=false;renderSide()});
-  document.getElementById("loc-next").onclick=()=>stage(3);
-  document.getElementById("traits-next").onclick=()=>{priorities();stage(4)};
-  document.querySelectorAll("[data-prev]").forEach(b=>b.onclick=()=>stage(b.dataset.prev));
-  document.getElementById("find-people").onclick=()=>{document.getElementById("b-build").style.display="none";document.getElementById("b-results").classList.add("show");window.scrollTo({top:0,behavior:"smooth"})};
-  document.querySelector(".lang-switch")?.addEventListener("click",()=>setTimeout(()=>{if(state.loc==="Lisbon")state.loc="Lisboa";else if(state.loc==="Lisboa")state.loc="Lisbon";renderLang()},0));
+  translate();
+  document.getElementById("open-radar")?.addEventListener("click",()=>{document.getElementById("radar-app").classList.add("open");document.body.style.overflow="hidden";translate();update()});
+  document.getElementById("ra-close").onclick=()=>{document.getElementById("radar-app").classList.remove("open");document.body.style.overflow=""};
+  document.querySelectorAll("#ra-roles .ra-chip").forEach(b=>b.onclick=()=>{document.querySelectorAll("#ra-roles .ra-chip").forEach(x=>x.classList.remove("on"));b.classList.add("on");state.role=true;update()});
+  document.querySelectorAll("#ra-location .ra-chip").forEach(b=>b.onclick=()=>{document.querySelectorAll("#ra-location .ra-chip").forEach(x=>x.classList.remove("on"));b.classList.add("on");state.loc=true;update()});
+  document.querySelectorAll(".ra-person").forEach((p,i)=>p.onclick=()=>{if(p.classList.contains("dim"))return;let names=["Marta Silva ✓","Tiago Costa ✓","Inês Ferreira ✓","André Ramos ✓","Sara Lopes ✓","João Martins ✓"];let roles=["Restaurant Manager · Lisboa","Assistant F&B Manager · Cascais","Restaurant Manager · Lisboa","Operations Manager · Lisboa","F&B Manager · Porto","Bar Manager · Lisboa"];document.getElementById("rd-name").textContent=names[i];document.getElementById("rd-role").textContent=roles[i];document.getElementById("rd-img").src=p.querySelector("img").src;document.getElementById("ra-detail").classList.add("show")});
+  document.getElementById("ra-discover").onclick=()=>{document.querySelectorAll(".ra-person:not(.dim)")[0]?.click()};
+  document.querySelector(".lang-switch")?.addEventListener("click",()=>setTimeout(()=>{state.must=0;state.nice=0;translate();update()},0));
  });
 })();
 </script>
