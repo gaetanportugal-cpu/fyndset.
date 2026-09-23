@@ -135,7 +135,7 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
 <div class="sublead" data-t="sublead">For hospitality professionals and the companies looking for them.</div>
 <div class="actions">
   <div class="cta-wrap"><small data-t="proLabel">I’M A PROFESSIONAL</small><button class="btn"><span data-t="beFound">Be found</span><b>→</b></button></div>
-  <div class="cta-wrap"><small data-t="hireLabel">I’M HIRING</small><button class="btn" id="open-radar"><span data-t="findTalent">Find talent</span><b>→</b></button></div>
+  <div class="cta-wrap"><small data-t="hireLabel">I’M HIRING</small><button class="btn" id="open-world"><span data-t="findTalent">Find talent</span><b>→</b></button></div>
 </div>
 <div class="pillars">
   <div><small data-t="p1">SKILLS</small><strong data-t="p1t">What you can do</strong></div>
@@ -476,132 +476,134 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 <style>
-/* V5.2 — Talent Radar */
-.radar-app{position:fixed;inset:0;z-index:1500;display:none;overflow:hidden;background:#031c1f;color:#fff}
-.radar-app.open{display:block}
-.ra-bg{position:absolute;inset:0;background:radial-gradient(circle at 72% 48%,rgba(63,224,218,.08),transparent 33%),linear-gradient(120deg,#031c1f,#052528 58%,#031c1f)}
-.ra-nav{height:72px;padding:0 3.5vw;display:flex;align-items:center;position:relative;z-index:8;border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(14px)}
-.ra-logo{font-size:27px;font-weight:800;letter-spacing:-1.4px}.ra-logo i{color:var(--cyan);font-style:normal}
-.ra-mode{margin-left:30px;font-size:8px;letter-spacing:.17em;color:#789390;text-transform:uppercase}
-.ra-close{margin-left:auto;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.03);color:#fff;border-radius:999px;padding:9px 15px;cursor:pointer}
-.ra-layout{position:relative;z-index:2;height:calc(100vh - 72px);display:grid;grid-template-columns:365px 1fr}
-.ra-controls{padding:38px 28px 30px 3.5vw;border-right:1px solid rgba(255,255,255,.08);overflow:auto;background:rgba(3,28,31,.76);backdrop-filter:blur(18px)}
-.ra-kicker{font-size:8px;letter-spacing:.18em;color:var(--cyan);text-transform:uppercase;margin-bottom:11px}
-.ra-controls h2{font-size:37px;line-height:.98;letter-spacing:-.04em;margin:0 0 10px}.ra-copy{font-size:11px;line-height:1.5;color:#8fa7a4;margin-bottom:27px}
-.ra-group{margin-bottom:23px}.ra-label{font-size:8px;letter-spacing:.12em;color:#6f8986;text-transform:uppercase;margin-bottom:9px}
-.ra-options{display:flex;flex-wrap:wrap;gap:7px}.ra-chip{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.035);color:#d7e3e1;border-radius:999px;padding:8px 11px;font-size:9.5px;cursor:pointer;transition:.18s}
-.ra-chip:hover{border-color:rgba(63,224,218,.5)}.ra-chip.on{background:rgba(63,224,218,.13);border-color:var(--cyan);color:#fff}.ra-chip.on:before{content:"✓ ";color:var(--cyan)}
-.ra-tier{display:none}.ra-tier.show{display:block;animation:raIn .25s ease}@keyframes raIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
-.ra-text{width:100%;box-sizing:border-box;border:1px solid rgba(255,255,255,.11);border-radius:12px;background:rgba(255,255,255,.025);color:#fff;padding:11px;font:inherit;font-size:10px;outline:none}
-.ra-discover{width:100%;border:0;border-radius:999px;background:var(--cyan);color:#052326;font-weight:750;padding:13px 17px;cursor:pointer;margin-top:3px}
-.ra-world{position:relative;overflow:hidden;min-width:0}
-.ra-grid{position:absolute;inset:0;opacity:.15;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(circle at center,#000,transparent 75%)}
-.ra-rings{position:absolute;left:54%;top:49%;width:min(64vw,720px);aspect-ratio:1;transform:translate(-50%,-50%);border:1px solid rgba(63,224,218,.15);border-radius:50%}
-.ra-rings:before,.ra-rings:after{content:"";position:absolute;border:1px solid rgba(63,224,218,.12);border-radius:50%;inset:15%}.ra-rings:after{inset:32%}
-.ra-sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 78%,rgba(63,224,218,.12) 92%,transparent 100%);animation:sweep 6s linear infinite}@keyframes sweep{to{transform:rotate(360deg)}}
-.ra-center{position:absolute;left:54%;top:49%;width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 22px var(--cyan)}
-.ra-status{position:absolute;left:32px;top:28px}.ra-status b{display:block;font-size:35px;letter-spacing:-.05em}.ra-status span{font-size:8px;letter-spacing:.14em;color:#7d9693;text-transform:uppercase}
-.ra-person{position:absolute;transform:translate(-50%,-50%);transition:opacity .45s,filter .45s,transform .45s;cursor:pointer}
-.ra-person.dim{opacity:.10;filter:blur(2px);transform:translate(-50%,-50%) scale(.82)}.ra-person.hot{transform:translate(-50%,-50%) scale(1.08)}
-.ra-avatar{width:58px;height:58px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.55);box-shadow:0 8px 30px rgba(0,0,0,.32)}
-.ra-pulse{position:absolute;width:72px;height:72px;border-radius:50%;border:1px solid rgba(63,224,218,.35);left:50%;top:29px;transform:translate(-50%,-50%);animation:pulse 2.6s ease-out infinite}@keyframes pulse{0%{transform:translate(-50%,-50%) scale(.65);opacity:.8}100%{transform:translate(-50%,-50%) scale(1.5);opacity:0}}
-.ra-tag{position:absolute;left:50%;top:66px;transform:translateX(-50%);white-space:nowrap;text-align:center;background:rgba(3,28,31,.88);border:1px solid rgba(255,255,255,.13);border-radius:10px;padding:6px 8px;backdrop-filter:blur(8px)}
-.ra-tag b{font-size:9.5px;display:block}.ra-tag span{font-size:7.5px;color:#8fa8a5}
-.ra-detail{position:absolute;right:25px;bottom:24px;width:310px;border:1px solid rgba(255,255,255,.15);border-radius:18px;background:rgba(4,31,34,.9);backdrop-filter:blur(20px);padding:18px;opacity:0;transform:translateY(10px);pointer-events:none;transition:.25s;z-index:7}
-.ra-detail.show{opacity:1;transform:none;pointer-events:auto}.ra-detail-top{display:flex;gap:11px;align-items:center}.ra-detail img{width:46px;height:46px;border-radius:50%;object-fit:cover}.ra-detail h3{font-size:14px;margin:0}.ra-detail .role{font-size:9px;color:#8ea5a2;margin-top:3px}.ra-why{font-size:7px;letter-spacing:.14em;color:var(--cyan);margin:15px 0 9px}.ra-proof{display:grid;gap:6px;font-size:9.5px;color:#d2dfdd}.ra-proof div:before{content:"✓";color:var(--cyan);margin-right:6px}.ra-explore{font-size:8.5px;color:#839b98;margin-top:12px;padding:9px;border-radius:9px;background:rgba(255,255,255,.035)}.ra-view{display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.08);margin-top:13px;padding-top:11px;font-size:9px}.ra-view i{font-style:normal;color:var(--cyan)}
-.ra-legend{position:absolute;left:30px;bottom:25px;font-size:8px;color:#68827f}.ra-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--cyan);margin-right:6px}
-@media(max-width:800px){.radar-app{overflow:auto}.ra-layout{height:auto;min-height:calc(100vh - 72px);grid-template-columns:1fr}.ra-controls{border-right:0;padding:28px 5vw}.ra-world{height:620px}.ra-detail{right:4vw;width:calc(92vw - 36px)}.ra-mode{display:none}}
+/* FYNDSET V5.3 — immersive Talent World */
+.tw{position:fixed;inset:0;z-index:1800;display:none;overflow:hidden;background:#031b1e;color:#fff}
+.tw.open{display:block}
+.tw-bg{position:absolute;inset:0;background:
+ radial-gradient(circle at 62% 46%,rgba(40,155,151,.15),transparent 22%),
+ radial-gradient(circle at 78% 18%,rgba(63,224,218,.08),transparent 26%),
+ linear-gradient(125deg,#021719 0%,#042326 55%,#031b1e 100%)}
+.tw-grain{position:absolute;inset:0;opacity:.16;pointer-events:none;background-image:
+ linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:58px 58px;
+ mask-image:radial-gradient(circle at 60% 50%,black,transparent 82%)}
+.tw-nav{height:74px;display:flex;align-items:center;padding:0 3.2vw;position:relative;z-index:20;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(2,23,25,.5);backdrop-filter:blur(18px)}
+.tw-logo{font-size:28px;font-weight:850;letter-spacing:-1.6px}.tw-logo i{font-style:normal;color:var(--cyan)}
+.tw-mode{margin-left:28px;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#78928f}
+.tw-close{margin-left:auto;border:1px solid rgba(255,255,255,.15);border-radius:999px;background:rgba(255,255,255,.025);color:#fff;padding:9px 15px;cursor:pointer}
+.tw-body{height:calc(100vh - 74px);position:relative;z-index:3;display:grid;grid-template-columns:315px 1fr}
+.tw-filter{padding:32px 24px 25px 3.2vw;border-right:1px solid rgba(255,255,255,.07);background:linear-gradient(90deg,rgba(2,23,25,.88),rgba(2,23,25,.66));backdrop-filter:blur(18px);overflow:auto;z-index:8}
+.tw-kicker{font-size:8px;letter-spacing:.18em;color:var(--cyan);text-transform:uppercase;margin-bottom:10px}
+.tw-filter h2{font-size:33px;line-height:1;letter-spacing:-.04em;margin:0 0 10px}.tw-sub{font-size:10.5px;line-height:1.55;color:#8ca4a1;margin-bottom:27px}
+.tw-group{margin-bottom:21px}.tw-label{font-size:7.5px;letter-spacing:.14em;color:#66817e;text-transform:uppercase;margin-bottom:9px}
+.tw-chips{display:flex;gap:7px;flex-wrap:wrap}.tw-chip{border:1px solid rgba(255,255,255,.13);border-radius:999px;background:rgba(255,255,255,.028);color:#cbd9d7;padding:7px 10px;font-size:9px;cursor:pointer;transition:.2s}
+.tw-chip:hover{border-color:rgba(63,224,218,.5)}.tw-chip.on{background:rgba(63,224,218,.11);border-color:rgba(63,224,218,.7);color:#fff}.tw-chip.on:before{content:"● ";font-size:6px;color:var(--cyan)}
+.tw-discover{width:100%;border:0;border-radius:999px;background:var(--cyan);color:#052326;padding:12px;font-weight:750;cursor:pointer;margin-top:2px}
+.tw-world{position:relative;overflow:hidden}
+.tw-radar{position:absolute;left:54%;top:51%;width:min(68vw,790px);aspect-ratio:1;transform:translate(-50%,-50%);border:1px solid rgba(63,224,218,.11);border-radius:50%}
+.tw-radar:before,.tw-radar:after{content:"";position:absolute;border:1px solid rgba(63,224,218,.085);border-radius:50%;inset:18%}.tw-radar:after{inset:36%}
+.tw-axis-x,.tw-axis-y{position:absolute;background:rgba(63,224,218,.055)}.tw-axis-x{height:1px;left:8%;right:8%;top:50%}.tw-axis-y{width:1px;top:8%;bottom:8%;left:50%}
+.tw-sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 25deg,transparent 0 80%,rgba(63,224,218,.075) 92%,transparent 100%);animation:twsweep 9s linear infinite}@keyframes twsweep{to{transform:rotate(360deg)}}
+.tw-core{position:absolute;left:54%;top:51%;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 25px rgba(63,224,218,.85)}
+.tw-head{position:absolute;left:32px;top:27px;z-index:6}.tw-head .small{font-size:8px;letter-spacing:.17em;color:#718b88;text-transform:uppercase}.tw-head strong{display:block;font-size:35px;letter-spacing:-.045em;margin-top:4px}.tw-head p{font-size:9.5px;color:#819a97;margin:5px 0 0}
+.tw-fynd{position:absolute;right:26px;top:25px;width:245px;padding:15px 16px;border:1px solid rgba(255,255,255,.11);border-radius:16px;background:rgba(3,29,32,.58);backdrop-filter:blur(14px);z-index:6}
+.tw-fynd-label{font-size:7px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase}.tw-fynd-role{font-size:13px;font-weight:700;margin:8px 0 3px}.tw-fynd-loc{font-size:8.5px;color:#809a97}.tw-fynd-signals{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}.tw-mini{font-size:7.5px;padding:5px 7px;border:1px solid rgba(63,224,218,.18);border-radius:999px;color:#bad1ce;background:rgba(63,224,218,.05)}
+.tw-person{position:absolute;transform:translate(-50%,-50%);z-index:4;cursor:pointer;transition:left .7s cubic-bezier(.2,.8,.2,1),top .7s cubic-bezier(.2,.8,.2,1),opacity .5s,filter .5s,transform .5s}
+.tw-person.fade{opacity:.10;filter:blur(2px);transform:translate(-50%,-50%) scale(.72);pointer-events:none}.tw-person.focus{transform:translate(-50%,-50%) scale(1.1)}
+.tw-person img{display:block;width:64px;height:64px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.55);box-shadow:0 15px 45px rgba(0,0,0,.35)}
+.tw-person .halo{position:absolute;left:32px;top:32px;width:78px;height:78px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(63,224,218,.28);animation:twpulse 3s ease-out infinite}@keyframes twpulse{0%{transform:translate(-50%,-50%) scale(.72);opacity:.8}100%{transform:translate(-50%,-50%) scale(1.55);opacity:0}}
+.tw-person .name{position:absolute;left:50%;top:72px;transform:translateX(-50%);white-space:nowrap;text-align:center;padding:6px 9px;border-radius:9px;background:rgba(2,23,25,.8);border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(10px)}
+.tw-person .name b{display:block;font-size:9px}.tw-person .name span{font-size:7px;color:#819a97}
+.tw-person .traits{display:none;position:absolute;left:50%;top:112px;transform:translateX(-50%);white-space:nowrap;gap:4px}.tw-person:hover .traits{display:flex}.tw-person .traits i{font-style:normal;font-size:6.5px;border:1px solid rgba(63,224,218,.18);border-radius:999px;padding:4px 6px;background:rgba(3,29,32,.85);color:#a9c6c2}
+.tw-card{position:absolute;right:25px;bottom:23px;width:335px;border:1px solid rgba(255,255,255,.14);border-radius:19px;background:rgba(3,29,32,.91);backdrop-filter:blur(22px);padding:18px;z-index:12;opacity:0;transform:translateY(12px);pointer-events:none;transition:.25s}.tw-card.show{opacity:1;transform:none;pointer-events:auto}
+.tw-card-top{display:flex;align-items:center;gap:11px}.tw-card-top img{width:48px;height:48px;border-radius:50%;object-fit:cover}.tw-card h3{font-size:15px;margin:0}.tw-card-role{font-size:8.5px;color:#8da5a2;margin-top:3px}.tw-why{font-size:7px;letter-spacing:.15em;color:var(--cyan);margin:15px 0 9px}.tw-proof{display:grid;gap:6px;font-size:9px;color:#d1dfdd}.tw-proof div:before{content:"◎";color:var(--cyan);margin-right:7px}.tw-momentum{margin-top:13px;padding:10px;border-radius:10px;background:rgba(255,255,255,.035)}.tw-momentum label{display:block;font-size:6.5px;letter-spacing:.12em;color:#6f8986;text-transform:uppercase;margin-bottom:5px}.tw-momentum div{font-size:8.5px;color:#b7cac7}.tw-momentum b{color:#fff}.tw-open{font-size:8px;color:#829b98;margin-top:10px}.tw-open span{color:#c6d7d4}.tw-view{margin-top:13px;padding-top:11px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;font-size:9px}.tw-view b{color:var(--cyan)}
+.tw-note{position:absolute;left:28px;bottom:22px;font-size:7px;color:#597471}
+@media(max-width:820px){.tw{overflow:auto}.tw-body{height:auto;grid-template-columns:1fr}.tw-filter{padding:26px 5vw;border-right:0}.tw-world{height:650px}.tw-fynd{right:4vw;top:20px}.tw-card{right:4vw;width:calc(92vw - 36px)}.tw-mode{display:none}}
 </style>
 
-<section class="radar-app" id="radar-app" aria-hidden="true">
-<div class="ra-bg"></div>
-<header class="ra-nav"><div class="ra-logo">fyndset<i>.</i></div><div class="ra-mode" data-r="mode">LIVE TALENT DISCOVERY</div><button class="ra-close" id="ra-close">← <span data-r="back">Back</span></button></header>
-<div class="ra-layout">
- <aside class="ra-controls">
-  <div class="ra-kicker" data-r="kicker">TUNE YOUR RADAR</div>
-  <h2 data-r="title">Who are you looking for?</h2>
-  <div class="ra-copy" data-r="copy">Build the person you have in mind. Watch the talent world respond.</div>
+<section class="tw" id="tw" aria-hidden="true">
+<div class="tw-bg"></div><div class="tw-grain"></div>
+<header class="tw-nav"><div class="tw-logo">fyndset<i>.</i></div><div class="tw-mode" data-w="mode">TALENT WORLD · LIVE DISCOVERY</div><button class="tw-close" id="tw-close">← <span data-w="back">Back</span></button></header>
+<div class="tw-body">
+ <aside class="tw-filter">
+  <div class="tw-kicker" data-w="tune">TUNE THE RADAR</div>
+  <h2 data-w="title">Who matters?</h2>
+  <div class="tw-sub" data-w="sub">Describe the person through signals. The world rearranges around your Fynd.</div>
 
-  <div class="ra-group">
-   <div class="ra-label" data-r="role">ROLE</div>
-   <div class="ra-options" id="ra-roles"><button class="ra-chip">Restaurant Manager</button><button class="ra-chip">F&B Manager</button><button class="ra-chip">Head Chef</button><button class="ra-chip">Bar Manager</button></div>
-  </div>
-  <div class="ra-group ra-tier" id="ra-location">
-   <div class="ra-label" data-r="where">WHERE</div>
-   <div class="ra-options"><button class="ra-chip" data-en="Lisbon" data-pt="Lisboa">Lisbon</button><button class="ra-chip">Porto</button><button class="ra-chip">Algarve</button></div>
-  </div>
-  <div class="ra-group ra-tier" id="ra-must">
-   <div class="ra-label" data-r="must">MUST HAVE</div>
-   <div class="ra-options" id="ra-traits"></div>
-  </div>
-  <div class="ra-group ra-tier" id="ra-nice">
-   <div class="ra-label" data-r="nice">NICE TO HAVE</div>
-   <div class="ra-options" id="ra-nice-traits"></div>
-  </div>
-  <div class="ra-group ra-tier" id="ra-words">
-   <div class="ra-label" data-r="words">IN YOUR OWN WORDS · OPTIONAL</div>
-   <input class="ra-text" id="ra-note">
-  </div>
-  <button class="ra-discover ra-tier" id="ra-discover"><span data-r="discover">Discover people</span> →</button>
+  <div class="tw-group"><div class="tw-label" data-w="role">ROLE</div><div class="tw-chips" id="tw-roles"><button class="tw-chip">Restaurant Manager</button><button class="tw-chip">F&B Manager</button><button class="tw-chip">Head Chef</button><button class="tw-chip">Bar Manager</button></div></div>
+  <div class="tw-group"><div class="tw-label" data-w="where">WHERE</div><div class="tw-chips" id="tw-locs"><button class="tw-chip" data-en="Lisbon" data-pt="Lisboa">Lisbon</button><button class="tw-chip">Porto</button><button class="tw-chip">Algarve</button></div></div>
+  <div class="tw-group"><div class="tw-label" data-w="must">ESSENTIAL SIGNALS</div><div class="tw-chips" id="tw-signals"></div></div>
+  <div class="tw-group"><div class="tw-label" data-w="bonus">BONUS SIGNALS</div><div class="tw-chips" id="tw-bonus"></div></div>
+  <button class="tw-discover" id="tw-discover"><span data-w="discover">Surface people</span> →</button>
  </aside>
 
- <main class="ra-world">
-  <div class="ra-grid"></div><div class="ra-rings"><div class="ra-sweep"></div></div><div class="ra-center"></div>
-  <div class="ra-status"><b id="ra-count">184</b><span data-r="signals">people in range</span></div>
+ <main class="tw-world">
+  <div class="tw-radar"><div class="tw-axis-x"></div><div class="tw-axis-y"></div><div class="tw-sweep"></div></div><div class="tw-core"></div>
+  <div class="tw-head"><span class="small" data-w="surfaced">PEOPLE SURFACED</span><strong><span id="tw-count">18</span></strong><p data-w="range">from 114 people currently in range</p></div>
+  <div class="tw-fynd"><div class="tw-fynd-label" data-w="your">YOUR FYND</div><div class="tw-fynd-role" id="tw-fynd-role">Restaurant Manager</div><div class="tw-fynd-loc" id="tw-fynd-loc">Lisboa</div><div class="tw-fynd-signals" id="tw-fynd-signals"></div></div>
 
-  <div class="ra-person" data-i="0" style="left:29%;top:27%"><div class="ra-pulse"></div><img class="ra-avatar" src="sofia.png"><div class="ra-tag"><b>Marta</b><span>Restaurant Manager</span></div></div>
-  <div class="ra-person" data-i="1" style="left:67%;top:24%"><div class="ra-pulse"></div><img class="ra-avatar" src="pedro.png"><div class="ra-tag"><b>Tiago</b><span>Assistant F&B Manager</span></div></div>
-  <div class="ra-person" data-i="2" style="left:76%;top:58%"><div class="ra-pulse"></div><img class="ra-avatar" src="sofia.png"><div class="ra-tag"><b>Inês</b><span>Restaurant Manager</span></div></div>
-  <div class="ra-person" data-i="3" style="left:39%;top:67%"><div class="ra-pulse"></div><img class="ra-avatar" src="pedro.png"><div class="ra-tag"><b>André</b><span>Operations Manager</span></div></div>
-  <div class="ra-person" data-i="4" style="left:56%;top:44%"><div class="ra-pulse"></div><img class="ra-avatar" src="sofia.png"><div class="ra-tag"><b>Sara</b><span>F&B Manager</span></div></div>
-  <div class="ra-person" data-i="5" style="left:86%;top:78%"><div class="ra-pulse"></div><img class="ra-avatar" src="pedro.png"><div class="ra-tag"><b>João</b><span>Bar Manager</span></div></div>
+  <div class="tw-person" data-p="0" style="left:52%;top:48%"><span class="halo"></span><img src="sofia.png"><div class="name"><b>Marta Silva</b><span>Restaurant Manager</span></div><div class="traits"><i>Leadership</i><i>Fine dining</i><i>Wine</i></div></div>
+  <div class="tw-person" data-p="1" style="left:68%;top:35%"><span class="halo"></span><img src="pedro.png"><div class="name"><b>Tiago Costa</b><span>Assistant F&B Manager</span></div><div class="traits"><i>Luxury</i><i>Leadership</i></div></div>
+  <div class="tw-person" data-p="2" style="left:38%;top:31%"><span class="halo"></span><img src="sofia.png"><div class="name"><b>Inês Ferreira</b><span>Restaurant Manager</span></div><div class="traits"><i>Volume</i><i>Opening</i></div></div>
+  <div class="tw-person" data-p="3" style="left:76%;top:59%"><span class="halo"></span><img src="pedro.png"><div class="name"><b>André Ramos</b><span>Operations Manager</span></div><div class="traits"><i>Scale</i><i>Teams</i></div></div>
+  <div class="tw-person" data-p="4" style="left:43%;top:69%"><span class="halo"></span><img src="sofia.png"><div class="name"><b>Sara Lopes</b><span>F&B Manager</span></div><div class="traits"><i>Luxury</i><i>Wine</i></div></div>
+  <div class="tw-person" data-p="5" style="left:85%;top:78%"><span class="halo"></span><img src="pedro.png"><div class="name"><b>João Martins</b><span>Bar Manager</span></div><div class="traits"><i>Wine</i><i>Opening</i></div></div>
+  <div class="tw-person" data-p="6" style="left:27%;top:55%"><span class="halo"></span><img src="sofia.png"><div class="name"><b>Leonor Alves</b><span>Restaurant Manager</span></div><div class="traits"><i>Fine dining</i><i>Teams</i></div></div>
+  <div class="tw-person" data-p="7" style="left:61%;top:76%"><span class="halo"></span><img src="pedro.png"><div class="name"><b>Rui Neves</b><span>F&B Supervisor</span></div><div class="traits"><i>Growth</i><i>Luxury</i></div></div>
 
-  <div class="ra-detail" id="ra-detail">
-   <div class="ra-detail-top"><img id="rd-img" src="sofia.png"><div><h3 id="rd-name">Marta Silva ✓</h3><div class="role" id="rd-role">Restaurant Manager · Lisboa</div></div></div>
-   <div class="ra-why" data-r="surfaced">WHY THIS PERSON SURFACED</div>
-   <div class="ra-proof"><div data-r="p1">Led teams of 20+</div><div data-r="p2">Premium dining experience</div><div data-r="p3">Strong wine knowledge</div></div>
-   <div class="ra-explore"><b data-r="explore">Worth exploring:</b> <span data-r="gap">career progression and next-step intent.</span></div>
-   <div class="ra-view"><span data-r="view">Explore Fyndset</span><i>→</i></div>
-  </div>
-  <div class="ra-legend"><span class="ra-dot"></span><span data-r="legend">Each signal is a person, not an application.</span></div>
+  <section class="tw-card" id="tw-card">
+   <div class="tw-card-top"><img id="tw-card-img" src="sofia.png"><div><h3 id="tw-card-name">Marta Silva ✓</h3><div class="tw-card-role" id="tw-card-role">Restaurant Manager · Lisboa</div></div></div>
+   <div class="tw-why" data-w="why">WHY MARTA SURFACED</div>
+   <div class="tw-proof"><div data-w="proof1">Leadership — proven across 2 roles</div><div data-w="proof2">Fine dining — 4 years</div><div data-w="proof3">Wine — WSET Level 2</div><div data-w="proof4">Opening — 2 concepts</div></div>
+   <div class="tw-momentum"><label data-w="momentum">CAREER MOMENTUM</label><div>Waiter → Head Waiter → Assistant RM → <b>Restaurant Manager</b></div></div>
+   <div class="tw-open"><span data-w="open">Open privately to:</span> <span data-w="intent">F&B leadership · Boutique luxury</span></div>
+   <div class="tw-view"><span data-w="explore">Explore Marta's Fyndset</span><b>→</b></div>
+  </section>
+  <div class="tw-note" data-w="demo">Prototype people and market counts are illustrative.</div>
  </main>
 </div>
 </section>
 
 <script>
 (()=>{
- const T={
- en:{mode:"LIVE TALENT DISCOVERY",back:"Back",kicker:"TUNE YOUR RADAR",title:"Who are you looking for?",copy:"Build the person you have in mind. Watch the talent world respond.",role:"ROLE",where:"WHERE",must:"MUST HAVE",nice:"NICE TO HAVE",words:"IN YOUR OWN WORDS · OPTIONAL",note:"e.g. calm under pressure, modern service style…",discover:"Discover people",signals:"people in range",surfaced:"WHY THIS PERSON SURFACED",p1:"Led teams of 20+",p2:"Premium dining experience",p3:"Strong wine knowledge",explore:"Worth exploring:",gap:"career progression and next-step intent.",view:"Explore Fyndset",legend:"Each signal is a person, not an application.",traits:["Team builder","Fine dining","High volume","Wine knowledge","Opening experience","Luxury hospitality"],niceTraits:["International experience","Cost control","Boutique concepts","Hotel background"]},
- pt:{mode:"DESCOBERTA DE TALENTO AO VIVO",back:"Voltar",kicker:"AFINA O TEU RADAR",title:"Quem procuras?",copy:"Constrói a pessoa que tens em mente. Vê o mundo de talento responder.",role:"FUNÇÃO",where:"ONDE",must:"ESSENCIAL",nice:"BÓNUS",words:"PELAS TUAS PALAVRAS · OPCIONAL",note:"ex.: calma sob pressão, estilo de serviço moderno…",discover:"Descobrir pessoas",signals:"pessoas no radar",surfaced:"PORQUE ESTA PESSOA APARECEU",p1:"Liderou equipas com mais de 20 pessoas",p2:"Experiência em restauração premium",p3:"Forte conhecimento de vinhos",explore:"Vale a pena explorar:",gap:"progressão de carreira e o que procura a seguir.",view:"Explorar Fyndset",legend:"Cada sinal é uma pessoa, não uma candidatura.",traits:["Lidera equipas","Fine dining","Grande volume","Conhecimento de vinhos","Abertura de restaurantes","Hotelaria de luxo"],niceTraits:["Experiência internacional","Controlo de custos","Conceitos boutique","Experiência em hotelaria"]}
+ const D={
+ en:{mode:"TALENT WORLD · LIVE DISCOVERY",back:"Back",tune:"TUNE THE RADAR",title:"Who matters?",sub:"Describe the person through signals. The world rearranges around your Fynd.",role:"ROLE",where:"WHERE",must:"ESSENTIAL SIGNALS",bonus:"BONUS SIGNALS",discover:"Surface people",surfaced:"PEOPLE SURFACED",range:"from 114 people currently in range",your:"YOUR FYND",why:"WHY MARTA SURFACED",proof1:"Leadership — proven across 2 roles",proof2:"Fine dining — 4 years",proof3:"Wine — WSET Level 2",proof4:"Opening — 2 concepts",momentum:"CAREER MOMENTUM",open:"Open privately to:",intent:"F&B leadership · Boutique luxury",explore:"Explore Marta's Fyndset",demo:"Prototype people and market counts are illustrative.",signals:["Team leadership","Fine dining","High volume","Wine knowledge","Opening experience"],bonusSignals:["Luxury hospitality","International","Cost control","Boutique concepts"]},
+ pt:{mode:"MUNDO DE TALENTO · DESCOBERTA AO VIVO",back:"Voltar",tune:"AFINA O RADAR",title:"Quem importa?",sub:"Define a pessoa através de sinais. O mundo reorganiza-se à volta do teu Fynd.",role:"FUNÇÃO",where:"ONDE",must:"SINAIS ESSENCIAIS",bonus:"SINAIS BÓNUS",discover:"Descobrir pessoas",surfaced:"PESSOAS ENCONTRADAS",range:"entre 114 pessoas atualmente no radar",your:"O TEU FYND",why:"PORQUE A MARTA APARECEU",proof1:"Liderança — demonstrada em 2 funções",proof2:"Fine dining — 4 anos",proof3:"Vinhos — WSET Level 2",proof4:"Aberturas — 2 conceitos",momentum:"PROGRESSÃO DE CARREIRA",open:"Disponível em privado para:",intent:"Liderança F&B · Luxo boutique",explore:"Explorar o Fyndset da Marta",demo:"Pessoas e números de mercado fictícios para demonstração.",signals:["Liderança de equipas","Fine dining","Grande volume","Conhecimento de vinhos","Abertura de restaurantes"],bonusSignals:["Hotelaria de luxo","Internacional","Controlo de custos","Conceitos boutique"]}
  };
- let state={role:false,loc:false,must:0,nice:0};
- const lang=()=>document.documentElement.lang==="pt"?"pt":"en", c=()=>T[lang()];
- function makeTraits(id,arr,type){let box=document.getElementById(id);box.innerHTML="";arr.forEach(x=>{let b=document.createElement("button");b.className="ra-chip";b.textContent=x;b.onclick=()=>{b.classList.toggle("on");state[type]+=b.classList.contains("on")?1:-1;update()};box.appendChild(b)})}
- function translate(){
-  document.querySelectorAll("[data-r]").forEach(el=>{let k=el.dataset.r;if(c()[k])el.textContent=c()[k]});
-  document.getElementById("ra-note").placeholder=c().note;
-  document.querySelectorAll("[data-en]").forEach(b=>b.textContent=b.dataset[lang()]);
-  makeTraits("ra-traits",c().traits,"must");makeTraits("ra-nice-traits",c().niceTraits,"nice");
+ let state={role:"Restaurant Manager",loc:"Lisboa",signals:[],bonus:[]};
+ const lang=()=>document.documentElement.lang==="pt"?"pt":"en", d=()=>D[lang()];
+ function mk(id,arr,key){let el=document.getElementById(id);el.innerHTML="";arr.forEach((v,i)=>{let b=document.createElement("button");b.className="tw-chip";b.textContent=v;b.onclick=()=>{b.classList.toggle("on");let a=state[key],p=a.indexOf(i);p>=0?a.splice(p,1):a.push(i);update()};el.appendChild(b)})}
+ function tr(){
+   document.querySelectorAll("[data-w]").forEach(x=>{let k=x.dataset.w;if(d()[k])x.textContent=d()[k]});
+   document.querySelectorAll("[data-en]").forEach(x=>x.textContent=x.dataset[lang()]);
+   mk("tw-signals",d().signals,"signals");mk("tw-bonus",d().bonusSignals,"bonus");
+   state.signals=[];state.bonus=[];update();
  }
  function update(){
-  if(state.role)document.getElementById("ra-location").classList.add("show");
-  if(state.loc)document.getElementById("ra-must").classList.add("show");
-  if(state.must)document.getElementById("ra-nice").classList.add("show");
-  if(state.must>=2){document.getElementById("ra-words").classList.add("show");document.getElementById("ra-discover").classList.add("show")}
-  let n=184;if(state.role)n=112;if(state.loc)n=68;n=Math.max(4,Math.round(n*Math.pow(.69,state.must)*Math.pow(.86,state.nice)));
-  document.getElementById("ra-count").textContent=n;
-  let keep=Math.max(1,6-Math.floor(state.must*.9)-Math.floor(state.nice*.4));
-  document.querySelectorAll(".ra-person").forEach((p,i)=>{p.classList.toggle("dim",i>=keep);p.classList.toggle("hot",i<Math.min(3,keep)&&state.must>=2)});
+   document.getElementById("tw-fynd-role").textContent=state.role;
+   document.getElementById("tw-fynd-loc").textContent=state.loc;
+   let s=document.getElementById("tw-fynd-signals");s.innerHTML="";
+   state.signals.forEach(i=>{let x=document.createElement("span");x.className="tw-mini";x.textContent=d().signals[i];s.appendChild(x)});
+   state.bonus.forEach(i=>{let x=document.createElement("span");x.className="tw-mini";x.textContent=d().bonusSignals[i];s.appendChild(x)});
+   let selected=state.signals.length+state.bonus.length;
+   let visible=Math.max(3,8-Math.floor(state.signals.length*1.2)-Math.floor(state.bonus.length*.55));
+   document.getElementById("tw-count").textContent=selected?visible:18;
+   const pts=[[52,48],[68,35],[38,31],[76,59],[43,69],[85,78],[27,55],[61,76]];
+   document.querySelectorAll(".tw-person").forEach((p,i)=>{
+      p.classList.toggle("fade",selected>0 && i>=visible);
+      p.classList.toggle("focus",selected>=2 && i<Math.min(3,visible));
+      if(selected>=2 && i<visible){let dx=(pts[i][0]-54)*.72,dy=(pts[i][1]-51)*.72;p.style.left=(54+dx)+"%";p.style.top=(51+dy)+"%"}else{p.style.left=pts[i][0]+"%";p.style.top=pts[i][1]+"%"}
+   });
  }
  document.addEventListener("DOMContentLoaded",()=>{
-  translate();
-  document.getElementById("open-radar")?.addEventListener("click",()=>{document.getElementById("radar-app").classList.add("open");document.body.style.overflow="hidden";translate();update()});
-  document.getElementById("ra-close").onclick=()=>{document.getElementById("radar-app").classList.remove("open");document.body.style.overflow=""};
-  document.querySelectorAll("#ra-roles .ra-chip").forEach(b=>b.onclick=()=>{document.querySelectorAll("#ra-roles .ra-chip").forEach(x=>x.classList.remove("on"));b.classList.add("on");state.role=true;update()});
-  document.querySelectorAll("#ra-location .ra-chip").forEach(b=>b.onclick=()=>{document.querySelectorAll("#ra-location .ra-chip").forEach(x=>x.classList.remove("on"));b.classList.add("on");state.loc=true;update()});
-  document.querySelectorAll(".ra-person").forEach((p,i)=>p.onclick=()=>{if(p.classList.contains("dim"))return;let names=["Marta Silva ✓","Tiago Costa ✓","Inês Ferreira ✓","André Ramos ✓","Sara Lopes ✓","João Martins ✓"];let roles=["Restaurant Manager · Lisboa","Assistant F&B Manager · Cascais","Restaurant Manager · Lisboa","Operations Manager · Lisboa","F&B Manager · Porto","Bar Manager · Lisboa"];document.getElementById("rd-name").textContent=names[i];document.getElementById("rd-role").textContent=roles[i];document.getElementById("rd-img").src=p.querySelector("img").src;document.getElementById("ra-detail").classList.add("show")});
-  document.getElementById("ra-discover").onclick=()=>{document.querySelectorAll(".ra-person:not(.dim)")[0]?.click()};
-  document.querySelector(".lang-switch")?.addEventListener("click",()=>setTimeout(()=>{state.must=0;state.nice=0;translate();update()},0));
+  tr();
+  document.getElementById("open-world")?.addEventListener("click",()=>{document.getElementById("tw").classList.add("open");document.body.style.overflow="hidden";tr()});
+  document.getElementById("tw-close").onclick=()=>{document.getElementById("tw").classList.remove("open");document.body.style.overflow=""};
+  document.querySelectorAll("#tw-roles .tw-chip").forEach(b=>b.onclick=()=>{document.querySelectorAll("#tw-roles .tw-chip").forEach(x=>x.classList.remove("on"));b.classList.add("on");state.role=b.textContent;update()});
+  document.querySelectorAll("#tw-locs .tw-chip").forEach(b=>b.onclick=()=>{document.querySelectorAll("#tw-locs .tw-chip").forEach(x=>x.classList.remove("on"));b.classList.add("on");state.loc=b.textContent;update()});
+  document.querySelectorAll(".tw-person").forEach((p,i)=>p.onclick=()=>{if(p.classList.contains("fade"))return;let names=["Marta Silva ✓","Tiago Costa ✓","Inês Ferreira ✓","André Ramos ✓","Sara Lopes ✓","João Martins ✓","Leonor Alves ✓","Rui Neves ✓"];let roles=["Restaurant Manager · Lisboa","Assistant F&B Manager · Cascais","Restaurant Manager · Lisboa","Operations Manager · Lisboa","F&B Manager · Porto","Bar Manager · Lisboa","Restaurant Manager · Cascais","F&B Supervisor · Lisboa"];document.getElementById("tw-card-name").textContent=names[i];document.getElementById("tw-card-role").textContent=roles[i];document.getElementById("tw-card-img").src=p.querySelector("img").src;document.getElementById("tw-card").classList.add("show")});
+  document.getElementById("tw-discover").onclick=()=>document.querySelector(".tw-person:not(.fade)")?.click();
+  document.querySelector(".lang-switch")?.addEventListener("click",()=>setTimeout(()=>{state.loc=lang()==="pt"?"Lisboa":"Lisbon";tr()},0));
  });
 })();
 </script>
