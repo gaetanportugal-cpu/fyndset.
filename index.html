@@ -136,6 +136,11 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
  <div class="line"></div><div class="radar"><i></i><i></i><i></i><b></b></div>
 </div>
 <div class="real" data-i18n-html="hero.real">REAL PEOPLE.<br>REAL OPPORTUNITIES.</div>
+<div class="v419-teaser">
+<small data-v419="teaser.label">LOOKING FOR</small>
+<strong data-v419="teaser.role">Restaurant Manager · Lisbon</strong>
+<span data-v419="teaser.matches">18 matching professionals →</span>
+</div>
 </section>
 <section class="mobile"><h2 data-i18n="mobile.title">What brings you here?</h2><button><span data-i18n="hero.beFound">Be found</span> <b>→</b></button><button><span data-i18n="hero.findTalent">Find talent</span> <b>→</b></button></section></main>
 <style>
@@ -521,6 +526,114 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(polish, 60);
     }
   }, true);
+});
+</script>
+
+
+<style>
+/* V4.19 — homepage freeze candidate */
+.copy h1{
+  font-size:clamp(50px,4.95vw,78px)!important;
+  line-height:.92!important;
+}
+.actions .btn:first-of-type{
+  background:#fff!important;
+  color:#092629!important;
+  border-color:#fff!important;
+}
+.actions .btn:first-of-type b{color:#092629!important}
+
+/* Definitive product teaser; hide the old legacy tagline if still present */
+.real{display:none!important}
+.v419-teaser{
+  position:absolute;right:1.5%;bottom:6.5%;z-index:25;width:250px;
+  padding:14px 16px;border:1px solid #ffffff45;border-radius:15px;
+  background:rgba(3,28,31,.68);backdrop-filter:blur(18px);
+  box-shadow:0 14px 38px #0003;pointer-events:auto
+}
+.v419-teaser small{display:block;font-size:6px;letter-spacing:.18em;color:#9fc5c0}
+.v419-teaser strong{display:block;font-size:10.5px;margin:6px 0 8px;color:#fff}
+.v419-teaser span{display:block;font-size:8px;color:var(--cyan)}
+@media(max-width:760px){.v419-teaser{display:none!important}}
+</style>
+
+<script>
+/* V4.19 — final hero semantics: two talent profiles + one employer */
+document.addEventListener('DOMContentLoaded', () => {
+  const COPY419 = {
+    en:{
+      label:'LOOKING FOR', role:'Restaurant Manager · Lisbon', matches:'18 matching professionals →',
+      miguelRole:'Hospitality Group CEO', miguelStatus:'Looking for talent',
+      pedroStatus:'Open to opportunities', sofiaStatus:'Open to opportunities'
+    },
+    pt:{
+      label:'À PROCURA DE', role:'Restaurant Manager · Lisboa', matches:'18 profissionais correspondem →',
+      miguelRole:'CEO de Grupo Hoteleiro', miguelStatus:'À procura de talento',
+      pedroStatus:'Disponível para oportunidades', sofiaStatus:'Disponível para oportunidades'
+    }
+  };
+
+  function apply419(){
+    const pt=(document.documentElement.lang||'').toLowerCase().startsWith('pt');
+    const c=COPY419[pt?'pt':'en'];
+
+    const teaser=document.querySelector('.v419-teaser');
+    if(teaser){
+      teaser.querySelector('[data-v419="teaser.label"]').textContent=c.label;
+      teaser.querySelector('[data-v419="teaser.role"]').textContent=c.role;
+      teaser.querySelector('[data-v419="teaser.matches"]').textContent=c.matches;
+    }
+
+    const pedro=document.querySelector('.pedro-id');
+    const sofia=document.querySelector('.sofia-id');
+    const miguel=document.querySelector('.miguel-id');
+
+    if(pedro){
+      const s=pedro.querySelector('.status'); if(s){s.textContent=c.pedroStatus;s.classList.remove('hiring');s.classList.add('available')}
+    }
+    if(sofia){
+      const s=sofia.querySelector('.status'); if(s){s.textContent=c.sofiaStatus;s.classList.remove('hiring');s.classList.add('available')}
+    }
+    if(miguel){
+      const r=miguel.querySelector('.role'); if(r) r.textContent=c.miguelRole;
+      const s=miguel.querySelector('.status'); if(s){s.textContent=c.miguelStatus;s.classList.remove('available');s.classList.add('hiring')}
+    }
+  }
+
+  apply419();
+  document.addEventListener('click', e=>{
+    if(e.target.closest('.links.push,[data-lang-switch],.lang-switch')){
+      setTimeout(apply419,0); setTimeout(apply419,80);
+    }
+  },true);
+});
+</script>
+
+
+<script>
+/* V4.20 — Portuguese terminology/copy polish */
+document.addEventListener('DOMContentLoaded', () => {
+  function applyV420(){
+    const pt=(document.documentElement.lang||'').toLowerCase().startsWith('pt');
+    if(!pt) return;
+
+    const eyebrow=document.querySelector('.eyebrow');
+    if(eyebrow) eyebrow.innerHTML='TALENTO EM <b>HOSPITALIDADE.</b> REINVENTADO.';
+
+    const lead=document.querySelector('.lead');
+    if(lead) lead.textContent='Constrói o teu Fyndset. Sê descoberto pelo que realmente sabes fazer, não apenas pelo que está no teu CV.';
+
+    const sublead=document.querySelector('.sublead');
+    if(sublead) sublead.textContent='Para profissionais de hospitalidade e para as empresas que os procuram.';
+  }
+
+  applyV420();
+  document.addEventListener('click', e=>{
+    if(e.target.closest('.links.push,[data-lang-switch],.lang-switch')){
+      setTimeout(applyV420,0);
+      setTimeout(applyV420,80);
+    }
+  },true);
 });
 </script>
 
