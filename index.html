@@ -135,7 +135,7 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
 <div class="sublead" data-t="sublead">For hospitality professionals and the companies looking for them.</div>
 <div class="actions">
   <div class="cta-wrap"><small data-t="proLabel">I’M A PROFESSIONAL</small><button class="btn"><span data-t="beFound">Be found</span><b>→</b></button></div>
-  <div class="cta-wrap"><small data-t="hireLabel">I’M HIRING</small><button class="btn"><span data-t="findTalent">Find talent</span><b>→</b></button></div>
+  <div class="cta-wrap"><small data-t="hireLabel">I’M HIRING</small><button class="btn" id="open-builder"><span data-t="findTalent">Find talent</span><b>→</b></button></div>
 </div>
 <div class="pillars">
   <div><small data-t="p1">SKILLS</small><strong data-t="p1t">What you can do</strong></div>
@@ -471,6 +471,198 @@ document.addEventListener('DOMContentLoaded', () => {
       render(document.documentElement.lang === "pt" ? "en" : "pt");
     });
   });
+})();
+</script>
+
+
+<style>
+/* V5.1 — Build your ideal person */
+.builder{position:fixed;inset:0;z-index:1200;display:none;overflow:auto;background:#041c1f;color:#fff}
+.builder.open{display:block}
+.b-glow{position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 80% 10%,rgba(63,224,218,.13),transparent 30%),radial-gradient(circle at 10% 90%,rgba(255,255,255,.045),transparent 28%)}
+.b-nav{height:76px;padding:0 4vw;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,.08);position:relative;z-index:2;background:rgba(4,28,31,.7);backdrop-filter:blur(18px)}
+.b-logo{font-size:27px;font-weight:800;letter-spacing:-1.5px}.b-logo i{font-style:normal;color:var(--cyan)}
+.b-nav-title{margin-left:38px;font-size:10px;color:#87a09d;letter-spacing:.12em;text-transform:uppercase}
+.b-close{margin-left:auto;border:1px solid rgba(255,255,255,.18);background:transparent;color:#fff;border-radius:999px;padding:10px 16px;cursor:pointer}
+.b-shell{position:relative;z-index:2;width:min(1180px,92vw);margin:0 auto;padding:54px 0 90px;display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:52px}
+.b-kicker{font-size:9px;letter-spacing:.17em;color:var(--cyan);text-transform:uppercase;margin-bottom:14px}
+.b-main h2{font-size:clamp(43px,5vw,68px);line-height:.96;letter-spacing:-.045em;margin:0 0 14px}
+.b-desc{color:#9eb4b1;font-size:14px;line-height:1.55;margin-bottom:35px;max-width:650px}
+.b-stage{display:none;animation:fadein .25s ease}.b-stage.active{display:block}@keyframes fadein{from{opacity:.25;transform:translateY(5px)}to{opacity:1;transform:none}}
+.b-question{font-size:18px;font-weight:650;margin-bottom:15px}
+.b-options{display:flex;flex-wrap:wrap;gap:10px}
+.b-option{border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.045);color:#e9f1ef;border-radius:14px;padding:13px 16px;font:inherit;font-size:12px;cursor:pointer;transition:.18s}
+.b-option:hover,.b-option.selected{border-color:var(--cyan);background:rgba(63,224,218,.11);color:#fff;transform:translateY(-1px)}
+.b-option.selected:before{content:"✓ ";color:var(--cyan)}
+.b-next{display:inline-flex;align-items:center;gap:14px;margin-top:28px;border:0;border-radius:999px;background:var(--cyan);color:#062326;padding:14px 21px;font-weight:750;cursor:pointer}
+.b-next:disabled{opacity:.35;cursor:not-allowed}
+.b-secondary{border:0;background:none;color:#91aaa7;font-size:11px;margin-left:14px;cursor:pointer}
+.b-location{display:flex;gap:10px;flex-wrap:wrap}
+.b-free{width:min(620px,100%);margin-top:18px;border:1px solid rgba(255,255,255,.14);border-radius:16px;background:rgba(255,255,255,.035);padding:15px}
+.b-free textarea{width:100%;height:72px;border:0;outline:0;resize:none;background:transparent;color:#fff;font:inherit;font-size:12px;line-height:1.5}
+.b-free textarea::placeholder{color:#708a87}
+.b-priority{display:grid;gap:8px;max-width:620px}
+.b-priority-row{display:flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.04);padding:12px 14px}
+.b-num{color:var(--cyan);font-size:10px;width:22px}.b-priority-row strong{font-size:12px;font-weight:550}.b-arrows{margin-left:auto;color:#6e8986;font-size:11px}
+.b-side{position:sticky;top:105px;height:max-content;border:1px solid rgba(255,255,255,.14);border-radius:22px;background:rgba(255,255,255,.055);backdrop-filter:blur(18px);padding:22px;box-shadow:0 25px 70px rgba(0,0,0,.18)}
+.b-side-label{font-size:7px;letter-spacing:.19em;color:#7e9996;text-transform:uppercase}.b-ideal-role{font-size:21px;font-weight:700;margin:10px 0 3px}.b-ideal-loc{font-size:11px;color:#9db2af}
+.b-selected{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0}.b-mini{font-size:9px;padding:7px 9px;border-radius:999px;background:rgba(63,224,218,.09);border:1px solid rgba(63,224,218,.22);color:#dffbf8}
+.b-market{margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.09)}
+.b-market-label{font-size:8px;color:#819b98;text-transform:uppercase;letter-spacing:.13em}
+.b-count{font-size:44px;letter-spacing:-.05em;font-weight:700;margin-top:4px}.b-count span{font-size:11px;color:#9ab0ad;letter-spacing:0;font-weight:400}
+.b-meter{height:4px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden;margin:13px 0 9px}.b-meter i{display:block;height:100%;width:100%;background:var(--cyan);transition:.35s}
+.b-insight{font-size:10px;color:#8ea6a3;line-height:1.45}
+.b-results{display:none}.b-results.show{display:block}
+.b-results-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:17px}.b-results-head h3{font-size:27px;margin:0}.b-results-head span{font-size:10px;color:#7e9794}
+.b-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.b-card{border:1px solid rgba(255,255,255,.13);border-radius:19px;background:rgba(255,255,255,.045);padding:19px}
+.b-person{display:flex;align-items:center;gap:11px}.b-person img{width:46px;height:46px;border-radius:50%;object-fit:cover}.b-name{font-weight:700;font-size:14px}.b-role{font-size:10px;color:#9bb0ad;margin-top:3px}
+.b-surfaced{font-size:8px;letter-spacing:.14em;color:var(--cyan);margin:18px 0 10px}.b-proof{display:grid;gap:7px;font-size:10.5px;color:#d4e1df}.b-proof div:before{content:"✓";color:var(--cyan);margin-right:7px}
+.b-gap{margin-top:14px;border-radius:10px;background:rgba(255,255,255,.035);padding:10px;font-size:9px;color:#91aaa7}.b-gap b{color:#c7d7d5;font-weight:600}
+.b-view{margin-top:16px;padding-top:13px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;font-size:10px}.b-view i{font-style:normal;color:var(--cyan)}
+.b-demo{font-size:8px;color:#68817e;margin-top:12px}
+@media(max-width:850px){.b-shell{grid-template-columns:1fr;gap:28px;padding-top:35px}.b-side{position:relative;top:auto;order:-1}.b-nav-title{display:none}.b-cards{grid-template-columns:1fr}.b-main h2{font-size:45px}}
+</style>
+
+<section class="builder" id="builder" aria-hidden="true">
+<div class="b-glow"></div>
+<header class="b-nav">
+ <div class="b-logo">fyndset<i>.</i></div>
+ <div class="b-nav-title" data-b="navtitle">Talent discovery</div>
+ <button class="b-close" id="b-close">← <span data-b="back">Back</span></button>
+</header>
+
+<div class="b-shell">
+ <main class="b-main">
+  <div id="b-build">
+   <div class="b-kicker" data-b="kicker">BUILD YOUR IDEAL PERSON</div>
+   <h2 data-b="title">Who would you like to find?</h2>
+   <div class="b-desc" data-b="desc">Build the person you have in mind. Fyndset will show how the talent market responds as you go.</div>
+
+   <div class="b-stage active" data-stage="1">
+    <div class="b-question" data-b="qrole">Start with a role</div>
+    <div class="b-options" id="roles">
+     <button class="b-option">Restaurant Manager</button><button class="b-option">F&B Manager</button><button class="b-option">Head Chef</button><button class="b-option">Sous Chef</button><button class="b-option">Bar Manager</button><button class="b-option" data-b="other">Other +</button>
+    </div>
+    <button class="b-next" id="role-next" disabled><span data-b="continue">Continue</span> →</button>
+   </div>
+
+   <div class="b-stage" data-stage="2">
+    <div class="b-question" data-b="qloc">Where should they be?</div>
+    <div class="b-location b-options" id="locations">
+     <button class="b-option" data-val-en="Lisbon" data-val-pt="Lisboa">Lisbon</button><button class="b-option">Porto</button><button class="b-option">Algarve</button><button class="b-option" data-val-en="Anywhere" data-val-pt="Qualquer localização">Anywhere</button>
+    </div>
+    <button class="b-next" id="loc-next" disabled><span data-b="continue">Continue</span> →</button>
+    <button class="b-secondary" data-prev="1" data-b="previous">Previous</button>
+   </div>
+
+   <div class="b-stage" data-stage="3">
+    <div class="b-question" data-b="qtraits">What would make this person stand out?</div>
+    <div class="b-options" id="traits"></div>
+    <div class="b-free"><textarea id="b-note"></textarea></div>
+    <button class="b-next" id="traits-next" disabled><span data-b="prioritize">Prioritize what matters</span> →</button>
+    <button class="b-secondary" data-prev="2" data-b="previous">Previous</button>
+   </div>
+
+   <div class="b-stage" data-stage="4">
+    <div class="b-question" data-b="qpriority">What matters most?</div>
+    <div class="b-desc" style="margin-bottom:17px" data-b="prioritydesc">Your priorities influence who surfaces first.</div>
+    <div class="b-priority" id="priorities"></div>
+    <button class="b-next" id="find-people"><span data-b="find">Find my people</span> →</button>
+    <button class="b-secondary" data-prev="3" data-b="previous">Previous</button>
+   </div>
+  </div>
+
+  <section class="b-results" id="b-results">
+   <div class="b-kicker" data-b="discovery">YOUR DISCOVERY</div>
+   <div class="b-results-head"><h3 data-b="found">People worth knowing</h3><span data-b="explain">Shown for a reason, not a score</span></div>
+   <div class="b-cards">
+    <article class="b-card">
+     <div class="b-person"><img src="sofia.png"><div><div class="b-name">Marta Silva ✓</div><div class="b-role">Restaurant Manager · Lisboa</div></div></div>
+     <div class="b-surfaced" data-b="why1">WHY MARTA SURFACED</div>
+     <div class="b-proof"><div data-b="m1">Led teams of 20+</div><div data-b="m2">4 years in premium fine dining</div><div data-b="m3">Restaurant opening experience</div><div>WSET Level 2 · PT · EN · ES</div></div>
+     <div class="b-gap"><b data-b="explore">One thing to explore:</b> <span data-b="gap1">no luxury-hotel experience verified yet.</span></div>
+     <div class="b-view"><span data-b="view">View Fyndset</span><i>→</i></div>
+    </article>
+    <article class="b-card">
+     <div class="b-person"><img src="pedro.png"><div><div class="b-name">Tiago Costa ✓</div><div class="b-role">Assistant F&B Manager · Cascais</div></div></div>
+     <div class="b-surfaced" data-b="why2">WHY TIAGO SURFACED</div>
+     <div class="b-proof"><div data-b="t1">Luxury hotel restaurant background</div><div data-b="t2">Team leadership and service training</div><div data-b="t3">Strong wine knowledge</div><div>PT · EN</div></div>
+     <div class="b-gap"><b data-b="explore">One thing to explore:</b> <span data-b="gap2">less direct restaurant-opening experience.</span></div>
+     <div class="b-view"><span data-b="view">View Fyndset</span><i>→</i></div>
+    </article>
+   </div>
+   <div class="b-demo" data-b="demo">Prototype profiles and market counts are illustrative.</div>
+  </section>
+ </main>
+
+ <aside class="b-side">
+  <div class="b-side-label" data-b="ideal">YOUR FYND</div>
+  <div class="b-ideal-role" id="ideal-role">—</div>
+  <div class="b-ideal-loc" id="ideal-loc" data-b="chooseLoc">Choose a location</div>
+  <div class="b-selected" id="ideal-traits"></div>
+  <div class="b-market">
+   <div class="b-market-label" data-b="market">TALENT MARKET</div>
+   <div class="b-count"><b id="market-count">184</b> <span data-b="people">people</span></div>
+   <div class="b-meter"><i id="market-meter"></i></div>
+   <div class="b-insight" id="market-insight" data-b="marketStart">Start building your ideal person to explore the market.</div>
+  </div>
+ </aside>
+</div>
+</section>
+
+<script>
+(()=>{
+ const C={
+ en:{navtitle:"Talent discovery",back:"Back",kicker:"BUILD YOUR IDEAL PERSON",title:"Who would you like to find?",desc:"Build the person you have in mind. Fyndset will show how the talent market responds as you go.",qrole:"Start with a role",other:"Other +",continue:"Continue",qloc:"Where should they be?",previous:"Previous",qtraits:"What would make this person stand out?",note:"Can't describe it with choices? Tell Fyndset in your own words…",prioritize:"Prioritize what matters",qpriority:"What matters most?",prioritydesc:"Your priorities influence who surfaces first.",find:"Find my people",ideal:"YOUR FYND",chooseLoc:"Choose a location",market:"TALENT MARKET",people:"people",marketStart:"Start building your ideal person to explore the market.",discovery:"YOUR DISCOVERY",found:"People worth knowing",explain:"Shown for a reason, not a score",why1:"WHY MARTA SURFACED",why2:"WHY TIAGO SURFACED",m1:"Led teams of 20+",m2:"4 years in premium fine dining",m3:"Restaurant opening experience",t1:"Luxury hotel restaurant background",t2:"Team leadership and service training",t3:"Strong wine knowledge",explore:"One thing to explore:",gap1:"no luxury-hotel experience verified yet.",gap2:"less direct restaurant-opening experience.",view:"View Fyndset",demo:"Prototype profiles and market counts are illustrative.",
+ traits:["Leads teams","Fine dining","High volume","Strong in wine","Opened restaurants","Luxury hospitality","Cost control","International experience"],
+ insights:["A broad talent pool. Add what matters to you.","Location narrows the market while keeping options open.","Good signal. Add another trait to make the search more distinctive.","Your ideal profile is becoming specific.","This combination is rare — a strong discovery opportunity."]},
+ pt:{navtitle:"Descoberta de talento",back:"Voltar",kicker:"CONSTRÓI A PESSOA IDEAL",title:"Quem gostarias de encontrar?",desc:"Constrói a pessoa que tens em mente. O Fyndset mostra como o mercado de talento responde à medida que escolhes.",qrole:"Começa por uma função",other:"Outra +",continue:"Continuar",qloc:"Onde deve estar?",previous:"Anterior",qtraits:"O que faria esta pessoa destacar-se?",note:"Não consegues descrever só com escolhas? Explica ao Fyndset pelas tuas palavras…",prioritize:"Priorizar o que importa",qpriority:"O que é mais importante?",prioritydesc:"As tuas prioridades influenciam quem aparece primeiro.",find:"Encontrar as minhas pessoas",ideal:"O TEU FYND",chooseLoc:"Escolhe uma localização",market:"MERCADO DE TALENTO",people:"pessoas",marketStart:"Começa a construir a pessoa ideal para explorar o mercado.",discovery:"A TUA DESCOBERTA",found:"Pessoas que vale a pena conhecer",explain:"Mostradas por uma razão, não por uma pontuação",why1:"PORQUE A MARTA APARECEU",why2:"PORQUE O TIAGO APARECEU",m1:"Liderou equipas com mais de 20 pessoas",m2:"4 anos em fine dining premium",m3:"Experiência em abertura de restaurantes",t1:"Experiência em restauração de hotel de luxo",t2:"Liderança de equipas e formação de serviço",t3:"Forte conhecimento de vinhos",explore:"Algo a explorar:",gap1:"ainda sem experiência validada em hotelaria de luxo.",gap2:"menos experiência direta em abertura de restaurantes.",view:"Ver Fyndset",demo:"Perfis e números de mercado fictícios para demonstração.",
+ traits:["Lidera equipas","Fine dining","Grande volume","Forte em vinhos","Abriu restaurantes","Hotelaria de luxo","Controlo de custos","Experiência internacional"],
+ insights:["Um mercado amplo. Adiciona o que realmente importa.","A localização reduz o mercado mantendo boas opções.","Bom sinal. Adiciona outra característica para tornar a procura mais distinta.","O perfil ideal está a tornar-se específico.","Esta combinação é rara — uma boa oportunidade de descoberta."]}
+ };
+ const state={role:"",loc:"",traits:[]};
+ const L=()=>document.documentElement.lang==="pt"?"pt":"en";
+ const c=()=>C[L()];
+ function renderLang(){
+  document.querySelectorAll("[data-b]").forEach(el=>{let k=el.dataset.b;if(c()[k])el.textContent=c()[k]});
+  document.getElementById("b-note").placeholder=c().note;
+  document.querySelectorAll("#locations .b-option").forEach(b=>{if(b.dataset["val"+(L()==="pt"?"Pt":"En")]) b.textContent=b.dataset["val"+(L()==="pt"?"Pt":"En")]});
+  renderTraits(); renderSide();
+ }
+ function renderTraits(){
+  const box=document.getElementById("traits"); box.innerHTML="";
+  c().traits.forEach((t,i)=>{let b=document.createElement("button");b.className="b-option"+(state.traits.includes(i)?" selected":"");b.textContent=t;b.onclick=()=>{state.traits.includes(i)?state.traits=state.traits.filter(x=>x!==i):state.traits.push(i);renderTraits();renderSide();document.getElementById("traits-next").disabled=!state.traits.length};box.appendChild(b)});
+ }
+ function stage(n){document.querySelectorAll(".b-stage").forEach(x=>x.classList.toggle("active",x.dataset.stage==n))}
+ function renderSide(){
+  document.getElementById("ideal-role").textContent=state.role||"—";
+  document.getElementById("ideal-loc").textContent=state.loc||c().chooseLoc;
+  const box=document.getElementById("ideal-traits");box.innerHTML="";
+  state.traits.forEach(i=>{let s=document.createElement("span");s.className="b-mini";s.textContent=c().traits[i];box.appendChild(s)});
+  let count=184;if(state.role)count=126;if(state.loc)count=76;count=Math.max(3,Math.round(count*Math.pow(.62,state.traits.length)));
+  document.getElementById("market-count").textContent=count;
+  document.getElementById("market-meter").style.width=Math.max(7,Math.min(100,count/184*100))+"%";
+  let ix=!state.role?0:!state.loc?0:Math.min(4,1+state.traits.length);
+  document.getElementById("market-insight").textContent=c().insights[ix];
+ }
+ function priorities(){
+  const box=document.getElementById("priorities");box.innerHTML="";
+  state.traits.slice(0,5).forEach((i,n)=>{let d=document.createElement("div");d.className="b-priority-row";d.innerHTML=`<span class="b-num">0${n+1}</span><strong>${c().traits[i]}</strong><span class="b-arrows">↕</span>`;box.appendChild(d)})
+ }
+ document.addEventListener("DOMContentLoaded",()=>{
+  renderLang();
+  document.getElementById("open-builder")?.addEventListener("click",()=>{document.getElementById("builder").classList.add("open");document.body.style.overflow="hidden";renderLang()});
+  document.getElementById("b-close").onclick=()=>{document.getElementById("builder").classList.remove("open");document.body.style.overflow=""};
+  document.querySelectorAll("#roles .b-option").forEach(b=>b.onclick=()=>{document.querySelectorAll("#roles .b-option").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");state.role=b.textContent.replace(" +","");document.getElementById("role-next").disabled=false;renderSide()});
+  document.getElementById("role-next").onclick=()=>stage(2);
+  document.querySelectorAll("#locations .b-option").forEach(b=>b.onclick=()=>{document.querySelectorAll("#locations .b-option").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");state.loc=b.textContent;document.getElementById("loc-next").disabled=false;renderSide()});
+  document.getElementById("loc-next").onclick=()=>stage(3);
+  document.getElementById("traits-next").onclick=()=>{priorities();stage(4)};
+  document.querySelectorAll("[data-prev]").forEach(b=>b.onclick=()=>stage(b.dataset.prev));
+  document.getElementById("find-people").onclick=()=>{document.getElementById("b-build").style.display="none";document.getElementById("b-results").classList.add("show");window.scrollTo({top:0,behavior:"smooth"})};
+  document.querySelector(".lang-switch")?.addEventListener("click",()=>setTimeout(()=>{if(state.loc==="Lisbon")state.loc="Lisboa";else if(state.loc==="Lisboa")state.loc="Lisbon";renderLang()},0));
+ });
 })();
 </script>
 
