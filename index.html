@@ -13,9 +13,9 @@ background-image:url("./fyndset-hero-bg.png");
 background-repeat:no-repeat;
 background-size:cover;
 background-position:center center;
-transform:scale(1.035);
-animation:cinematicMove 22s ease-in-out infinite alternate;
-will-change:transform;
+
+
+
 }
 nav{height:86px;padding:0 3.2vw;display:flex;align-items:center;gap:36px;position:relative;z-index:20}.brand{font-size:29px;font-weight:850;letter-spacing:-1.7px;display:flex;align-items:center}.mark{width:27px;height:25px;margin-right:5px;position:relative}.mark:before,.mark:after{content:"";position:absolute;left:1px;height:8px;border-radius:9px 2px 9px 2px;transform:skew(-25deg)}.mark:before{top:3px;width:23px;background:#fff}.mark:after{top:14px;width:18px;background:var(--cyan)}.brand i{font-style:normal;color:var(--cyan)}
 .links{display:flex;gap:30px;font-size:11px}.push{margin-left:auto}.signin{padding:10px 20px;border:1px solid #ffffff6b;border-radius:999px}
@@ -39,8 +39,64 @@ linear-gradient(90deg,rgba(2,22,24,.76) 0%,rgba(2,22,24,.54) 27%,rgba(2,22,24,.1
 linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
 }
 @media(prefers-reduced-motion:reduce){.bg{animation:none!important}}
+
+/* V4.3 — only the water moves */
+.water-motion{
+ position:absolute;
+ z-index:-5;
+ left:27%;
+ right:0;
+ top:39%;
+ height:31%;
+ overflow:hidden;
+ pointer-events:none;
+ opacity:.42;
+ -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 18%,#000 75%,transparent 100%);
+ mask-image:linear-gradient(to bottom,transparent 0%,#000 18%,#000 75%,transparent 100%);
+}
+.water-motion::before{
+ content:"";
+ position:absolute;
+ inset:-10% -4%;
+ background:url("./fyndset-hero-bg.png") center center/cover no-repeat;
+ background-attachment:scroll;
+ filter:saturate(1.04) brightness(1.02);
+ transform:scale(1.015);
+ animation:waterDrift 9s ease-in-out infinite alternate;
+}
+.water-motion::after{
+ content:"";
+ position:absolute;
+ inset:0;
+ background:
+ repeating-linear-gradient(
+   178deg,
+   rgba(255,255,255,.00) 0px,
+   rgba(255,255,255,.025) 2px,
+   rgba(255,255,255,.00) 5px,
+   rgba(65,224,218,.035) 8px,
+   rgba(255,255,255,.00) 12px
+ );
+ mix-blend-mode:screen;
+ animation:waterShimmer 7s linear infinite;
+}
+@keyframes waterDrift{
+ 0%{transform:scale(1.015) translate3d(-.18%,0,0)}
+ 100%{transform:scale(1.02) translate3d(.22%,.12%,0)}
+}
+@keyframes waterShimmer{
+ 0%{transform:translate3d(-1.2%,0,0) skewX(-.2deg);opacity:.42}
+ 50%{opacity:.68}
+ 100%{transform:translate3d(1.2%,.4%,0) skewX(.2deg);opacity:.42}
+}
+@media(max-width:760px){
+ .water-motion{left:0;right:0;top:39%;height:28%;opacity:.34}
+}
+@media(prefers-reduced-motion:reduce){
+ .water-motion::before,.water-motion::after{animation:none!important}
+}
 </style></head><body>
-<main class="hero"><div class="bg"></div>
+<main class="hero"><div class="bg"></div><div class="water-motion"></div>
 <nav><div class="brand"><span class="mark"></span>fyndset<i>.</i></div><div class="links"><span>For Talent</span><span>For Employers</span><span>About</span><span>Resources</span></div><div class="links push">🌐 &nbsp; EN⌄</div><div class="signin">Sign in</div></nav>
 <section class="copy"><div class="eyebrow">Hospitality <b>talent.</b> Reimagined.</div><h1>Don’t apply.<span>Get found.</span></h1><div class="lead">The private, intelligent way for hospitality professionals and employers to connect.</div><div class="actions"><button class="btn">Be found <b>→</b></button><button class="btn">Find talent <b>→</b></button></div><div class="metrics"><div class="metric"><small>People</small><strong>12K+</strong></div><div class="metric"><small>Hotel & restaurant groups</small><strong>850+</strong></div><div class="metric"><small>Countries</small><strong>15</strong></div></div></section>
 <section class="talent"><div class="radar"></div>
