@@ -735,4 +735,108 @@ document.addEventListener("DOMContentLoaded",()=>{tr();
 })();
 </script>
 
+
+<style>
+/* v5.6 — radar lock + Living Fyndset */
+.fw-builder h2{font-size:29px}
+.fw-detail{width:310px}
+.fw-person{--dim:1}
+.fw-world.person-selected .fw-person:not(.selected){opacity:.32;filter:saturate(.65)}
+.fw-world.person-selected .fw-person.selected{opacity:1;z-index:12}
+.match-line{position:absolute;height:1px;transform-origin:0 50%;background:linear-gradient(90deg,rgba(63,224,218,.65),rgba(63,224,218,.05));z-index:3;pointer-events:none;opacity:0;transition:.25s}
+.match-line.show{opacity:1}
+.fw-summary-breakdown{display:flex;gap:7px;margin-top:7px}.fw-summary-breakdown span{font-size:6.5px;padding:4px 6px;border:1px solid rgba(255,255,255,.08);border-radius:999px;color:#8ca5a2}.fw-summary-breakdown i{display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--cyan);margin-right:4px}
+.lf{position:fixed;inset:0;z-index:2600;display:none;overflow:auto;background:#031b1e;color:#fff}
+.lf.open{display:block}
+.lf-bg{position:fixed;inset:0;background:radial-gradient(circle at 74% 20%,rgba(63,224,218,.09),transparent 28%),linear-gradient(125deg,#021719,#052427 58%,#031b1e);z-index:-1}
+.lf-nav{height:70px;display:flex;align-items:center;padding:0 3vw;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(2,23,25,.7);backdrop-filter:blur(18px);position:sticky;top:0;z-index:20}
+.lf-logo{font-size:27px;font-weight:850;letter-spacing:-1.5px}.lf-logo i{font-style:normal;color:var(--cyan)}
+.lf-nav-mode{margin-left:28px;font-size:7px;letter-spacing:.17em;color:#78918f;text-transform:uppercase}.lf-back{margin-left:auto;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:transparent;color:#fff;padding:9px 14px;cursor:pointer}
+.lf-wrap{max-width:1320px;margin:auto;padding:38px 4vw 70px}
+.lf-hero{display:grid;grid-template-columns:1.15fr .85fr;gap:38px;align-items:center;min-height:400px}
+.lf-person{display:flex;gap:25px;align-items:center}.lf-photo-wrap{position:relative;flex:0 0 auto}.lf-photo{width:150px;height:150px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.5);box-shadow:0 20px 70px rgba(0,0,0,.35)}.lf-photo-ring{position:absolute;inset:-14px;border:1px solid rgba(63,224,218,.18);border-radius:50%}.lf-verified{position:absolute;right:3px;bottom:10px;width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:var(--cyan);color:#042326;font-size:12px;font-weight:900}
+.lf-eyebrow{font-size:7px;letter-spacing:.17em;color:var(--cyan);text-transform:uppercase}.lf-name{font-size:47px;letter-spacing:-.05em;line-height:.95;margin:8px 0}.lf-role{font-size:13px;color:#a8bcba}.lf-meta{font-size:8.5px;color:#748e8b;margin-top:7px}.lf-intent{display:inline-flex;align-items:center;gap:6px;margin-top:13px;padding:7px 9px;border:1px solid rgba(63,224,218,.18);border-radius:999px;font-size:7.5px;color:#b9cecb}.lf-intent i{width:5px;height:5px;border-radius:50%;background:var(--cyan)}
+.lf-thesis{border:1px solid rgba(255,255,255,.1);border-radius:22px;background:rgba(4,34,37,.62);backdrop-filter:blur(16px);padding:24px}.lf-thesis small{font-size:7px;letter-spacing:.16em;color:#6f8b87}.lf-thesis h2{font-size:24px;line-height:1.08;letter-spacing:-.035em;margin:10px 0 15px}.lf-thesis p{font-size:10px;line-height:1.6;color:#a6bab7}.lf-thesis .lf-cta{display:flex;gap:8px;margin-top:18px}.lf-cta button{border-radius:999px;padding:10px 14px;font-size:8px;cursor:pointer}.lf-primary{border:0;background:var(--cyan);color:#042326;font-weight:750}.lf-secondary{border:1px solid rgba(255,255,255,.14);background:transparent;color:#fff}
+.lf-dna-section{margin-top:18px;border-top:1px solid rgba(255,255,255,.07);padding-top:34px}.lf-section-kicker{font-size:7px;letter-spacing:.17em;color:var(--cyan);text-transform:uppercase}.lf-section-title{font-size:27px;letter-spacing:-.04em;margin:7px 0 20px}
+.lf-dna-world{display:grid;grid-template-columns:1fr 1fr;gap:18px}.lf-dna-card,.lf-proof-card,.lf-journey,.lf-intent-card{border:1px solid rgba(255,255,255,.09);border-radius:18px;background:rgba(255,255,255,.025);padding:19px}
+.lf-dna-row{display:grid;grid-template-columns:95px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.055)}.lf-dna-row:last-child{border:0}.lf-dna-row label{font-size:7px;letter-spacing:.1em;color:#78928f;text-transform:uppercase}.lf-dna-signals{display:flex;flex-wrap:wrap;gap:5px}.lf-pill{font-size:7.5px;border:1px solid rgba(63,224,218,.16);border-radius:999px;padding:5px 7px;color:#bfd2cf;background:rgba(63,224,218,.04)}.lf-state{font-size:6.5px;color:var(--cyan)}
+.lf-proof-card h3,.lf-journey h3,.lf-intent-card h3{font-size:14px;margin:0 0 13px}.lf-proof-list{display:grid;gap:9px}.lf-proof{display:grid;grid-template-columns:17px 1fr;gap:8px}.lf-proof b{font-size:9px}.lf-proof p{font-size:8px;color:#819a97;margin:3px 0 0;line-height:1.4}.lf-proof-icon{width:17px;height:17px;border-radius:50%;display:grid;place-items:center;background:rgba(63,224,218,.08);color:var(--cyan);font-size:7px}
+.lf-lower{display:grid;grid-template-columns:1.3fr .7fr;gap:18px;margin-top:18px}.journey-line{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:20px}.journey-step{position:relative;padding-top:18px;border-top:1px solid rgba(63,224,218,.18)}.journey-step:before{content:"";position:absolute;top:-4px;left:0;width:7px;height:7px;border-radius:50%;background:#315f5d;border:1px solid var(--cyan)}.journey-step.current:before{background:var(--cyan);box-shadow:0 0 16px rgba(63,224,218,.45)}.journey-step small{font-size:6.5px;color:#66817e}.journey-step b{display:block;font-size:9px;margin-top:4px}.journey-step span{font-size:7px;color:#7d9693}
+.lf-next{display:flex;flex-wrap:wrap;gap:6px}.lf-private-note{margin-top:15px;padding:10px;border-radius:10px;background:rgba(63,224,218,.04);border:1px solid rgba(63,224,218,.1);font-size:8px;line-height:1.5;color:#9bb2af}
+@media(max-width:850px){.lf-hero,.lf-dna-world,.lf-lower{grid-template-columns:1fr}.lf-person{align-items:flex-start}.lf-photo{width:105px;height:105px}.lf-name{font-size:36px}.journey-line{grid-template-columns:1fr}.journey-step{border-top:0;border-left:1px solid rgba(63,224,218,.18);padding:0 0 20px 18px}.journey-step:before{top:0;left:-4px}}
+</style>
+
+<section class="lf" id="lf">
+<div class="lf-bg"></div>
+<header class="lf-nav"><div class="lf-logo">fyndset<i>.</i></div><div class="lf-nav-mode" data-l="mode">LIVING PROFESSIONAL PROFILE</div><button class="lf-back" id="lf-back">← <span data-l="back">Back to discovery</span></button></header>
+<div class="lf-wrap">
+ <section class="lf-hero">
+  <div class="lf-person">
+   <div class="lf-photo-wrap"><div class="lf-photo-ring"></div><img class="lf-photo" src="sofia.png"><span class="lf-verified">✓</span></div>
+   <div><div class="lf-eyebrow" data-l="fyndset">MARTA'S FYNDSET</div><h1 class="lf-name">Marta Silva</h1><div class="lf-role">Restaurant Manager · Lisboa</div><div class="lf-meta" data-l="meta">8 years in hospitality · PT · EN · ES</div><div class="lf-intent"><i></i><span data-l="private">Employed · privately open to the right opportunity</span></div></div>
+  </div>
+  <aside class="lf-thesis"><small data-l="why">WHY MARTA IS WORTH KNOWING</small><h2 data-l="headline">A restaurant leader with strong service craft, proven team leadership and momentum beyond her current title.</h2><p data-l="body">Marta has led a 22-person front-of-house team, worked across premium dining environments and helped open two concepts. Her next move points toward broader F&B leadership.</p><div class="lf-cta"><button class="lf-primary" data-l="invite">Invite to talk</button><button class="lf-secondary" data-l="save">Save Fyndset</button></div></aside>
+ </section>
+
+ <section class="lf-dna-section"><div class="lf-section-kicker">FYND DNA</div><h2 class="lf-section-title" data-l="dnaTitle">What Marta has actually demonstrated</h2>
+  <div class="lf-dna-world">
+   <div class="lf-dna-card">
+    <div class="lf-dna-row"><label>Craft</label><div class="lf-dna-signals"><span class="lf-pill">Fine dining</span><span class="lf-pill">Wine</span><span class="lf-pill">Guest experience</span></div><span class="lf-state" data-l="proven">PROVEN</span></div>
+    <div class="lf-dna-row"><label>Leadership</label><div class="lf-dna-signals"><span class="lf-pill">22-person team</span><span class="lf-pill">Training</span><span class="lf-pill">Service culture</span></div><span class="lf-state" data-l="verified">VERIFIED</span></div>
+    <div class="lf-dna-row"><label>Environment</label><div class="lf-dna-signals"><span class="lf-pill">Premium</span><span class="lf-pill">High volume</span><span class="lf-pill">Openings</span></div><span class="lf-state" data-l="proven">PROVEN</span></div>
+    <div class="lf-dna-row"><label>Momentum</label><div class="lf-dna-signals"><span class="lf-pill">2 promotions</span><span class="lf-pill">Scope growth</span></div><span class="lf-state">↑</span></div>
+    <div class="lf-dna-row"><label>Intent</label><div class="lf-dna-signals"><span class="lf-pill">F&B leadership</span><span class="lf-pill">Boutique luxury</span></div><span class="lf-state" data-l="private2">PRIVATE</span></div>
+   </div>
+   <div class="lf-proof-card"><h3 data-l="proofTitle">Proof, not keywords</h3><div class="lf-proof-list">
+    <div class="lf-proof"><span class="lf-proof-icon">✓</span><div><b data-l="lead">Team leadership · verified</b><p data-l="leadp">Led 22 FOH professionals. Validated by a former Operations Director.</p></div></div>
+    <div class="lf-proof"><span class="lf-proof-icon">✓</span><div><b data-l="wine">Wine knowledge</b><p>WSET Level 2 · 2024</p></div></div>
+    <div class="lf-proof"><span class="lf-proof-icon">◎</span><div><b data-l="opening">Opening experience</b><p data-l="openingp">Helped launch two restaurant concepts and build service routines.</p></div></div>
+    <div class="lf-proof"><span class="lf-proof-icon">◎</span><div><b data-l="gap">Something to explore</b><p data-l="gapp">Luxury hotel experience has not yet been independently verified.</p></div></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="lf-lower">
+  <div class="lf-journey"><div class="lf-section-kicker" data-l="journey">CAREER JOURNEY</div><h3 data-l="momentum">Momentum matters more than a static title</h3><div class="journey-line">
+   <div class="journey-step"><small>2018</small><b>Waiter</b><span data-l="step1">Service foundations</span></div>
+   <div class="journey-step"><small>2020</small><b>Head Waiter</b><span data-l="step2">Team coordination</span></div>
+   <div class="journey-step"><small>2022</small><b>Assistant RM</b><span data-l="step3">Operations + training</span></div>
+   <div class="journey-step current"><small>2024 →</small><b>Restaurant Manager</b><span data-l="step4">22-person team · P&L exposure</span></div>
+  </div></div>
+  <div class="lf-intent-card"><div class="lf-section-kicker" data-l="next">WHAT MARTA WANTS NEXT</div><h3 data-l="nextTitle">The direction, not just the history</h3><div class="lf-next"><span class="lf-pill">F&B leadership</span><span class="lf-pill">Boutique luxury</span><span class="lf-pill">International</span><span class="lf-pill">Opening projects</span></div><div class="lf-private-note" data-l="privacy">Marta's intent is private. Her current employer cannot see that she is open to opportunities.</div></div>
+ </section>
+</div>
+</section>
+
+<script>
+(()=>{
+ const P={
+ en:{mode:"LIVING PROFESSIONAL PROFILE",back:"Back to discovery",fyndset:"MARTA'S FYNDSET",meta:"8 years in hospitality · PT · EN · ES",private:"Employed · privately open to the right opportunity",why:"WHY MARTA IS WORTH KNOWING",headline:"A restaurant leader with strong service craft, proven team leadership and momentum beyond her current title.",body:"Marta has led a 22-person front-of-house team, worked across premium dining environments and helped open two concepts. Her next move points toward broader F&B leadership.",invite:"Invite to talk",save:"Save Fyndset",dnaTitle:"What Marta has actually demonstrated",proven:"PROVEN",verified:"VERIFIED",private2:"PRIVATE",proofTitle:"Proof, not keywords",lead:"Team leadership · verified",leadp:"Led 22 FOH professionals. Validated by a former Operations Director.",wine:"Wine knowledge",opening:"Opening experience",openingp:"Helped launch two restaurant concepts and build service routines.",gap:"Something to explore",gapp:"Luxury hotel experience has not yet been independently verified.",journey:"CAREER JOURNEY",momentum:"Momentum matters more than a static title",step1:"Service foundations",step2:"Team coordination",step3:"Operations + training",step4:"22-person team · P&L exposure",next:"WHAT MARTA WANTS NEXT",nextTitle:"The direction, not just the history",privacy:"Marta's intent is private. Her current employer cannot see that she is open to opportunities."},
+ pt:{mode:"PERFIL PROFISSIONAL VIVO",back:"Voltar à descoberta",fyndset:"FYNDSET DA MARTA",meta:"8 anos em hospitalidade · PT · EN · ES",private:"Empregada · aberta em privado à oportunidade certa",why:"PORQUE VALE A PENA CONHECER A MARTA",headline:"Uma líder de restauração com forte cultura de serviço, liderança demonstrada e uma trajetória que aponta além do cargo atual.",body:"A Marta liderou uma equipa de 22 pessoas em sala, trabalhou em contextos de restauração premium e participou na abertura de dois conceitos. O próximo passo aponta para uma liderança F&B mais abrangente.",invite:"Convidar para conversar",save:"Guardar Fyndset",dnaTitle:"O que a Marta realmente demonstrou",proven:"DEMONSTRADO",verified:"VALIDADO",private2:"PRIVADO",proofTitle:"Provas, não palavras-chave",lead:"Liderança de equipa · validada",leadp:"Liderou 22 profissionais de sala. Validado por um antigo Diretor de Operações.",wine:"Conhecimento de vinhos",opening:"Experiência em aberturas",openingp:"Participou no lançamento de dois conceitos e na criação das rotinas de serviço.",gap:"Algo a explorar",gapp:"A experiência em hotelaria de luxo ainda não foi validada de forma independente.",journey:"PERCURSO PROFISSIONAL",momentum:"A progressão importa mais do que um cargo estático",step1:"Bases de serviço",step2:"Coordenação de equipa",step3:"Operações + formação",step4:"Equipa de 22 pessoas · exposição a P&L",next:"O QUE A MARTA PROCURA A SEGUIR",nextTitle:"A direção, não apenas o passado",privacy:"A intenção da Marta é privada. O empregador atual não consegue ver que está aberta a oportunidades."}};
+ const lang=()=>document.documentElement.lang==="pt"?"pt":"en";
+ function trp(){document.querySelectorAll("[data-l]").forEach(e=>{let k=e.dataset.l;if(P[lang()][k])e.textContent=P[lang()][k]})}
+ function openProfile(){document.getElementById("lf").classList.add("open");document.body.style.overflow="hidden";trp()}
+ document.querySelectorAll(".fd-actions button:first-child").forEach(b=>b.addEventListener("click",openProfile));
+ document.getElementById("lf-back")?.addEventListener("click",()=>{document.getElementById("lf").classList.remove("open");document.body.style.overflow="hidden"});
+ document.querySelector(".lang-switch")?.addEventListener("click",()=>setTimeout(trp,20));
+
+ // Final wording in discovery.
+ const pt=()=>lang()==="pt";
+ const h=document.querySelector(".fw-builder h2"); if(h) h.textContent=pt()?"Quem procuras?":"Who are you looking for?";
+ const intro=document.querySelector(".fw-intro"); if(intro) intro.textContent=pt()?"Constrói a pessoa, não a vaga. O Fyndset explora talento direto, adjacente e inesperado.":"Build the person, not the vacancy. Fyndset explores direct, adjacent and unexpected talent.";
+ const gapTitle=document.getElementById("fd-gap-title"); if(gapTitle) gapTitle.textContent=pt()?"Algo a explorar:":"Something to explore:";
+
+ // Summary legend.
+ const sum=document.querySelector(".fw-summary"); if(sum && !sum.querySelector(".fw-summary-breakdown")) sum.insertAdjacentHTML("beforeend",'<div class="fw-summary-breakdown"><span><i></i>3 Core</span><span><i></i>3 Adjacent</span><span><i></i>2 Discovery</span></div>');
+
+ // Selection emphasis + brief semantic connection lines.
+ const world=document.querySelector(".fw-world");
+ const people=[...document.querySelectorAll(".fw-person")];
+ function clearLines(){world?.querySelectorAll(".match-line").forEach(x=>x.remove())}
+ function line(x1,y1,x2,y2){let el=document.createElement("i");el.className="match-line";let dx=x2-x1,dy=y2-y1;el.style.left=x1+"px";el.style.top=y1+"px";el.style.width=Math.hypot(dx,dy)+"px";el.style.transform=`rotate(${Math.atan2(dy,dx)}rad)`;world.appendChild(el);requestAnimationFrame(()=>el.classList.add("show"));setTimeout(()=>el.classList.remove("show"),1500);setTimeout(()=>el.remove(),1800)}
+ people.forEach(p=>p.addEventListener("click",()=>{world.classList.add("person-selected");clearLines();let wr=world.getBoundingClientRect(),pr=p.getBoundingClientRect();let sx=pr.left+pr.width/2-wr.left,sy=pr.top+pr.height/2-wr.top;[[world.clientWidth*.83,world.clientHeight*.16],[world.clientWidth*.87,world.clientHeight*.21],[world.clientWidth*.80,world.clientHeight*.25]].forEach(q=>line(sx,sy,q[0],q[1]));setTimeout(()=>world.classList.remove("person-selected"),2300)},true));
+ trp();
+})();
+</script>
+
 </body></html>
