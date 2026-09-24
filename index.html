@@ -299,132 +299,45 @@ body.fy-dedicated .fy-nav{bottom:28px}
  body.fy-mode-company #company-story .fy-stage{min-height:100dvh!important;height:100dvh!important}
 }
 </style>
-
-<style id="fyndset-pro01-cinematic-v7">
-/* Professional 01 — cinematic/scientific polish */
-body.fy-mode-pro #pro-story .fy-slide[data-slide="0"] .fy-inner{
-  grid-template-columns:39% 61%;
-  width:min(1600px,94vw);
-  padding:92px 0 132px;
-}
-body.fy-mode-pro #pro-story .fy-slide[data-slide="0"] .fy-copy{align-self:center}
-body.fy-mode-pro #pro-story .fy-slide[data-slide="0"] .fy-copy h2{
-  max-width:700px;font-size:clamp(58px,5.2vw,92px);line-height:.92;
-  text-shadow:0 10px 42px rgba(0,0,0,.28)
-}
-body.fy-mode-pro #pro-story .fy-slide[data-slide="0"] .fy-copy p{
-  max-width:585px;font-size:18px;color:#c4d3d1
-}
-body.fy-mode-pro #pro-story .fy-slide[data-slide="0"] .fy-primary{
-  box-shadow:0 10px 40px rgba(63,224,218,.12);transition:.25s ease
-}
-body.fy-mode-pro #pro-story .fy-slide[data-slide="0"] .fy-primary:hover{
-  transform:translateY(-2px);box-shadow:0 14px 46px rgba(63,224,218,.22)
-}
-
-/* quieter, more premium return control */
-body.fy-mode-pro #pro-story .fy-mode-home{
-  top:25px;left:30px;border-color:rgba(117,219,215,.25);
-  background:rgba(3,28,31,.44);color:#dce8e6;padding:10px 15px;
-  font-size:11px;letter-spacing:.02em
-}
-body.fy-mode-pro #pro-story .fy-mode-home:before{
-  content:"";width:5px;height:5px;border-radius:50%;background:#3fe0da;
-  box-shadow:0 0 12px rgba(63,224,218,.65)
-}
-
-/* Scientific identity layer around Sofia */
-.fy-science-layer{position:absolute;inset:4% 1% 2% 0;pointer-events:none}
-.fy-scan-core{
-  position:absolute;left:27%;top:30%;width:255px;height:255px;border-radius:50%;
-  border:1px solid rgba(63,224,218,.25);
-  box-shadow:0 0 0 34px rgba(63,224,218,.025),0 0 55px rgba(63,224,218,.10);
-}
-.fy-scan-core:before,.fy-scan-core:after{
-  content:"";position:absolute;border-radius:50%;inset:26px;border:1px dashed rgba(63,224,218,.23)
-}
-.fy-scan-core:after{inset:73px;border-style:solid;border-color:rgba(63,224,218,.42)}
-.fy-scan-line{position:absolute;height:1px;background:linear-gradient(90deg,transparent,#3fe0da,transparent);opacity:.55;transform-origin:left}
-.fy-sl1{width:220px;left:29%;top:41%;transform:rotate(-22deg)}
-.fy-sl2{width:255px;left:34%;top:49%;transform:rotate(15deg)}
-.fy-sl3{width:190px;left:30%;top:58%;transform:rotate(35deg)}
-.fy-science-chip{
-  position:absolute;padding:8px 13px;border:1px solid rgba(63,224,218,.38);
-  border-radius:999px;background:rgba(3,31,34,.72);backdrop-filter:blur(9px);
-  color:#dceceb;font-size:10px;box-shadow:0 0 24px rgba(63,224,218,.08)
-}
-.fy-science-chip b{color:#3fe0da;margin-right:5px}
-.fy-sc1{left:23%;top:24%}.fy-sc2{left:46%;top:31%}.fy-sc3{left:49%;top:52%}
-.fy-science-micro{
-  position:absolute;left:35%;top:61%;width:150px;padding:11px 12px;
-  border:1px solid rgba(63,224,218,.20);border-radius:12px;
-  background:rgba(2,29,32,.56);backdrop-filter:blur(8px)
-}
-.fy-science-micro small{display:block;color:#6f9996;font-size:7px;letter-spacing:.16em;margin-bottom:8px}
-.fy-science-bars{display:flex;align-items:flex-end;gap:5px;height:35px}
-.fy-science-bars i{display:block;width:8px;background:#3fe0da;opacity:.72;border-radius:2px 2px 0 0}
-.fy-science-bars i:nth-child(1){height:25%}.fy-science-bars i:nth-child(2){height:48%}.fy-science-bars i:nth-child(3){height:40%}.fy-science-bars i:nth-child(4){height:70%}.fy-science-bars i:nth-child(5){height:58%}.fy-science-bars i:nth-child(6){height:90%}
-
-/* right card feels like an evidence instrument, not a passport/card */
-body.fy-mode-pro #pro-story .fy-slide[data-slide="0"] .fy-profile{
-  right:0;top:17%;width:445px;padding:26px 27px;
-  background:linear-gradient(145deg,rgba(5,36,38,.91),rgba(5,27,29,.78));
-  border-color:rgba(120,222,218,.28);
-  box-shadow:0 28px 70px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.04)
-}
-body.fy-mode-pro #pro-story .fy-slide[data-slide="0"] .fy-profile:before{
-  content:"PROFESSIONAL SIGNAL MAP";position:absolute;right:24px;top:19px;
-  color:#5f918e;font-size:6px;letter-spacing:.18em
-}
-body.fy-mode-pro #pro-story .fy-slide[data-slide="0"] .fy-signal i{
-  position:relative;height:4px;background:rgba(126,178,174,.15)
-}
-body.fy-mode-pro #pro-story .fy-slide[data-slide="0"] .fy-signal i:after{
-  content:"";position:absolute;right:0;top:-3px;width:1px;height:10px;background:rgba(255,255,255,.17)
-}
-
-/* navigation becomes unmistakably interactive */
-body.fy-mode-pro #pro-story .fy-nav{
-  bottom:28px;padding:13px 18px 12px;border-radius:26px;
-  background:rgba(3,31,34,.76);border:1px solid rgba(111,206,202,.20);
-  backdrop-filter:blur(16px);box-shadow:0 18px 55px rgba(0,0,0,.28);
-}
-body.fy-mode-pro #pro-story .fy-dot{width:145px;color:#9fb5b2}
-body.fy-mode-pro #pro-story .fy-dot:before{
-  width:38px;height:38px;display:grid;place-items:center;
-  background:#092b2e;border-color:rgba(197,225,222,.42);
-  box-shadow:inset 0 0 0 6px rgba(3,28,31,.9);margin-bottom:8px
-}
-body.fy-mode-pro #pro-story .fy-dot:not(:last-child):after{
-  top:19px;width:126px;left:82px;background:rgba(129,190,186,.38)
-}
-body.fy-mode-pro #pro-story .fy-dot.active:before{
-  background:#3fe0da;border-color:#76f4ee;
-  box-shadow:inset 0 0 0 9px #07363a,0 0 0 4px rgba(63,224,218,.10),0 0 26px rgba(63,224,218,.48)
-}
-body.fy-mode-pro #pro-story .fy-dot.active:not(:last-child):after{
-  background:linear-gradient(90deg,#3fe0da,rgba(129,190,186,.38))
-}
-body.fy-mode-pro #pro-story .fy-dot b{font-size:9px;letter-spacing:.08em}
-body.fy-mode-pro #pro-story .fy-dot span{font-size:11px;margin-top:4px}
-body.fy-mode-pro #pro-story .fy-dot.active span{color:#5ef0e9;font-weight:750}
-
-@media(max-width:1050px){
- .fy-science-layer{opacity:.68}
- body.fy-mode-pro #pro-story .fy-slide[data-slide="0"] .fy-profile{width:390px}
- body.fy-mode-pro #pro-story .fy-dot{width:120px}
-}
-@media(max-width:850px){
- .fy-science-layer{display:none}
- body.fy-mode-pro #pro-story .fy-slide[data-slide="0"] .fy-inner{display:block;width:90vw;padding-top:75px}
- body.fy-mode-pro #pro-story .fy-slide[data-slide="0"] .fy-copy h2{font-size:48px}
- body.fy-mode-pro #pro-story .fy-nav{width:94%;padding:10px 4px}
- body.fy-mode-pro #pro-story .fy-dot{width:25%}
- body.fy-mode-pro #pro-story .fy-dot:before{width:30px;height:30px}
- body.fy-mode-pro #pro-story .fy-dot:not(:last-child):after{top:15px;left:calc(50% + 15px);width:calc(100% - 30px)}
-}
-</style>
-</head><body>
+<style id="fyndset-pro01-approved-v8">
+body.fy-mode-pro #pro-story .fy-pro-identity .fy-bg{background-size:cover!important;background-position:center!important}
+body.fy-mode-pro #pro-story .fy-pro-identity .fy-bg:after{display:block!important;background:linear-gradient(90deg,rgba(2,25,28,.99),rgba(2,25,28,.91) 27%,rgba(2,25,28,.43) 44%,rgba(2,25,28,.03) 68%,rgba(2,25,28,.1))!important}
+body.fy-mode-pro #pro-story .fy-pro-identity .fy-inner{width:100%;max-width:none;padding:95px 3.5vw 125px;grid-template-columns:34% 66%;gap:0;z-index:2}
+body.fy-mode-pro #pro-story .fy-pro-identity .fy-copy{align-self:center;z-index:5}
+body.fy-mode-pro #pro-story .fy-pro-identity .fy-kicker{letter-spacing:.22em;font-size:11px;margin-bottom:27px;color:#5ef0e9}
+body.fy-mode-pro #pro-story .fy-pro-identity .fy-copy h2{font-size:clamp(58px,4.85vw,88px);line-height:.93;letter-spacing:-.055em;max-width:650px;margin:0 0 24px}
+body.fy-mode-pro #pro-story .fy-pro-identity .fy-copy h2 em{color:#3fe0da}
+body.fy-mode-pro #pro-story .fy-pro-identity .fy-copy p{font-size:17px;line-height:1.58;color:#c8d6d4;max-width:590px;margin-bottom:30px}
+body.fy-mode-pro #pro-story .fy-pro-identity .fy-primary{min-width:300px;height:62px;border-radius:32px;font-size:15px}
+body.fy-mode-pro #pro-story .fy-pro-identity .fy-visual{position:relative;min-height:650px}
+body.fy-mode-pro #pro-story .fy-mode-home{top:22px;left:30px;padding:11px 18px;border-radius:25px;background:rgba(3,28,31,.48);border:1px solid rgba(157,214,210,.30);box-shadow:0 0 22px rgba(63,224,218,.08);font-size:12px;color:#f2f7f6}
+body.fy-mode-pro #pro-story .fy-mode-home:before{display:none}
+.fy-pro-identity .fy-hud{position:absolute;left:5%;top:15%;width:64%;height:68%;z-index:2;pointer-events:none}
+.fy-pro-identity .fy-hud svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.fy-pro-identity .rings circle{fill:none;stroke:rgba(68,239,231,.25);stroke-width:1}
+.fy-pro-identity .grid path{fill:none;stroke:rgba(68,239,231,.17);stroke-width:1;stroke-dasharray:3 7}
+.fy-pro-identity .net path{fill:none;stroke:rgba(68,239,231,.68);stroke-width:1.25}
+.fy-pro-identity .net circle{fill:#45eee7;stroke:#c6fffc;stroke-width:1}
+.hud-orb{position:absolute;width:54px;height:54px;border:1px solid rgba(79,237,230,.5);border-radius:50%;display:grid;place-items:center;color:#bffffb;background:rgba(3,34,37,.5);box-shadow:0 0 26px rgba(53,231,223,.17);font-size:20px}
+.hud-orb.o1{left:17%;top:38%}.hud-orb.o2{left:43%;top:54%}.hud-orb.o3{left:61%;top:42%}
+.hud-chip{position:absolute;padding:8px 14px;border-radius:18px;border:1px solid rgba(86,237,230,.5);background:rgba(3,32,35,.8);backdrop-filter:blur(9px);box-shadow:0 0 22px rgba(50,226,219,.15);font-size:11px;color:#eefcfb}
+.hud-chip.c1{left:22%;top:26%}.hud-chip.c2{left:56%;top:34%}.hud-chip.c3{left:63%;top:55%}
+.hud-chart{position:absolute;left:50%;top:63%;width:135px;padding:11px 13px 12px;border:1px solid rgba(66,220,214,.34);border-radius:9px;background:rgba(3,29,32,.74);backdrop-filter:blur(10px)}
+.hud-chart small{font-size:6px;letter-spacing:.18em;color:#77aaa7}.hud-chart>div{height:42px;display:flex;align-items:end;gap:5px;margin-top:8px}.hud-chart i{width:8px;background:linear-gradient(#74fff8,#24bdb7)}
+.hud-chart i:nth-child(1){height:22%}.hud-chart i:nth-child(2){height:40%}.hud-chart i:nth-child(3){height:32%}.hud-chart i:nth-child(4){height:58%}.hud-chart i:nth-child(5){height:48%}.hud-chart i:nth-child(6){height:80%}
+body.fy-mode-pro #pro-story .fy-profile-science{top:15%;right:0;width:450px;padding:28px;border-radius:28px;background:linear-gradient(135deg,rgba(5,36,38,.94),rgba(5,31,33,.82));border:1px solid rgba(153,221,217,.32);box-shadow:0 30px 75px rgba(0,0,0,.36);z-index:5}
+.fy-profile-science .fy-person{padding-bottom:22px}.fy-profile-science .fy-person img{width:62px;height:62px}.fy-profile-science .fy-person strong{font-size:22px}.fy-profile-science .verified{color:#3fe0da;font-size:12px}
+.fy-profile-science .fy-signal{grid-template-columns:105px 1fr 78px;margin-top:19px}.fy-profile-science .fy-signal i{height:6px}
+.fy-principles{display:flex;margin-top:43px;width:480px}.fy-principles>div{width:160px;display:grid;grid-template-columns:45px 1fr;align-items:center;gap:10px;position:relative}.fy-principles>div:not(:last-child):after{content:"";position:absolute;right:0;height:54px;width:1px;background:rgba(177,216,212,.20)}
+.fy-principles i{width:38px;height:38px;border:1px solid rgba(164,219,215,.45);border-radius:50%;display:grid;place-items:center;color:#9ed0cd;font-style:normal;font-size:18px}.fy-principles span{font-size:12px;line-height:1.45;color:#b9cac8}
+body.fy-mode-pro #pro-story .fy-nav{bottom:20px;width:660px;padding:12px 24px 11px;border-radius:30px;background:linear-gradient(90deg,rgba(3,31,34,.92),rgba(10,40,39,.84));border:1px solid rgba(139,213,209,.25);backdrop-filter:blur(18px);box-shadow:0 18px 60px rgba(0,0,0,.32)}
+body.fy-mode-pro #pro-story .fy-dot{width:25%;font-size:10px;color:#9eb2b0}
+body.fy-mode-pro #pro-story .fy-dot:before{width:43px;height:43px;margin-bottom:6px;background:#082b2e;border:1px solid rgba(193,225,222,.48);box-shadow:inset 0 0 0 7px #062326}
+body.fy-mode-pro #pro-story .fy-dot:not(:last-child):after{top:21px;left:calc(50% + 21px);width:calc(100% - 42px);height:1px;background:rgba(180,216,213,.46)}
+body.fy-mode-pro #pro-story .fy-dot.active:before{background:#3fe0da;border-color:#9ffffa;box-shadow:inset 0 0 0 9px #083a3e,0 0 0 3px rgba(63,224,218,.16),0 0 24px rgba(63,224,218,.55)}
+body.fy-mode-pro #pro-story .fy-dot.active span{color:#5ef0e9;font-weight:700}
+@media(max-width:850px){body.fy-mode-pro #pro-story .fy-pro-identity .fy-inner{display:block;padding:78px 5vw 130px}.fy-pro-identity .fy-hud,.fy-principles{display:none}body.fy-mode-pro #pro-story .fy-pro-identity .fy-visual{min-height:380px}body.fy-mode-pro #pro-story .fy-profile-science{top:25px;right:0;width:100%}body.fy-mode-pro #pro-story .fy-nav{width:94%;padding:10px 5px}}
+</style></head><body>
 <main class="hero"><video class="hero-video" autoplay muted loop playsinline preload="auto" poster="./fyndset-hero-bg.png" aria-hidden="true">
     <source src="./fyndset-hero.mp4" type="video/mp4">
   </video>
@@ -502,19 +415,37 @@ body.fy-mode-pro #pro-story .fy-dot.active span{color:#5ef0e9;font-weight:750}
 
 <section class="fy-audience fy-professional" id="pro-story"><button class="fy-mode-home" type="button" data-return-home>← Página principal</button>
   <div class="fy-stage">
-    <article class="fy-slide active" data-slide="0">
-      <div class="fy-bg" style="background-image:url('./fyndset-career-sofia.png')"></div>
-      <div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">PARA PROFISSIONAIS</div><h2>A tua carreira é<br>mais do que <em>um cargo.</em></h2><p>O Fyndset mostra o que realmente sabes fazer, onde já o demonstraste e o que procuras a seguir.</p><button class="fy-primary" data-open-profile>Construir o meu Fyndset <b>→</b></button></div><div class="fy-visual">
-<div class="fy-science-layer" aria-hidden="true">
-  <div class="fy-scan-core"></div><i class="fy-scan-line fy-sl1"></i><i class="fy-scan-line fy-sl2"></i><i class="fy-scan-line fy-sl3"></i>
-  <span class="fy-science-chip fy-sc1"><b>◉</b>Liderança</span>
-  <span class="fy-science-chip fy-sc2"><b>⌁</b>Fine dining</span>
-  <span class="fy-science-chip fy-sc3"><b>◇</b>Aberturas</span>
-  <div class="fy-science-micro"><small>SIGNAL ACTIVITY</small><div class="fy-science-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    <article class="fy-slide active fy-pro-identity" data-slide="0">
+<div class="fy-bg" style="background-image:url('./sofia-restaurant-manager-clean.png?v=20260924-1')"></div>
+<div class="fy-inner">
+<div class="fy-copy">
+<div class="fy-kicker">PARA PROFISSIONAIS</div>
+<h2>A tua carreira é<br>mais do que <em>um cargo.</em></h2>
+<p>O Fyndset mostra o que realmente sabes fazer,<br>onde já o demonstraste e o que procuras a seguir.</p>
+<button class="fy-primary" data-open-profile>Construir o meu Fyndset <b>→</b></button>
+<div class="fy-principles">
+<div><i>◇</i><span>Competências<br>reais</span></div>
+<div><i>◎</i><span>Evidência<br>no contexto</span></div>
+<div><i>▥</i><span>Oportunidades<br>com sentido</span></div>
+</div></div>
+<div class="fy-visual">
+<div class="fy-hud" aria-hidden="true">
+<svg viewBox="0 0 760 520" preserveAspectRatio="none">
+<g class="rings"><circle cx="318" cy="287" r="116"/><circle cx="318" cy="287" r="83"/><circle cx="318" cy="287" r="48"/></g>
+<g class="grid"><path d="M184 330 Q318 205 452 330"/><path d="M210 356 Q318 245 430 356"/><path d="M318 171V410"/><path d="M185 287H470"/></g>
+<g class="net"><path d="M235 298 L276 258 L318 287 L363 248 L405 299 L449 271"/><path d="M245 340 L318 287 L389 342"/><path d="M276 258 L253 213"/><path d="M363 248 L408 210"/><circle cx="235" cy="298" r="4"/><circle cx="276" cy="258" r="5"/><circle cx="318" cy="287" r="6"/><circle cx="363" cy="248" r="4"/><circle cx="405" cy="299" r="5"/><circle cx="449" cy="271" r="4"/></g>
+</svg>
+<span class="hud-orb o1">♙</span><span class="hud-orb o2">⌁</span><span class="hud-orb o3">⌖</span>
+<span class="hud-chip c1">♙ Liderança</span><span class="hud-chip c2">⌘ Fine dining</span><span class="hud-chip c3">⌘ Aberturas</span>
+<div class="hud-chart"><small>SIGNAL ACTIVITY</small><div><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
 </div>
-<div class="fy-glass fy-profile"><div class="fy-person"><img src="./sofia.png"><div><strong>Sofia ✓</strong><small>Restaurant Manager · Portugal</small></div></div><div class="fy-signal"><span>Liderança</span><i><b style="width:91%"></b></i><small>Demonstrada</small></div><div class="fy-signal"><span>Fine dining</span><i><b style="width:84%"></b></i><small>4 anos</small></div><div class="fy-signal"><span>Aberturas</span><i><b style="width:72%"></b></i><small>2 conceitos</small></div></div></div></div>
-    </article>
-    <article class="fy-slide" data-slide="1"><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">02 · FYND DNA</div><h2>Não é um CV.<br>É aquilo que <em>demonstraste.</em></h2><p>O teu Fyndset transforma experiência real em sinais profissionais que ajudam as empresas a compreender quem és.</p><button class="fy-primary" data-open-profile>Construir o meu Fyndset <b>→</b></button></div><div class="fy-visual"><div class="fy-dna"><div class="fy-dna-center"><img src="./sofia.png"></div><div class="fy-node n1"><b>LEADERSHIP</b><span>22 pessoas · formação</span></div><div class="fy-node n2"><b>ENVIRONMENT</b><span>Fine dining · high volume</span></div><div class="fy-node n3"><b>INTENT</b><span>F&B leadership</span></div><div class="fy-node n4"><b>MOMENTUM</b><span>3 promoções</span></div><div class="fy-node n5"><b>CRAFT</b><span>Wine · guest experience</span></div></div></div></div></article>
+<div class="fy-glass fy-profile fy-profile-science">
+<div class="fy-person"><img src="./sofia.png"><div><strong>Sofia <b class="verified">◆</b></strong><small>Restaurant Manager · Portugal</small></div></div>
+<div class="fy-signal"><span>Liderança</span><i><b style="width:91%"></b></i><small>Demonstrada</small></div>
+<div class="fy-signal"><span>Fine dining</span><i><b style="width:84%"></b></i><small>4 anos</small></div>
+<div class="fy-signal"><span>Aberturas</span><i><b style="width:72%"></b></i><small>2 conceitos</small></div>
+</div></div></div></article>
+<article class="fy-slide" data-slide="1"><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">02 · FYND DNA</div><h2>Não é um CV.<br>É aquilo que <em>demonstraste.</em></h2><p>O teu Fyndset transforma experiência real em sinais profissionais que ajudam as empresas a compreender quem és.</p><button class="fy-primary" data-open-profile>Construir o meu Fyndset <b>→</b></button></div><div class="fy-visual"><div class="fy-dna"><div class="fy-dna-center"><img src="./sofia.png"></div><div class="fy-node n1"><b>LEADERSHIP</b><span>22 pessoas · formação</span></div><div class="fy-node n2"><b>ENVIRONMENT</b><span>Fine dining · high volume</span></div><div class="fy-node n3"><b>INTENT</b><span>F&B leadership</span></div><div class="fy-node n4"><b>MOMENTUM</b><span>3 promoções</span></div><div class="fy-node n5"><b>CRAFT</b><span>Wine · guest experience</span></div></div></div></div></article>
     <article class="fy-slide" data-slide="2"><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">03 · PROVA</div><h2>Não digas apenas<br>que sabes fazer.<br><em>Mostra onde.</em></h2><p>Cada sinal pode ser explorado através de experiência, contexto e verificação — prova em vez de palavras-chave.</p><button class="fy-primary" data-open-profile>Construir o meu Fyndset <b>→</b></button></div><div class="fy-visual"><div class="fy-glass fy-proof"><h3>Leadership ✓</h3><div class="fy-proof-row"><b>Led 22-person FOH team</b><small>Restaurant Manager · 2024 — hoje</small></div><div class="fy-proof-row"><b>Former Operations Director ✓</b><small>Verificação por referência</small></div><div class="fy-proof-row"><b>Team training & development</b><small>Evidência em documentos</small></div><div class="fy-proof-row"><b>2 openings</b><small>Participação verificada</small></div></div></div></div></article>
     <article class="fy-slide" data-slide="3"><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">04 · PRIVACIDADE</div><h2>Não tens de estar<br>à procura para estar<br><em>aberto ao que vem a seguir.</em></h2><p>Tu decides como és descoberto. O Fyndset foi pensado também para talento passivo e privado.</p><button class="fy-primary" data-open-profile>Construir o meu Fyndset <b>→</b></button></div><div class="fy-visual"><div class="fy-glass fy-privacy"><h3>Visibilidade do perfil</h3><div class="fy-choice"><i></i><div><b>Totalmente visível</b><br><small>A empresas verificadas</small></div></div><div class="fy-choice active"><i></i><div><b>Visível para oportunidades relevantes</b><br><small>Recomendado</small></div></div><div class="fy-choice"><i></i><div><b>Apenas por convite</b><br><small>Quando houver compatibilidade</small></div></div><div class="fy-choice"><i></i><div><b>Privado</b><br><small>Ocultar empresas selecionadas</small></div></div></div></div></div></article>
     <div class="fy-nav" data-story-nav><button class="fy-dot active" data-go="0"><b>01</b><span>Identidade</span></button><button class="fy-dot" data-go="1"><b>02</b><span>Fynd DNA</span></button><button class="fy-dot" data-go="2"><b>03</b><span>Prova</span></button><button class="fy-dot" data-go="3"><b>04</b><span>Privacidade</span></button></div>
