@@ -2207,4 +2207,115 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 </script>
 
+
+<style id="fyndset-v16-flow-polish">
+/* CTA: lower, clearly separated from Sofia's evidence card */
+.fy-final-build{
+  top:72.5%!important;
+  right:5.1%!important;
+}
+
+/* Travelling light: brighter head + fading trail along the vector lines */
+.fy-read-path{
+  stroke:rgba(70,242,235,.16)!important;
+  stroke-width:1!important;
+  opacity:.32!important;
+}
+.fy-flow-dot{
+  fill:#9ffffa;
+  filter:drop-shadow(0 0 3px #52eee8) drop-shadow(0 0 8px rgba(63,224,218,.95));
+  opacity:0;
+}
+.fy-flow-tail{
+  fill:#4feae4;
+  filter:drop-shadow(0 0 5px rgba(63,224,218,.72));
+  opacity:0;
+}
+.fy-reading .fy-flow-dot.d1{animation:fyFlowDot 1.00s .14s ease-in-out both}
+.fy-reading .fy-flow-tail.t1{animation:fyFlowTail 1.00s .10s ease-in-out both}
+.fy-reading .fy-flow-dot.d2{animation:fyFlowDot 1.00s .28s ease-in-out both}
+.fy-reading .fy-flow-tail.t2{animation:fyFlowTail 1.00s .24s ease-in-out both}
+.fy-reading .fy-flow-dot.d3{animation:fyFlowDot .96s .42s ease-in-out both}
+.fy-reading .fy-flow-tail.t3{animation:fyFlowTail .96s .38s ease-in-out both}
+
+@keyframes fyFlowDot{
+  0%,7%{opacity:0}
+  16%{opacity:1}
+  78%{opacity:1}
+  100%{opacity:0}
+}
+@keyframes fyFlowTail{
+  0%,10%{opacity:0}
+  23%{opacity:.48}
+  70%{opacity:.28}
+  100%{opacity:0}
+}
+
+@media(max-width:900px){
+  .fy-final-build{top:auto!important;bottom:103px!important}
+}
+</style>
+
+<script id="fyndset-v16-flow-polish-js">
+document.addEventListener('DOMContentLoaded',()=>{
+  const svg=document.querySelector('.fy-pro-final-page .fy-read-svg');
+  if(!svg || svg.querySelector('.fy-flow-dot')) return;
+
+  const NS='http://www.w3.org/2000/svg';
+  const paths=[
+    {sel:'.p1',dot:'d1',tail:'t1'},
+    {sel:'.p2',dot:'d2',tail:'t2'},
+    {sel:'.p3',dot:'d3',tail:'t3'}
+  ];
+
+  paths.forEach(({sel,dot,tail})=>{
+    const p=svg.querySelector(sel);
+    if(!p) return;
+
+    const tailCircle=document.createElementNS(NS,'circle');
+    tailCircle.setAttribute('r','0.22');
+    tailCircle.setAttribute('class','fy-flow-tail '+tail);
+    const tailMotion=document.createElementNS(NS,'animateMotion');
+    tailMotion.setAttribute('dur', tail==='t3' ? '.96s' : '1s');
+    tailMotion.setAttribute('begin', tail==='t1' ? '.10s' : tail==='t2' ? '.24s' : '.38s');
+    tailMotion.setAttribute('fill','freeze');
+    tailMotion.setAttribute('repeatCount','1');
+    const tailMpath=document.createElementNS(NS,'mpath');
+    const id='fyflow-'+dot;
+    p.setAttribute('id',id);
+    tailMpath.setAttributeNS('http://www.w3.org/1999/xlink','href','#'+id);
+    tailMpath.setAttribute('href','#'+id);
+    tailMotion.appendChild(tailMpath);
+    tailCircle.appendChild(tailMotion);
+
+    const circle=document.createElementNS(NS,'circle');
+    circle.setAttribute('r','0.34');
+    circle.setAttribute('class','fy-flow-dot '+dot);
+    const motion=document.createElementNS(NS,'animateMotion');
+    motion.setAttribute('dur', dot==='d3' ? '.96s' : '1s');
+    motion.setAttribute('begin', dot==='d1' ? '.14s' : dot==='d2' ? '.28s' : '.42s');
+    motion.setAttribute('fill','freeze');
+    motion.setAttribute('repeatCount','1');
+    const mpath=document.createElementNS(NS,'mpath');
+    mpath.setAttributeNS('http://www.w3.org/1999/xlink','href','#'+id);
+    mpath.setAttribute('href','#'+id);
+    motion.appendChild(mpath);
+    circle.appendChild(motion);
+
+    svg.appendChild(tailCircle);
+    svg.appendChild(circle);
+  });
+
+  /* SMIL needs a restart when our 3-second CSS reading restarts. */
+  const first=document.querySelector('.fy-pro-final-page');
+  if(first){
+    new MutationObserver(()=>{
+      if(first.classList.contains('fy-reading')){
+        svg.querySelectorAll('animateMotion').forEach(a=>{ try{a.beginElement()}catch(e){} });
+      }
+    }).observe(first,{attributes:true,attributeFilter:['class']});
+  }
+});
+</script>
+
 </body></html>
