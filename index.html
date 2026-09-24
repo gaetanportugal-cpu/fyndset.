@@ -222,7 +222,7 @@ main.hero::after{
 <div class="lead" data-t="lead">Create one profile around your skills, experience and intent — then let the right hospitality opportunities find you.</div>
 <div class="sublead" data-t="sublead">For people open to what’s next, and companies looking beyond job titles.</div>
 <div class="actions">
-  <div class="cta-wrap"><small data-t="proLabel">I’M A PROFESSIONAL</small><button class="btn" id="open-pro-builder" type="button" onclick="event.preventDefault();var s=document.getElementById('pro-builder-shell');if(s){s.classList.add('open');document.body.style.overflow='hidden';}return false;"><span data-t="beFound">Be found</span><b>→</b></button></div>
+  <div class="cta-wrap"><small data-t="proLabel">I’M A PROFESSIONAL</small><button class="btn" id="open-pro-builder" type="button" onclick="event.preventDefault();document.getElementById('pro-story')?.scrollIntoView({behavior:'smooth'});return false;"><span data-t="beFound">Be found</span><b>→</b></button></div>
   <div class="cta-wrap"><small data-t="hireLabel">I’M HIRING</small><button class="btn" id="open-fynd-world"><span data-t="findTalent">Find talent</span><b>→</b></button></div>
 </div>
 <div class="pillars">
@@ -251,25 +251,92 @@ main.hero::after{
 </div>
 </section>
 <section class="mobile"><h2 data-t="mobileTitle">What brings you here?</h2>
-<button id="open-pro-builder-mobile" type="button" onclick="event.preventDefault();var s=document.getElementById('pro-builder-shell');if(s){s.classList.add('open');document.body.style.overflow='hidden';}return false;"><span data-t="beFound">Be found</span> <b>→</b></button>
+<button id="open-pro-builder-mobile" type="button" onclick="event.preventDefault();document.getElementById('pro-story')?.scrollIntoView({behavior:'smooth'});return false;"><span data-t="beFound">Be found</span> <b>→</b></button>
 <button><span data-t="findTalent">Find talent</span> <b>→</b></button></section><div class="fy-scroll-cue" aria-hidden="true"><span>Descobrir</span><i></i></div></main>
 
 
-<nav class="fy-chapters" aria-label="Capítulos">
-  <button class="fy-chapter active" type="button" data-target="top"><span>Descoberta</span><i></i></button>
-  <button class="fy-chapter" type="button" data-target="how-it-works"><span>Fyndset</span><i></i></button>
-  <button class="fy-chapter" type="button" data-target="fynd-difference"><span>Identidade</span><i></i></button>
-  <button class="fy-chapter" type="button" data-target="fynd-privacy"><span>Privacidade</span><i></i></button>
-  <button class="fy-chapter" type="button" data-target="fynd-final"><span>Próximo passo</span><i></i></button>
-</nav>
 
-<section class="career-story career-story-reference" id="how-it-works" aria-label="Como funciona o Fyndset — a tua carreira é mais do que um cargo">
+
+
+<style id="fyndset-two-stories-v1">
+.fy-audience{position:relative;min-height:780px;background:#031c1f;color:#f8fbfa;overflow:hidden;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;border-top:1px solid rgba(255,255,255,.055)}
+.fy-audience *{box-sizing:border-box}.fy-stage{position:relative;min-height:780px}.fy-slide{position:absolute;inset:0;opacity:0;visibility:hidden;pointer-events:none;transform:translateX(18px);transition:opacity .42s ease,transform .55s ease,visibility .42s}
+.fy-slide.active{opacity:1;visibility:visible;pointer-events:auto;transform:none}.fy-bg{position:absolute;inset:0;background-size:cover;background-position:center}.fy-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,28,31,.98) 0%,rgba(3,28,31,.86) 35%,rgba(3,28,31,.24) 69%,rgba(3,28,31,.36) 100%)}
+.fy-inner{position:relative;z-index:2;width:min(1480px,92vw);min-height:780px;margin:auto;display:grid;grid-template-columns:45% 55%;align-items:center;padding:80px 0 120px}.fy-kicker{font-size:10px;font-weight:800;letter-spacing:.24em;color:#3fe0da;margin-bottom:26px}.fy-copy h2{margin:0;max-width:660px;font-size:clamp(48px,4.8vw,82px);line-height:.96;letter-spacing:-.055em}.fy-copy h2 em{font-style:normal;color:#3fe0da}.fy-copy p{max-width:560px;color:#bdcecc;font-size:18px;line-height:1.55;margin:24px 0 30px}
+.fy-primary{border:0;border-radius:999px;padding:17px 25px;background:#3fe0da;color:#031c1f;font-weight:800;font-size:14px;cursor:pointer}.fy-primary b{margin-left:26px}.fy-visual{position:relative;min-height:500px}.fy-glass{position:absolute;background:rgba(4,28,31,.83);border:1px solid rgba(255,255,255,.18);border-radius:24px;backdrop-filter:blur(18px);box-shadow:0 28px 70px rgba(0,0,0,.3)}
+.fy-profile{right:1%;top:20%;width:430px;padding:24px}.fy-person{display:flex;gap:14px;align-items:center;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.09)}.fy-person img{width:68px;height:68px;border-radius:50%;object-fit:cover;border:2px solid #fff}.fy-person strong{font-size:21px}.fy-person small{display:block;color:#9db2af;margin-top:5px}.fy-signal{display:grid;grid-template-columns:120px 1fr 76px;gap:12px;align-items:center;margin-top:18px;font-size:12px}.fy-signal i{height:5px;background:rgba(255,255,255,.11);border-radius:9px;overflow:hidden}.fy-signal i b{display:block;height:100%;background:#3fe0da}.fy-signal small{text-align:right;color:#91aaa7}
+.fy-dna{position:absolute;inset:5% 2% 0 4%;display:grid;place-items:center}.fy-dna-center{width:170px;height:170px;border-radius:50%;display:grid;place-items:center;border:1px solid #3fe0da;box-shadow:0 0 0 30px rgba(63,224,218,.04),0 0 70px rgba(63,224,218,.13)}.fy-dna-center img{width:118px;height:118px;border-radius:50%;object-fit:cover}.fy-node{position:absolute;width:190px;padding:15px 17px;border:1px solid rgba(63,224,218,.35);border-radius:16px;background:rgba(4,29,32,.88)}.fy-node b{display:block;color:#3fe0da;font-size:11px;letter-spacing:.1em}.fy-node span{font-size:12px;color:#b8cac8}.n1{top:3%;left:35%}.n2{top:31%;right:2%}.n3{bottom:5%;right:17%}.n4{bottom:5%;left:12%}.n5{top:31%;left:0}
+.fy-proof{right:3%;top:9%;width:470px;padding:28px}.fy-proof h3{font-size:25px;margin:0 0 22px}.fy-proof-row{position:relative;padding:5px 0 22px 34px;border-left:1px solid rgba(63,224,218,.4);margin-left:8px}.fy-proof-row:before{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:#3fe0da;left:-5.5px;top:8px}.fy-proof-row b{display:block;font-size:15px}.fy-proof-row small{display:block;color:#93aaa7;margin-top:5px}
+.fy-privacy{right:3%;top:15%;width:440px;padding:28px}.fy-privacy h3{margin:0 0 20px}.fy-choice{display:flex;gap:12px;align-items:center;padding:15px;border:1px solid rgba(255,255,255,.1);border-radius:14px;margin:10px 0;color:#a8bcba}.fy-choice.active{border-color:#3fe0da;background:rgba(63,224,218,.08);color:#fff}.fy-choice i{width:13px;height:13px;border-radius:50%;border:1px solid #3fe0da}.fy-choice.active i{background:#3fe0da;box-shadow:inset 0 0 0 3px #063236}
+.fy-nav{position:absolute;z-index:10;left:50%;bottom:35px;transform:translateX(-50%);display:flex;align-items:flex-start;gap:0}.fy-dot{width:130px;border:0;background:transparent;color:#9cb1ae;cursor:pointer;padding:0;position:relative;font-size:11px}.fy-dot:before{content:"";display:block;width:13px;height:13px;border-radius:50%;border:1px solid #c5d2d0;background:#031c1f;margin:0 auto 9px;position:relative;z-index:2}.fy-dot:not(:last-child):after{content:"";position:absolute;height:1px;background:rgba(255,255,255,.32);width:117px;left:71px;top:6px}.fy-dot.active{color:#fff}.fy-dot.active:before{background:#3fe0da;border-color:#3fe0da;box-shadow:0 0 18px rgba(63,224,218,.5)}.fy-dot b{display:block;font-size:10px;color:inherit}.fy-dot span{display:block;margin-top:2px}
+.fy-company .fy-bg:after{background:linear-gradient(90deg,rgba(3,28,31,.98),rgba(3,28,31,.76) 43%,rgba(3,28,31,.24) 75%,rgba(3,28,31,.45))}.fy-radar{position:absolute;inset:3% 5% 0 4%;display:grid;place-items:center}.fy-ring{position:absolute;border:1px solid rgba(63,224,218,.25);border-radius:50%}.r1{width:400px;height:400px}.r2{width:300px;height:300px}.r3{width:200px;height:200px}.fy-radar-center{width:130px;height:130px;border-radius:50%;background:#052f33;border:1px solid #3fe0da;display:grid;place-items:center;font-size:38px;color:#3fe0da}.fy-face{position:absolute;width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid #3fe0da;box-shadow:0 0 0 7px rgba(3,28,31,.72)}.f1{top:7%;left:45%}.f2{top:35%;right:10%}.f3{bottom:9%;right:28%}.f4{bottom:12%;left:22%}.f5{top:39%;left:5%}
+.fy-discovery{right:3%;top:9%;width:430px;overflow:hidden}.fy-discovery img{width:100%;height:235px;object-fit:cover}.fy-discovery-body{padding:22px}.fy-discovery h3{margin:0 0 4px;font-size:25px}.fy-tag{display:inline-block;border-radius:99px;background:#e7d0b3;color:#392d23;padding:5px 10px;font-size:10px;font-weight:800;float:right}.fy-list{margin-top:17px;display:grid;gap:11px;color:#c5d2d0;font-size:13px}
+.fy-why{right:3%;top:13%;width:450px;padding:28px}.fy-why h3{font-size:27px;margin:0 0 20px}.fy-check{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)}.fy-check b{color:#3fe0da;margin-right:10px}.fy-gap{margin-top:18px;padding:16px;border-radius:14px;background:rgba(255,255,255,.06);color:#b9c9c7}.fy-full{right:1%;top:8%;width:520px;padding:25px}.fy-full-top{display:flex;align-items:center;gap:14px}.fy-full-top img{width:72px;height:72px;border-radius:50%;object-fit:cover}.fy-full-top strong{font-size:22px}.fy-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:22px}.fy-metrics div{padding:14px 8px;border-radius:12px;background:rgba(255,255,255,.055);text-align:center}.fy-metrics b{display:block;color:#3fe0da;font-size:19px}.fy-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.fy-tags span{border:1px solid rgba(255,255,255,.15);padding:8px 10px;border-radius:99px;font-size:10px}
+.fy-bridge{position:relative;min-height:500px;background:radial-gradient(circle at 50% 50%,rgba(13,91,95,.25),transparent 35%),#031c1f;color:#fff;display:grid;place-items:center;overflow:hidden;border-top:1px solid rgba(255,255,255,.055)}.fy-bridge-inner{width:min(1380px,90vw);display:grid;grid-template-columns:1fr 330px 1fr;align-items:center;gap:40px}.fy-bridge-side h3{font-size:34px;line-height:1.08;margin:0 0 15px}.fy-bridge-side h3 em{font-style:normal;color:#3fe0da}.fy-bridge-side p{color:#9fb4b1;max-width:430px;line-height:1.55}.fy-bridge-side.right{text-align:right}.fy-bridge-side.right p{margin-left:auto}.fy-link{height:250px;display:grid;place-items:center;position:relative}.fy-link:before,.fy-link:after{content:"";position:absolute;top:50%;width:120px;border-top:2px dotted #3fe0da}.fy-link:before{right:68%}.fy-link:after{left:68%}.fy-link-logo{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;border:1px solid #3fe0da;box-shadow:0 0 0 28px rgba(63,224,218,.04),0 0 60px rgba(63,224,218,.14);font-size:50px;color:#3fe0da}
+.fy-ending{position:relative;min-height:650px;background:linear-gradient(rgba(3,28,31,.42),rgba(3,28,31,.9)),url("./fyndset-hero-bg.png") center/cover;color:#fff;display:grid;place-items:center;font-family:Inter,Arial,sans-serif}.fy-ending-inner{width:min(1400px,92vw);text-align:center}.fy-ending h2{font-size:clamp(48px,5vw,78px);line-height:.98;margin:15px 0}.fy-ending h2 span{color:#3fe0da}.fy-stories{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:45px 0 38px}.fy-story{padding:25px;border-radius:20px;background:rgba(3,28,31,.72);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(12px);text-align:left}.fy-story q{font-size:22px}.fy-story small{display:block;margin-top:15px;color:#9fb4b1}.fy-end-actions{display:flex;justify-content:center;gap:18px}.fy-end-actions button{border-radius:99px;padding:17px 24px;font-weight:800;cursor:pointer}.fy-end-actions button:first-child{border:0;background:#3fe0da;color:#031c1f}.fy-end-actions button:last-child{border:1px solid rgba(255,255,255,.5);background:rgba(3,28,31,.65);color:#fff}
+@media(max-width:850px){.fy-audience,.fy-stage,.fy-inner{min-height:930px}.fy-inner{display:block;padding:65px 5vw 150px}.fy-copy h2{font-size:50px}.fy-visual{min-height:440px;margin-top:30px}.fy-profile,.fy-proof,.fy-privacy,.fy-discovery,.fy-why,.fy-full{right:0;top:8%;width:min(100%,470px)}.fy-nav{width:96%;bottom:25px}.fy-dot{width:25%;font-size:9px}.fy-dot:not(:last-child):after{width:calc(100% - 13px);left:calc(50% + 7px)}.fy-bridge-inner{grid-template-columns:1fr;text-align:center;padding:60px 0}.fy-bridge-side.right{text-align:center}.fy-bridge-side p,.fy-bridge-side.right p{margin-left:auto;margin-right:auto}.fy-link{height:170px}.fy-link:before,.fy-link:after{display:none}.fy-stories{grid-template-columns:1fr}.fy-end-actions{flex-direction:column;align-items:center}}
+</style>
+
+<section class="fy-audience fy-professional" id="pro-story">
+  <div class="fy-stage">
+    <article class="fy-slide active" data-slide="0">
+      <div class="fy-bg" style="background-image:url('./fyndset-career-sofia.png')"></div>
+      <div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">PARA PROFISSIONAIS</div><h2>A tua carreira é<br>mais do que <em>um cargo.</em></h2><p>O Fyndset mostra o que realmente sabes fazer, onde já o demonstraste e o que procuras a seguir.</p><button class="fy-primary" data-open-profile>Construir o meu Fyndset <b>→</b></button></div><div class="fy-visual"><div class="fy-glass fy-profile"><div class="fy-person"><img src="./sofia.png"><div><strong>Sofia ✓</strong><small>Restaurant Manager · Portugal</small></div></div><div class="fy-signal"><span>Liderança</span><i><b style="width:91%"></b></i><small>Demonstrada</small></div><div class="fy-signal"><span>Fine dining</span><i><b style="width:84%"></b></i><small>4 anos</small></div><div class="fy-signal"><span>Aberturas</span><i><b style="width:72%"></b></i><small>2 conceitos</small></div></div></div></div>
+    </article>
+    <article class="fy-slide" data-slide="1"><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">02 · FYND DNA</div><h2>Não é um CV.<br>É aquilo que <em>demonstraste.</em></h2><p>O teu Fyndset transforma experiência real em sinais profissionais que ajudam as empresas a compreender quem és.</p><button class="fy-primary" data-open-profile>Construir o meu Fyndset <b>→</b></button></div><div class="fy-visual"><div class="fy-dna"><div class="fy-dna-center"><img src="./sofia.png"></div><div class="fy-node n1"><b>LEADERSHIP</b><span>22 pessoas · formação</span></div><div class="fy-node n2"><b>ENVIRONMENT</b><span>Fine dining · high volume</span></div><div class="fy-node n3"><b>INTENT</b><span>F&B leadership</span></div><div class="fy-node n4"><b>MOMENTUM</b><span>3 promoções</span></div><div class="fy-node n5"><b>CRAFT</b><span>Wine · guest experience</span></div></div></div></div></article>
+    <article class="fy-slide" data-slide="2"><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">03 · PROVA</div><h2>Não digas apenas<br>que sabes fazer.<br><em>Mostra onde.</em></h2><p>Cada sinal pode ser explorado através de experiência, contexto e verificação — prova em vez de palavras-chave.</p><button class="fy-primary" data-open-profile>Construir o meu Fyndset <b>→</b></button></div><div class="fy-visual"><div class="fy-glass fy-proof"><h3>Leadership ✓</h3><div class="fy-proof-row"><b>Led 22-person FOH team</b><small>Restaurant Manager · 2024 — hoje</small></div><div class="fy-proof-row"><b>Former Operations Director ✓</b><small>Verificação por referência</small></div><div class="fy-proof-row"><b>Team training & development</b><small>Evidência em documentos</small></div><div class="fy-proof-row"><b>2 openings</b><small>Participação verificada</small></div></div></div></div></article>
+    <article class="fy-slide" data-slide="3"><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">04 · PRIVACIDADE</div><h2>Não tens de estar<br>à procura para estar<br><em>aberto ao que vem a seguir.</em></h2><p>Tu decides como és descoberto. O Fyndset foi pensado também para talento passivo e privado.</p><button class="fy-primary" data-open-profile>Construir o meu Fyndset <b>→</b></button></div><div class="fy-visual"><div class="fy-glass fy-privacy"><h3>Visibilidade do perfil</h3><div class="fy-choice"><i></i><div><b>Totalmente visível</b><br><small>A empresas verificadas</small></div></div><div class="fy-choice active"><i></i><div><b>Visível para oportunidades relevantes</b><br><small>Recomendado</small></div></div><div class="fy-choice"><i></i><div><b>Apenas por convite</b><br><small>Quando houver compatibilidade</small></div></div><div class="fy-choice"><i></i><div><b>Privado</b><br><small>Ocultar empresas selecionadas</small></div></div></div></div></div></article>
+    <div class="fy-nav" data-story-nav><button class="fy-dot active" data-go="0"><b>01</b><span>Identidade</span></button><button class="fy-dot" data-go="1"><b>02</b><span>Fynd DNA</span></button><button class="fy-dot" data-go="2"><b>03</b><span>Prova</span></button><button class="fy-dot" data-go="3"><b>04</b><span>Privacidade</span></button></div>
+  </div>
+</section>
+
+<section class="fy-bridge" id="the-meeting"><div class="fy-bridge-inner"><div class="fy-bridge-side"><div class="fy-kicker">O ENCONTRO</div><h3>Enquanto uma pessoa<br>constrói <em>quem é...</em></h3><p>O talento mostra a sua identidade real, as experiências e o que procura a seguir, com privacidade e controlo.</p></div><div class="fy-link"><div class="fy-link-logo">F</div></div><div class="fy-bridge-side right"><h3>...uma empresa<br><em>encontra quem procura.</em></h3><p>Sem construir a pessoa ideal. Sem pesquisar uma pilha de CVs. O Fyndset faz a descoberta a partir do que realmente importa.</p></div></div></section>
+
+<section class="fy-audience fy-company" id="company-story">
+  <div class="fy-stage">
+    <article class="fy-slide active" data-slide="0"><div class="fy-bg" style="background-image:url('./fyndset-hero-bg.png')"></div><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">PARA EMPRESAS</div><h2>Encontra quem<br><em>procuravas.</em></h2><p>Descobre pessoas pela experiência, competências, contexto e trajetória — sem depender apenas de cargos ou CVs.</p><button class="fy-primary" data-open-company>Encontrar talento <b>→</b></button></div><div class="fy-visual"><div class="fy-radar"><div class="fy-ring r1"></div><div class="fy-ring r2"></div><div class="fy-ring r3"></div><div class="fy-radar-center">◎</div><img class="fy-face f1" src="./sofia.png"><img class="fy-face f2" src="./miguel.png"><img class="fy-face f3" src="./pedro.png"><img class="fy-face f4" src="./sofia.png"><img class="fy-face f5" src="./pedro.png"></div></div></div></article>
+    <article class="fy-slide" data-slide="1"><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">02 · DISCOVERY</div><h2>E quem não sabias<br>que devias <em>procurar.</em></h2><p>O radar não mostra apenas correspondências diretas. Também revela trajetórias e sinais transferíveis que uma pesquisa tradicional pode perder.</p><button class="fy-primary" data-open-company>Encontrar talento <b>→</b></button></div><div class="fy-visual"><div class="fy-glass fy-discovery"><img src="./pedro.png"><div class="fy-discovery-body"><span class="fy-tag">DISCOVERY</span><h3>Tiago Mendes</h3><small>Assistant Restaurant Manager</small><div class="fy-list"><span>↗ 2 promoções</span><span>◎ Lidera equipa de 16 pessoas</span><span>◉ Fine dining</span><span>✓ Sinais fortes de liderança</span></div></div></div></div></div></article>
+    <article class="fy-slide" data-slide="2"><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">03 · PORQUÊ ESTA PESSOA?</div><h2>Percebe porque<br><em>apareceu a Sofia.</em></h2><p>Sem percentagens mágicas. O Fyndset explica os sinais que trouxeram cada pessoa à superfície e aquilo que ainda vale a pena explorar.</p><button class="fy-primary" data-open-company>Encontrar talento <b>→</b></button></div><div class="fy-visual"><div class="fy-glass fy-why"><h3>Porque apareceu a Sofia?</h3><div class="fy-check"><b>✓</b> Liderança · demonstrada e verificada</div><div class="fy-check"><b>✓</b> Fine dining · experiência relevante</div><div class="fy-check"><b>✓</b> Team scale · 22 pessoas</div><div class="fy-check"><b>✓</b> Career momentum · 3 promoções</div><div class="fy-gap"><b>Algo a explorar</b><br><small>Experiência luxury hotel ainda não verificada.</small></div></div></div></div></article>
+    <article class="fy-slide" data-slide="3"><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">04 · FYNDSET COMPLETO</div><h2>Conhece a pessoa.<br>Depois <em>convida-a para conversar.</em></h2><p>Explora experiência, evidência, trajetória, intenção e contexto num perfil profissional vivo.</p><button class="fy-primary" data-open-company>Encontrar talento <b>→</b></button></div><div class="fy-visual"><div class="fy-glass fy-full"><div class="fy-full-top"><img src="./sofia.png"><div><strong>Sofia Martins ✓</strong><small>Restaurant Manager · Lisboa</small></div></div><div class="fy-metrics"><div><b>8</b><small>anos</small></div><div><b>22</b><small>pessoas</small></div><div><b>2</b><small>aberturas</small></div><div><b>7</b><small>validações</small></div></div><div class="fy-tags"><span>Fine dining</span><span>Leadership</span><span>Team training</span><span>Wine</span><span>Guest experience</span><span>Opening experience</span></div></div></div></div></article>
+    <div class="fy-nav" data-story-nav><button class="fy-dot active" data-go="0"><b>01</b><span>Radar</span></button><button class="fy-dot" data-go="1"><b>02</b><span>Discovery</span></button><button class="fy-dot" data-go="2"><b>03</b><span>Porquê esta pessoa</span></button><button class="fy-dot" data-go="3"><b>04</b><span>Fyndset completo</span></button></div>
+  </div>
+</section>
+
+<section class="fy-ending" id="shared-ending"><div class="fy-ending-inner"><div class="fy-kicker">HISTÓRIAS · OS DOIS LADOS</div><h2>Ela não se candidatou.<br><span>Foi encontrada.</span></h2><p>Pessoas extraordinárias não estão apenas a candidatar-se. Estão a ser descobertas.</p><div class="fy-stories"><div class="fy-story"><q>O Fyndset deu-me a oportunidade de ser descoberta.</q><small>Exemplo ilustrativo · profissional de hospitality</small></div><div class="fy-story"><q>Encontrámos alguém que nunca teria aparecido numa pesquisa tradicional.</q><small>Exemplo ilustrativo · empresa de hospitality</small></div></div><div class="fy-end-actions"><button data-open-profile>Construir o meu Fyndset →</button><button data-open-company>Encontrar talento →</button></div></div></section>
+
+<script id="fyndset-two-stories-js">
+(()=>{
+  function initStory(root){
+    const slides=[...root.querySelectorAll('.fy-slide')], dots=[...root.querySelectorAll('.fy-dot')];
+    const show=n=>{slides.forEach((s,i)=>s.classList.toggle('active',i===n));dots.forEach((d,i)=>d.classList.toggle('active',i===n));};
+    dots.forEach((d,i)=>d.addEventListener('click',()=>show(i)));
+    show(0); // IMPORTANT: no slide advances automatically; only a dot click reveals another page.
+  }
+  document.querySelectorAll('.fy-audience').forEach(initStory);
+  const openProfile=()=>{const s=document.getElementById('pro-builder-shell');if(s){s.classList.add('open');document.body.style.overflow='hidden';}};
+  document.querySelectorAll('[data-open-profile]').forEach(b=>b.addEventListener('click',openProfile));
+  const originalCompany=document.getElementById('open-fynd-world');
+  document.querySelectorAll('[data-open-company]').forEach(b=>b.addEventListener('click',()=>originalCompany?.click()));
+  // Hero company CTA explains first; it no longer opens discovery immediately.
+  if(originalCompany){
+    originalCompany.addEventListener('click',e=>{
+      if(!e.__fyndDirect){e.stopImmediatePropagation();e.preventDefault();document.getElementById('company-story')?.scrollIntoView({behavior:'smooth'});}
+    },true);
+  }
+  // Direct company buttons bypass the hero redirect and open the existing product.
+  document.querySelectorAll('[data-open-company]').forEach(b=>b.addEventListener('click',()=>{
+    const fw=document.getElementById('fw');if(fw){fw.classList.add('open');document.body.style.overflow='hidden';}
+  }));
+})();
+</script>
+
+<section class="career-story career-story-reference" style="display:none" id="how-it-works" aria-label="Como funciona o Fyndset — a tua carreira é mais do que um cargo">
   <picture class="career-reference-picture">
     <img src="./fyndset-career-sofia.png" alt="Sofia, Restaurant Manager, em sala durante o serviço. O Fyndset mostra experiências reais, competências no contexto, trajetória e intenção de carreira.">
   </picture>
 </section>
 
-<section class="home-different" id="fynd-difference">
+<section class="home-different" style="display:none" id="fynd-difference">
   <div class="hd-wrap">
     <div class="hd-copy">
       <div class="hs-kicker" data-new-en="BUILT DIFFERENTLY" data-new-pt="PENSADO DE FORMA DIFERENTE">BUILT DIFFERENTLY</div>
@@ -304,7 +371,7 @@ main.hero::after{
   </div>
 </section>
 
-<section class="home-privacy" id="fynd-privacy">
+<section class="home-privacy" style="display:none" id="fynd-privacy">
   <div class="hp-wrap">
     <div>
       <div class="hp-quote" aria-hidden="true">”</div>
@@ -315,7 +382,7 @@ main.hero::after{
   </div>
 </section>
 
-<section class="home-final" id="fynd-final">
+<section class="home-final" style="display:none" id="fynd-final">
   <div class="hf-glow"></div>
   <div class="hf-inner">
     <div class="hs-kicker" data-new-en="YOUR NEXT MOVE CAN FIND YOU" data-new-pt="O TEU PRÓXIMO PASSO PODE ENCONTRAR-TE">YOUR NEXT MOVE CAN FIND YOU</div>
