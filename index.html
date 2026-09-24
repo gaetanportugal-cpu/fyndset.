@@ -134,7 +134,7 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
 <div class="lead" data-t="lead">Build your Fyndset. Get discovered for what you can actually do, not just what’s on your CV.</div>
 <div class="sublead" data-t="sublead">For hospitality professionals and the companies looking for them.</div>
 <div class="actions">
-  <div class="cta-wrap"><small data-t="proLabel">I’M A PROFESSIONAL</small><button class="btn"><span data-t="beFound">Be found</span><b>→</b></button></div>
+  <div class="cta-wrap"><small data-t="proLabel">I’M A PROFESSIONAL</small><button class="btn" id="open-pro-builder" type="button" onclick="event.preventDefault();var s=document.getElementById('pro-builder-shell');if(s){s.classList.add('open');document.body.style.overflow='hidden';}return false;"><span data-t="beFound">Be found</span><b>→</b></button></div>
   <div class="cta-wrap"><small data-t="hireLabel">I’M HIRING</small><button class="btn" id="open-fynd-world"><span data-t="findTalent">Find talent</span><b>→</b></button></div>
 </div>
 <div class="pillars">
@@ -163,7 +163,7 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
 </div>
 </section>
 <section class="mobile"><h2 data-t="mobileTitle">What brings you here?</h2>
-<button><span data-t="beFound">Be found</span> <b>→</b></button>
+<button id="open-pro-builder-mobile" type="button" onclick="event.preventDefault();var s=document.getElementById('pro-builder-shell');if(s){s.classList.add('open');document.body.style.overflow='hidden';}return false;"><span data-t="beFound">Be found</span> <b>→</b></button>
 <button><span data-t="findTalent">Find talent</span> <b>→</b></button></section></main>
 <style>
 /* V4.8 — exact concept: professional portraits + corrected targets + Pedro tracks video motion */
@@ -1036,7 +1036,7 @@ document.addEventListener("DOMContentLoaded",()=>{tr();
 </style>
 
 <section id="pro-builder-shell" aria-label="Build your Fyndset">
-  <button id="pro-builder-close">← Voltar</button>
+  <button id="pro-builder-close" type="button" onclick="var s=document.getElementById('pro-builder-shell');if(s){s.classList.remove('open');document.body.style.overflow='';}return false;">← Voltar</button>
   <iframe id="pro-builder-frame" title="Build your Fyndset" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;pt&quot;&gt;
 &lt;head&gt;
