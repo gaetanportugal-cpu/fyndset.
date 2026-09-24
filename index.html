@@ -258,6 +258,47 @@ main.hero::after{display:none!important}
  }
 }
 </style>
+
+<style id="fyndset-dedicated-modes-v6">
+.fy-mode-home{
+  position:absolute;top:24px;left:28px;z-index:80;
+  display:none;align-items:center;gap:9px;
+  border:1px solid rgba(255,255,255,.22);border-radius:999px;
+  padding:11px 16px;background:rgba(3,28,31,.72);backdrop-filter:blur(14px);
+  color:#f8fbfa;font:650 12px/1 Inter,Arial,sans-serif;cursor:pointer;
+}
+.fy-mode-home:hover{border-color:#3fe0da;color:#3fe0da}
+body.fy-dedicated{overflow:hidden!important}
+body.fy-dedicated main.hero,
+body.fy-dedicated #the-meeting,
+body.fy-dedicated #shared-ending{display:none!important}
+body.fy-dedicated #pro-story,
+body.fy-dedicated #company-story{display:none!important}
+body.fy-mode-pro #pro-story,
+body.fy-mode-company #company-story{
+  display:block!important;position:fixed!important;inset:0!important;
+  width:100vw!important;height:100dvh!important;min-height:0!important;
+  z-index:10000!important;overflow:hidden!important;margin:0!important;
+}
+body.fy-mode-pro #pro-story .fy-stage,
+body.fy-mode-company #company-story .fy-stage,
+body.fy-mode-pro #pro-story .fy-slide,
+body.fy-mode-company #company-story .fy-slide,
+body.fy-mode-pro #pro-story .fy-inner,
+body.fy-mode-company #company-story .fy-inner{
+  min-height:100dvh!important;height:100dvh!important;
+}
+body.fy-mode-pro #pro-story .fy-mode-home,
+body.fy-mode-company #company-story .fy-mode-home{display:flex}
+body.fy-dedicated .fy-nav{bottom:28px}
+@media(max-width:850px){
+ .fy-mode-home{top:14px;left:14px;padding:10px 13px}
+ body.fy-mode-pro #pro-story,
+ body.fy-mode-company #company-story{overflow-y:auto!important}
+ body.fy-mode-pro #pro-story .fy-stage,
+ body.fy-mode-company #company-story .fy-stage{min-height:100dvh!important;height:100dvh!important}
+}
+</style>
 </head><body>
 <main class="hero"><video class="hero-video" autoplay muted loop playsinline preload="auto" poster="./fyndset-hero-bg.png" aria-hidden="true">
     <source src="./fyndset-hero.mp4" type="video/mp4">
@@ -334,7 +375,7 @@ main.hero::after{display:none!important}
 @media(max-width:850px){.fy-audience,.fy-stage,.fy-inner{min-height:930px}.fy-inner{display:block;padding:65px 5vw 150px}.fy-copy h2{font-size:50px}.fy-visual{min-height:440px;margin-top:30px}.fy-profile,.fy-proof,.fy-privacy,.fy-discovery,.fy-why,.fy-full{right:0;top:8%;width:min(100%,470px)}.fy-nav{width:96%;bottom:25px}.fy-dot{width:25%;font-size:9px}.fy-dot:not(:last-child):after{width:calc(100% - 13px);left:calc(50% + 7px)}.fy-bridge-inner{grid-template-columns:1fr;text-align:center;padding:60px 0}.fy-bridge-side.right{text-align:center}.fy-bridge-side p,.fy-bridge-side.right p{margin-left:auto;margin-right:auto}.fy-link{height:170px}.fy-link:before,.fy-link:after{display:none}.fy-stories{grid-template-columns:1fr}.fy-end-actions{flex-direction:column;align-items:center}}
 </style>
 
-<section class="fy-audience fy-professional" id="pro-story">
+<section class="fy-audience fy-professional" id="pro-story"><button class="fy-mode-home" type="button" data-return-home>← Página principal</button>
   <div class="fy-stage">
     <article class="fy-slide active" data-slide="0">
       <div class="fy-bg" style="background-image:url('./fyndset-career-sofia.png')"></div>
@@ -360,7 +401,7 @@ main.hero::after{display:none!important}
 </div>
 </section>
 
-<section class="fy-audience fy-company" id="company-story">
+<section class="fy-audience fy-company" id="company-story"><button class="fy-mode-home" type="button" data-return-home>← Página principal</button>
   <div class="fy-stage">
     <article class="fy-slide active" data-slide="0"><div class="fy-bg" style="background-image:url('./fyndset-hero-bg.png')"></div><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">PARA EMPRESAS</div><h2>Encontra quem<br><em>procuravas.</em></h2><p>Descobre pessoas pela experiência, competências, contexto e trajetória — sem depender apenas de cargos ou CVs.</p><button class="fy-primary" data-open-company>Encontrar talento <b>→</b></button></div><div class="fy-visual"><div class="fy-radar"><div class="fy-ring r1"></div><div class="fy-ring r2"></div><div class="fy-ring r3"></div><div class="fy-radar-center">◎</div><img class="fy-face f1" src="./sofia.png"><img class="fy-face f2" src="./miguel.png"><img class="fy-face f3" src="./pedro.png"><img class="fy-face f4" src="./sofia.png"><img class="fy-face f5" src="./pedro.png"></div></div></div></article>
     <article class="fy-slide" data-slide="1"><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">02 · DISCOVERY</div><h2>E quem não sabias<br>que devias <em>procurar.</em></h2><p>O radar não mostra apenas correspondências diretas. Também revela trajetórias e sinais transferíveis que uma pesquisa tradicional pode perder.</p><button class="fy-primary" data-open-company>Encontrar talento <b>→</b></button></div><div class="fy-visual"><div class="fy-glass fy-discovery"><img src="./pedro.png"><div class="fy-discovery-body"><span class="fy-tag">DISCOVERY</span><h3>Tiago Mendes</h3><small>Assistant Restaurant Manager</small><div class="fy-list"><span>↗ 2 promoções</span><span>◎ Lidera equipa de 16 pessoas</span><span>◉ Fine dining</span><span>✓ Sinais fortes de liderança</span></div></div></div></div></div></article>
@@ -1612,35 +1653,64 @@ document.getElementById(&quot;next&quot;).onclick=forward;document.getElementByI
 })();
 </script>
 
-<script id="fyndset-gated-explanations-v3">
+<script id="fyndset-dedicated-routing-v6">
 (()=>{
+ const body=document.body;
  const pro=document.getElementById('pro-story');
  const company=document.getElementById('company-story');
  const heroPro=document.getElementById('open-pro-builder');
  const heroCompany=document.getElementById('open-fynd-world');
 
- function unlock(which){
-   if(which==='pro'){
-     pro?.classList.add('fy-unlocked');
-     company?.classList.remove('fy-unlocked');
-   }else{
-     company?.classList.add('fy-unlocked');
-     pro?.classList.remove('fy-unlocked');
-   }
-   const target=which==='pro'?pro:company;
-   requestAnimationFrame(()=>requestAnimationFrame(()=>{
-     target?.scrollIntoView({behavior:'smooth',block:'start'});
-   }));
+ function resetStory(root){
+   if(!root)return;
+   const slides=[...root.querySelectorAll('.fy-slide')];
+   const dots=[...root.querySelectorAll('.fy-dot')];
+   slides.forEach((s,i)=>s.classList.toggle('active',i===0));
+   dots.forEach((d,i)=>d.classList.toggle('active',i===0));
  }
 
- // Hero CTAs ONLY reveal their explanation path.
- // Capture + stopImmediatePropagation prevents the old product-opening handlers from firing.
+ function enter(mode){
+   resetStory(mode==='pro'?pro:company);
+   body.classList.remove('fy-mode-pro','fy-mode-company');
+   body.classList.add('fy-dedicated',mode==='pro'?'fy-mode-pro':'fy-mode-company');
+   window.scrollTo(0,0);
+ }
+
+ function home(){
+   body.classList.remove('fy-dedicated','fy-mode-pro','fy-mode-company');
+   pro?.classList.remove('fy-unlocked');
+   company?.classList.remove('fy-unlocked');
+   document.documentElement.style.scrollBehavior='auto';
+   window.scrollTo(0,0);
+   requestAnimationFrame(()=>document.documentElement.style.scrollBehavior='');
+ }
+
+ // Hero choices enter isolated explanation experiences.
  if(heroPro) heroPro.addEventListener('click',e=>{
-   e.preventDefault(); e.stopImmediatePropagation(); unlock('pro');
+   e.preventDefault();e.stopImmediatePropagation();enter('pro');
  },true);
  if(heroCompany) heroCompany.addEventListener('click',e=>{
-   e.preventDefault(); e.stopImmediatePropagation(); unlock('company');
+   e.preventDefault();e.stopImmediatePropagation();enter('company');
  },true);
+
+ document.querySelectorAll('[data-return-home]').forEach(b=>b.addEventListener('click',home));
+
+ // Dedicated pages never leak to the public page through wheel/touch scrolling.
+ // Dots remain the only way to reveal slides 02–04.
+ [pro,company].forEach(root=>{
+   if(!root)return;
+   root.addEventListener('wheel',e=>{
+     if(body.classList.contains('fy-dedicated')) e.preventDefault();
+   },{passive:false});
+   root.addEventListener('touchmove',e=>{
+     if(body.classList.contains('fy-dedicated')) e.preventDefault();
+   },{passive:false});
+ });
+
+ // Browser Back from a dedicated state returns cleanly to homepage.
+ window.addEventListener('popstate',()=>{
+   if(body.classList.contains('fy-dedicated')) home();
+ });
 })();
 </script>
 </body></html>
