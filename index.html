@@ -1752,4 +1752,97 @@ document.addEventListener('DOMContentLoaded',()=>{
   });
 });
 </script>
+
+<style id="fyndset-v10-1-hotspot-fix">
+/* v10.1 — page 01 is one image; ONLY its own image controls are clickable. */
+body.fy-mode-pro.fy-cine-01 #pro-story > .fy-mode-home,
+body.fy-mode-pro.fy-cine-01 #pro-story > .fy-nav{
+  display:none !important;
+  pointer-events:none !important;
+}
+
+/* Keep the approved composition mapped 1:1 to the viewport.
+   This makes hotspot coordinates match the controls painted into the image. */
+body.fy-mode-pro.fy-cine-01 #pro-story .fy-pro-cinematic-final{
+  position:fixed !important; inset:0 !important; width:100vw !important; height:100vh !important;
+}
+body.fy-mode-pro.fy-cine-01 #pro-story .fy-pro-cinematic-final .fy-cinematic-image{
+  position:absolute !important; inset:0 !important;
+  background-image:url('./fyndset-professional-identity-cinematic.png') !important;
+  background-size:100% 100% !important;
+  background-position:0 0 !important;
+  background-repeat:no-repeat !important;
+}
+
+/* Exact normalized hit areas from the approved 1792×832 composition. */
+body.fy-mode-pro.fy-cine-01 .fy-hot-home{left:1.90%!important;top:2.65%!important;width:9.75%!important;height:5.85%!important}
+body.fy-mode-pro.fy-cine-01 .fy-hot-build{left:2.95%!important;top:65.55%!important;width:18.85%!important;height:8.85%!important}
+
+/* The four circles/labels already visible IN THE IMAGE become the navigator. */
+body.fy-mode-pro.fy-cine-01 .fy-hot-step{top:80.2%!important;height:16.6%!important;width:8.8%!important}
+body.fy-mode-pro.fy-cine-01 .fy-hot-step.s1{left:30.1%!important}
+body.fy-mode-pro.fy-cine-01 .fy-hot-step.s2{left:39.6%!important}
+body.fy-mode-pro.fy-cine-01 .fy-hot-step.s3{left:49.1%!important}
+body.fy-mode-pro.fy-cine-01 .fy-hot-step.s4{left:58.7%!important}
+
+/* No accidental stacking from legacy controls on the cinematic page. */
+body.fy-mode-pro.fy-cine-01 #pro-story .fy-pro-cinematic-final .fy-hotspot{
+  display:block!important; opacity:1!important; pointer-events:auto!important; z-index:999!important;
+}
+</style>
+
+<script id="fyndset-v10-1-hotspot-fix-js">
+document.addEventListener('DOMContentLoaded',()=>{
+  const body=document.body;
+  const pro=document.getElementById('pro-story');
+  const cine=pro?.querySelector('.fy-pro-cinematic-final');
+  const shell=document.getElementById('pro-builder-shell');
+
+  function setCine(on){ body.classList.toggle('fy-cine-01',!!on); }
+
+  // Entering professional explanation always starts on cinematic page 01.
+  const heroPro=document.getElementById('open-pro-builder');
+  heroPro?.addEventListener('click',()=>setTimeout(()=>setCine(true),0),true);
+
+  // HOME: isolated handler; cannot fall through to the build hotspot.
+  cine?.querySelector('.fy-hot-home')?.addEventListener('click',(e)=>{
+    e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
+    setCine(false);
+    body.classList.remove('fy-dedicated','fy-mode-pro','fy-mode-company');
+    window.scrollTo(0,0);
+  },true);
+
+  // BUILD: explicitly open the existing builder shell.
+  cine?.querySelector('.fy-hot-build')?.addEventListener('click',(e)=>{
+    e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
+    if(shell){
+      shell.classList.add('open');
+      document.body.style.overflow='hidden';
+    }
+  },true);
+
+  // IMAGE NAV: click exactly the four controls visible in the image.
+  cine?.querySelectorAll('[data-pro-step]').forEach(btn=>{
+    btn.addEventListener('click',(e)=>{
+      e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
+      const i=Number(btn.dataset.proStep || 0);
+      if(i===0){ setCine(true); return; }
+      setCine(false);
+      const slides=[...pro.querySelectorAll('.fy-slide')];
+      const dots=[...pro.querySelectorAll(':scope > .fy-nav .fy-dot')];
+      slides.forEach((s,n)=>s.classList.toggle('active',n===i));
+      dots.forEach((d,n)=>d.classList.toggle('active',n===i));
+    },true);
+  });
+
+  // Legacy nav is used only on pages 02–04. If it returns to 01, restore image mode.
+  pro?.querySelectorAll(':scope > .fy-nav .fy-dot').forEach((dot,i)=>{
+    dot.addEventListener('click',()=>setCine(i===0));
+  });
+
+  // Any visible "Página principal" on pages 02–04 also clears cinematic state.
+  pro?.querySelector(':scope > [data-return-home]')?.addEventListener('click',()=>setCine(false),true);
+});
+</script>
+
 </body></html>
