@@ -113,7 +113,23 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
  .pedro-id .line,.pedro-id .radar{display:none}
 }
 
-</style></head><body>
+</style>
+<style>
+/* FYNDSET — SECTION 02 / integrated into existing homepage */
+.career-story{--cs:#3fe0da;position:relative;min-height:820px;overflow:hidden;background:#031c1f;color:#f8fbfa;border-top:1px solid rgba(255,255,255,.06)}
+.career-photo{position:absolute;z-index:0;inset:0 0 0 43%;background:linear-gradient(90deg,#031c1f 0%,rgba(3,28,31,.93) 9%,rgba(3,28,31,.34) 34%,rgba(3,28,31,.04) 70%),linear-gradient(0deg,rgba(3,28,31,.55),transparent 48%),url("./sofia-restaurant-manager-floor.jpg") center/cover no-repeat}
+.career-inner{position:relative;z-index:2;width:min(1480px,93vw);min-height:820px;margin:auto;padding:92px 0 66px;display:grid;grid-template-columns:47% 53%}
+.career-copy{max-width:660px}.career-kicker{font-size:9px;letter-spacing:.24em;color:var(--cs);font-weight:700;margin-bottom:36px}
+.career-copy h2{margin:0;font-size:clamp(58px,5.8vw,94px);line-height:.92;letter-spacing:-.06em;font-weight:520}.career-copy h2 em{display:inline;font-style:normal;color:var(--cs);font-weight:610}
+.career-copy>p{max-width:555px;margin:30px 0 43px;color:#a8bfbc;font-size:17px;line-height:1.6}
+.career-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:650px}.career-pillars>div{min-width:0}.career-pillars i{display:grid;place-items:center;width:52px;height:52px;border:1px solid rgba(63,224,218,.4);border-radius:50%;color:var(--cs);font-style:normal;font-size:18px;margin-bottom:14px}.career-pillars b{display:block;max-width:115px;font-size:11px;line-height:1.45;font-weight:550;color:#eaf5f3}
+.career-visual{position:relative;min-height:640px}.career-fyndset{position:absolute;right:2%;top:35%;width:min(430px,48vw);padding:22px 24px 24px;border:1px solid rgba(255,255,255,.2);border-radius:22px;background:linear-gradient(145deg,rgba(7,38,40,.9),rgba(3,25,27,.78));backdrop-filter:blur(18px);box-shadow:0 35px 90px rgba(0,0,0,.38)}
+.career-person{display:flex;align-items:center;gap:13px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.08)}.career-person img{width:62px;height:62px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.65)}.career-person strong{display:block;font-size:18px}.career-person small{display:block;margin-top:4px;font-size:9px;color:#8fa7a4}.career-person>span{margin-left:auto;display:grid;place-items:center;width:21px;height:21px;border-radius:50%;background:var(--cs);color:#063033;font-size:11px;font-weight:800}
+.career-label{margin:19px 0 12px;font-size:6.5px;letter-spacing:.17em;color:#6f8d89}.career-signal{display:grid;grid-template-columns:115px 1fr 72px;gap:12px;align-items:center;margin:14px 0}.career-signal>b{font-size:9px;font-weight:520}.career-signal>i{display:block;height:4px;border-radius:99px;background:rgba(255,255,255,.09);overflow:hidden}.career-signal>i u{display:block;width:var(--w);height:100%;background:var(--cs);border-radius:99px;text-decoration:none;transform-origin:left;animation:careerGrow 1.2s ease both}.career-signal>small{text-align:right;font-size:7px;color:#7f9996}.career-context{position:absolute;right:2%;bottom:2%;font-size:7px;letter-spacing:.18em;color:rgba(255,255,255,.5)}
+@keyframes careerGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(max-width:760px){.career-story{min-height:1040px}.career-photo{inset:50% 0 0;background-position:center}.career-inner{display:block;min-height:1040px;width:auto;padding:70px 20px}.career-copy h2{font-size:52px}.career-copy>p{font-size:14px;margin:24px 0 32px}.career-pillars{grid-template-columns:1fr 1fr;gap:22px}.career-visual{min-height:480px}.career-fyndset{top:43%;right:0;width:100%;padding:18px}.career-signal{grid-template-columns:92px 1fr}.career-signal>small{display:none}.career-context{display:none}}
+</style>
+</head><body>
 <main class="hero"><video class="hero-video" autoplay muted loop playsinline preload="auto" poster="./fyndset-hero-bg.png" aria-hidden="true">
     <source src="./fyndset-hero.mp4" type="video/mp4">
   </video>
@@ -166,30 +182,29 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
 <button id="open-pro-builder-mobile" type="button" onclick="event.preventDefault();var s=document.getElementById('pro-builder-shell');if(s){s.classList.add('open');document.body.style.overflow='hidden';}return false;"><span data-t="beFound">Be found</span> <b>→</b></button>
 <button><span data-t="findTalent">Find talent</span> <b>→</b></button></section></main>
 
-<section class="home-story" id="how-it-works">
-  <div class="hs-wrap">
-    <div class="hs-kicker" data-new-en="HOW FYNDSET WORKS" data-new-pt="COMO FUNCIONA">HOW FYNDSET WORKS</div>
-    <div class="hs-head">
-      <h2><span data-new-html-en="Your career is more than<br><span>a job title.</span>" data-new-html-pt="A tua carreira é mais do que<br><span>um cargo.</span>">Your career is more than<br><span>a job title.</span></span></h2>
-      <p><span data-new-en="Fyndset turns what you can do, where you’ve proved it and what you want next into a profile that companies can discover." data-new-pt="O Fyndset transforma o que sabes fazer, onde já o demonstraste e o que procuras a seguir num perfil que as empresas podem descobrir.">Fyndset turns what you can do, where you’ve proved it and what you want next into a profile that companies can discover.</span></p>
+<section class="career-story" id="how-it-works">
+  <div class="career-photo" role="img" aria-label="Restaurant Manager a coordenar o serviço na sala de um restaurante premium"></div>
+  <div class="career-inner">
+    <div class="career-copy">
+      <div class="career-kicker" data-new-en="HOW FYNDSET WORKS" data-new-pt="COMO FUNCIONA">HOW FYNDSET WORKS</div>
+      <h2><span data-new-html-en="Your career is<br>more than <em>a job title.</em>" data-new-html-pt="A tua carreira é<br>mais do que <em>um cargo.</em>">Your career is<br>more than <em>a job title.</em></span></h2>
+      <p><span data-new-en="Fyndset shows what you can actually do, where you’ve proved it and what you want next." data-new-pt="O Fyndset mostra o que realmente sabes fazer, onde já o demonstraste e o que procuras a seguir.">Fyndset shows what you can actually do, where you’ve proved it and what you want next.</span></p>
+      <div class="career-pillars">
+        <div><i>◎</i><b data-new-en="Real experience" data-new-pt="Experiência real">Real experience</b></div>
+        <div><i>◌</i><b data-new-en="Skills in context" data-new-pt="Competências no contexto">Skills in context</b></div>
+        <div><i>↗</i><b data-new-en="Career momentum" data-new-pt="Trajetória com sentido">Career momentum</b></div>
+        <div><i>◇</i><b data-new-en="Career intent" data-new-pt="Intenção de carreira">Career intent</b></div>
+      </div>
     </div>
-
-    <div class="hs-steps">
-      <article>
-        <div class="hs-marker"><div class="hs-icon">◎</div><span class="hs-num">01</span></div>
-        <h3 data-new-en="Build your Fyndset" data-new-pt="Constrói o teu Fyndset">Build your Fyndset</h3>
-        <p><span data-new-en="Capture skills, experience, environments and career intent — not just a list of previous jobs." data-new-pt="Mostra competências, experiência, ambientes e intenção de carreira — não apenas uma lista de empregos anteriores.">Capture skills, experience, environments and career intent — not just a list of previous jobs.</span></p>
+    <div class="career-visual">
+      <article class="career-fyndset">
+        <div class="career-person"><img src="./sofia.png" alt="Sofia"><div><strong>Sofia</strong><small>Restaurant Manager · Portugal</small></div><span>✓</span></div>
+        <div class="career-label" data-new-en="PROFESSIONAL SIGNALS" data-new-pt="SINAIS PROFISSIONAIS">PROFESSIONAL SIGNALS</div>
+        <div class="career-signal"><b data-new-en="Leadership" data-new-pt="Liderança">Leadership</b><i><u style="--w:91%"></u></i><small data-new-en="Demonstrated" data-new-pt="Demonstrada">Demonstrated</small></div>
+        <div class="career-signal"><b>Fine dining</b><i><u style="--w:84%"></u></i><small data-new-en="4 years" data-new-pt="4 anos">4 years</small></div>
+        <div class="career-signal"><b data-new-en="Opening experience" data-new-pt="Experiência em aberturas">Opening experience</b><i><u style="--w:72%"></u></i><small data-new-en="2 concepts" data-new-pt="2 conceitos">2 concepts</small></div>
       </article>
-      <article>
-        <div class="hs-marker"><div class="hs-icon">◌</div><span class="hs-num">02</span></div>
-        <h3 data-new-en="Control your visibility" data-new-pt="Controla a tua visibilidade">Control your visibility</h3>
-        <p><span data-new-en="Choose what you’re open to and how you want to be discovered. Your profile works around your intent." data-new-pt="Escolhe a que oportunidades estás aberto e como queres ser descoberto. O teu perfil adapta-se à tua intenção.">Choose what you’re open to and how you want to be discovered. Your profile works around your intent.</span></p>
-      </article>
-      <article>
-        <div class="hs-marker"><div class="hs-icon">↗</div><span class="hs-num">03</span></div>
-        <h3 data-new-en="Get found for fit" data-new-pt="Sê encontrado pela compatibilidade">Get found for fit</h3>
-        <p><span data-new-en="Companies discover people through capability, context and trajectory — instead of relying only on titles." data-new-pt="As empresas descobrem pessoas pelas competências, contexto e trajetória — em vez de dependerem apenas de cargos.">Companies discover people through capability, context and trajectory — instead of relying only on titles.</span></p>
-      </article>
+      <div class="career-context">RESTAURANT FLOOR · SERVICE · LEADERSHIP</div>
     </div>
   </div>
 </section>
