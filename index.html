@@ -1904,4 +1904,183 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 </script>
 
+
+<style id="fyndset-v14-identity-read-motion">
+/* One-shot identity reading. Pure overlay: does not duplicate artwork or controls. */
+.fy-pro-final-page{ --read-x:56%; --read-y:53%; }
+.fy-identity-read{
+  position:absolute; inset:0; z-index:8; pointer-events:none; overflow:hidden;
+  opacity:0;
+}
+.fy-pro-final-page.fy-reading .fy-identity-read{opacity:1}
+
+/* A soft focus/illumination pass over Sofia — no visible zoom. */
+.fy-read-focus{
+  position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 53% 45%, rgba(75,244,237,.075) 0 9%, rgba(75,244,237,.018) 21%, transparent 38%),
+    linear-gradient(90deg, rgba(3,28,31,.10), transparent 45%, rgba(3,28,31,.04));
+  opacity:0;
+}
+.fy-reading .fy-read-focus{animation:fyFocusIn 1.05s cubic-bezier(.2,.75,.2,1) both}
+
+/* Scientific scan rings centered around the existing hologram. */
+.fy-read-radar{
+  position:absolute; left:56%; top:52%; width:310px; height:310px;
+  transform:translate(-50%,-50%); opacity:0;
+}
+.fy-read-radar::before,.fy-read-radar::after{
+  content:""; position:absolute; inset:0; border-radius:50%;
+  border:1px solid rgba(71,238,231,.0);
+  box-shadow:0 0 22px rgba(63,224,218,0);
+}
+.fy-reading .fy-read-radar{animation:fyRadarAppear .78s .18s ease-out both}
+.fy-reading .fy-read-radar::before{animation:fyRing .62s .22s ease-out both}
+.fy-reading .fy-read-radar::after{inset:22%;animation:fyRing .55s .34s ease-out both}
+
+/* Three short vector traces: tablet -> signal map -> profile card. */
+.fy-read-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.fy-read-path{
+  fill:none; stroke:rgba(77,241,234,.78); stroke-width:1.05;
+  stroke-linecap:round; vector-effect:non-scaling-stroke;
+  filter:drop-shadow(0 0 4px rgba(63,224,218,.48));
+  stroke-dasharray:1; stroke-dashoffset:1; opacity:0;
+}
+.fy-reading .fy-read-path.p1{animation:fyTrace .50s .24s ease-out forwards}
+.fy-reading .fy-read-path.p2{animation:fyTrace .48s .38s ease-out forwards}
+.fy-reading .fy-read-path.p3{animation:fyTrace .46s .52s ease-out forwards}
+
+/* Tiny recognition pulses placed over the three existing signal labels.
+   No text is added, so the PNG stays the single visual source. */
+.fy-read-signal{
+  position:absolute;width:13px;height:13px;border-radius:50%;
+  border:1px solid rgba(92,255,247,.88);
+  background:rgba(63,224,218,.14);
+  box-shadow:0 0 0 0 rgba(63,224,218,.34),0 0 12px rgba(63,224,218,.42);
+  opacity:0; transform:scale(.55);
+}
+.fy-read-signal.s1{left:43.8%;top:38.6%}
+.fy-read-signal.s2{left:59.0%;top:42.8%}
+.fy-read-signal.s3{left:60.5%;top:55.0%}
+.fy-reading .fy-read-signal.s1{animation:fyRecognise .32s .66s ease-out both}
+.fy-reading .fy-read-signal.s2{animation:fyRecognise .32s .79s ease-out both}
+.fy-reading .fy-read-signal.s3{animation:fyRecognise .32s .92s ease-out both}
+
+/* Final energy transfer toward Sofia's existing profile card. */
+.fy-read-confirm{
+  position:absolute;left:68.7%;top:28%;width:25%;height:32%;
+  border:1px solid rgba(82,246,239,0);border-radius:28px;opacity:0;
+}
+.fy-reading .fy-read-confirm{animation:fyConfirm .34s 1.04s ease-out both}
+
+/* One concluding pulse on 01. */
+.fy-reading ~ .fy-final-nav .fy-final-dot[data-final-step="0"] .fy-final-circle,
+.fy-stage.fy-reading-stage .fy-final-nav .fy-final-dot[data-final-step="0"] .fy-final-circle{
+  animation:fyNavConfirm .36s 1.08s ease-out both;
+}
+
+@keyframes fyFocusIn{
+  0%{opacity:0;filter:blur(7px)}
+  45%{opacity:1;filter:blur(1px)}
+  100%{opacity:.28;filter:blur(0)}
+}
+@keyframes fyRadarAppear{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(.91)}
+  55%{opacity:.82}
+  100%{opacity:.20;transform:translate(-50%,-50%) scale(1)}
+}
+@keyframes fyRing{
+  0%{border-color:rgba(71,238,231,0);transform:scale(.82);box-shadow:0 0 0 rgba(63,224,218,0)}
+  50%{border-color:rgba(71,238,231,.58);box-shadow:0 0 20px rgba(63,224,218,.13)}
+  100%{border-color:rgba(71,238,231,.08);transform:scale(1)}
+}
+@keyframes fyTrace{
+  0%{opacity:0;stroke-dashoffset:1}
+  18%{opacity:.95}
+  100%{opacity:.16;stroke-dashoffset:0}
+}
+@keyframes fyRecognise{
+  0%{opacity:0;transform:scale(.45);box-shadow:0 0 0 0 rgba(63,224,218,.34)}
+  55%{opacity:1;transform:scale(1.18);box-shadow:0 0 0 8px rgba(63,224,218,.08),0 0 16px rgba(63,224,218,.55)}
+  100%{opacity:.18;transform:scale(.82);box-shadow:0 0 0 14px rgba(63,224,218,0)}
+}
+@keyframes fyConfirm{
+  0%{opacity:0;border-color:rgba(82,246,239,0);box-shadow:0 0 0 rgba(63,224,218,0)}
+  45%{opacity:1;border-color:rgba(82,246,239,.55);box-shadow:0 0 30px rgba(63,224,218,.16)}
+  100%{opacity:0;border-color:rgba(82,246,239,0);box-shadow:0 0 0 rgba(63,224,218,0)}
+}
+@keyframes fyNavConfirm{
+  0%{box-shadow:0 0 0 5px rgba(63,224,218,.07),0 0 20px rgba(63,224,218,.3)}
+  50%{box-shadow:0 0 0 9px rgba(63,224,218,.10),0 0 32px rgba(63,224,218,.58)}
+  100%{box-shadow:0 0 0 5px rgba(63,224,218,.07),0 0 20px rgba(63,224,218,.3)}
+}
+
+@media(max-width:900px){
+  .fy-read-radar{left:56%;top:50%;width:210px;height:210px}
+  .fy-read-signal{display:none}
+  .fy-read-confirm{left:67%;top:24%;width:29%;height:31%}
+}
+@media(prefers-reduced-motion:reduce){
+  .fy-identity-read{display:none!important}
+  .fy-final-circle{animation:none!important}
+}
+</style>
+
+<script id="fyndset-v14-identity-read-motion-js">
+document.addEventListener('DOMContentLoaded',()=>{
+  const pro=document.getElementById('pro-story');
+  if(!pro) return;
+  const first=pro.querySelector('.fy-pro-final-page');
+  const stage=pro.querySelector('.fy-stage');
+  if(!first || !stage) return;
+
+  const layer=document.createElement('div');
+  layer.className='fy-identity-read';
+  layer.setAttribute('aria-hidden','true');
+  layer.innerHTML=`
+    <div class="fy-read-focus"></div>
+    <div class="fy-read-radar"></div>
+    <svg class="fy-read-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path class="fy-read-path p1" pathLength="1" d="M49 61 C51 54 52 47 48 40"/>
+      <path class="fy-read-path p2" pathLength="1" d="M52 57 C56 51 59 47 61 43"/>
+      <path class="fy-read-path p3" pathLength="1" d="M57 55 C62 50 66 43 70 37"/>
+    </svg>
+    <i class="fy-read-signal s1"></i>
+    <i class="fy-read-signal s2"></i>
+    <i class="fy-read-signal s3"></i>
+    <i class="fy-read-confirm"></i>`;
+  first.appendChild(layer);
+
+  let timer;
+  function playIdentityRead(){
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    clearTimeout(timer);
+    first.classList.remove('fy-reading');
+    stage.classList.remove('fy-reading-stage');
+    void first.offsetWidth; // intentional restart only on entering 01
+    first.classList.add('fy-reading');
+    stage.classList.add('fy-reading-stage');
+    timer=setTimeout(()=>{
+      first.classList.remove('fy-reading');
+      stage.classList.remove('fy-reading-stage');
+    },1500);
+  }
+
+  /* Page 01 entry from the homepage */
+  document.getElementById('open-pro-builder')?.addEventListener('click',()=>{
+    setTimeout(playIdentityRead,80);
+  },true);
+
+  /* Page 01 entry from the 01 navigation button */
+  pro.querySelector('.fy-final-dot[data-final-step="0"]')?.addEventListener('click',()=>{
+    setTimeout(playIdentityRead,30);
+  });
+
+  /* Also play if the dedicated professional page is already open on load. */
+  if(document.body.classList.contains('fy-mode-pro') && first.classList.contains('active')){
+    setTimeout(playIdentityRead,180);
+  }
+});
+</script>
+
 </body></html>
