@@ -399,27 +399,27 @@ body.fy-mode-pro #pro-story:has(.fy-pro-cinematic-final.active) > .fy-nav{opacit
 
 <section class="fy-audience fy-professional" id="pro-story"><button class="fy-mode-home" type="button" data-return-home>← Página principal</button>
   <div class="fy-stage">
-    <article class="fy-slide active fy-pro-clean-final" data-slide="0">
-  <div class="fy-pro-clean-bg" role="img" aria-label="Fyndset para profissionais — a tua carreira é mais do que um cargo"></div>
+    <article class="fy-slide active fy-pro-final-page" data-slide="0">
+  <div class="fy-pro-final-bg" role="img" aria-label="Fyndset profissional — identidade"></div>
 
-  <button class="fy-clean-home" type="button" data-clean-home>← Página principal</button>
+  <button class="fy-final-home" type="button" data-final-home>← Página principal</button>
 
-  <button class="fy-clean-build" type="button" data-open-profile>
-    <span>Construir o meu Fyndset</span><b>→</b>
+  <button class="fy-final-build" type="button" data-open-profile>
+    <span>Construir o meu Fyndset</span><span aria-hidden="true">→</span>
   </button>
 
-  <nav class="fy-clean-steps" aria-label="Explorar Fyndset">
-    <button class="fy-clean-step active" type="button" data-clean-step="0">
-      <i class="fy-step-icon">♙</i><small>01</small><strong>Identidade</strong>
+  <nav class="fy-final-nav" aria-label="Explorar o Fyndset">
+    <button class="fy-final-dot active" type="button" data-final-step="0">
+      <span class="fy-final-circle">♙</span><small>01</small><strong>Identidade</strong>
     </button>
-    <button class="fy-clean-step" type="button" data-clean-step="1">
-      <i class="fy-step-icon">⌬</i><small>02</small><strong>Fynd DNA</strong>
+    <button class="fy-final-dot" type="button" data-final-step="1">
+      <span class="fy-final-circle">⌬</span><small>02</small><strong>Fynd DNA</strong>
     </button>
-    <button class="fy-clean-step" type="button" data-clean-step="2">
-      <i class="fy-step-icon">▥</i><small>03</small><strong>Prova</strong>
+    <button class="fy-final-dot" type="button" data-final-step="2">
+      <span class="fy-final-circle">▥</span><small>03</small><strong>Prova</strong>
     </button>
-    <button class="fy-clean-step" type="button" data-clean-step="3">
-      <i class="fy-step-icon">◇</i><small>04</small><strong>Privacidade</strong>
+    <button class="fy-final-dot" type="button" data-final-step="3">
+      <span class="fy-final-circle">◇</span><small>04</small><strong>Privacidade</strong>
     </button>
   </nav>
 </article>
@@ -1757,128 +1757,6 @@ document.getElementById(&quot;next&quot;).onclick=forward;document.getElementByI
 </script>
 
 
-<style id="fyndset-v11-clean-professional">
-/* PAGE 01: one clean image + six REAL HTML controls. No hotspots. */
-body.fy-mode-pro #pro-story .fy-pro-clean-final{
-  position:fixed!important; inset:0!important; width:100vw!important; height:100vh!important;
-  overflow:hidden!important; background:#031c1f!important;
-}
-body.fy-mode-pro #pro-story .fy-pro-clean-final .fy-pro-clean-bg{
-  position:absolute; inset:0; z-index:0;
-  background:url('./fyndset-professional-identity-clean.png') center center/cover no-repeat;
-}
-body.fy-mode-pro #pro-story:has(.fy-pro-clean-final.active) > .fy-mode-home,
-body.fy-mode-pro #pro-story:has(.fy-pro-clean-final.active) .fy-stage > .fy-nav{
-  display:none!important;
-}
-
-/* Real home control */
-.fy-clean-home{
-  position:absolute; z-index:20; top:24px; left:28px;
-  border:1px solid rgba(127,255,249,.34); background:rgba(3,28,31,.72); color:#fff;
-  border-radius:999px; padding:13px 22px; font:700 14px/1 Inter,Arial,sans-serif;
-  backdrop-filter:blur(14px); cursor:pointer;
-  box-shadow:0 0 0 1px rgba(255,255,255,.025),0 0 28px rgba(63,224,218,.08);
-}
-.fy-clean-home:hover{border-color:#3fe0da;box-shadow:0 0 28px rgba(63,224,218,.18)}
-
-/* Real build CTA */
-.fy-clean-build{
-  position:absolute; z-index:20; left:3.05%; top:65.5%;
-  min-width:340px; display:flex; align-items:center; justify-content:space-between; gap:30px;
-  border:0; border-radius:999px; padding:19px 28px; cursor:pointer;
-  background:#3fe0da; color:#031c1f; font:800 17px/1 Inter,Arial,sans-serif;
-  box-shadow:0 12px 40px rgba(0,0,0,.22),0 0 30px rgba(63,224,218,.12);
-}
-.fy-clean-build:hover{transform:translateY(-1px);box-shadow:0 16px 44px rgba(0,0,0,.3),0 0 34px rgba(63,224,218,.2)}
-.fy-clean-build b{font-size:20px;font-weight:500}
-
-/* Real four-step navigator */
-.fy-clean-steps{
-  position:absolute; z-index:20; left:50%; bottom:20px; transform:translateX(-50%);
-  width:min(760px,56vw); min-height:118px; padding:15px 28px 13px;
-  display:grid; grid-template-columns:repeat(4,1fr); align-items:start;
-  border:1px solid rgba(127,255,249,.19); border-radius:30px;
-  background:linear-gradient(100deg,rgba(3,28,31,.9),rgba(9,43,43,.82));
-  backdrop-filter:blur(18px); box-shadow:0 18px 55px rgba(0,0,0,.35);
-}
-.fy-clean-steps:before{
-  content:""; position:absolute; top:39px; left:12.5%; right:12.5%; height:1px;
-  background:linear-gradient(90deg,#3fe0da 0 16.5%,rgba(210,231,228,.5) 16.5% 100%);
-}
-.fy-clean-step{
-  position:relative; z-index:2; border:0; background:transparent; color:#a9b9b7;
-  cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:5px;
-  font-family:Inter,Arial,sans-serif;
-}
-.fy-step-icon{
-  width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
-  border:1px solid rgba(218,235,232,.55);background:#06272a;color:#d9e7e5;
-  font-style:normal;font-size:19px;
-}
-.fy-clean-step small{font-size:11px;font-weight:800;color:inherit}
-.fy-clean-step strong{font-size:13px;font-weight:600;color:inherit}
-.fy-clean-step.active{color:#64f5ef}
-.fy-clean-step.active .fy-step-icon{
-  border-color:#54f3ed;background:#0a4d50;color:#64f5ef;
-  box-shadow:0 0 0 6px rgba(63,224,218,.08),0 0 24px rgba(63,224,218,.38);
-}
-.fy-clean-step:hover{color:#fff}
-
-/* Page 01 is visually self-contained. */
-body.fy-mode-pro #pro-story .fy-pro-clean-final.active ~ *{}
-
-/* Responsive: keep controls real and readable. */
-@media(max-width:900px){
-  .fy-clean-home{top:16px;left:16px;padding:11px 16px;font-size:12px}
-  .fy-clean-build{left:4vw;top:auto;bottom:155px;min-width:260px;padding:16px 20px;font-size:14px}
-  .fy-clean-steps{width:92vw;bottom:14px;min-height:105px;padding:12px 12px 10px;border-radius:24px}
-  .fy-step-icon{width:42px;height:42px}
-  .fy-clean-step strong{font-size:11px}
-}
-</style>
-
-<script id="fyndset-v11-clean-professional-js">
-document.addEventListener('DOMContentLoaded',()=>{
-  const body=document.body;
-  const pro=document.getElementById('pro-story');
-  if(!pro) return;
-  const slides=[...pro.querySelectorAll('.fy-slide')];
-  const legacyDots=[...pro.querySelectorAll('.fy-stage > .fy-nav .fy-dot')];
-  const cleanSteps=[...pro.querySelectorAll('[data-clean-step]')];
-
-  function showStep(n){
-    slides.forEach((s,i)=>s.classList.toggle('active',i===n));
-    legacyDots.forEach((d,i)=>d.classList.toggle('active',i===n));
-    cleanSteps.forEach((d,i)=>d.classList.toggle('active',i===n));
-  }
-
-  cleanSteps.forEach(btn=>btn.addEventListener('click',e=>{
-    e.preventDefault(); e.stopPropagation();
-    showStep(Number(btn.dataset.cleanStep));
-  }));
-
-  /* Home is deliberately independent from every other action. */
-  pro.querySelector('[data-clean-home]')?.addEventListener('click',e=>{
-    e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
-    body.classList.remove('fy-dedicated','fy-mode-pro','fy-mode-company');
-    pro.classList.remove('fy-unlocked');
-    document.documentElement.style.scrollBehavior='auto';
-    window.scrollTo(0,0);
-    requestAnimationFrame(()=>document.documentElement.style.scrollBehavior='');
-  },true);
-
-  /* Existing nav on pages 02–04 can return to the new page 01. */
-  legacyDots.forEach((dot,i)=>dot.addEventListener('click',()=>showStep(i)));
-
-  /* Entering professional mode always starts at 01. */
-  document.getElementById('open-pro-builder')?.addEventListener('click',()=>{
-    requestAnimationFrame(()=>showStep(0));
-  },true);
-});
-</script>
-
-
 <style id="fyndset-v11-1-builder-layer-fix">
 /* Builder must sit ABOVE the isolated professional/company experiences. */
 #pro-builder-shell{
@@ -1911,6 +1789,118 @@ document.addEventListener('DOMContentLoaded',()=>{
     shell?.classList.remove('open');
     shell?.setAttribute('aria-hidden','true');
   },true);
+});
+</script>
+
+
+<style id="fyndset-v13-professional-final">
+body.fy-mode-pro #pro-story .fy-pro-final-page{
+  position:fixed!important; inset:0!important; width:100vw!important; height:100vh!important;
+  overflow:hidden!important; background:#031c1f!important;
+}
+.fy-pro-final-bg{
+  position:absolute; inset:0; z-index:0;
+  background:url('./fyndset-professional-identity-bg.png') center center/cover no-repeat;
+}
+
+/* hide legacy navigation on page 01 only */
+body.fy-mode-pro #pro-story:has(.fy-pro-final-page.active) > .fy-mode-home,
+body.fy-mode-pro #pro-story:has(.fy-pro-final-page.active) .fy-stage > .fy-nav{
+  display:none!important;
+}
+
+.fy-final-home{
+  position:absolute;z-index:20;left:28px;top:26px;
+  padding:12px 20px;border-radius:999px;
+  border:1px solid rgba(96,239,233,.34);
+  background:rgba(3,28,31,.68);backdrop-filter:blur(14px);
+  color:#fff;font:700 13px/1 Inter,Arial,sans-serif;cursor:pointer;
+  transition:.2s ease;
+}
+.fy-final-home:hover{border-color:#3fe0da;box-shadow:0 0 22px rgba(63,224,218,.16)}
+
+.fy-final-build{
+  position:absolute;z-index:20;left:3%;top:65%;
+  width:310px;padding:17px 23px;
+  display:flex;justify-content:space-between;align-items:center;
+  border:0;border-radius:999px;background:#3fe0da;color:#031c1f;
+  font:800 15px/1 Inter,Arial,sans-serif;cursor:pointer;
+  box-shadow:0 12px 35px rgba(0,0,0,.25);transition:.2s ease;
+}
+.fy-final-build:hover{transform:translateY(-1px);box-shadow:0 15px 40px rgba(0,0,0,.3),0 0 24px rgba(63,224,218,.15)}
+
+/* Smaller 4-button design, reused on ALL four professional pages */
+.fy-final-nav{
+  position:fixed;z-index:20020;left:50%;bottom:18px;transform:translateX(-50%);
+  width:min(650px,52vw);height:92px;padding:10px 22px 8px;
+  display:grid;grid-template-columns:repeat(4,1fr);align-items:start;
+  border:1px solid rgba(104,238,232,.2);border-radius:25px;
+  background:linear-gradient(100deg,rgba(3,28,31,.9),rgba(10,45,44,.82));
+  backdrop-filter:blur(18px);box-shadow:0 15px 48px rgba(0,0,0,.34);
+}
+.fy-final-nav:before{
+  content:"";position:absolute;top:31px;left:13%;right:13%;height:1px;
+  background:rgba(197,224,221,.42);
+}
+.fy-final-dot{
+  position:relative;z-index:2;border:0;background:transparent;color:#9fb3b1;
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  font-family:Inter,Arial,sans-serif;cursor:pointer;
+}
+.fy-final-circle{
+  width:39px;height:39px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid rgba(205,229,226,.48);background:#06272a;color:#d6e7e4;font-size:15px;
+}
+.fy-final-dot small{font-size:9px;font-weight:800}
+.fy-final-dot strong{font-size:11px;font-weight:650}
+.fy-final-dot.active{color:#62f2ec}
+.fy-final-dot.active .fy-final-circle{
+  border-color:#54eee8;background:#0b4b4d;
+  box-shadow:0 0 0 5px rgba(63,224,218,.07),0 0 20px rgba(63,224,218,.3);
+}
+
+/* The SAME design appears on pages 02,03,04. */
+body.fy-mode-pro #pro-story .fy-stage > .fy-nav{display:none!important}
+
+@media(max-width:900px){
+ .fy-pro-final-bg{background-position:center center}
+ .fy-final-home{left:15px;top:15px;padding:10px 14px;font-size:11px}
+ .fy-final-build{left:4vw;top:auto;bottom:125px;width:245px;padding:14px 18px;font-size:12px}
+ .fy-final-nav{width:92vw;height:82px;bottom:10px;padding:8px 8px 6px;border-radius:21px}
+ .fy-final-circle{width:35px;height:35px}
+ .fy-final-dot strong{font-size:9px}
+}
+</style>
+
+<script id="fyndset-v13-professional-final-js">
+document.addEventListener('DOMContentLoaded',()=>{
+ const body=document.body, pro=document.getElementById('pro-story');
+ if(!pro) return;
+ const stage=pro.querySelector('.fy-stage');
+ const slides=[...pro.querySelectorAll('.fy-slide')];
+ const nav=pro.querySelector('.fy-final-nav');
+ const dots=[...pro.querySelectorAll('.fy-final-dot')];
+
+ /* Move ONE navigation instance outside slide 01 so the exact same design
+    persists across pages 01–04. */
+ if(nav && stage && nav.parentElement!==stage) stage.appendChild(nav);
+
+ function show(n){
+   slides.forEach((s,i)=>s.classList.toggle('active',i===n));
+   dots.forEach((d,i)=>d.classList.toggle('active',i===n));
+ }
+ dots.forEach(d=>d.addEventListener('click',e=>{
+   e.preventDefault();e.stopPropagation();show(Number(d.dataset.finalStep));
+ }));
+
+ pro.querySelector('[data-final-home]')?.addEventListener('click',e=>{
+   e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
+   body.classList.remove('fy-dedicated','fy-mode-pro','fy-mode-company');
+   pro.classList.remove('fy-unlocked');
+   window.scrollTo(0,0);
+ },true);
+
+ document.getElementById('open-pro-builder')?.addEventListener('click',()=>requestAnimationFrame(()=>show(0)),true);
 });
 </script>
 
