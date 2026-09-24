@@ -141,6 +141,66 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
   .career-reference-picture img{object-fit:cover;object-position:48% center}
 }
 </style>
+
+<style id="fyndset-cinematic-scroll-v1">
+html{scroll-behavior:smooth}
+main.hero{position:relative;z-index:2}
+main.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;height:150px;z-index:20;
+  pointer-events:none;
+  background:linear-gradient(to bottom,rgba(3,28,31,0),rgba(3,28,31,.48) 44%,#031c1f 100%);
+}
+.career-story-reference{
+  z-index:3;
+  margin-top:-72px;
+  padding-top:72px;
+  border-top:0!important;
+  background:#031c1f;
+}
+.career-story-reference::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:155px;z-index:3;pointer-events:none;
+  background:linear-gradient(to bottom,#031c1f 0%,rgba(3,28,31,.78) 30%,rgba(3,28,31,.18) 74%,transparent 100%);
+}
+.career-reference-picture{
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.28) 8%,#000 20%,#000 100%);
+  mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.28) 8%,#000 20%,#000 100%);
+}
+.fy-chapters{
+  position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:2500;
+  display:flex;flex-direction:column;align-items:flex-end;gap:13px;
+}
+.fy-chapter{
+  appearance:none;border:0;background:transparent;color:#fff;padding:0;cursor:pointer;
+  display:flex;align-items:center;gap:10px;opacity:.42;transition:.25s ease;
+}
+.fy-chapter span{
+  max-width:0;overflow:hidden;white-space:nowrap;font:600 8px/1 Inter,Arial,sans-serif;
+  letter-spacing:.13em;text-transform:uppercase;transition:.28s ease;color:#d7e5e3;
+}
+.fy-chapter i{
+  width:7px;height:7px;border:1px solid rgba(255,255,255,.75);border-radius:50%;
+  display:block;transition:.25s ease;box-shadow:0 0 0 0 rgba(63,224,218,0);
+}
+.fy-chapter:hover,.fy-chapter.active{opacity:1}
+.fy-chapter:hover span,.fy-chapter.active span{max-width:120px}
+.fy-chapter.active i{
+  background:#3fe0da;border-color:#3fe0da;box-shadow:0 0 0 5px rgba(63,224,218,.10),0 0 18px rgba(63,224,218,.35)
+}
+.fy-scroll-cue{
+  position:absolute;z-index:30;left:50%;bottom:26px;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:7px;color:rgba(255,255,255,.65);
+  font:600 7px/1 Inter,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;pointer-events:none
+}
+.fy-scroll-cue i{width:1px;height:28px;background:linear-gradient(#3fe0da,transparent);animation:fyCue 1.8s ease-in-out infinite}
+@keyframes fyCue{0%,100%{transform:scaleY(.45);transform-origin:top;opacity:.45}50%{transform:scaleY(1);opacity:1}}
+@media(max-width:900px){
+  .fy-chapters{right:10px;gap:11px}.fy-chapter span{display:none}
+  .career-story-reference{margin-top:-35px;padding-top:35px}
+  main.hero::after{height:95px}
+  .career-story-reference::before{height:95px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fy-scroll-cue i{animation:none}}
+</style>
 </head><body>
 <main class="hero"><video class="hero-video" autoplay muted loop playsinline preload="auto" poster="./fyndset-hero-bg.png" aria-hidden="true">
     <source src="./fyndset-hero.mp4" type="video/mp4">
@@ -192,7 +252,16 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
 </section>
 <section class="mobile"><h2 data-t="mobileTitle">What brings you here?</h2>
 <button id="open-pro-builder-mobile" type="button" onclick="event.preventDefault();var s=document.getElementById('pro-builder-shell');if(s){s.classList.add('open');document.body.style.overflow='hidden';}return false;"><span data-t="beFound">Be found</span> <b>→</b></button>
-<button><span data-t="findTalent">Find talent</span> <b>→</b></button></section></main>
+<button><span data-t="findTalent">Find talent</span> <b>→</b></button></section><div class="fy-scroll-cue" aria-hidden="true"><span>Descobrir</span><i></i></div></main>
+
+
+<nav class="fy-chapters" aria-label="Capítulos">
+  <button class="fy-chapter active" type="button" data-target="top"><span>Descoberta</span><i></i></button>
+  <button class="fy-chapter" type="button" data-target="how-it-works"><span>Fyndset</span><i></i></button>
+  <button class="fy-chapter" type="button" data-target="fynd-difference"><span>Identidade</span><i></i></button>
+  <button class="fy-chapter" type="button" data-target="fynd-privacy"><span>Privacidade</span><i></i></button>
+  <button class="fy-chapter" type="button" data-target="fynd-final"><span>Próximo passo</span><i></i></button>
+</nav>
 
 <section class="career-story career-story-reference" id="how-it-works" aria-label="Como funciona o Fyndset — a tua carreira é mais do que um cargo">
   <picture class="career-reference-picture">
@@ -200,7 +269,7 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
   </picture>
 </section>
 
-<section class="home-different">
+<section class="home-different" id="fynd-difference">
   <div class="hd-wrap">
     <div class="hd-copy">
       <div class="hs-kicker" data-new-en="BUILT DIFFERENTLY" data-new-pt="PENSADO DE FORMA DIFERENTE">BUILT DIFFERENTLY</div>
@@ -235,7 +304,7 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
   </div>
 </section>
 
-<section class="home-privacy">
+<section class="home-privacy" id="fynd-privacy">
   <div class="hp-wrap">
     <div>
       <div class="hp-quote" aria-hidden="true">”</div>
@@ -246,7 +315,7 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
   </div>
 </section>
 
-<section class="home-final">
+<section class="home-final" id="fynd-final">
   <div class="hf-glow"></div>
   <div class="hf-inner">
     <div class="hs-kicker" data-new-en="YOUR NEXT MOVE CAN FIND YOU" data-new-pt="O TEU PRÓXIMO PASSO PODE ENCONTRAR-TE">YOUR NEXT MOVE CAN FIND YOU</div>
@@ -1390,4 +1459,24 @@ document.getElementById(&quot;next&quot;).onclick=forward;document.getElementByI
 })();
 </script>
 
+
+<script id="fyndset-chapter-scroll-v1">
+(()=>{
+ const buttons=[...document.querySelectorAll('.fy-chapter')];
+ const sections=buttons.map(b=>{
+   const id=b.dataset.target;
+   return id==='top'?document.querySelector('main.hero'):document.getElementById(id);
+ });
+ buttons.forEach((b,i)=>b.addEventListener('click',()=>{
+   const el=sections[i]; if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+ }));
+ const update=()=>{
+   const marker=window.innerHeight*.42;
+   let active=0;
+   sections.forEach((el,i)=>{if(el&&el.getBoundingClientRect().top<=marker) active=i});
+   buttons.forEach((b,i)=>b.classList.toggle('active',i===active));
+ };
+ addEventListener('scroll',update,{passive:true});addEventListener('resize',update);update();
+})();
+</script>
 </body></html>
