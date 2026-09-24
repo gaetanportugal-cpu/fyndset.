@@ -1845,4 +1845,128 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 </script>
 
+
+<style id="fyndset-v10-2-clean-cinematic">
+/* v10.2 — PAGE 01 = the approved image + invisible interaction only.
+   Kill EVERY legacy visual layer/nav on this page. */
+body.fy-mode-pro.fy-cine-01 #pro-story .fy-pro-cinematic-final > *:not(.fy-cinematic-image):not(.fy-image-hotspots),
+body.fy-mode-pro.fy-cine-01 #pro-story > .fy-nav,
+body.fy-mode-pro.fy-cine-01 #pro-story .fy-pro-cinematic-final .fy-nav,
+body.fy-mode-pro.fy-cine-01 #pro-story .fy-pro-cinematic-final .fy-dots,
+body.fy-mode-pro.fy-cine-01 #pro-story .fy-pro-cinematic-final .fy-step-nav,
+body.fy-mode-pro.fy-cine-01 #pro-story .fy-pro-cinematic-final .fy-mode-home{
+  display:none!important; visibility:hidden!important; pointer-events:none!important;
+}
+body.fy-mode-pro.fy-cine-01 #pro-story .fy-pro-cinematic-final{
+  position:fixed!important; inset:0!important; width:100vw!important; height:100vh!important;
+  overflow:hidden!important; background:#031c1f!important;
+}
+body.fy-mode-pro.fy-cine-01 #pro-story .fy-pro-cinematic-final .fy-cinematic-image{
+  display:block!important; position:absolute!important; z-index:1!important;
+  inset:0!important; width:100%!important; height:100%!important;
+  background-image:url('./fyndset-professional-identity-cinematic.png')!important;
+  background-size:cover!important; background-position:center center!important;
+  background-repeat:no-repeat!important;
+}
+body.fy-mode-pro.fy-cine-01 #pro-story .fy-image-hotspots{
+  display:block!important; position:absolute!important; inset:0!important;
+  z-index:1000!important; pointer-events:none!important;
+}
+body.fy-mode-pro.fy-cine-01 #pro-story .fy-image-hotspots .fy-hotspot{
+  display:block!important; position:absolute!important; opacity:0!important;
+  background:transparent!important; border:0!important; padding:0!important;
+  pointer-events:auto!important; cursor:pointer!important;
+}
+</style>
+
+<script id="fyndset-v10-2-clean-cinematic-js">
+document.addEventListener('DOMContentLoaded',()=>{
+  const body=document.body;
+  const pro=document.getElementById('pro-story');
+  const cine=pro?.querySelector('.fy-pro-cinematic-final');
+  if(!cine) return;
+
+  /* Remove duplicate legacy navigation physically from the cinematic slide.
+     Keep the story-level nav for slides 02–04, but it is hidden while 01 is active. */
+  cine.querySelectorAll('.fy-nav,.fy-dots,.fy-step-nav,.fy-mode-home').forEach(el=>el.remove());
+
+  let layer=cine.querySelector('.fy-image-hotspots');
+  if(!layer){
+    layer=document.createElement('div');
+    layer.className='fy-image-hotspots';
+    cine.appendChild(layer);
+  }
+
+  /* Rebuild the hit layer from scratch: six controls, no visible HTML. */
+  layer.innerHTML=`
+    <button class="fy-hotspot hs-home" aria-label="Página principal"></button>
+    <button class="fy-hotspot hs-build" aria-label="Construir o meu Fyndset"></button>
+    <button class="fy-hotspot hs-step hs-1" data-step="0" aria-label="Identidade"></button>
+    <button class="fy-hotspot hs-step hs-2" data-step="1" aria-label="Fynd DNA"></button>
+    <button class="fy-hotspot hs-step hs-3" data-step="2" aria-label="Prova"></button>
+    <button class="fy-hotspot hs-step hs-4" data-step="3" aria-label="Privacidade"></button>`;
+
+  const img=cine.querySelector('.fy-cinematic-image');
+  const natural={w:1792,h:832};
+
+  /* Coordinates in the approved source image. They are transformed at runtime
+     using the exact same object-fit:cover math as the background image. */
+  const boxes={
+    home:[30,17,205,73],
+    build:[53,538,382,613],
+    s1:[540,646,710,817],
+    s2:[711,646,880,817],
+    s3:[882,646,1050,817],
+    s4:[1051,646,1222,817]
+  };
+
+  function place(el,b){
+    const vw=cine.clientWidth, vh=cine.clientHeight;
+    const scale=Math.max(vw/natural.w,vh/natural.h);
+    const rw=natural.w*scale, rh=natural.h*scale;
+    const ox=(vw-rw)/2, oy=(vh-rh)/2;
+    el.style.left=(ox+b[0]*scale)+'px';
+    el.style.top=(oy+b[1]*scale)+'px';
+    el.style.width=((b[2]-b[0])*scale)+'px';
+    el.style.height=((b[3]-b[1])*scale)+'px';
+  }
+  function layout(){
+    place(layer.querySelector('.hs-home'),boxes.home);
+    place(layer.querySelector('.hs-build'),boxes.build);
+    place(layer.querySelector('.hs-1'),boxes.s1);
+    place(layer.querySelector('.hs-2'),boxes.s2);
+    place(layer.querySelector('.hs-3'),boxes.s3);
+    place(layer.querySelector('.hs-4'),boxes.s4);
+  }
+  layout(); addEventListener('resize',layout);
+
+  function stop(e){e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();}
+  function cineMode(on){body.classList.toggle('fy-cine-01',!!on)}
+
+  layer.querySelector('.hs-home').onclick=e=>{
+    stop(e); cineMode(false);
+    body.classList.remove('fy-dedicated','fy-mode-pro','fy-mode-company');
+    document.body.style.overflow='';
+    scrollTo(0,0);
+  };
+
+  layer.querySelector('.hs-build').onclick=e=>{
+    stop(e);
+    const shell=document.getElementById('pro-builder-shell');
+    if(shell){shell.classList.add('open');document.body.style.overflow='hidden';}
+  };
+
+  layer.querySelectorAll('.hs-step').forEach(btn=>btn.onclick=e=>{
+    stop(e);
+    const n=+btn.dataset.step;
+    if(n===0){cineMode(true);return}
+    cineMode(false);
+    const slides=[...pro.querySelectorAll('.fy-slide')];
+    const nav=[...pro.querySelectorAll(':scope > .fy-nav .fy-dot')];
+    slides.forEach((s,i)=>s.classList.toggle('active',i===n));
+    nav.forEach((d,i)=>d.classList.toggle('active',i===n));
+  });
+});
+</script>
+
 </body></html>
