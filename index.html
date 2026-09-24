@@ -1878,4 +1878,40 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 </script>
 
+
+<style id="fyndset-v11-1-builder-layer-fix">
+/* Builder must sit ABOVE the isolated professional/company experiences. */
+#pro-builder-shell{
+  z-index:30000!important;
+}
+#pro-builder-close{
+  z-index:30010!important;
+}
+</style>
+
+<script id="fyndset-v11-1-builder-routing-fix">
+document.addEventListener('DOMContentLoaded',()=>{
+  const shell=document.getElementById('pro-builder-shell');
+
+  /* Make every "Construir o meu Fyndset" action deterministic.
+     It opens the builder immediately, on top of the current page. */
+  document.querySelectorAll('[data-open-profile]').forEach(btn=>{
+    btn.addEventListener('click',e=>{
+      e.preventDefault();
+      e.stopPropagation();
+      if(!shell) return;
+      shell.classList.add('open');
+      shell.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    },true);
+  });
+
+  /* Closing the builder returns to the page from which it was opened. */
+  document.getElementById('pro-builder-close')?.addEventListener('click',()=>{
+    shell?.classList.remove('open');
+    shell?.setAttribute('aria-hidden','true');
+  },true);
+});
+</script>
+
 </body></html>
