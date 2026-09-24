@@ -460,6 +460,38 @@ body.fy-mode-pro #pro-story:has(.fy-pro-cinematic-final.active) > .fy-nav{opacit
 }
 </style>
 
+<style id="fyndset-v21-true-hologram">
+.fy-dna-v18 .dna18-copy{width:31.5%;top:18.5%}
+.fy-dna-v18 .dna18-copy h2{font-size:clamp(44px,3.85vw,70px);line-height:1.01}
+.fy-dna-v18 .dna21-world{position:absolute;z-index:4;right:1%;top:3%;width:64%;height:80%;overflow:visible}
+.dna21-hud{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.h21-rings circle{fill:none;stroke:#4dece5;stroke-width:1;opacity:.13}
+.h21-rings circle:nth-child(2){stroke-dasharray:4 9;opacity:.21;animation:h21spin 28s linear infinite;transform-origin:500px 350px}
+.h21-rings circle:nth-child(3){stroke-dasharray:72 16 9 22;opacity:.27;animation:h21back 22s linear infinite;transform-origin:500px 350px}
+.h21-rings circle:nth-child(4){opacity:.24}.h21-rings circle:nth-child(5){stroke-width:1.5;opacity:.3}
+.h21-arcs path{fill:none;stroke:#66fff8;stroke-width:2;opacity:.48;filter:url(#h21glow)}
+.h21-circuit path{fill:none;stroke:#55f2eb;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.82;filter:url(#h21glow)}
+.h21-nodes circle{fill:#d7fffd;stroke:#55f2eb;stroke-width:2;filter:url(#h21glow)}
+.h21-travel circle{fill:#f0fffe}
+.dna21-scan{position:absolute;left:50%;top:50%;width:420px;height:420px;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden;opacity:.48;pointer-events:none}
+.dna21-scan:before{content:"";position:absolute;left:50%;top:50%;width:50%;height:50%;transform-origin:0 0;background:conic-gradient(from 0deg,rgba(63,224,218,.24),rgba(63,224,218,.045) 26deg,transparent 60deg);animation:h21scan 5.4s linear infinite}
+.dna21-core{left:50%;top:50%;z-index:9}
+.dna21-core:after{content:"";position:absolute;left:50%;top:82px;width:360px;height:360px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(63,224,218,.18),rgba(63,224,218,.05) 30%,transparent 66%);z-index:-2;pointer-events:none}
+.fy-dna-v18 .dna21-core .dna18-photo{width:188px;height:188px;border-color:#91fff9;box-shadow:0 0 0 5px rgba(88,249,242,.13),0 0 0 15px rgba(88,249,242,.045),0 0 48px rgba(63,224,218,.55),0 0 115px rgba(63,224,218,.2)}
+.fy-dna-v18 .dna21-core strong{font-size:29px}
+.fy-dna-v18 .dna21-card{z-index:10;width:312px;min-height:106px;border-radius:25px;border-color:rgba(83,245,238,.82);background:linear-gradient(110deg,rgba(6,64,67,.91),rgba(2,25,28,.93) 76%);box-shadow:0 0 29px rgba(63,224,218,.14),0 19px 45px rgba(0,0,0,.31),inset 0 0 32px rgba(63,224,218,.045);backdrop-filter:blur(18px) saturate(1.22)}
+.fy-dna-v18 .dna21-card.leadership{left:50%;top:0;transform:translateX(-50%)}
+.fy-dna-v18 .dna21-card.craft{left:1%;top:28%}
+.fy-dna-v18 .dna21-card.environment{right:0;top:28%}
+.fy-dna-v18 .dna21-card.momentum{left:4.5%;bottom:0}
+.fy-dna-v18 .dna21-card.intent{right:3%;bottom:0}
+.dna21-particles{position:absolute;inset:0;pointer-events:none}.dna21-particles i{position:absolute;width:3px;height:3px;border-radius:50%;background:#a9fffb;box-shadow:0 0 10px #55f2eb;animation:h21blink 3s ease-in-out infinite}
+.dna21-particles i:nth-child(1){left:20%;top:12%}.dna21-particles i:nth-child(2){left:34%;top:6%;animation-delay:.4s}.dna21-particles i:nth-child(3){left:76%;top:12%;animation-delay:.8s}.dna21-particles i:nth-child(4){left:91%;top:32%;animation-delay:1.2s}.dna21-particles i:nth-child(5){left:84%;top:67%;animation-delay:1.6s}.dna21-particles i:nth-child(6){left:69%;top:85%;animation-delay:2s}.dna21-particles i:nth-child(7){left:39%;top:87%;animation-delay:.7s}.dna21-particles i:nth-child(8){left:15%;top:72%;animation-delay:1.1s}.dna21-particles i:nth-child(9){left:8%;top:47%;animation-delay:1.5s}.dna21-particles i:nth-child(10){left:62%;top:20%;animation-delay:2.3s}
+@keyframes h21spin{to{transform:rotate(360deg)}}@keyframes h21back{to{transform:rotate(-360deg)}}@keyframes h21scan{to{transform:rotate(360deg)}}@keyframes h21blink{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:1;transform:scale(1.7)}}
+@media(max-width:1100px){.fy-dna-v18 .dna21-world{right:-8%;width:70%;transform:scale(.87);transform-origin:center}.fy-dna-v18 .dna18-copy{width:38%}}
+@media(max-width:850px){.fy-dna-v18 .dna18-copy{width:90vw}.fy-dna-v18 .dna21-world{top:43%;right:-31%;width:132%;height:49%;transform:scale(.72);transform-origin:center top}}
+@media(prefers-reduced-motion:reduce){.h21-rings circle,.dna21-scan:before,.dna21-particles i{animation:none!important}.h21-travel{display:none}}
+</style>
 </head><body>
 <main class="hero"><video class="hero-video" autoplay muted loop playsinline preload="auto" poster="./fyndset-hero-bg.png" aria-hidden="true">
     <source src="./fyndset-hero.mp4" type="video/mp4">
@@ -572,52 +604,53 @@ body.fy-mode-pro #pro-story:has(.fy-pro-cinematic-final.active) > .fy-nav{opacit
     </button>
   </div>
 
-  <div class="dna18-world" aria-label="Fynd DNA da Sofia">
-    <div class="dna18-rings" aria-hidden="true"><i></i><i></i><i></i></div>
-    <div class="dna18-scan" aria-hidden="true"></div>
-    <div class="dna18-orbit-points" aria-hidden="true">
-      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-    </div>
-
-    <svg class="dna18-network" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">
+  <div class="dna18-world dna21-world" aria-label="Fynd DNA da Sofia">
+    <svg class="dna21-hud" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">
       <defs>
-        <filter id="dna18Glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="h21glow" x="-70%" y="-70%" width="240%" height="240%">
+          <feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
       </defs>
-      <path id="dna18-p-lead" d="M500 345 C500 250 500 170 500 92"/>
-      <path id="dna18-p-craft" d="M455 345 C385 340 330 315 275 270"/>
-      <path id="dna18-p-env" d="M545 345 C615 340 675 315 735 270"/>
-      <path id="dna18-p-mom" d="M460 390 C390 430 340 475 300 530"/>
-      <path id="dna18-p-intent" d="M540 390 C610 430 660 475 705 530"/>
-      <g class="dna18-travellers">
-        <circle class="trav t1" r="4"><animateMotion dur="1.25s" begin="0s" repeatCount="indefinite"><mpath href="#dna18-p-lead"/></animateMotion></circle>
-        <circle class="trav t2" r="4"><animateMotion dur="1.35s" begin=".3s" repeatCount="indefinite"><mpath href="#dna18-p-craft"/></animateMotion></circle>
-        <circle class="trav t3" r="4"><animateMotion dur="1.35s" begin=".6s" repeatCount="indefinite"><mpath href="#dna18-p-env"/></animateMotion></circle>
-        <circle class="trav t4" r="4"><animateMotion dur="1.4s" begin=".9s" repeatCount="indefinite"><mpath href="#dna18-p-mom"/></animateMotion></circle>
-        <circle class="trav t5" r="4"><animateMotion dur="1.4s" begin="1.2s" repeatCount="indefinite"><mpath href="#dna18-p-intent"/></animateMotion></circle>
+      <g class="h21-rings">
+        <circle cx="500" cy="350" r="268"/><circle cx="500" cy="350" r="228"/><circle cx="500" cy="350" r="187"/><circle cx="500" cy="350" r="144"/><circle cx="500" cy="350" r="105"/>
+      </g>
+      <g class="h21-arcs">
+        <path d="M291 184 A260 260 0 0 1 440 95"/><path d="M566 96 A260 260 0 0 1 738 222"/>
+        <path d="M760 402 A260 260 0 0 1 632 579"/><path d="M399 594 A260 260 0 0 1 244 457"/>
+      </g>
+      <g class="h21-circuit">
+        <path id="hp1" d="M500 246 V196 H500 V112"/>
+        <path id="hp2" d="M395 330 H333 L294 290 H216"/>
+        <path id="hp3" d="M605 330 H670 L711 290 H790"/>
+        <path id="hp4" d="M416 421 L360 465 V532 H258"/>
+        <path id="hp5" d="M584 421 L642 465 V532 H744"/>
+      </g>
+      <g class="h21-nodes">
+        <circle cx="500" cy="196" r="5"/><circle cx="333" cy="330" r="5"/><circle cx="294" cy="290" r="4"/>
+        <circle cx="670" cy="330" r="5"/><circle cx="711" cy="290" r="4"/><circle cx="360" cy="465" r="5"/>
+        <circle cx="360" cy="532" r="4"/><circle cx="642" cy="465" r="5"/><circle cx="642" cy="532" r="4"/>
+      </g>
+      <g class="h21-travel" filter="url(#h21glow)">
+        <circle r="5"><animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#hp1"/></animateMotion></circle>
+        <circle r="4"><animateMotion dur="3s" begin=".45s" repeatCount="indefinite"><mpath href="#hp2"/></animateMotion></circle>
+        <circle r="4"><animateMotion dur="3s" begin=".9s" repeatCount="indefinite"><mpath href="#hp3"/></animateMotion></circle>
+        <circle r="4"><animateMotion dur="3.1s" begin="1.35s" repeatCount="indefinite"><mpath href="#hp4"/></animateMotion></circle>
+        <circle r="4"><animateMotion dur="3.1s" begin="1.8s" repeatCount="indefinite"><mpath href="#hp5"/></animateMotion></circle>
       </g>
     </svg>
+    <div class="dna21-scan" aria-hidden="true"></div>
+    <div class="dna21-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
-    <div class="dna18-core">
+    <div class="dna18-core dna21-core">
       <div class="dna18-photo"><img src="./sofia.png" alt="Sofia"></div>
-      <strong>Sofia</strong>
-      <span>Restaurant Manager · Portugal</span>
+      <strong>Sofia</strong><span>Restaurant Manager · Portugal</span>
     </div>
 
-    <div class="dna18-card leadership">
-      <i class="dna18-icon">♟</i><div><b>LIDERANÇA</b><span>22 pessoas · formação</span><small>Cultura de serviço</small></div><em>›</em>
-    </div>
-    <div class="dna18-card craft">
-      <i class="dna18-icon">♨</i><div><b>OFÍCIO</b><span>Fine dining</span><small>Vinhos · Experiência do cliente</small></div><em>›</em>
-    </div>
-    <div class="dna18-card environment">
-      <i class="dna18-icon">⌖</i><div><b>AMBIENTE</b><span>Luxo · Alto volume</span><small>2 aberturas</small></div><em>›</em>
-    </div>
-    <div class="dna18-card momentum">
-      <i class="dna18-icon">↗</i><div><b>PROGRESSÃO</b><span>3 promoções</span><small>Crescimento consistente</small></div><em>›</em>
-    </div>
-    <div class="dna18-card intent">
-      <i class="dna18-icon">⌂</i><div><b>OBJETIVO</b><span>Liderança de F&amp;B</span><small>Hotelaria boutique</small></div><em>›</em>
-    </div>
+    <div class="dna18-card leadership dna21-card"><i class="dna18-icon">♟</i><div><b>LIDERANÇA</b><span>22 pessoas · formação</span><small>Cultura de serviço</small></div><em>›</em></div>
+    <div class="dna18-card craft dna21-card"><i class="dna18-icon">♨</i><div><b>OFÍCIO</b><span>Fine dining</span><small>Vinhos · Experiência do cliente</small></div><em>›</em></div>
+    <div class="dna18-card environment dna21-card"><i class="dna18-icon">⌖</i><div><b>AMBIENTE</b><span>Luxo · Alto volume</span><small>2 aberturas</small></div><em>›</em></div>
+    <div class="dna18-card momentum dna21-card"><i class="dna18-icon">↗</i><div><b>PROGRESSÃO</b><span>3 promoções</span><small>Crescimento consistente</small></div><em>›</em></div>
+    <div class="dna18-card intent dna21-card"><i class="dna18-icon">⌂</i><div><b>OBJETIVO</b><span>Liderança de F&amp;B</span><small>Hotelaria boutique</small></div><em>›</em></div>
   </div>
 </article>
     <article class="fy-slide" data-slide="2"><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">03 · PROVA</div><h2>Não digas apenas<br>que sabes fazer.<br><em>Mostra onde.</em></h2><p>Cada sinal pode ser explorado através de experiência, contexto e verificação — prova em vez de palavras-chave.</p><button class="fy-primary" data-open-profile>Construir o meu Fyndset <b>→</b></button></div><div class="fy-visual"><div class="fy-glass fy-proof"><h3>Leadership ✓</h3><div class="fy-proof-row"><b>Led 22-person FOH team</b><small>Restaurant Manager · 2024 — hoje</small></div><div class="fy-proof-row"><b>Former Operations Director ✓</b><small>Verificação por referência</small></div><div class="fy-proof-row"><b>Team training & development</b><small>Evidência em documentos</small></div><div class="fy-proof-row"><b>2 openings</b><small>Participação verificada</small></div></div></div></div></article>
