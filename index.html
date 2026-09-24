@@ -937,4 +937,86 @@ document.addEventListener("DOMContentLoaded",()=>{tr();
 })();
 </script>
 
+
+<style>
+/* v6 — definitive Fyndset: Editorial → Living → Identity */
+#lf{display:none!important}
+.f6{position:fixed;inset:0;z-index:4000;display:none;overflow:auto;background:#041d20;color:#f8fbfa}
+.f6.open{display:block}.f6 *{box-sizing:border-box}
+.f6-nav{height:68px;position:sticky;top:0;z-index:20;display:flex;align-items:center;padding:0 3vw;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(3,27,30,.86);backdrop-filter:blur(18px)}
+.f6-logo{font-size:27px;font-weight:900;letter-spacing:-1.6px}.f6-logo i{font-style:normal;color:#3fe0da}.f6-mode{margin-left:28px;font-size:6.5px;letter-spacing:.18em;color:#78928f}.f6-back{margin-left:auto;border:1px solid rgba(255,255,255,.13);background:transparent;color:#fff;border-radius:999px;padding:9px 14px;cursor:pointer}
+.f6-hero{min-height:650px;display:grid;grid-template-columns:.86fr 1.14fr;max-width:1380px;margin:auto;padding:65px 5vw 70px;gap:72px;align-items:center}
+.f6-photo-shell{position:relative}.f6-photo{width:100%;height:515px;object-fit:cover;border-radius:2px;filter:saturate(.86);box-shadow:0 28px 80px rgba(0,0,0,.24)}.f6-badge{position:absolute;right:18px;bottom:18px;padding:8px 10px;border:1px solid rgba(63,224,218,.24);border-radius:999px;background:rgba(3,28,31,.82);backdrop-filter:blur(10px);font-size:7px;color:#c2d4d1}
+.f6-k{font-size:6.5px;letter-spacing:.18em;color:#3fe0da;text-transform:uppercase}.f6 h1{font-family:Georgia,serif;font-weight:400;font-size:76px;line-height:.92;letter-spacing:-.055em;margin:13px 0 10px}.f6-role{font-size:13px;color:#9db2af}.f6-quote{font-family:Georgia,serif;font-size:26px;line-height:1.28;margin:36px 0 30px;max-width:600px;color:#dbe7e5}.f6-facts{display:flex;gap:26px;padding:18px 0;border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1)}.f6-fact small{display:block;font-size:5.8px;letter-spacing:.13em;color:#708b88}.f6-fact b{font-size:11px}.f6-actions{display:flex;gap:8px;margin-top:24px}.f6-primary,.f6-secondary{border-radius:999px;padding:11px 15px;font-size:8px;cursor:pointer}.f6-primary{border:0;background:#3fe0da;color:#032326;font-weight:800}.f6-secondary{border:1px solid rgba(255,255,255,.13);background:transparent;color:#fff}
+.f6-section{max-width:1380px;margin:auto;padding:65px 5vw;border-top:1px solid rgba(255,255,255,.07)}.f6-title{font-family:Georgia,serif;font-size:39px;font-weight:400;letter-spacing:-.04em;margin:8px 0 30px}.f6-sub{font-size:9px;line-height:1.6;color:#839b98;max-width:620px;margin-top:-20px;margin-bottom:30px}
+.f6-living{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:stretch}.f6-world{min-height:535px;position:relative;border:1px solid rgba(63,224,218,.1);border-radius:50%;background:radial-gradient(circle,rgba(63,224,218,.075),transparent 58%)}.f6-world:before,.f6-world:after{content:"";position:absolute;inset:16%;border:1px solid rgba(63,224,218,.08);border-radius:50%}.f6-world:after{inset:33%}.f6-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:90px;height:90px;border-radius:50%;object-fit:cover;border:2px solid white;z-index:4;box-shadow:0 0 45px rgba(63,224,218,.18)}
+.f6-node{position:absolute;z-index:5;transform:translate(-50%,-50%);min-width:130px;padding:10px 11px;border:1px solid rgba(255,255,255,.1);border-radius:12px;background:rgba(4,31,34,.9);cursor:pointer;transition:.2s}.f6-node:hover,.f6-node.on{border-color:rgba(63,224,218,.5);background:rgba(63,224,218,.06)}.f6-node b{font-size:8px}.f6-node span{display:block;font-size:6.2px;color:#728c89;margin-top:3px}.fn1{left:50%;top:10%}.fn2{left:86%;top:32%}.fn3{left:84%;top:70%}.fn4{left:50%;top:91%}.fn5{left:14%;top:69%}.fn6{left:14%;top:31%}
+.f6-explain{border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:24px;background:rgba(255,255,255,.018)}.f6-explain h3{font-family:Georgia,serif;font-size:25px;font-weight:400;margin:8px 0}.f6-explain p{font-size:9px;line-height:1.65;color:#92aaa7}.f6-chain{margin-top:22px;display:grid;gap:8px}.f6-chain div{padding:11px;border:1px solid rgba(255,255,255,.07);border-radius:11px}.f6-chain small{font-size:5.7px;color:#6e8986;letter-spacing:.12em}.f6-chain b{display:block;font-size:9px;margin-top:3px}.f6-chain .verified{border-color:rgba(63,224,218,.18);color:#c6d8d5}
+.f6-story{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:30px}.f6-step{position:relative;padding:24px 20px 0 0;border-top:1px solid rgba(63,224,218,.16)}.f6-step:before{content:"";position:absolute;top:-4px;width:7px;height:7px;border-radius:50%;background:#3fe0da}.f6-step small{font-size:6px;color:#718b88}.f6-step h3{font-family:Georgia,serif;font-weight:400;font-size:19px;margin:7px 0}.f6-step p{font-size:8px;line-height:1.55;color:#7e9895}.f6-step em{font-style:normal;font-size:6.5px;color:#3fe0da}
+.f6-proofgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.f6-card{border:1px solid rgba(255,255,255,.08);border-radius:17px;padding:19px;background:rgba(255,255,255,.018)}.f6-card h3{font-size:13px;margin:0 0 12px}.f6-tags{display:flex;flex-wrap:wrap;gap:6px}.f6-tag{padding:6px 8px;border:1px solid rgba(63,224,218,.14);border-radius:999px;font-size:7px;color:#b5c9c6}.f6-scale{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.f6-metric{padding:10px;border-left:1px solid rgba(63,224,218,.16)}.f6-metric strong{display:block;font-family:Georgia,serif;font-size:27px;font-weight:400}.f6-metric span{font-size:6px;color:#728c89}
+.f6-ask{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:center}.f6-askbox{border:1px solid rgba(63,224,218,.15);border-radius:18px;padding:20px;background:rgba(63,224,218,.025)}.f6-askrow{display:flex;gap:7px}.f6-input{flex:1;border:1px solid rgba(255,255,255,.1);background:#03191c;color:#fff;border-radius:999px;padding:11px 13px;font-size:8px;outline:none}.f6-answer{display:none;margin-top:12px;font-size:8px;line-height:1.6;color:#adc1be;padding:12px;border-top:1px solid rgba(255,255,255,.07)}.f6-answer.show{display:block}.f6-answer b{color:#fff}.f6-source{display:block;color:#3fe0da;margin-top:6px;font-size:6.5px}
+.f6-pass{border:1px solid rgba(63,224,218,.18);border-radius:24px;padding:26px;background:linear-gradient(135deg,rgba(63,224,218,.055),rgba(255,255,255,.015));display:grid;grid-template-columns:1fr 1fr;gap:25px}.f6-idhead{display:flex;gap:15px;align-items:center}.f6-idpic{width:78px;height:78px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.5)}.f6-idhead h3{font-size:24px;margin:0}.f6-idhead p{font-size:8px;color:#7f9996}.f6-creds{display:grid;grid-template-columns:1fr 1fr;gap:7px}.f6-cred{padding:10px;border:1px solid rgba(255,255,255,.07);border-radius:10px;font-size:7px}.f6-cred i{float:right;color:#3fe0da;font-style:normal}.f6-cred span{display:block;color:#708986;font-size:6px;margin-top:3px}
+.f6-final{text-align:center;padding:90px 5vw 110px;border-top:1px solid rgba(255,255,255,.07)}.f6-final h2{font-family:Georgia,serif;font-weight:400;font-size:48px;letter-spacing:-.045em;margin:10px auto 25px;max-width:720px}
+@media(max-width:850px){.f6-hero,.f6-living,.f6-ask,.f6-pass{grid-template-columns:1fr}.f6 h1{font-size:54px}.f6-photo{height:420px}.f6-story{grid-template-columns:1fr}.f6-step{border-top:0;border-left:1px solid rgba(63,224,218,.16);padding:0 0 24px 20px}.f6-step:before{left:-4px;top:0}.f6-proofgrid{grid-template-columns:1fr}.f6-scale{grid-template-columns:1fr 1fr}.f6-world{min-height:500px}}
+</style>
+
+<section class="f6" id="f6">
+<header class="f6-nav"><div class="f6-logo">fyndset<i>.</i></div><div class="f6-mode">LIVING PROFESSIONAL IDENTITY</div><button class="f6-back" id="f6-back">← Voltar à descoberta</button></header>
+
+<section class="f6-hero">
+ <div class="f6-photo-shell"><img src="sofia.png" class="f6-photo"><span class="f6-badge">● Aberta em privado à oportunidade certa</span></div>
+ <div><div class="f6-k">FYNDSET DA MARTA · LISBOA</div><h1>Marta<br>Silva</h1><div class="f6-role">Restaurant Manager · 8 anos em hospitalidade</div><div class="f6-quote">“Construo equipas que entregam padrões elevados sem tornar o serviço mecânico.”</div>
+ <div class="f6-facts"><div class="f6-fact"><small>TEAM SCALE</small><b>22 pessoas</b></div><div class="f6-fact"><small>OPENINGS</small><b>2 conceitos</b></div><div class="f6-fact"><small>CRAFT</small><b>Fine dining · Wine</b></div><div class="f6-fact"><small>NEXT</small><b>F&B Leadership</b></div></div>
+ <div class="f6-actions"><button class="f6-primary">Convidar para conversar →</button><button class="f6-secondary" onclick="document.getElementById('f6-dna').scrollIntoView({behavior:'smooth'})">Explorar Fyndset</button></div></div>
+</section>
+
+<section class="f6-section" id="f6-dna"><div class="f6-k">UNDERSTAND MARTA</div><h2 class="f6-title">O seu Fynd DNA.</h2><p class="f6-sub">Não uma lista de skills. Um mapa vivo daquilo que a Marta demonstrou, dos contextos onde o fez e da direção em que está a evoluir.</p>
+ <div class="f6-living"><div class="f6-world"><img src="sofia.png" class="f6-center"><div class="f6-node fn1 on" data-n="lead"><b>LEADERSHIP ✓</b><span>22 pessoas · Training</span></div><div class="f6-node fn2" data-n="craft"><b>CRAFT</b><span>Fine dining · Wine</span></div><div class="f6-node fn3" data-n="env"><b>ENVIRONMENT</b><span>Premium · High volume</span></div><div class="f6-node fn4" data-n="momentum"><b>MOMENTUM ↑</b><span>2 promoções</span></div><div class="f6-node fn5" data-n="intent"><b>INTENT</b><span>F&B · Boutique luxury</span></div><div class="f6-node fn6" data-n="scale"><b>SCALE</b><span>350 covers · 2 concepts</span></div></div>
+ <aside class="f6-explain"><div class="f6-k">EXPLORE THE EVIDENCE</div><h3 id="f6-node-title">Leadership</h3><p id="f6-node-copy">A liderança não aparece porque a Marta a escreveu no perfil. Aparece porque existe evidência ligada à experiência.</p><div class="f6-chain" id="f6-chain"></div></aside></div>
+</section>
+
+<section class="f6-section"><div class="f6-k">WATCH HER JOURNEY</div><h2 class="f6-title">Como a profissional ganhou forma.</h2><div class="f6-story">
+ <div class="f6-step"><small>2018</small><h3>Waiter</h3><em>CRAFT APPEARS</em><p>Fine dining, wine service e guest experience criam a base.</p></div>
+ <div class="f6-step"><small>2020</small><h3>Head Waiter</h3><em>LEADERSHIP APPEARS</em><p>Coordenação de serviço, formação e primeiras responsabilidades de equipa.</p></div>
+ <div class="f6-step"><small>2022</small><h3>Assistant RM</h3><em>OPERATIONS EXPANDS</em><p>Escalas, custos, training e participação num projeto de abertura.</p></div>
+ <div class="f6-step"><small>2024 → TODAY</small><h3>Restaurant Manager</h3><em>SCALE GROWS</em><p>22 pessoas, exposição a P&L, cultura de serviço e responsabilidade operacional.</p></div>
+ </div>
+</section>
+
+<section class="f6-section"><div class="f6-k">CONTEXT MATTERS</div><h2 class="f6-title">Onde — e a que escala — já o fez.</h2><div class="f6-proofgrid">
+ <div class="f6-card"><h3>Environment fingerprint</h3><div class="f6-tags"><span class="f6-tag">Fine dining</span><span class="f6-tag">Independent</span><span class="f6-tag">Premium</span><span class="f6-tag">High volume</span><span class="f6-tag">Openings</span><span class="f6-tag">Urban</span><span class="f6-tag">International guests</span></div></div>
+ <div class="f6-card"><h3>Scale</h3><div class="f6-scale"><div class="f6-metric"><strong>22</strong><span>MAIOR EQUIPA</span></div><div class="f6-metric"><strong>350</strong><span>COVERS / PEAK DAY</span></div><div class="f6-metric"><strong>2</strong><span>ABERTURAS</span></div><div class="f6-metric"><strong>€3.2M</strong><span>OPERATION EXPOSURE</span></div></div></div>
+ </div>
+</section>
+
+<section class="f6-section"><div class="f6-ask"><div><div class="f6-k">ASK THIS FYNDSET</div><h2 class="f6-title">Pergunta à evidência.</h2><p class="f6-sub" style="margin:0">O Fyndset responde apenas com informação demonstrada, validada ou declarada — e mostra a origem. Quando não sabe, diz que não sabe.</p></div><div class="f6-askbox"><div class="f6-askrow"><input class="f6-input" id="f6-input" placeholder="A Marta já liderou mais de 15 pessoas?"><button class="f6-primary" id="f6-ask">Perguntar</button></div><div class="f6-answer" id="f6-answer"></div></div></div></section>
+
+<section class="f6-section"><div class="f6-k">TRUST THE EVIDENCE</div><h2 class="f6-title">Fyndset Identity.</h2><p class="f6-sub">A camada portátil do perfil: credenciais práticas, experiências validadas e sinais profissionais que acompanham a Marta ao longo da carreira.</p>
+ <div class="f6-pass"><div class="f6-idhead"><img src="sofia.png" class="f6-idpic"><div><h3>Marta Silva ✓</h3><p>Restaurant Manager · Lisboa<br>12 sinais demonstrados · 7 validados · 3 experiências verificadas</p></div></div><div class="f6-creds"><div class="f6-cred"><i>✓</i><b>WSET Level 2</b><span>Credential · 2024</span></div><div class="f6-cred"><i>✓</i><b>Leadership</b><span>22-person FOH</span></div><div class="f6-cred"><i>✓</i><b>Food Safety</b><span>Current</span></div><div class="f6-cred"><i>✓</i><b>EU Work</b><span>Eligible</span></div></div></div>
+</section>
+
+<section class="f6-final"><div class="f6-k">YOU'VE EXPLORED THE PERSON</div><h2>Vale a pena conhecer a Marta?</h2><button class="f6-primary">Convidar para conversar →</button></section>
+</section>
+
+<script>
+(()=>{
+ const f6=document.getElementById("f6");
+ function open6(){f6.classList.add("open");document.body.style.overflow="hidden"}
+ document.querySelectorAll(".fd-actions button:first-child").forEach(b=>{b.onclick=(e)=>{e.stopImmediatePropagation();open6()}});
+ document.getElementById("f6-back").onclick=()=>{f6.classList.remove("open");document.body.style.overflow="hidden"};
+
+ const data={
+  lead:{t:"Leadership",c:"A liderança não aparece porque a Marta a escreveu no perfil. Aparece porque existe evidência ligada à experiência.",ch:[["SIGNAL","Leadership"],["PROOF","Led 22-person FOH team"],["EXPERIENCE","Restaurant Manager · 2024 →"],["VERIFIED BY","Former Operations Director ✓"]]},
+  craft:{t:"Craft",c:"O craft é construído a partir de contextos e competências demonstradas ao longo do percurso.",ch:[["SIGNAL","Fine dining"],["PROOF","4 years demonstrated"],["CREDENTIAL","WSET Level 2"],["STATUS","Evidence strong ✓"]]},
+  env:{t:"Environment",c:"O cargo não explica o contexto. O Fyndset mostra os ambientes onde a Marta sabe operar.",ch:[["CONTEXT","Premium dining"],["CONTEXT","High volume"],["EXPERIENCE","2 openings"],["STATUS","Demonstrated ●"]]},
+  momentum:{t:"Momentum",c:"A trajetória mostra aumento consistente de responsabilidade — sem transformar potencial numa pontuação.",ch:[["2018","Waiter"],["2020","Head Waiter"],["2022","Assistant RM"],["2024","Restaurant Manager ↑"]]},
+  intent:{t:"Intent",c:"A intenção é controlada pela profissional e pode permanecer privada para o empregador atual.",ch:[["NEXT","F&B leadership"],["ENVIRONMENT","Boutique luxury"],["INTEREST","Opening projects"],["VISIBILITY","Private ●"]]},
+  scale:{t:"Scale",c:"Escala dá contexto ao título e ajuda a perceber a dimensão real da responsabilidade.",ch:[["PEOPLE","22"],["SERVICE","350 covers peak"],["OPENINGS","2 concepts"],["SCOPE","€3.2M exposure"]]}
+ };
+ function render(k){let d=data[k];document.getElementById("f6-node-title").textContent=d.t;document.getElementById("f6-node-copy").textContent=d.c;document.getElementById("f6-chain").innerHTML=d.ch.map((x,i)=>`<div class="${i===d.ch.length-1?'verified':''}"><small>${x[0]}</small><b>${x[1]}</b></div>`).join("")}
+ document.querySelectorAll(".f6-node").forEach(n=>n.onclick=()=>{document.querySelectorAll(".f6-node").forEach(x=>x.classList.remove("on"));n.classList.add("on");render(n.dataset.n)});render("lead");
+ document.getElementById("f6-ask").onclick=()=>{let q=document.getElementById("f6-input").value.toLowerCase(),a=document.getElementById("f6-answer");if(q.includes("hotel")||q.includes("lux"))a.innerHTML="<b>Ainda não há evidência suficiente.</b> Existe experiência em restauração premium, mas a experiência em hotelaria de luxo não está validada.<span class='f6-source'>Evidence status · not verified ○</span>";else if(q.includes("vinho")||q.includes("wine"))a.innerHTML="<b>Sim, existe evidência.</b> WSET Level 2, credencial de 2024 marcada como validada.<span class='f6-source'>Ver credencial →</span>";else a.innerHTML="<b>Sim.</b> A Marta lidera atualmente uma equipa FOH de 22 pessoas.<span class='f6-source'>Restaurant Manager · 2024 → · Validado por antigo Diretor de Operações ✓</span>";a.classList.add("show")};
+})();
+</script>
+
 </body></html>
