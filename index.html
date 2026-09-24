@@ -839,4 +839,102 @@ document.addEventListener("DOMContentLoaded",()=>{tr();
 })();
 </script>
 
+
+<style>
+/* v5.7 — Fyndset as a professional identity system */
+.lf-wrap{max-width:1380px}
+.lf-innovation{margin-top:18px;display:grid;gap:18px}
+.lf-two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.lf-cardx{border:1px solid rgba(255,255,255,.09);border-radius:18px;background:rgba(255,255,255,.025);padding:19px;position:relative;overflow:hidden}
+.lf-cardx h3{font-size:14px;margin:0 0 5px}.lf-cardx>p{font-size:8px;color:#809996;line-height:1.5;margin:0 0 15px}
+.lf-fingerprint{display:flex;flex-wrap:wrap;gap:7px}.lf-fingerprint span{padding:7px 9px;border-radius:10px;border:1px solid rgba(63,224,218,.13);background:rgba(63,224,218,.035);font-size:8px;color:#c4d5d2}
+.lf-scale{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.scale-item{padding:12px;border-radius:12px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.065)}.scale-item small{display:block;font-size:6px;letter-spacing:.12em;color:#6f8986;text-transform:uppercase}.scale-item strong{display:block;font-size:18px;letter-spacing:-.04em;margin-top:5px}.scale-item span{font-size:7px;color:#809996}
+.lf-evidence{display:grid;grid-template-columns:145px 1fr;gap:16px;align-items:stretch}.evidence-signals{display:grid;gap:6px}.evidence-signal{border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:9px;cursor:pointer;transition:.2s}.evidence-signal:hover,.evidence-signal.active{border-color:rgba(63,224,218,.4);background:rgba(63,224,218,.055)}.evidence-signal b{font-size:8px;display:block}.evidence-signal span{font-size:6.5px;color:#6f8986}.evidence-chain{border-left:1px solid rgba(63,224,218,.15);padding-left:20px;display:flex;align-items:center}.chain{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.chain-node{border:1px solid rgba(255,255,255,.09);border-radius:11px;padding:9px 10px;min-width:105px}.chain-node small{display:block;font-size:6px;color:#6d8784}.chain-node b{font-size:8px}.chain-arrow{color:var(--cyan);font-size:12px}
+.lf-confidence{font-size:6px;color:var(--cyan);margin-top:4px}
+.lf-ask{border-color:rgba(63,224,218,.16);background:radial-gradient(circle at 100% 0,rgba(63,224,218,.07),transparent 40%),rgba(255,255,255,.025)}.ask-row{display:flex;gap:8px}.ask-input{flex:1;border:1px solid rgba(255,255,255,.1);border-radius:999px;background:rgba(2,24,27,.6);color:#fff;padding:11px 13px;font-size:8px;outline:none}.ask-go{border:0;border-radius:999px;background:var(--cyan);color:#042326;font-size:8px;font-weight:750;padding:0 15px;cursor:pointer}.ask-suggestions{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}.ask-suggestions button{border:1px solid rgba(255,255,255,.08);border-radius:999px;background:transparent;color:#829b98;padding:5px 7px;font-size:6.5px;cursor:pointer}.ask-answer{display:none;margin-top:12px;padding:12px;border-radius:12px;background:rgba(63,224,218,.04);border:1px solid rgba(63,224,218,.1);font-size:8px;line-height:1.55;color:#b7cac7}.ask-answer.show{display:block}.ask-answer b{color:#fff}.ask-source{display:block;margin-top:7px;color:var(--cyan);font-size:6.5px}
+.lf-replay{display:flex;align-items:center;gap:12px;margin-top:14px}.replay-btn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(63,224,218,.3);background:rgba(63,224,218,.06);color:var(--cyan);cursor:pointer}.replay-track{height:3px;flex:1;background:rgba(255,255,255,.07);border-radius:99px;position:relative}.replay-fill{height:100%;width:0;background:var(--cyan);border-radius:99px;transition:width 2.8s linear}.replay-years{display:flex;justify-content:space-between;font-size:6px;color:#6f8986;margin-top:6px}
+.lf-passport{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.passport-item{border:1px solid rgba(255,255,255,.075);border-radius:11px;padding:10px}.passport-item b{font-size:8px;display:block}.passport-item span{font-size:6.5px;color:#718b88}.passport-item i{font-style:normal;color:var(--cyan);float:right}
+.lf-memory{font-size:8px;line-height:1.6;color:#9bb0ad}.lf-memory strong{color:#fff}.lf-card-share{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid rgba(63,224,218,.12);border-radius:13px;background:rgba(63,224,218,.025)}.mini-avatar{width:43px;height:43px;border-radius:50%;object-fit:cover}.mini-info{flex:1}.mini-info b{font-size:10px}.mini-info span{display:block;font-size:7px;color:#78928f}.mini-signals{font-size:6.5px;color:#a6bbb8;margin-top:4px}.share-btn{border:1px solid rgba(255,255,255,.11);border-radius:999px;background:transparent;color:#fff;padding:7px 9px;font-size:7px;cursor:pointer}
+@media(max-width:850px){.lf-two{grid-template-columns:1fr}.lf-scale,.lf-passport{grid-template-columns:repeat(2,1fr)}.lf-evidence{grid-template-columns:1fr}.evidence-chain{border-left:0;border-top:1px solid rgba(63,224,218,.15);padding:15px 0 0}.chain{display:grid;grid-template-columns:1fr}.chain-arrow{transform:rotate(90deg);text-align:center}}
+</style>
+
+<script>
+(()=>{
+ const lower=document.querySelector('.lf-lower');
+ if(!lower) return;
+ const innovation=document.createElement('section');
+ innovation.className='lf-innovation';
+ innovation.innerHTML=`
+ <div class="lf-two">
+  <article class="lf-cardx">
+   <div class="lf-section-kicker">ENVIRONMENT FINGERPRINT</div><h3 data-v57="envTitle">Where Marta knows how to operate</h3><p data-v57="envCopy">Same title, very different professional context. These are the environments behind the experience.</p>
+   <div class="lf-fingerprint"><span>Fine dining</span><span>Independent</span><span>Premium</span><span>High volume</span><span>Openings</span><span>Urban</span><span>International guests</span></div>
+  </article>
+  <article class="lf-cardx">
+   <div class="lf-section-kicker">SCALE</div><h3 data-v57="scaleTitle">How big was the responsibility?</h3><p data-v57="scaleCopy">Context that a job title rarely tells you.</p>
+   <div class="lf-scale"><div class="scale-item"><small data-v57="people">People</small><strong>22</strong><span data-v57="team">team members</span></div><div class="scale-item"><small data-v57="covers">Peak service</small><strong>350</strong><span data-v57="day">covers/day</span></div><div class="scale-item"><small data-v57="concepts">Concepts</small><strong>2</strong><span data-v57="opened">opened</span></div><div class="scale-item"><small data-v57="scope">Scope</small><strong>€3.2M</strong><span data-v57="exposure">operation exposure</span></div></div>
+  </article>
+ </div>
+
+ <article class="lf-cardx">
+  <div class="lf-section-kicker">EVIDENCE GRAPH</div><h3 data-v57="graphTitle">Every signal can lead back to proof</h3><p data-v57="graphCopy">Confidence belongs to the evidence — never to a score on the person.</p>
+  <div class="lf-evidence">
+   <div class="evidence-signals"><div class="evidence-signal active" data-chain="lead"><b data-v57="leadership">Leadership ✓</b><span data-v57="high">High evidence confidence</span></div><div class="evidence-signal" data-chain="wine"><b data-v57="wine">Wine knowledge ✓</b><span data-v57="strong">Strong evidence</span></div><div class="evidence-signal" data-chain="cost"><b data-v57="cost">Cost control ○</b><span data-v57="needs">Needs validation</span></div></div>
+   <div class="evidence-chain" id="evidence-chain"></div>
+  </div>
+ </article>
+
+ <div class="lf-two">
+  <article class="lf-cardx lf-ask">
+   <div class="lf-section-kicker">ASK THIS FYNDSET</div><h3 data-v57="askTitle">Don't search the profile. Ask the evidence.</h3><p data-v57="askCopy">Answers only use information Marta has demonstrated, verified or declared — and show the source.</p>
+   <div class="ask-row"><input id="ask-input" class="ask-input" data-v57ph="askPh"><button class="ask-go" id="ask-go" data-v57="ask">Ask</button></div>
+   <div class="ask-suggestions"><button data-q="team" data-v57="q1">Has Marta managed 15+ people?</button><button data-q="hotel" data-v57="q2">Luxury hotel experience?</button><button data-q="wine" data-v57="q3">What proves her wine knowledge?</button></div>
+   <div class="ask-answer" id="ask-answer"></div>
+  </article>
+  <article class="lf-cardx">
+   <div class="lf-section-kicker">FYNDSET REPLAY</div><h3 data-v57="replayTitle">Watch the professional take shape</h3><p data-v57="replayCopy">Replay the moments that added new signals to Marta's professional identity.</p>
+   <div class="lf-replay"><button class="replay-btn" id="replay-btn">▶</button><div style="flex:1"><div class="replay-track"><div class="replay-fill" id="replay-fill"></div></div><div class="replay-years"><span>2018 · Craft</span><span>2020 · Leadership</span><span>2022 · Operations</span><span>2024 · Scale</span></div></div></div>
+  </article>
+ </div>
+
+ <div class="lf-two">
+  <article class="lf-cardx">
+   <div class="lf-section-kicker">PROFESSIONAL PASSPORT</div><h3 data-v57="passport">Portable, practical credentials</h3><p data-v57="passportCopy">Verified where possible, without letting credentials dominate the person.</p>
+   <div class="lf-passport"><div class="passport-item"><i>✓</i><b>WSET 2</b><span>Verified</span></div><div class="passport-item"><i>✓</i><b>Português</b><span>C2</span></div><div class="passport-item"><i>✓</i><b>English</b><span>C1</span></div><div class="passport-item"><i>✓</i><b>Food Safety</b><span>Verified</span></div><div class="passport-item"><i>✓</i><b>EU Work</b><span>Eligible</span></div></div>
+  </article>
+  <article class="lf-cardx">
+   <div class="lf-section-kicker">PROFESSIONAL MEMORY</div><h3 data-v57="memoryTitle">A profile that grows with the career</h3><p class="lf-memory" data-v57="memoryCopy">Marta's Fyndset keeps the <strong>proof, validations, experiences and progression</strong> she earns over time. It is not rebuilt every time she changes jobs.</p>
+   <div class="lf-card-share"><img src="sofia.png" class="mini-avatar"><div class="mini-info"><b>Marta Silva ✓</b><span>Restaurant Manager · Lisboa</span><div class="mini-signals">Leadership · Fine dining · Openings · 3 verified experiences</div></div><button class="share-btn" id="share-card" data-v57="share">Share Fyndset</button></div>
+  </article>
+ </div>`;
+ lower.insertAdjacentElement('afterend',innovation);
+
+ const C={
+ en:{envTitle:"Where Marta knows how to operate",envCopy:"Same title, very different professional context. These are the environments behind the experience.",scaleTitle:"How big was the responsibility?",scaleCopy:"Context that a job title rarely tells you.",people:"People",team:"team members",covers:"Peak service",day:"covers/day",concepts:"Concepts",opened:"opened",scope:"Scope",exposure:"operation exposure",graphTitle:"Every signal can lead back to proof",graphCopy:"Confidence belongs to the evidence — never to a score on the person.",leadership:"Leadership ✓",high:"High evidence confidence",wine:"Wine knowledge ✓",strong:"Strong evidence",cost:"Cost control ○",needs:"Needs validation",askTitle:"Don't search the profile. Ask the evidence.",askCopy:"Answers only use information Marta has demonstrated, verified or declared — and show the source.",ask:"Ask",askPh:"Ask something about Marta…",q1:"Has Marta managed 15+ people?",q2:"Luxury hotel experience?",q3:"What proves her wine knowledge?",replayTitle:"Watch the professional take shape",replayCopy:"Replay the moments that added new signals to Marta's professional identity.",passport:"Portable, practical credentials",passportCopy:"Verified where possible, without letting credentials dominate the person.",memoryTitle:"A profile that grows with the career",memoryCopy:"Marta's Fyndset keeps the proof, validations, experiences and progression she earns over time. It is not rebuilt every time she changes jobs.",share:"Share Fyndset"},
+ pt:{envTitle:"Onde a Marta sabe operar",envCopy:"O mesmo cargo pode esconder contextos profissionais muito diferentes. Estes são os ambientes por detrás da experiência.",scaleTitle:"Qual era a dimensão da responsabilidade?",scaleCopy:"Contexto que um cargo raramente consegue explicar.",people:"Pessoas",team:"membros da equipa",covers:"Pico de serviço",day:"covers/dia",concepts:"Conceitos",opened:"abertos",scope:"Escala",exposure:"exposição operacional",graphTitle:"Cada sinal pode levar de volta à prova",graphCopy:"A confiança pertence à evidência — nunca a uma pontuação sobre a pessoa.",leadership:"Liderança ✓",high:"Elevada confiança na evidência",wine:"Conhecimento de vinhos ✓",strong:"Evidência forte",cost:"Controlo de custos ○",needs:"Precisa de validação",askTitle:"Não procures no perfil. Pergunta à evidência.",askCopy:"As respostas usam apenas informação demonstrada, validada ou declarada pela Marta — e mostram a origem.",ask:"Perguntar",askPh:"Pergunta algo sobre a Marta…",q1:"A Marta já liderou mais de 15 pessoas?",q2:"Tem experiência em hotelaria de luxo?",q3:"O que prova o conhecimento de vinhos?",replayTitle:"Vê a profissional ganhar forma",replayCopy:"Revê os momentos que acrescentaram novos sinais à identidade profissional da Marta.",passport:"Credenciais práticas e portáteis",passportCopy:"Validadas sempre que possível, sem deixar que as credenciais dominem a pessoa.",memoryTitle:"Um perfil que cresce com a carreira",memoryCopy:"O Fyndset da Marta conserva as provas, validações, experiências e progressão que conquista ao longo do tempo. Não é reconstruído sempre que muda de emprego.",share:"Partilhar Fyndset"}};
+ const lang=()=>document.documentElement.lang==="pt"?"pt":"en";
+ function tr57(){document.querySelectorAll("[data-v57]").forEach(e=>{let v=C[lang()][e.dataset.v57];if(v)e.textContent=v});document.querySelectorAll("[data-v57ph]").forEach(e=>e.placeholder=C[lang()][e.dataset.v57ph])}
+ const chains={
+  lead:[["SIGNAL","Leadership"],["PROOF","Led 22-person FOH team"],["EXPERIENCE","Restaurant Manager · 2024→"],["VERIFIED BY","Former Operations Director ✓"]],
+  wine:[["SIGNAL","Wine knowledge"],["PROOF","WSET Level 2"],["CREDENTIAL","Certificate · 2024"],["STATUS","Verified ✓"]],
+  cost:[["SIGNAL","Cost control"],["SOURCE","Self-declared"],["EVIDENCE","P&L exposure"],["STATUS","Needs validation ○"]]
+ };
+ function renderChain(k){document.getElementById("evidence-chain").innerHTML='<div class="chain">'+chains[k].map((n,i)=>`${i?'<span class="chain-arrow">→</span>':''}<div class="chain-node"><small>${n[0]}</small><b>${n[1]}</b></div>`).join("")+'</div>'}
+ document.querySelectorAll(".evidence-signal").forEach(e=>e.onclick=()=>{document.querySelectorAll(".evidence-signal").forEach(x=>x.classList.remove("active"));e.classList.add("active");renderChain(e.dataset.chain)});renderChain("lead");
+
+ function answer(kind){
+   const pt=lang()==="pt";let a="";
+   if(kind==="team") a=pt?"<b>Sim.</b> A Marta lidera atualmente uma equipa FOH de 22 pessoas.":"<b>Yes.</b> Marta currently leads a 22-person FOH team.";
+   else if(kind==="hotel") a=pt?"<b>Ainda não há evidência suficiente.</b> Existe experiência em restauração premium, mas a experiência em hotelaria de luxo não está validada.":"<b>Not enough evidence yet.</b> She has premium restaurant experience, but luxury hotel experience is not verified.";
+   else a=pt?"<b>WSET Level 2.</b> A credencial de 2024 está marcada como validada.":"<b>WSET Level 2.</b> Her 2024 credential is marked as verified.";
+   document.getElementById("ask-answer").innerHTML=a+`<span class="ask-source">${pt?"Ver origem da evidência →":"View evidence source →"}</span>`;document.getElementById("ask-answer").classList.add("show")
+ }
+ document.querySelectorAll(".ask-suggestions button").forEach(b=>b.onclick=()=>answer(b.dataset.q));
+ document.getElementById("ask-go").onclick=()=>{let q=document.getElementById("ask-input").value.toLowerCase();answer(q.includes("hotel")||q.includes("lux")?"hotel":q.includes("wine")||q.includes("vinho")?"wine":"team")};
+ document.getElementById("replay-btn").onclick=()=>{let f=document.getElementById("replay-fill");f.style.transition="none";f.style.width="0";requestAnimationFrame(()=>{f.style.transition="width 2.8s linear";f.style.width="100%"});document.getElementById("replay-btn").textContent="◼";setTimeout(()=>document.getElementById("replay-btn").textContent="↻",2900)};
+ document.getElementById("share-card").onclick=()=>{document.getElementById("share-card").textContent=lang()==="pt"?"Link preparado ✓":"Link ready ✓";setTimeout(tr57,1400)};
+ document.querySelector(".lang-switch")?.addEventListener("click",()=>setTimeout(tr57,30));tr57();
+})();
+</script>
+
 </body></html>
