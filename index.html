@@ -2083,4 +2083,128 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 </script>
 
+
+<style id="fyndset-v15-final-polish">
+/* 01 — Home control: compact, modern, instrument-like */
+.fy-final-home{
+  left:26px!important; top:24px!important;
+  width:48px!important; height:48px!important; padding:0!important;
+  overflow:hidden!important; white-space:nowrap!important;
+  border:1px solid rgba(92,242,235,.28)!important;
+  border-radius:50%!important;
+  background:rgba(3,28,31,.58)!important;
+  color:transparent!important;
+  backdrop-filter:blur(18px)!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 10px 28px rgba(0,0,0,.22)!important;
+}
+.fy-final-home::before{
+  content:"⌂"; position:absolute; inset:0;
+  display:grid; place-items:center;
+  color:#dff9f6; font:400 19px/1 Arial,sans-serif;
+}
+.fy-final-home::after{
+  content:"Página principal"; position:absolute;
+  left:58px; top:50%; transform:translateY(-50%) translateX(-5px);
+  width:max-content; padding:9px 13px;
+  border:1px solid rgba(92,242,235,.20); border-radius:999px;
+  background:rgba(3,28,31,.84); color:#e9f7f5;
+  font:650 11px/1 Inter,Arial,sans-serif;
+  opacity:0; pointer-events:none;
+  transition:.2s ease;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+.fy-final-home:hover{
+  border-color:rgba(92,242,235,.7)!important;
+  box-shadow:0 0 0 5px rgba(63,224,218,.05),0 0 24px rgba(63,224,218,.18)!important;
+}
+.fy-final-home:hover::after{opacity:1;transform:translateY(-50%) translateX(0)}
+
+/* 02 — CTA moved away from the baked-in lower-left information.
+   It now lives below Sofia's evidence card, on the clean restaurant area. */
+.fy-final-build{
+  left:auto!important; right:5.1%!important; top:66.5%!important;
+  width:286px!important; padding:15px 20px!important;
+  background:rgba(3,28,31,.80)!important;
+  color:#effffd!important;
+  border:1px solid rgba(63,224,218,.55)!important;
+  backdrop-filter:blur(16px)!important;
+  box-shadow:0 12px 34px rgba(0,0,0,.30),inset 0 0 0 1px rgba(255,255,255,.02)!important;
+}
+.fy-final-build::before{
+  content:""; width:7px;height:7px;border-radius:50%;
+  background:#3fe0da;box-shadow:0 0 12px rgba(63,224,218,.75);
+  margin-right:10px;flex:0 0 auto;
+}
+.fy-final-build span:first-child{margin-right:auto}
+.fy-final-build:hover{
+  background:#3fe0da!important;color:#031c1f!important;
+  border-color:#3fe0da!important;transform:translateY(-2px)!important;
+}
+
+/* Give the recurring read a softer reset so it feels like a live signal,
+   not a looping advert. */
+.fy-pro-final-page.fy-reading .fy-identity-read{opacity:1}
+@media(max-width:900px){
+  .fy-final-home{left:14px!important;top:14px!important;width:42px!important;height:42px!important}
+  .fy-final-build{
+    right:4vw!important;left:auto!important;top:auto!important;bottom:112px!important;
+    width:240px!important;padding:13px 16px!important;
+  }
+}
+</style>
+
+<script id="fyndset-v15-recurring-read">
+document.addEventListener('DOMContentLoaded',()=>{
+  const pro=document.getElementById('pro-story');
+  if(!pro) return;
+  const first=pro.querySelector('.fy-pro-final-page');
+  const stage=pro.querySelector('.fy-stage');
+  if(!first || !stage) return;
+
+  let repeatTimer=null;
+
+  function pulse(){
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if(!document.body.classList.contains('fy-mode-pro') || !first.classList.contains('active')) return;
+    first.classList.remove('fy-reading');
+    stage.classList.remove('fy-reading-stage');
+    void first.offsetWidth;
+    first.classList.add('fy-reading');
+    stage.classList.add('fy-reading-stage');
+    setTimeout(()=>{
+      first.classList.remove('fy-reading');
+      stage.classList.remove('fy-reading-stage');
+    },1450);
+  }
+
+  function stopLoop(){
+    if(repeatTimer){ clearInterval(repeatTimer); repeatTimer=null; }
+  }
+  function startLoop(){
+    stopLoop();
+    /* First read immediately; then a new subtle read every 3 seconds. */
+    setTimeout(pulse,90);
+    repeatTimer=setInterval(pulse,3000);
+  }
+
+  const observer=new MutationObserver(()=>{
+    if(document.body.classList.contains('fy-mode-pro') && first.classList.contains('active')) startLoop();
+    else stopLoop();
+  });
+  observer.observe(document.body,{attributes:true,attributeFilter:['class']});
+  observer.observe(first,{attributes:true,attributeFilter:['class']});
+
+  pro.querySelectorAll('.fy-final-dot').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      if(btn.dataset.finalStep==='0') setTimeout(startLoop,40);
+      else stopLoop();
+    });
+  });
+
+  pro.querySelector('[data-final-home]')?.addEventListener('click',stopLoop,true);
+
+  if(document.body.classList.contains('fy-mode-pro') && first.classList.contains('active')) startLoop();
+});
+</script>
+
 </body></html>
