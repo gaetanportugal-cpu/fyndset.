@@ -201,6 +201,63 @@ main.hero::after{
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fy-scroll-cue i{animation:none}}
 </style>
+
+<style id="fyndset-corrections-v2">
+/* HERO: restore clarity; keep original profile bubbles untouched */
+main.hero::after{display:none!important}
+.fy-scroll-cue{display:none!important}
+
+/* Remove the three explanatory micro-text blocks from the hero */
+.pillars{display:none!important}
+
+/* Audience explanations are gated: no access by scrolling */
+#pro-story,#company-story{display:none}
+#pro-story.fy-unlocked,#company-story.fy-unlocked{display:block}
+
+/* Sofia slide: use only Sofia/restaurant crop, never the baked-in composite */
+#pro-story .fy-slide[data-slide="0"] .fy-bg{
+  background-image:
+    linear-gradient(90deg,#031c1f 0%,rgba(3,28,31,.97) 28%,rgba(3,28,31,.72) 46%,rgba(3,28,31,.08) 68%),
+    url('./fyndset-sofia-only-crop.png')!important;
+  background-size:auto 100%,auto 100%!important;
+  background-repeat:no-repeat!important;
+  background-position:left top,right center!important;
+}
+#pro-story .fy-slide[data-slide="0"] .fy-bg:after{display:none!important}
+
+/* One continuous public page: encounter + both-side stories + close */
+#the-meeting{
+  min-height:100vh;
+  padding:76px 0 48px;
+  align-content:center;
+  background:
+    radial-gradient(circle at 50% 38%,rgba(13,91,95,.28),transparent 32%),
+    linear-gradient(180deg,#031c1f 0%,#031c1f 58%,rgba(3,28,31,.91) 100%);
+}
+#the-meeting .fy-bridge-inner{margin-bottom:48px}
+.fy-public-ending{
+  width:min(1380px,90vw);
+  margin:0 auto;
+  padding-top:38px;
+  border-top:0;
+  text-align:center;
+}
+.fy-public-ending h2{font-size:clamp(42px,4.4vw,70px);line-height:.98;margin:12px 0}
+.fy-public-ending h2 span{color:#3fe0da}
+.fy-public-ending>p{color:#a9bcba;margin:14px auto 26px;max-width:650px}
+.fy-public-ending .fy-stories{margin:24px 0 28px}
+.fy-public-ending .fy-story{background:rgba(5,40,43,.56)}
+/* old separate ending is no longer part of layout */
+#shared-ending{display:none!important}
+
+@media(max-width:850px){
+ #the-meeting{min-height:auto;padding:60px 0}
+ #pro-story .fy-slide[data-slide="0"] .fy-bg{
+   background-size:auto 100%!important;
+   background-position:70% center!important;
+ }
+}
+</style>
 </head><body>
 <main class="hero"><video class="hero-video" autoplay muted loop playsinline preload="auto" poster="./fyndset-hero-bg.png" aria-hidden="true">
     <source src="./fyndset-hero.mp4" type="video/mp4">
@@ -290,7 +347,18 @@ main.hero::after{
   </div>
 </section>
 
-<section class="fy-bridge" id="the-meeting"><div class="fy-bridge-inner"><div class="fy-bridge-side"><div class="fy-kicker">O ENCONTRO</div><h3>Enquanto uma pessoa<br>constrói <em>quem é...</em></h3><p>O talento mostra a sua identidade real, as experiências e o que procura a seguir, com privacidade e controlo.</p></div><div class="fy-link"><div class="fy-link-logo">F</div></div><div class="fy-bridge-side right"><h3>...uma empresa<br><em>encontra quem procura.</em></h3><p>Sem construir a pessoa ideal. Sem pesquisar uma pilha de CVs. O Fyndset faz a descoberta a partir do que realmente importa.</p></div></div></section>
+<section class="fy-bridge" id="the-meeting"><div class="fy-bridge-inner"><div class="fy-bridge-side"><div class="fy-kicker">O ENCONTRO</div><h3>Enquanto uma pessoa<br>constrói <em>quem é...</em></h3><p>O talento mostra a sua identidade real, as experiências e o que procura a seguir, com privacidade e controlo.</p></div><div class="fy-link"><div class="fy-link-logo">F</div></div><div class="fy-bridge-side right"><h3>...uma empresa<br><em>encontra quem procura.</em></h3><p>Sem construir a pessoa ideal. Sem pesquisar uma pilha de CVs. O Fyndset faz a descoberta a partir do que realmente importa.</p></div></div>
+<div class="fy-public-ending">
+  <div class="fy-kicker">OS DOIS LADOS</div>
+  <h2>Ela não se candidatou.<br><span>Foi encontrada.</span></h2>
+  <p>Pessoas extraordinárias não estão apenas a candidatar-se. Estão a ser descobertas.</p>
+  <div class="fy-stories">
+    <div class="fy-story"><q>O Fyndset deu-me a oportunidade de ser descoberta.</q><small>Exemplo ilustrativo · profissional de hospitality</small></div>
+    <div class="fy-story"><q>Encontrámos alguém que nunca teria aparecido numa pesquisa tradicional.</q><small>Exemplo ilustrativo · empresa de hospitality</small></div>
+  </div>
+  <div class="fy-end-actions"><button data-open-profile>Construir o meu Fyndset →</button><button data-open-company>Encontrar talento →</button></div>
+</div>
+</section>
 
 <section class="fy-audience fy-company" id="company-story">
   <div class="fy-stage">
@@ -1544,6 +1612,29 @@ document.getElementById(&quot;next&quot;).onclick=forward;document.getElementByI
    buttons.forEach((b,i)=>b.classList.toggle('active',i===active));
  };
  addEventListener('scroll',update,{passive:true});addEventListener('resize',update);update();
+})();
+</script>
+
+<script id="fyndset-gated-explanations-v2">
+(()=>{
+ const pro=document.getElementById('pro-story');
+ const company=document.getElementById('company-story');
+ const meeting=document.getElementById('the-meeting');
+ const heroPro=document.getElementById('open-pro-builder');
+ const heroCompany=document.getElementById('open-fynd-world');
+
+ function unlock(which){
+   pro?.classList.toggle('fy-unlocked',which==='pro');
+   company?.classList.toggle('fy-unlocked',which==='company');
+   const target=which==='pro'?pro:company;
+   requestAnimationFrame(()=>target?.scrollIntoView({behavior:'smooth',block:'start'}));
+ }
+ // Capture phase ensures old handlers cannot open builders/radar from hero.
+ if(heroPro) heroPro.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();unlock('pro')},true);
+ if(heroCompany) heroCompany.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();unlock('company')},true);
+
+ // If the visitor simply scrolls, both gated explanation blocks remain display:none,
+ // so the next accessible public section is O Encontro + Histórias on the same page.
 })();
 </script>
 </body></html>
