@@ -492,6 +492,282 @@ body.fy-mode-pro #pro-story:has(.fy-pro-cinematic-final.active) > .fy-nav{opacit
 @media(max-width:850px){.fy-dna-v18 .dna18-copy{width:90vw}.fy-dna-v18 .dna21-world{top:43%;right:-31%;width:132%;height:49%;transform:scale(.72);transform-origin:center top}}
 @media(prefers-reduced-motion:reduce){.h21-rings circle,.dna21-scan:before,.dna21-particles i{animation:none!important}.h21-travel{display:none}}
 </style>
+
+<style id="fyndset-v22-proof">
+/* 03 · PROVA — evidence browser, deliberately distinct from the holographic DNA page */
+.fy-proof-v22 .fy-inner{padding-left:3.4%;padding-right:3.4%}
+.fy-proof-v22 .fy-copy{width:38%;align-self:center;padding-bottom:4vh}
+.fy-proof-v22 .fy-copy h2{font-size:clamp(50px,4.35vw,78px);line-height:1.01;letter-spacing:-.048em}
+.fy-proof-v22 .fy-copy h2 em{color:#35e4de}
+.fy-proof-v22 .fy-copy p{max-width:560px;font-size:17px;line-height:1.55;color:#c9d9d6}
+.proof22-visual{width:59%;display:flex;align-items:center;justify-content:flex-end}
+.proof22-panel{
+  width:min(100%,1000px);height:650px;padding:25px 28px 22px;border-radius:28px;
+  border:1px solid rgba(63,224,218,.24);
+  background:
+    radial-gradient(circle at 55% 0%,rgba(63,224,218,.055),transparent 32%),
+    linear-gradient(145deg,rgba(3,34,37,.94),rgba(2,25,28,.96));
+  box-shadow:0 30px 90px rgba(0,0,0,.25),inset 0 0 45px rgba(63,224,218,.018);
+  color:#f8fbfa;
+}
+.proof22-tabs{height:78px;display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid rgba(255,255,255,.13)}
+.proof22-tabs button{position:relative;border:0;background:transparent;color:#d8e5e3;display:grid;place-items:center;align-content:center;gap:9px;font:650 12px/1 Inter,Arial,sans-serif;cursor:pointer}
+.proof22-tabs button i{font:400 21px/1 Arial,sans-serif;font-style:normal;color:#dce9e7}
+.proof22-tabs button.active{color:#43eee8}
+.proof22-tabs button.active i{color:#43eee8;text-shadow:0 0 17px rgba(63,224,218,.55)}
+.proof22-tabs button.active:after{content:"";position:absolute;left:8%;right:8%;bottom:-1px;height:2px;background:#43eee8;box-shadow:0 0 13px rgba(63,224,218,.6)}
+.proof22-head{display:flex;align-items:flex-start;justify-content:space-between;padding:23px 7px 17px}
+.proof22-head h3{margin:0 0 8px;font-size:27px;letter-spacing:-.025em}
+.proof22-head p{margin:0;color:#c4d3d0;font-size:13px;line-height:1.55}
+.proof22-count{margin-top:8px;border:1px solid rgba(63,224,218,.45);border-radius:999px;padding:9px 14px;color:#43eee8;font:650 11px/1 Inter,Arial,sans-serif;white-space:nowrap;background:rgba(63,224,218,.035)}
+.proof22-list{display:grid;gap:7px}
+.proof22-row{
+  width:100%;min-height:94px;display:grid;grid-template-columns:142px 1fr auto 28px;align-items:center;gap:17px;
+  padding:8px 13px 8px 9px;border-radius:18px;border:1px solid rgba(63,224,218,.18);
+  background:linear-gradient(90deg,rgba(7,53,56,.48),rgba(2,27,30,.72));
+  color:#f8fbfa;text-align:left;cursor:pointer;transition:.22s ease;
+}
+.proof22-row:hover{transform:translateX(3px);border-color:rgba(63,224,218,.48);background:linear-gradient(90deg,rgba(8,66,69,.62),rgba(2,29,32,.8));box-shadow:0 0 24px rgba(63,224,218,.07)}
+.proof22-thumb{height:76px;border-radius:12px;border:1px solid rgba(63,224,218,.18);display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 20%,rgba(63,224,218,.17),rgba(3,38,41,.86));color:#6af5ef;font-style:normal;overflow:hidden}
+.proof22-thumb b{font-size:27px;line-height:1}.proof22-thumb small{margin-top:5px;color:#b8cfcc;font-size:9px;letter-spacing:.08em;text-transform:uppercase}
+.proof22-reference,.proof22-doc{font:800 28px/1 Inter,Arial,sans-serif}
+.proof22-info{min-width:0}.proof22-info strong,.proof22-info small,.proof22-info em{display:block}
+.proof22-info strong{font-size:15px;margin-bottom:7px}.proof22-info small{font-size:12px;color:#b8cbc8;margin-bottom:6px}.proof22-info em{font-size:11px;color:#8fa6a3;font-style:normal}
+.proof22-state{justify-self:end;border:1px solid;border-radius:999px;padding:8px 13px;font:700 10px/1 Inter,Arial,sans-serif;white-space:nowrap}
+.proof22-state.demonstrated{color:#4af0b2;border-color:rgba(74,240,178,.55);background:rgba(74,240,178,.035)}
+.proof22-state.verified{color:#45eee8;border-color:rgba(69,238,232,.55);background:rgba(69,238,232,.035)}
+.proof22-arrow{font:300 28px/1 Arial,sans-serif;color:#43eee8}
+@media(max-width:1250px){
+ .fy-proof-v22 .fy-copy{width:36%}.proof22-visual{width:62%}.proof22-panel{height:620px;padding:21px}
+ .proof22-row{grid-template-columns:112px 1fr auto 22px}.proof22-thumb{height:70px}
+}
+@media(max-width:850px){
+ .fy-proof-v22 .fy-inner{display:block;padding:70px 5vw 150px;overflow:auto}
+ .fy-proof-v22 .fy-copy{width:100%;padding-bottom:25px}.fy-proof-v22 .fy-copy h2{font-size:48px}
+ .proof22-visual{width:100%;display:block}.proof22-panel{height:auto;min-height:610px;padding:16px}
+ .proof22-tabs button span{font-size:9px}.proof22-row{grid-template-columns:70px 1fr 22px}.proof22-thumb{height:62px}
+ .proof22-state{grid-column:2;padding:6px 9px;justify-self:start}.proof22-arrow{grid-column:3;grid-row:1}
+ .proof22-head p br{display:none}
+}
+</style>
+
+
+<style id="fyndset-v23-proof-layout-fix">
+/* PAGE 03 ONLY — isolated desktop composition. No dependency on generic fy-copy/fy-visual sizing. */
+@media (min-width: 1101px){
+  .fy-proof-v22 > .fy-inner{
+    position:relative !important;
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+    max-width:none !important;
+    padding:0 !important;
+    margin:0 !important;
+    overflow:hidden !important;
+  }
+
+  .fy-proof-v22 .fy-copy{
+    position:absolute !important;
+    left:3.1% !important;
+    top:17.2% !important;
+    width:37.5% !important;
+    max-width:650px !important;
+    padding:0 !important;
+    margin:0 !important;
+    transform:none !important;
+  }
+
+  .fy-proof-v22 .fy-copy .fy-kicker{
+    margin-bottom:31px !important;
+  }
+
+  .fy-proof-v22 .fy-copy h2{
+    width:100% !important;
+    max-width:650px !important;
+    margin:0 !important;
+    font-size:clamp(50px,4.05vw,73px) !important;
+    line-height:.99 !important;
+    letter-spacing:-.045em !important;
+    white-space:normal !important;
+  }
+
+  .fy-proof-v22 .fy-copy h2 br{display:block !important}
+
+  .fy-proof-v22 .fy-copy p{
+    width:100% !important;
+    max-width:570px !important;
+    margin:28px 0 0 !important;
+    font-size:17px !important;
+    line-height:1.55 !important;
+  }
+
+  .fy-proof-v22 .fy-copy .fy-primary{
+    margin-top:29px !important;
+  }
+
+  .fy-proof-v22 .proof22-visual{
+    position:absolute !important;
+    left:43.5% !important;
+    right:3.1% !important;
+    top:15.4% !important;
+    bottom:14.5% !important;
+    width:auto !important;
+    height:auto !important;
+    max-width:none !important;
+    display:block !important;
+    margin:0 !important;
+    padding:0 !important;
+    transform:none !important;
+  }
+
+  .fy-proof-v22 .proof22-panel{
+    box-sizing:border-box !important;
+    width:100% !important;
+    max-width:none !important;
+    height:100% !important;
+    min-height:0 !important;
+    padding:20px 25px 18px !important;
+    overflow:hidden !important;
+  }
+
+  .fy-proof-v22 .proof22-tabs{
+    height:68px !important;
+  }
+
+  .fy-proof-v22 .proof22-head{
+    padding:17px 6px 13px !important;
+  }
+
+  .fy-proof-v22 .proof22-head h3{
+    font-size:25px !important;
+    margin-bottom:5px !important;
+  }
+
+  .fy-proof-v22 .proof22-head p{
+    font-size:12px !important;
+    line-height:1.42 !important;
+  }
+
+  .fy-proof-v22 .proof22-count{
+    margin-top:5px !important;
+    padding:8px 12px !important;
+  }
+
+  .fy-proof-v22 .proof22-list{
+    gap:6px !important;
+  }
+
+  .fy-proof-v22 .proof22-row{
+    box-sizing:border-box !important;
+    min-height:78px !important;
+    height:auto !important;
+    grid-template-columns:112px minmax(0,1fr) auto 22px !important;
+    gap:14px !important;
+    padding:7px 12px 7px 7px !important;
+  }
+
+  .fy-proof-v22 .proof22-thumb{
+    height:64px !important;
+  }
+
+  .fy-proof-v22 .proof22-info strong{
+    font-size:14px !important;
+    margin-bottom:4px !important;
+  }
+
+  .fy-proof-v22 .proof22-info small{
+    font-size:11px !important;
+    margin-bottom:4px !important;
+  }
+
+  .fy-proof-v22 .proof22-info em{
+    font-size:10px !important;
+  }
+
+  .fy-proof-v22 .proof22-state{
+    font-size:9px !important;
+    padding:7px 10px !important;
+  }
+
+  /* Keep the shared 01–04 navigation centred and above the page content. */
+  .fy-proof-v22 .pro-nav,
+  .fy-proof-v22 ~ .pro-nav{
+    z-index:40 !important;
+  }
+}
+
+/* Laptop heights: keep all four evidence rows visible above the persistent nav. */
+@media (min-width:1101px) and (max-height:820px){
+  .fy-proof-v22 .fy-copy{top:14.5% !important}
+  .fy-proof-v22 .fy-copy h2{font-size:clamp(46px,3.7vw,66px) !important}
+  .fy-proof-v22 .fy-copy p{margin-top:20px !important}
+  .fy-proof-v22 .fy-copy .fy-primary{margin-top:21px !important}
+  .fy-proof-v22 .proof22-visual{top:12.5% !important;bottom:15.5% !important}
+  .fy-proof-v22 .proof22-panel{padding-top:15px !important}
+  .fy-proof-v22 .proof22-tabs{height:57px !important}
+  .fy-proof-v22 .proof22-head{padding-top:12px !important;padding-bottom:9px !important}
+  .fy-proof-v22 .proof22-row{min-height:69px !important}
+  .fy-proof-v22 .proof22-thumb{height:56px !important}
+}
+
+/* Tablet/mobile remains stacked but gets explicit widths to avoid inherited clipping. */
+@media (max-width:1100px){
+  .fy-proof-v22 > .fy-inner{
+    width:100% !important;
+    max-width:none !important;
+  }
+  .fy-proof-v22 .fy-copy,
+  .fy-proof-v22 .proof22-visual{
+    max-width:none !important;
+  }
+}
+</style>
+
+
+<style id="fyndset-v24-proof-images">
+/* 03 · PROVA — visual evidence thumbnails. Top categories are explanatory, not navigation. */
+.fy-proof-v22 .proof22-tabs{grid-template-columns:repeat(5,1fr)}
+.fy-proof-v22 .proof22-tabs > div{
+  position:relative;border:0;background:transparent;color:#d8e5e3;
+  display:grid;place-items:center;align-content:center;gap:8px;
+  font:650 12px/1 Inter,Arial,sans-serif;
+  user-select:none;pointer-events:none;
+}
+.fy-proof-v22 .proof22-tabs > div i{
+  font:400 20px/1 Arial,sans-serif;font-style:normal;color:#dce9e7
+}
+.fy-proof-v22 .proof22-tabs > div.active{color:#43eee8}
+.fy-proof-v22 .proof22-tabs > div.active i{color:#43eee8;text-shadow:0 0 17px rgba(63,224,218,.55)}
+.fy-proof-v22 .proof22-tabs > div.active:after{
+  content:"";position:absolute;left:8%;right:8%;bottom:-1px;height:2px;
+  background:#43eee8;box-shadow:0 0 13px rgba(63,224,218,.6)
+}
+.fy-proof-v22 .proof22-thumb.proof22-photo{
+  height:64px!important;padding:0!important;display:block!important;
+  overflow:hidden;border-radius:11px;background:#06282b;
+}
+.fy-proof-v22 .proof22-thumb.proof22-photo svg{
+  display:block;width:100%;height:100%;object-fit:cover;
+}
+.fy-proof-v22 .proof22-row{
+  grid-template-columns:126px minmax(0,1fr) auto 22px!important;
+}
+/* Reserve a comfortable safety zone above the shared 01–04 navigation. */
+@media (min-width:1101px){
+  .fy-proof-v22 .proof22-visual{bottom:19.5%!important}
+  .fy-proof-v22 .proof22-panel{height:100%!important}
+  .fy-proof-v22 .proof22-row{min-height:72px!important}
+  .fy-proof-v22 .proof22-thumb.proof22-photo{height:59px!important}
+}
+@media (min-width:1101px) and (max-height:820px){
+  .fy-proof-v22 .proof22-visual{bottom:21.5%!important}
+  .fy-proof-v22 .proof22-tabs{height:52px!important}
+  .fy-proof-v22 .proof22-head{padding-top:9px!important;padding-bottom:7px!important}
+  .fy-proof-v22 .proof22-row{min-height:61px!important}
+  .fy-proof-v22 .proof22-thumb.proof22-photo{height:49px!important}
+}
+</style>
+
 </head><body>
 <main class="hero"><video class="hero-video" autoplay muted loop playsinline preload="auto" poster="./fyndset-hero-bg.png" aria-hidden="true">
     <source src="./fyndset-hero.mp4" type="video/mp4">
@@ -653,7 +929,89 @@ body.fy-mode-pro #pro-story:has(.fy-pro-cinematic-final.active) > .fy-nav{opacit
     <div class="dna18-card intent dna21-card"><i class="dna18-icon">⌂</i><div><b>OBJETIVO</b><span>Liderança de F&amp;B</span><small>Hotelaria boutique</small></div><em>›</em></div>
   </div>
 </article>
-    <article class="fy-slide" data-slide="2"><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">03 · PROVA</div><h2>Não digas apenas<br>que sabes fazer.<br><em>Mostra onde.</em></h2><p>Cada sinal pode ser explorado através de experiência, contexto e verificação — prova em vez de palavras-chave.</p><button class="fy-primary" data-open-profile>Construir o meu Fyndset <b>→</b></button></div><div class="fy-visual"><div class="fy-glass fy-proof"><h3>Leadership ✓</h3><div class="fy-proof-row"><b>Led 22-person FOH team</b><small>Restaurant Manager · 2024 — hoje</small></div><div class="fy-proof-row"><b>Former Operations Director ✓</b><small>Verificação por referência</small></div><div class="fy-proof-row"><b>Team training & development</b><small>Evidência em documentos</small></div><div class="fy-proof-row"><b>2 openings</b><small>Participação verificada</small></div></div></div></div></article>
+    <article class="fy-slide fy-proof-v22" data-slide="2">
+      <div class="fy-inner">
+        <div class="fy-copy">
+          <div class="fy-kicker">03 · PROVA</div>
+          <h2>Não digas apenas<br>que sabes fazer.<br><em>Mostra onde<br>o demonstraste.</em></h2>
+          <p>Cada sinal do teu Fyndset está ligado à experiência, ao contexto e à verificação que o sustentam.</p>
+          <button class="fy-primary" data-open-profile>Construir o meu Fyndset <b>→</b></button>
+        </div>
+
+        <div class="fy-visual proof22-visual">
+          <section class="proof22-panel" aria-label="Evidências profissionais">
+            <nav class="proof22-tabs" aria-label="Categorias do Fynd DNA">
+              <div class="active"><i>♟</i><span>Liderança</span></div>
+              <div><i>♨</i><span>Ofício</span></div>
+              <div><i>⌖</i><span>Ambiente</span></div>
+              <div><i>↗</i><span>Progressão</span></div>
+              <div><i>⌂</i><span>Objetivo</span></div>
+            </nav>
+
+            <div class="proof22-head">
+              <div>
+                <h3>Liderança</h3>
+                <p>Evidências que demonstram a tua capacidade de liderar equipas,<br>assumir responsabilidade e entregar resultados.</p>
+              </div>
+              <span class="proof22-count">▣ &nbsp; 4 evidências &nbsp;⌄</span>
+            </div>
+
+            <div class="proof22-list">
+              <button class="proof22-row" type="button">
+                <span class="proof22-thumb proof22-photo"><svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="320" height="150" fill="#071f21"/>
+        <rect y="90" width="320" height="60" fill="#102c2c"/>
+        <circle cx="55" cy="46" r="19" fill="#d49a70"/><path d="M23 105q32-55 64 0" fill="#202f30"/>
+        <circle cx="112" cy="52" r="17" fill="#b87555"/><path d="M84 110q28-52 56 0" fill="#17282a"/>
+        <circle cx="170" cy="43" r="20" fill="#d8a07b"/><path d="M135 112q35-60 70 0" fill="#1a292b"/>
+        <circle cx="231" cy="51" r="18" fill="#9f674f"/><path d="M201 110q30-54 60 0" fill="#17292b"/>
+        <circle cx="282" cy="46" r="17" fill="#d6a27d"/><path d="M255 108q27-50 54 0" fill="#203032"/>
+        <circle cx="164" cy="34" r="3" fill="#ffd39c"/><circle cx="232" cy="25" r="4" fill="#ffd39c"/>
+        <rect width="320" height="150" fill="url(#shade)" opacity=".08"/><defs><linearGradient id="shade"><stop stop-color="#3fe0da"/><stop offset="1" stop-color="#000"/></linearGradient></defs></svg></span>
+                <span class="proof22-info"><strong>Liderou equipa de 22 pessoas</strong><small>Restaurant Manager · 2024 — hoje</small><em>Gestão de equipa, turnos e operações diárias.</em></span>
+                <span class="proof22-state demonstrated">● &nbsp; Demonstrado</span><span class="proof22-arrow">›</span>
+              </button>
+              <button class="proof22-row" type="button">
+                <span class="proof22-thumb proof22-photo"><svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="320" height="150" fill="#082326"/><rect y="86" width="320" height="64" fill="#142a29"/>
+        <rect x="18" y="18" width="82" height="64" rx="4" fill="#183d3c"/><rect x="110" y="18" width="82" height="64" rx="4" fill="#183d3c"/><rect x="202" y="18" width="100" height="64" rx="4" fill="#183d3c"/>
+        <circle cx="59" cy="38" r="5" fill="#ffc274"/><circle cx="151" cy="38" r="5" fill="#ffc274"/><circle cx="252" cy="38" r="5" fill="#ffc274"/>
+        <ellipse cx="72" cy="112" rx="43" ry="9" fill="#7c5a42"/><rect x="69" y="112" width="6" height="28" fill="#654b39"/>
+        <ellipse cx="231" cy="112" rx="43" ry="9" fill="#7c5a42"/><rect x="228" y="112" width="6" height="28" fill="#654b39"/>
+        <circle cx="55" cy="101" r="4" fill="#d8e8df"/><circle cx="88" cy="102" r="4" fill="#d8e8df"/><circle cx="214" cy="102" r="4" fill="#d8e8df"/>
+        <rect width="320" height="150" fill="url(#shade)" opacity=".08"/><defs><linearGradient id="shade"><stop stop-color="#3fe0da"/><stop offset="1" stop-color="#000"/></linearGradient></defs></svg></span>
+                <span class="proof22-info"><strong>2 aberturas de restaurante</strong><small>Lisboa · 2022 &nbsp; | &nbsp; Porto · 2023</small><em>Planeamento, recrutamento e lançamento.</em></span>
+                <span class="proof22-state demonstrated">● &nbsp; Demonstrado</span><span class="proof22-arrow">›</span>
+              </button>
+              <button class="proof22-row" type="button">
+                <span class="proof22-thumb proof22-photo"><svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="320" height="150" fill="#082225"/><rect x="188" width="132" height="150" fill="#113435"/>
+        <circle cx="95" cy="52" r="31" fill="#c98d68"/><path d="M62 46q10-40 65-8q-10-31-37-29q-26 3-28 37" fill="#28201e"/>
+        <path d="M44 150q10-62 51-62t54 62" fill="#17272a"/><path d="M75 90l20 25l21-25l13 60H61z" fill="#e8e6df"/>
+        <path d="M86 111l9 8l10-8l-4 39H90z" fill="#164e50"/>
+        <circle cx="230" cy="40" r="4" fill="#f6bd73"/><circle cx="270" cy="69" r="3" fill="#f6bd73"/>
+        <rect width="320" height="150" fill="url(#shade)" opacity=".08"/><defs><linearGradient id="shade"><stop stop-color="#3fe0da"/><stop offset="1" stop-color="#000"/></linearGradient></defs></svg></span>
+                <span class="proof22-info"><strong>Diretor de Operações · referência</strong><small>Referência verificada · 2023</small><em>Feedback sobre liderança e resultados.</em></span>
+                <span class="proof22-state verified">✓ &nbsp; Referência verificada</span><span class="proof22-arrow">›</span>
+              </button>
+              <button class="proof22-row" type="button">
+                <span class="proof22-thumb proof22-photo"><svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="320" height="150" fill="#082225"/><rect y="96" width="320" height="54" fill="#132d2d"/>
+        <circle cx="54" cy="53" r="17" fill="#d29a75"/><path d="M28 113q26-50 52 0" fill="#1a2c2e"/>
+        <circle cx="112" cy="55" r="16" fill="#a86e53"/><path d="M87 113q25-48 50 0" fill="#18292b"/>
+        <circle cx="170" cy="50" r="18" fill="#d5a07b"/><path d="M142 113q28-52 56 0" fill="#1b2d2e"/>
+        <circle cx="231" cy="55" r="16" fill="#b77a5c"/><path d="M206 113q25-48 50 0" fill="#192a2c"/>
+        <circle cx="282" cy="51" r="17" fill="#d6a17d"/><path d="M256 113q26-50 52 0" fill="#1a2b2d"/>
+        <path d="M20 25h280" stroke="#ffc479" stroke-width="2" opacity=".35"/><circle cx="80" cy="25" r="4" fill="#ffc479"/><circle cx="205" cy="25" r="4" fill="#ffc479"/>
+        <rect width="320" height="150" fill="url(#shade)" opacity=".08"/><defs><linearGradient id="shade"><stop stop-color="#3fe0da"/><stop offset="1" stop-color="#000"/></linearGradient></defs></svg></span>
+                <span class="proof22-info"><strong>Formação de equipas</strong><small>Programas internos · 2023 — 2024</small><em>Planos de formação e materiais.</em></span>
+                <span class="proof22-state verified">✓ &nbsp; Documento verificado</span><span class="proof22-arrow">›</span>
+              </button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </article>
     <article class="fy-slide" data-slide="3"><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">04 · PRIVACIDADE</div><h2>Não tens de estar<br>à procura para estar<br><em>aberto ao que vem a seguir.</em></h2><p>Tu decides como és descoberto. O Fyndset foi pensado também para talento passivo e privado.</p><button class="fy-primary" data-open-profile>Construir o meu Fyndset <b>→</b></button></div><div class="fy-visual"><div class="fy-glass fy-privacy"><h3>Visibilidade do perfil</h3><div class="fy-choice"><i></i><div><b>Totalmente visível</b><br><small>A empresas verificadas</small></div></div><div class="fy-choice active"><i></i><div><b>Visível para oportunidades relevantes</b><br><small>Recomendado</small></div></div><div class="fy-choice"><i></i><div><b>Apenas por convite</b><br><small>Quando houver compatibilidade</small></div></div><div class="fy-choice"><i></i><div><b>Privado</b><br><small>Ocultar empresas selecionadas</small></div></div></div></div></div></article>
     <div class="fy-nav" data-story-nav><button class="fy-dot active" data-go="0"><b>01</b><span>Identidade</span></button><button class="fy-dot" data-go="1"><b>02</b><span>Fynd DNA</span></button><button class="fy-dot" data-go="2"><b>03</b><span>Prova</span></button><button class="fy-dot" data-go="3"><b>04</b><span>Privacidade</span></button></div>
   </div>
@@ -2792,5 +3150,8 @@ document.addEventListener('DOMContentLoaded',()=>{
  .dna18-travellers{display:none}
 }
 </style>
+
+
+
 
 </body></html>
