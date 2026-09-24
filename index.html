@@ -129,6 +129,18 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
 @keyframes careerGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @media(max-width:760px){.career-story{min-height:1040px}.career-photo{inset:50% 0 0;background-position:center}.career-inner{display:block;min-height:1040px;width:auto;padding:70px 20px}.career-copy h2{font-size:52px}.career-copy>p{font-size:14px;margin:24px 0 32px}.career-pillars{grid-template-columns:1fr 1fr;gap:22px}.career-visual{min-height:480px}.career-fyndset{top:43%;right:0;width:100%;padding:18px}.career-signal{grid-template-columns:92px 1fr}.career-signal>small{display:none}.career-context{display:none}}
 </style>
+
+<style>
+/* Section 02 — approved cinematic reference. Keep this image + composition intact on desktop. */
+.career-story-reference{position:relative;width:100%;min-height:0!important;height:auto!important;background:#031c1f;overflow:hidden;border-top:1px solid rgba(255,255,255,.05)}
+.career-reference-picture{display:block;width:100%;line-height:0}
+.career-reference-picture img{display:block;width:100%;height:auto;object-fit:contain;object-position:center;background:#031c1f}
+@media(max-width:760px){
+  .career-story-reference{height:760px!important;min-height:760px!important}
+  .career-reference-picture,.career-reference-picture img{width:100%;height:100%}
+  .career-reference-picture img{object-fit:cover;object-position:48% center}
+}
+</style>
 </head><body>
 <main class="hero"><video class="hero-video" autoplay muted loop playsinline preload="auto" poster="./fyndset-hero-bg.png" aria-hidden="true">
     <source src="./fyndset-hero.mp4" type="video/mp4">
@@ -182,31 +194,10 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
 <button id="open-pro-builder-mobile" type="button" onclick="event.preventDefault();var s=document.getElementById('pro-builder-shell');if(s){s.classList.add('open');document.body.style.overflow='hidden';}return false;"><span data-t="beFound">Be found</span> <b>→</b></button>
 <button><span data-t="findTalent">Find talent</span> <b>→</b></button></section></main>
 
-<section class="career-story" id="how-it-works">
-  <div class="career-photo" role="img" aria-label="Restaurant Manager a coordenar o serviço na sala de um restaurante premium"></div>
-  <div class="career-inner">
-    <div class="career-copy">
-      <div class="career-kicker" data-new-en="HOW FYNDSET WORKS" data-new-pt="COMO FUNCIONA">HOW FYNDSET WORKS</div>
-      <h2><span data-new-html-en="Your career is<br>more than <em>a job title.</em>" data-new-html-pt="A tua carreira é<br>mais do que <em>um cargo.</em>">Your career is<br>more than <em>a job title.</em></span></h2>
-      <p><span data-new-en="Fyndset shows what you can actually do, where you’ve proved it and what you want next." data-new-pt="O Fyndset mostra o que realmente sabes fazer, onde já o demonstraste e o que procuras a seguir.">Fyndset shows what you can actually do, where you’ve proved it and what you want next.</span></p>
-      <div class="career-pillars">
-        <div><i>◎</i><b data-new-en="Real experience" data-new-pt="Experiência real">Real experience</b></div>
-        <div><i>◌</i><b data-new-en="Skills in context" data-new-pt="Competências no contexto">Skills in context</b></div>
-        <div><i>↗</i><b data-new-en="Career momentum" data-new-pt="Trajetória com sentido">Career momentum</b></div>
-        <div><i>◇</i><b data-new-en="Career intent" data-new-pt="Intenção de carreira">Career intent</b></div>
-      </div>
-    </div>
-    <div class="career-visual">
-      <article class="career-fyndset">
-        <div class="career-person"><img src="./sofia.png" alt="Sofia"><div><strong>Sofia</strong><small>Restaurant Manager · Portugal</small></div><span>✓</span></div>
-        <div class="career-label" data-new-en="PROFESSIONAL SIGNALS" data-new-pt="SINAIS PROFISSIONAIS">PROFESSIONAL SIGNALS</div>
-        <div class="career-signal"><b data-new-en="Leadership" data-new-pt="Liderança">Leadership</b><i><u style="--w:91%"></u></i><small data-new-en="Demonstrated" data-new-pt="Demonstrada">Demonstrated</small></div>
-        <div class="career-signal"><b>Fine dining</b><i><u style="--w:84%"></u></i><small data-new-en="4 years" data-new-pt="4 anos">4 years</small></div>
-        <div class="career-signal"><b data-new-en="Opening experience" data-new-pt="Experiência em aberturas">Opening experience</b><i><u style="--w:72%"></u></i><small data-new-en="2 concepts" data-new-pt="2 conceitos">2 concepts</small></div>
-      </article>
-      <div class="career-context">RESTAURANT FLOOR · SERVICE · LEADERSHIP</div>
-    </div>
-  </div>
+<section class="career-story career-story-reference" id="how-it-works" aria-label="Como funciona o Fyndset — a tua carreira é mais do que um cargo">
+  <picture class="career-reference-picture">
+    <img src="./fyndset-career-sofia.png" alt="Sofia, Restaurant Manager, em sala durante o serviço. O Fyndset mostra experiências reais, competências no contexto, trajetória e intenção de carreira.">
+  </picture>
 </section>
 
 <section class="home-different">
