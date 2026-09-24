@@ -117,7 +117,7 @@ linear-gradient(0deg,rgba(2,22,24,.16),transparent 45%);
 <style>
 /* FYNDSET — SECTION 02 / integrated into existing homepage */
 .career-story{--cs:#3fe0da;position:relative;min-height:820px;overflow:hidden;background:#031c1f;color:#f8fbfa;border-top:1px solid rgba(255,255,255,.06)}
-.career-photo{position:absolute;z-index:0;inset:0 0 0 43%;background:linear-gradient(90deg,#031c1f 0%,rgba(3,28,31,.93) 9%,rgba(3,28,31,.34) 34%,rgba(3,28,31,.04) 70%),linear-gradient(0deg,rgba(3,28,31,.55),transparent 48%),url("./sofia-restaurant-manager-floor.jpg") center/cover no-repeat}
+.career-photo{position:absolute;z-index:0;inset:0 0 0 43%;background:linear-gradient(90deg,#031c1f 0%,rgba(3,28,31,.93) 9%,rgba(3,28,31,.34) 34%,rgba(3,28,31,.04) 70%),linear-gradient(0deg,rgba(3,28,31,.55),transparent 48%),url("./sofia-restaurant-manager-clean.png?v=20260924-1") center/cover no-repeat}
 .career-inner{position:relative;z-index:2;width:min(1480px,93vw);min-height:820px;margin:auto;padding:92px 0 66px;display:grid;grid-template-columns:47% 53%}
 .career-copy{max-width:660px}.career-kicker{font-size:9px;letter-spacing:.24em;color:var(--cs);font-weight:700;margin-bottom:36px}
 .career-copy h2{margin:0;font-size:clamp(58px,5.8vw,94px);line-height:.92;letter-spacing:-.06em;font-weight:520}.career-copy h2 em{display:inline;font-style:normal;color:var(--cs);font-weight:610}
@@ -218,7 +218,7 @@ main.hero::after{display:none!important}
 #pro-story .fy-slide[data-slide="0"] .fy-bg{
   background-image:
     linear-gradient(90deg,#031c1f 0%,rgba(3,28,31,.97) 28%,rgba(3,28,31,.72) 46%,rgba(3,28,31,.08) 68%),
-    url('./fyndset-sofia-only-crop.png')!important;
+    url('./sofia-restaurant-manager-clean.png?v=20260924-1')!important;
   background-size:auto 100%,auto 100%!important;
   background-repeat:no-repeat!important;
   background-position:left top,right center!important;
@@ -383,17 +383,14 @@ main.hero::after{display:none!important}
   document.querySelectorAll('.fy-audience').forEach(initStory);
   const openProfile=()=>{const s=document.getElementById('pro-builder-shell');if(s){s.classList.add('open');document.body.style.overflow='hidden';}};
   document.querySelectorAll('[data-open-profile]').forEach(b=>b.addEventListener('click',openProfile));
-  const originalCompany=document.getElementById('open-fynd-world');
-  document.querySelectorAll('[data-open-company]').forEach(b=>b.addEventListener('click',()=>originalCompany?.click()));
-  // Hero company CTA explains first; it no longer opens discovery immediately.
-  if(originalCompany){
-    originalCompany.addEventListener('click',e=>{
-      if(!e.__fyndDirect){e.stopImmediatePropagation();e.preventDefault();document.getElementById('company-story')?.scrollIntoView({behavior:'smooth'});}
-    },true);
-  }
-  // Direct company buttons bypass the hero redirect and open the existing product.
+  // Buttons inside the company explanation open the existing discovery product directly.
   document.querySelectorAll('[data-open-company]').forEach(b=>b.addEventListener('click',()=>{
-    const fw=document.getElementById('fw');if(fw){fw.classList.add('open');document.body.style.overflow='hidden';}
+    const fw=document.getElementById('fw');
+    if(fw){
+      fw.classList.add('open');
+      fw.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    }
   }));
 })();
 </script>
@@ -1615,26 +1612,35 @@ document.getElementById(&quot;next&quot;).onclick=forward;document.getElementByI
 })();
 </script>
 
-<script id="fyndset-gated-explanations-v2">
+<script id="fyndset-gated-explanations-v3">
 (()=>{
  const pro=document.getElementById('pro-story');
  const company=document.getElementById('company-story');
- const meeting=document.getElementById('the-meeting');
  const heroPro=document.getElementById('open-pro-builder');
  const heroCompany=document.getElementById('open-fynd-world');
 
  function unlock(which){
-   pro?.classList.toggle('fy-unlocked',which==='pro');
-   company?.classList.toggle('fy-unlocked',which==='company');
+   if(which==='pro'){
+     pro?.classList.add('fy-unlocked');
+     company?.classList.remove('fy-unlocked');
+   }else{
+     company?.classList.add('fy-unlocked');
+     pro?.classList.remove('fy-unlocked');
+   }
    const target=which==='pro'?pro:company;
-   requestAnimationFrame(()=>target?.scrollIntoView({behavior:'smooth',block:'start'}));
+   requestAnimationFrame(()=>requestAnimationFrame(()=>{
+     target?.scrollIntoView({behavior:'smooth',block:'start'});
+   }));
  }
- // Capture phase ensures old handlers cannot open builders/radar from hero.
- if(heroPro) heroPro.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();unlock('pro')},true);
- if(heroCompany) heroCompany.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();unlock('company')},true);
 
- // If the visitor simply scrolls, both gated explanation blocks remain display:none,
- // so the next accessible public section is O Encontro + Histórias on the same page.
+ // Hero CTAs ONLY reveal their explanation path.
+ // Capture + stopImmediatePropagation prevents the old product-opening handlers from firing.
+ if(heroPro) heroPro.addEventListener('click',e=>{
+   e.preventDefault(); e.stopImmediatePropagation(); unlock('pro');
+ },true);
+ if(heroCompany) heroCompany.addEventListener('click',e=>{
+   e.preventDefault(); e.stopImmediatePropagation(); unlock('company');
+ },true);
 })();
 </script>
 </body></html>
