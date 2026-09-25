@@ -1187,28 +1187,58 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
     </div>
   </div>
 
-  <div class="id26-person">
-    <div class="id26-orbit" aria-hidden="true">
-      <svg viewBox="0 0 640 640">
-        <ellipse class="orb o1" cx="320" cy="320" rx="268" ry="235"/>
-        <ellipse class="orb o2" cx="320" cy="320" rx="222" ry="286" transform="rotate(34 320 320)"/>
-        <ellipse class="orb o3" cx="320" cy="320" rx="284" ry="180" transform="rotate(-18 320 320)"/>
-        <path id="id26path1" d="M61 285 C120 72 430 20 579 213 C657 314 583 514 387 575 C201 633 53 485 61 285Z"/>
-        <path id="id26path2" d="M108 463 C196 558 430 580 546 397 C625 273 519 104 353 79 C176 52 54 218 108 463Z"/>
-        <circle class="traveller t1" r="5"><animateMotion dur="5.2s" repeatCount="indefinite"><mpath href="#id26path1"/></animateMotion></circle>
-        <circle class="traveller t2" r="4"><animateMotion dur="4.1s" begin="-1.8s" repeatCount="indefinite"><mpath href="#id26path2"/></animateMotion></circle>
-        <circle class="traveller t3" r="3"><animateMotion dur="6.4s" begin="-3s" repeatCount="indefinite"><mpath href="#id26path1"/></animateMotion></circle>
-        <circle class="traveller t4" r="4"><animateMotion dur="5.8s" begin="-2.2s" repeatCount="indefinite"><mpath href="#id26path2"/></animateMotion></circle>
-      </svg>
+  <div class="id26-person id35-scene" aria-label="Sofia envolvida por uma identidade profissional holográfica">
+    <!-- BACK LAYER: photographic ribbons pass behind Sofia -->
+    <div class="id35-aura" aria-hidden="true"></div>
+
+    <div class="id35-band id35-band-top id35-behind" aria-hidden="true">
+      <div class="id35-rail"></div>
+      <div class="id35-frame f1"><div class="id35-photo hotel"></div></div>
+      <div class="id35-frame f2"><div class="id35-photo service"></div></div>
+      <div class="id35-frame f3"><div class="id35-photo team"></div></div>
+      <i class="id35-runlight a"></i><i class="id35-runlight b"></i>
     </div>
 
-    <img class="id26-sofia" src="./sofia-professional.png" alt="Sofia, Chefe de Sala">
+    <div class="id35-band id35-band-mid id35-behind" aria-hidden="true">
+      <div class="id35-rail"></div>
+      <div class="id35-frame f1"><div class="id35-photo kitchen"></div></div>
+      <div class="id35-frame f2"><div class="id35-photo data"></div></div>
+      <div class="id35-frame f3"><div class="id35-photo resort"></div></div>
+      <i class="id35-runlight a"></i><i class="id35-runlight b"></i>
+    </div>
 
-    <div class="id26-signal s1"><i></i><span><b>Liderança</b><small>22 pessoas</small></span></div>
-    <div class="id26-signal s2"><i></i><span><b>Gestão de equipas</b><small>Formação · serviço</small></span></div>
-    <div class="id26-signal s3"><i></i><span><b>Progressão</b><small>3 promoções</small></span></div>
-    <div class="id26-signal s4"><i></i><span><b>Ambiente</b><small>Luxo · alto volume</small></span></div>
-    <div class="id26-signal s5"><i></i><span><b>Objetivo</b><small>Liderança de F&amp;B</small></span></div>
+    <div class="id35-signal sig-hotel"><span class="id35-icon">▰</span><b>Hotelaria</b><small>Experiências reais<br>em contexto</small></div>
+    <div class="id35-signal sig-fb"><span class="id35-icon">⌁</span><b>F&amp;B</b><small>Operações<br>e serviço</small></div>
+    <div class="id35-signal sig-lead"><span class="id35-icon">♙</span><b>Liderança</b><small>Gestão de equipas<br>e talento</small></div>
+    <div class="id35-signal sig-growth"><span class="id35-icon">▥</span><b>Progressão</b><small>Crescimento<br>e novas oportunidades</small></div>
+
+    <!-- Sofia is the photographic hero -->
+    <img class="id26-sofia id35-sofia" src="./sofia-professional.png" alt="Sofia, Chefe de Sala">
+
+    <!-- FRONT LAYER: lower ribbon crosses in front of Sofia -->
+    <div class="id35-band id35-band-front" aria-hidden="true">
+      <div class="id35-rail"></div>
+      <div class="id35-frame f1 id35-cv"><div class="id35-cv-ui"><i></i><i></i><i></i><span></span></div></div>
+      <div class="id35-frame f2"><div class="id35-photo hospitality"></div></div>
+      <div class="id35-frame f3"><div class="id35-photo venue"></div></div>
+      <i class="id35-runlight a"></i><i class="id35-runlight b"></i>
+    </div>
+
+    <div class="id35-signal sig-identity"><span class="id35-icon">○</span><b>Identidade</b><small>O teu percurso<br>de forma completa</small></div>
+    <div class="id35-signal sig-env"><span class="id35-icon">⌖</span><b>Ambiente</b><small>Contexto, cultura<br>e tipo de projeto</small></div>
+    <div class="id35-signal sig-goal"><span class="id35-icon">◎</span><b>Objetivo</b><small>O que procuras<br>a seguir</small></div>
+
+    <svg class="id35-sparks" viewBox="0 0 1000 760" aria-hidden="true">
+      <defs>
+        <filter id="id35glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <path id="id35pathA" d="M80 160 C260 35 720 30 930 180"/>
+        <path id="id35pathB" d="M50 390 C250 255 760 255 965 410"/>
+        <path id="id35pathC" d="M90 590 C330 705 740 690 945 545"/>
+      </defs>
+      <circle r="5" class="id35-spark"><animateMotion dur="6.8s" repeatCount="indefinite"><mpath href="#id35pathA"/></animateMotion></circle>
+      <circle r="4" class="id35-spark"><animateMotion dur="8.4s" begin="-3s" repeatCount="indefinite"><mpath href="#id35pathB"/></animateMotion></circle>
+      <circle r="5" class="id35-spark"><animateMotion dur="7.5s" begin="-1.6s" repeatCount="indefinite"><mpath href="#id35pathC"/></animateMotion></circle>
+    </svg>
   </div>
 
   <aside class="id26-profile fynd-card32">
@@ -3748,6 +3778,204 @@ document.addEventListener('DOMContentLoaded',()=>{
   .fy-final-nav .fy-heartbeat32{left:0!important;width:100%!important;top:16px!important}
 }
 @media(prefers-reduced-motion:reduce){.fy-nav-cta33 i{animation:none!important}}
+</style>
+
+
+<style id="fyndset-v35-3d-ribbons">
+/* PAGE 01: the proof card moves out of Identity; the scene becomes the product metaphor. */
+.fy-id-v26 .id26-profile{display:none!important}
+.fy-id-v26 .id26-copy{width:31.2%!important}
+.fy-id-v26 .id35-scene{
+  position:absolute!important;left:28.5%!important;right:1.5%!important;top:0!important;bottom:10%!important;
+  width:auto!important;height:auto!important;transform:none!important;overflow:visible!important;
+  perspective:1300px;transform-style:preserve-3d;
+}
+.id35-aura{position:absolute;z-index:0;left:48%;top:46%;width:58%;aspect-ratio:1;transform:translate(-50%,-50%);
+  border-radius:50%;background:radial-gradient(circle,rgba(44,236,226,.17),rgba(13,95,96,.07) 42%,transparent 72%);
+  filter:blur(8px);animation:id35breathe 5s ease-in-out infinite}
+.id35-band{position:absolute;left:3%;width:92%;height:150px;transform-style:preserve-3d;pointer-events:none}
+.id35-band:before,.id35-band:after{content:"";position:absolute;inset:0;border-radius:50%;
+  border-top:2px solid rgba(83,255,247,.9);border-bottom:1px solid rgba(43,202,197,.28);
+  box-shadow:0 -2px 10px rgba(63,224,218,.55),0 0 34px rgba(63,224,218,.10)}
+.id35-band:after{inset:9px 3%;opacity:.35;border-top-width:1px}
+.id35-band-top{top:7%;transform:rotate(-3deg) rotateX(64deg)}
+.id35-band-mid{top:34%;transform:rotate(4deg) rotateX(67deg)}
+.id35-band-front{z-index:8;top:61%;transform:rotate(-2deg) rotateX(69deg)}
+.id35-behind{z-index:2}
+.id35-rail{position:absolute;left:0;right:0;top:48%;height:1px;background:linear-gradient(90deg,transparent,#43e8e1 18%,#7ffff8 50%,#43e8e1 82%,transparent);opacity:.75}
+.id35-frame{position:absolute;top:-38px;width:160px;height:112px;padding:4px;border:1px solid rgba(91,255,247,.42);border-radius:5px;
+  background:linear-gradient(145deg,rgba(22,143,142,.22),rgba(2,30,33,.42));box-shadow:0 0 18px rgba(63,224,218,.12);overflow:hidden;
+  transform:rotateX(-64deg) translateZ(2px);opacity:.72}
+.id35-frame:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(74,255,246,.08),transparent 25% 75%,rgba(74,255,246,.08))}
+.id35-band .f1{left:13%}.id35-band .f2{left:47%;width:190px}.id35-band .f3{right:9%;width:175px}
+.id35-band-mid .f1{left:17%}.id35-band-mid .f2{left:51%}.id35-band-mid .f3{right:8%}
+.id35-band-front .f1{left:9%;width:145px}.id35-band-front .f2{left:50%;width:180px}.id35-band-front .f3{right:8%;width:150px}
+.id35-photo{width:100%;height:100%;background-size:cover;background-position:center;filter:saturate(.75) contrast(1.04)}
+/* Existing hospitality assets are deliberately reused; no new upload is required. */
+.id35-photo.hotel{background-image:linear-gradient(90deg,rgba(1,35,38,.05),rgba(1,35,38,.18)),url("./fyndset-hero-bg.png")}
+.id35-photo.service{background-image:linear-gradient(90deg,rgba(1,35,38,.05),rgba(1,35,38,.22)),url("./sofia.png")}
+.id35-photo.team{background-image:linear-gradient(90deg,rgba(1,35,38,.08),rgba(1,35,38,.18)),url("./miguel.png")}
+.id35-photo.kitchen{background-image:linear-gradient(90deg,rgba(1,35,38,.06),rgba(1,35,38,.20)),url("./pedro.png")}
+.id35-photo.data{background:
+  linear-gradient(180deg,transparent,rgba(0,20,23,.32)),
+  repeating-linear-gradient(90deg,rgba(69,239,231,.08) 0 1px,transparent 1px 18px),
+  repeating-linear-gradient(0deg,rgba(69,239,231,.06) 0 1px,transparent 1px 15px),
+  radial-gradient(circle at 72% 38%,rgba(64,240,231,.25),transparent 30%),#07383b}
+.id35-photo.resort{background-image:linear-gradient(90deg,rgba(1,35,38,.04),rgba(1,35,38,.20)),url("./fyndset-hero-bg.png");background-position:center 62%}
+.id35-photo.hospitality{background-image:linear-gradient(90deg,rgba(1,35,38,.08),rgba(1,35,38,.18)),url("./sofia.png")}
+.id35-photo.venue{background-image:linear-gradient(90deg,rgba(1,35,38,.05),rgba(1,35,38,.18)),url("./fyndset-hero-bg.png")}
+.id35-cv{background:linear-gradient(145deg,rgba(185,255,252,.48),rgba(37,162,162,.20))}
+.id35-cv-ui{position:absolute;inset:15px 18px;transform:rotateX(0);border:1px solid rgba(223,255,253,.55);border-radius:5px;background:rgba(205,255,252,.15)}
+.id35-cv-ui span{position:absolute;left:13px;top:14px;width:27px;height:27px;border:2px solid #bafffb;border-radius:50%}
+.id35-cv-ui i{position:absolute;left:52px;right:12px;height:3px;background:#aafff9;opacity:.8}.id35-cv-ui i:nth-child(1){top:16px}.id35-cv-ui i:nth-child(2){top:28px;right:32px}.id35-cv-ui i:nth-child(3){top:40px;right:20px}
+.id35-runlight{position:absolute;z-index:4;top:-3px;width:7px;height:7px;border-radius:50%;background:#f3ffff;box-shadow:0 0 7px #fff,0 0 20px #3fe0da,0 0 34px #3fe0da}
+.id35-runlight.a{animation:id35travel 7s linear infinite}.id35-runlight.b{animation:id35travel 9s linear -4.2s infinite}
+.id35-sofia{z-index:6!important;left:49%!important;bottom:-3%!important;width:43%!important;height:82%!important;transform:translateX(-50%)!important;
+  object-fit:contain!important;object-position:center bottom!important;filter:drop-shadow(0 28px 30px rgba(0,0,0,.42)) drop-shadow(0 0 15px rgba(63,224,218,.18))!important}
+.id35-signal{position:absolute;z-index:10;display:grid;grid-template-columns:43px auto;grid-template-rows:auto auto;column-gap:10px;align-items:center;
+  min-width:155px;padding:9px 12px;border:1px solid rgba(72,239,232,.52);border-radius:16px;background:linear-gradient(120deg,rgba(5,66,69,.78),rgba(2,31,34,.70));
+  backdrop-filter:blur(10px);box-shadow:0 0 22px rgba(63,224,218,.08);color:#f7ffff}
+.id35-signal .id35-icon{grid-row:1/3;width:39px;height:39px;display:grid;place-items:center;border:1px solid rgba(91,255,248,.75);border-radius:12px;color:#91fff9;font:700 20px/1 Arial}
+.id35-signal b{font:750 11px/1.1 Inter,Arial,sans-serif}.id35-signal small{margin-top:3px;color:#c0d8d5;font:500 7.5px/1.25 Inter,Arial,sans-serif}
+.sig-hotel{left:3%;top:10%}.sig-fb{left:7%;top:34%}.sig-lead{right:1%;top:14%}.sig-growth{right:6%;top:37%}
+.sig-identity{left:14%;top:67%}.sig-env{right:21%;top:69%}.sig-goal{right:2%;top:62%}
+.id35-sparks{position:absolute;z-index:12;inset:0;width:100%;height:100%;pointer-events:none}.id35-spark{fill:#f4ffff;stroke:#7ffff8;stroke-width:1;filter:url(#id35glow)}
+.fy-id-v26 .fy-final-nav{z-index:50!important}
+@keyframes id35travel{0%{left:2%;opacity:0}8%{opacity:1}92%{opacity:1}100%{left:96%;opacity:0}}
+@keyframes id35breathe{0%,100%{opacity:.72;transform:translate(-50%,-50%) scale(.98)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.04)}}
+@media(max-width:1200px){.fy-id-v26 .id35-scene{left:31%!important}.id35-signal{transform:scale(.88)}.id35-sofia{width:47%!important}}
+@media(max-width:900px){.fy-id-v26 .id35-scene{left:0!important;right:0!important;top:48%!important;height:620px!important}.id35-signal{display:none}.id35-sofia{left:50%!important;width:58%!important}.id35-band{left:2%;width:96%}}
+@media(prefers-reduced-motion:reduce){.id35-runlight,.id35-aura{animation:none!important}.id35-spark{display:none!important}}
+</style>
+<script id="fyndset-v35-depth-motion">
+(function(){
+ const s=document.querySelector('.id35-scene'); if(!s||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const bands=[...s.querySelectorAll('.id35-band')], signals=[...s.querySelectorAll('.id35-signal')];
+ let x=0,y=0,tx=0,ty=0;
+ addEventListener('pointermove',e=>{tx=(e.clientX/innerWidth-.5)*2;ty=(e.clientY/innerHeight-.5)*2},{passive:true});
+ (function loop(){x+=(tx-x)*.045;y+=(ty-y)*.045;
+   bands.forEach((b,i)=>b.style.margin=`${y*(i+1)*2}px 0 0 ${x*(i+1)*3}px`);
+   signals.forEach((n,i)=>n.style.margin=`${y*((i%3)+1)*1.2}px 0 0 ${x*((i%2)+1)*1.8}px`);
+   requestAnimationFrame(loop);
+ })();
+})();
+</script>
+
+
+<style id="fyndset-v36-cinematic-ribbons">
+/* v36 — photographic identity ribbons. Keeps the existing app/navigation intact. */
+.fy-id-v26 .id35-scene{
+  left:29%!important;right:0!important;top:-1%!important;bottom:10%!important;
+  perspective:1550px!important;
+}
+.id35-aura{
+  left:50%!important;top:47%!important;width:54%!important;
+  background:
+    radial-gradient(circle at 50% 47%,rgba(58,242,232,.20),rgba(9,95,96,.08) 39%,transparent 68%)!important;
+  filter:blur(5px)!important;
+}
+.id35-sofia{
+  left:50%!important;bottom:-2%!important;width:42%!important;height:84%!important;
+  z-index:7!important;
+  filter:drop-shadow(0 24px 30px rgba(0,0,0,.44)) drop-shadow(0 0 18px rgba(58,235,226,.30))!important;
+}
+
+/* Three different depths instead of three flat horizontal rings */
+.id35-band{left:0!important;width:98%!important;height:170px!important;transform-origin:50% 50%!important}
+.id35-band-top{
+  top:8%!important;
+  transform:rotate(-7deg) rotateX(62deg) rotateY(-5deg)!important;
+  z-index:3!important;
+}
+.id35-band-mid{
+  top:35%!important;
+  transform:rotate(5deg) rotateX(66deg) rotateY(5deg)!important;
+  z-index:4!important;
+}
+.id35-band-front{
+  top:63%!important;
+  transform:rotate(-5deg) rotateX(68deg) rotateY(-4deg)!important;
+  z-index:9!important;
+}
+.id35-band:before{
+  border-top:2px solid rgba(92,255,247,.92)!important;
+  border-bottom:1px solid rgba(43,208,201,.38)!important;
+  box-shadow:0 -2px 12px rgba(63,224,218,.65),0 0 38px rgba(63,224,218,.12)!important;
+}
+.id35-band:after{opacity:.52!important}
+.id35-rail{
+  height:2px!important;
+  background:linear-gradient(90deg,transparent 1%,rgba(58,224,218,.45) 9%,#8dfff9 48%,rgba(58,224,218,.55) 89%,transparent 99%)!important;
+  box-shadow:0 0 12px rgba(63,224,218,.35)!important
+}
+
+/* Larger, readable photographic panes embedded in each ribbon */
+.id35-frame{
+  top:-51px!important;height:137px!important;
+  border-color:rgba(99,255,247,.58)!important;
+  background:linear-gradient(145deg,rgba(18,124,124,.20),rgba(1,26,29,.34))!important;
+  box-shadow:0 0 22px rgba(63,224,218,.18),inset 0 0 18px rgba(63,224,218,.06)!important;
+  opacity:.92!important;
+}
+.id35-band .f1{left:12%!important;width:190px!important}
+.id35-band .f2{left:44%!important;width:220px!important}
+.id35-band .f3{right:7%!important;width:205px!important}
+.id35-band-mid .f1{left:9%!important;width:205px!important}
+.id35-band-mid .f2{left:48%!important;width:225px!important}
+.id35-band-mid .f3{right:6%!important;width:210px!important}
+.id35-band-front .f1{left:8%!important;width:175px!important}
+.id35-band-front .f2{left:48%!important;width:210px!important}
+.id35-band-front .f3{right:8%!important;width:185px!important}
+.id35-photo{filter:saturate(.95) contrast(1.08) brightness(.82)!important}
+.id35-frame:after{
+  background:linear-gradient(90deg,rgba(47,255,245,.16),transparent 18% 80%,rgba(47,255,245,.14))!important
+}
+
+/* Signals are annotations, not widgets */
+.id35-signal{
+  min-width:132px!important;padding:7px 9px!important;border-radius:13px!important;
+  grid-template-columns:34px auto!important;column-gap:8px!important;
+  background:linear-gradient(120deg,rgba(4,57,60,.72),rgba(1,28,31,.58))!important;
+  border-color:rgba(72,239,232,.46)!important;
+  box-shadow:0 0 16px rgba(63,224,218,.07)!important;
+  backdrop-filter:blur(9px)!important;
+}
+.id35-signal .id35-icon{width:31px!important;height:31px!important;border-radius:10px!important;font-size:15px!important}
+.id35-signal b{font-size:10px!important}.id35-signal small{font-size:6.8px!important}
+.sig-hotel{left:5%!important;top:12%!important}
+.sig-fb{left:7%!important;top:38%!important}
+.sig-lead{right:1%!important;top:17%!important}
+.sig-growth{right:4%!important;top:39%!important}
+.sig-identity{left:14%!important;top:70%!important}
+.sig-env{right:20%!important;top:72%!important}
+.sig-goal{right:2%!important;top:65%!important}
+
+/* Stronger travelling energy, but only on the ribbons */
+.id35-runlight{width:8px!important;height:8px!important;box-shadow:0 0 7px #fff,0 0 19px #75fff8,0 0 38px #3fe0da!important}
+.id35-band-top .id35-runlight.a{animation-duration:7.6s!important}
+.id35-band-mid .id35-runlight.a{animation-duration:8.4s!important}
+.id35-band-front .id35-runlight.a{animation-duration:7.1s!important}
+.id35-band-top .id35-runlight.b{animation-duration:10.2s!important}
+.id35-band-mid .id35-runlight.b{animation-duration:9.6s!important}
+.id35-band-front .id35-runlight.b{animation-duration:10.8s!important}
+
+/* cinematic scan on panes */
+.id35-frame:before{
+  content:"";position:absolute;z-index:4;top:0;bottom:0;width:42%;
+  background:linear-gradient(90deg,transparent,rgba(137,255,249,.14),transparent);
+  transform:skewX(-18deg);animation:id36scan 6.5s ease-in-out infinite;pointer-events:none
+}
+.id35-band-mid .id35-frame:before{animation-delay:-2.2s}
+.id35-band-front .id35-frame:before{animation-delay:-4.1s}
+@keyframes id36scan{0%,18%{left:-55%;opacity:0}28%{opacity:1}52%{left:120%;opacity:.75}53%,100%{opacity:0}}
+
+/* Keep lower ribbon away from the four-step navigation */
+.fy-id-v26 .fy-final-nav{z-index:60!important}
+@media(max-width:1100px){
+ .fy-id-v26 .id35-scene{left:31%!important}
+ .id35-frame{transform:rotateX(-64deg) scale(.88)!important}
+}
+@media(prefers-reduced-motion:reduce){.id35-frame:before{animation:none!important}}
 </style>
 
 </body></html>
