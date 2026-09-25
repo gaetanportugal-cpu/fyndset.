@@ -859,6 +859,154 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
 }
 </style>
 
+
+<style id="fyndset-v29-professional-system">
+:root{
+  --fy-bg:#021f22;
+  --fy-cyan:#3fe0da;
+  --fy-white:#f7fbfa;
+  --fy-muted:#a8bfbd;
+}
+
+/* One cinematic environment across professional pages */
+#pro-story,
+#pro-story .fy-stage,
+#pro-story .fy-slide{
+  background:
+    radial-gradient(ellipse at 58% 43%,rgba(15,102,103,.22) 0%,rgba(7,65,68,.11) 27%,rgba(2,31,34,0) 55%),
+    radial-gradient(ellipse at 88% 20%,rgba(0,100,101,.09),transparent 34%),
+    linear-gradient(115deg,#021d20 0%,#022326 48%,#021b1e 100%)!important;
+}
+#pro-story .fy-slide:before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.13),transparent 22%,transparent 78%,rgba(0,0,0,.10)),
+    radial-gradient(circle at 52% 48%,transparent 0 26%,rgba(63,224,218,.018) 27%,transparent 28%);
+}
+#pro-story .fy-inner,#pro-story .id26-copy,#pro-story .id26-person,#pro-story .id26-profile,
+#pro-story .dna18-copy,#pro-story .dna18-world,#pro-story .proof22-panel{z-index:2}
+
+/* Permanent Fyndset identity */
+.fy-pro-brand{
+  position:absolute;z-index:80;left:2.4%;top:24px;display:flex;align-items:center;gap:10px;
+  border:0;background:transparent;color:#fff;padding:0;cursor:pointer;
+  font:inherit;filter:drop-shadow(0 3px 12px rgba(0,0,0,.18));
+}
+.fy-pro-brand strong{font-size:27px;line-height:1;font-weight:800;letter-spacing:-1.4px}
+.fy-pro-brand strong span{color:var(--fy-cyan)}
+.fy-pro-brand-mark{position:relative;width:28px;height:23px;display:block}
+.fy-pro-brand-mark i{position:absolute;left:0;width:26px;height:8px;background:#fff;transform:skewX(-30deg);border-radius:2px}
+.fy-pro-brand-mark i:first-child{top:1px}
+.fy-pro-brand-mark i:last-child{bottom:1px;width:20px;background:var(--fy-cyan)}
+#pro-story .fy-mode-home,#pro-story .fy-final-home{display:none!important}
+
+/* Make headings speak the same visual language as the homepage */
+#pro-story h2{
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-weight:500!important;
+  letter-spacing:-.045em!important;
+  text-wrap:balance;
+}
+#pro-story h2 em{font-style:normal!important;color:var(--fy-cyan)!important;font-weight:600!important}
+#pro-story .fy-kicker,#pro-story .id26-kicker,#pro-story .dna18-kicker{
+  letter-spacing:.28em!important;font-weight:800!important;color:var(--fy-cyan)!important;
+}
+
+/* PAGE 01 */
+.fy-id-v26 .id26-copy{top:19%!important}
+.fy-id-v26 .id26-copy h2{font-size:clamp(50px,4.25vw,76px)!important;line-height:.96!important}
+.fy-id-v26 .id26-copy p{font-size:16px!important;line-height:1.65!important;color:#e5efed!important}
+
+.id29-flow{
+  margin-top:38px;display:flex;align-items:center;gap:15px;width:min(560px,100%);
+}
+.id29-flow>div{min-width:118px;display:grid;gap:3px}
+.id29-flow-no{font-size:9px;letter-spacing:.18em;color:rgba(63,224,218,.65);font-weight:800}
+.id29-flow strong{font-size:11px;letter-spacing:.12em;color:#f7fbfa}
+.id29-flow small{font-size:11px;color:#91aaa7;white-space:nowrap}
+.id29-flow>i{height:1px;flex:1;min-width:18px;background:linear-gradient(90deg,rgba(63,224,218,.18),rgba(63,224,218,.75),rgba(63,224,218,.18));position:relative}
+.id29-flow>i:after{content:"";position:absolute;width:4px;height:4px;border-radius:50%;background:#dffffd;box-shadow:0 0 8px #3fe0da;top:-2px;animation:id29Flow 3.6s linear infinite}
+.id29-flow>i:nth-of-type(2):after{animation-delay:-1.8s}
+@keyframes id29Flow{from{left:0}to{left:calc(100% - 4px)}}
+
+/* The orbit labels are signals, not buttons/cards */
+.fy-id-v26 .id26-signal{
+  width:auto!important;min-width:0!important;min-height:0!important;height:auto!important;
+  padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;
+  box-shadow:none!important;backdrop-filter:none!important;
+  display:flex!important;align-items:center!important;gap:9px!important;
+  color:#fff!important;text-align:left!important;
+}
+.fy-id-v26 .id26-signal:before{
+  content:"";position:absolute;left:-18px;top:50%;width:14px;height:1px;
+  background:linear-gradient(90deg,transparent,#3fe0da);
+}
+.fy-id-v26 .id26-signal:after{display:none!important}
+.fy-id-v26 .id26-signal i{
+  display:block!important;width:8px!important;height:8px!important;min-width:8px!important;
+  padding:0!important;border-radius:50%!important;background:#dffffd!important;border:0!important;
+  box-shadow:0 0 0 4px rgba(63,224,218,.08),0 0 13px #3fe0da!important;
+}
+.fy-id-v26 .id26-signal span{display:grid!important;gap:2px!important}
+.fy-id-v26 .id26-signal b{font-size:12px!important;letter-spacing:.04em!important;white-space:nowrap}
+.fy-id-v26 .id26-signal small{font-size:9px!important;color:#8faeab!important;white-space:nowrap}
+.fy-id-v26 .id26-signal.s1{left:16%!important;top:20%!important}
+.fy-id-v26 .id26-signal.s2{left:10%!important;top:39%!important}
+.fy-id-v26 .id26-signal.s3{right:7%!important;top:25%!important}
+.fy-id-v26 .id26-signal.s4{right:4%!important;top:43%!important}
+.fy-id-v26 .id26-signal.s5{right:9%!important;top:61%!important}
+
+/* Sofia keeps the cyan rim-light feeling */
+.fy-id-v26 .id26-sofia{
+  filter:
+    drop-shadow(-5px 0 5px rgba(63,224,218,.25))
+    drop-shadow(5px 0 8px rgba(63,224,218,.16))
+    drop-shadow(0 26px 30px rgba(0,0,0,.40))!important;
+}
+
+/* Same premium bottom navigation on all professional slides */
+#pro-story .fy-nav{
+  background:rgba(2,34,37,.76)!important;border:1px solid rgba(63,224,218,.20)!important;
+  backdrop-filter:blur(18px)!important;box-shadow:0 20px 50px rgba(0,0,0,.18)!important;
+}
+
+/* Pages 02–04: remove any flat/old background feeling */
+#pro-story .fy-slide[data-slide="1"],
+#pro-story .fy-slide[data-slide="2"],
+#pro-story .fy-slide[data-slide="3"]{overflow:hidden}
+#pro-story .fy-slide[data-slide="1"]:after,
+#pro-story .fy-slide[data-slide="2"]:after,
+#pro-story .fy-slide[data-slide="3"]:after{
+  content:"";position:absolute;z-index:0;width:650px;height:650px;border-radius:50%;
+  right:6%;top:8%;pointer-events:none;
+  background:radial-gradient(circle,rgba(63,224,218,.07),rgba(63,224,218,.025) 38%,transparent 68%);
+  filter:blur(5px);
+}
+
+/* Page 03 panel and Page 04 privacy panel belong to the same glass language */
+#pro-story .proof22-panel,#pro-story .fy-privacy{
+  background:linear-gradient(145deg,rgba(3,43,46,.82),rgba(2,28,31,.68))!important;
+  border:1px solid rgba(63,224,218,.22)!important;
+  box-shadow:0 28px 70px rgba(0,0,0,.20),inset 0 1px rgba(255,255,255,.025)!important;
+  backdrop-filter:blur(18px)!important;
+}
+
+/* Keep the persistent navigation clear of page content */
+#pro-story .fy-inner{padding-bottom:150px!important}
+#pro-story .proof22-panel{margin-bottom:50px!important}
+
+@media(max-width:900px){
+  .fy-pro-brand{left:5vw;top:22px}
+  .fy-pro-brand strong{font-size:23px}
+  .id29-flow{gap:8px;flex-wrap:wrap}
+  .id29-flow>i{display:none}
+  .id29-flow>div{min-width:30%}
+}
+@media(prefers-reduced-motion:reduce){
+  .id29-flow>i:after{animation:none}
+}
+</style>
+
 </head><body>
 <main class="hero"><video class="hero-video" autoplay muted loop playsinline preload="auto" poster="./fyndset-hero-bg.png" aria-hidden="true">
     <source src="./fyndset-hero.mp4" type="video/mp4">
@@ -939,6 +1087,9 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
   <div class="fy-stage">
     
 <article class="fy-slide active fy-pro-final-page fy-id-v26" data-slide="0">
+  <button class="fy-pro-brand" type="button" data-final-home aria-label="Fyndset — Página principal">
+  <span class="fy-pro-brand-mark"><i></i><i></i></span><strong>fyndset<span>.</span></strong>
+</button>
   <div class="id26-bg"></div>
 
   <button class="fy-final-home" type="button" data-final-home>← Página principal</button>
@@ -948,10 +1099,12 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
     <h2>A tua carreira é<br>mais do que <em>um<br>cargo.</em></h2>
     <p>O Fyndset mostra o que realmente sabes fazer,<br>onde já o demonstraste e o que procuras a seguir.</p>
 
-    <div class="id26-pillars">
-      <div><span>◇</span><strong>Competências<br>reais</strong></div>
-      <div><span>◎</span><strong>Evidência<br>no contexto</strong></div>
-      <div><span>▥</span><strong>Oportunidades<br>com sentido</strong></div>
+    <div class="id29-flow" aria-label="Como funciona o Fyndset">
+      <div><span class="id29-flow-no">01</span><strong>COMPETÊNCIA</strong><small>O que sabes fazer</small></div>
+      <i></i>
+      <div><span class="id29-flow-no">02</span><strong>EVIDÊNCIA</strong><small>Onde o demonstraste</small></div>
+      <i></i>
+      <div><span class="id29-flow-no">03</span><strong>OPORTUNIDADE</strong><small>Onde podes chegar</small></div>
     </div>
   </div>
 
@@ -972,11 +1125,11 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
 
     <img class="id26-sofia" src="./sofia-professional.png" alt="Sofia, Restaurant Manager">
 
-    <div class="id26-signal s1"><i>♙</i><span>Liderança</span></div>
-    <div class="id26-signal s2"><i>♧</i><span>Gestão<br>de equipas</span></div>
-    <div class="id26-signal s3"><i>↗</i><span>Progressão</span></div>
-    <div class="id26-signal s4"><i>♢</i><span>Ambiente</span></div>
-    <div class="id26-signal s5"><i>⌂</i><span>Objetivo</span></div>
+    <div class="id26-signal s1"><i></i><span><b>Liderança</b><small>22 pessoas</small></span></div>
+    <div class="id26-signal s2"><i></i><span><b>Gestão de equipas</b><small>Formação · serviço</small></span></div>
+    <div class="id26-signal s3"><i></i><span><b>Progressão</b><small>3 promoções</small></span></div>
+    <div class="id26-signal s4"><i></i><span><b>Ambiente</b><small>Luxo · alto volume</small></span></div>
+    <div class="id26-signal s5"><i></i><span><b>Objetivo</b><small>Liderança de F&amp;B</small></span></div>
   </div>
 
   <aside class="id26-profile">
@@ -1001,6 +1154,9 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
   </nav>
 </article>
 <article class="fy-slide fy-dna-v18" data-slide="1">
+  <button class="fy-pro-brand" type="button" data-final-home aria-label="Fyndset — Página principal">
+  <span class="fy-pro-brand-mark"><i></i><i></i></span><strong>fyndset<span>.</span></strong>
+</button>
   <div class="dna18-copy">
     <div class="dna18-kicker">02 · FYND DNA</div>
     <h2>Não é um CV.<br>É aquilo que<br><em>demonstraste.</em></h2>
@@ -1060,6 +1216,9 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
   </div>
 </article>
     <article class="fy-slide fy-proof-v22" data-slide="2">
+  <button class="fy-pro-brand" type="button" data-final-home aria-label="Fyndset — Página principal">
+  <span class="fy-pro-brand-mark"><i></i><i></i></span><strong>fyndset<span>.</span></strong>
+</button>
       <div class="fy-inner">
         <div class="fy-copy">
           <div class="fy-kicker">03 · PROVA</div>
@@ -3283,5 +3442,15 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 
 
+
+
+<script id="fyndset-v29-brand-hook">
+document.addEventListener('click',function(e){
+  const brand=e.target.closest('.fy-pro-brand');
+  if(!brand) return;
+  const existing=document.querySelector('[data-final-home], [data-return-home]');
+  if(existing && existing!==brand){ existing.click(); }
+});
+</script>
 
 </body></html>
