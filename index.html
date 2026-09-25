@@ -769,106 +769,85 @@ body.fy-mode-pro #pro-story:has(.fy-pro-cinematic-final.active) > .fy-nav{opacit
 </style>
 
 
-<style id="fyndset-v25-privacy">
-.fy-privacy-v25{overflow:hidden!important}
-.privacy25-shell{position:absolute;inset:0;overflow:hidden}
-.privacy25-copy{position:absolute;left:3.5%;top:16.5%;width:39%;max-width:690px}
-.privacy25-copy .fy-kicker{margin-bottom:32px}
-.privacy25-copy h2{margin:0;font-size:clamp(52px,4.15vw,76px);line-height:1.01;letter-spacing:-.048em;color:#f8fbfa}
-.privacy25-copy h2 em{font-style:normal;color:#3fe0da}
-.privacy25-copy p{max-width:625px;margin:27px 0 0;color:#c8d9d6;font-size:17px;line-height:1.55}
-.privacy25-copy .fy-primary{margin-top:29px}
+<style id="fyndset-v26-page1-built-ui">
+/* PAGE 01: only Sofia is an image. Everything else is real HTML/CSS/SVG. */
+body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;overflow:hidden!important;background:#031c1f!important}
+.fy-id-v26 .id26-bg{position:absolute;inset:0;background:
+ radial-gradient(circle at 54% 38%,rgba(16,112,113,.22),transparent 27%),
+ radial-gradient(circle at 84% 72%,rgba(13,88,91,.16),transparent 24%),
+ linear-gradient(105deg,#031c1f 0%,#032629 50%,#031c1f 100%)}
+.fy-id-v26 .id26-bg:after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(63,224,218,.13) .65px,transparent .65px);background-size:27px 27px;opacity:.12}
 
-.privacy25-panel{
- position:absolute;left:43.3%;right:3.3%;top:8.2%;bottom:17.5%;
- border:1px solid rgba(63,224,218,.20);border-radius:28px;padding:22px 24px 18px;
- background:linear-gradient(145deg,rgba(4,36,39,.96),rgba(2,27,30,.97));
- box-shadow:0 28px 80px rgba(0,0,0,.22),inset 0 0 50px rgba(63,224,218,.018);
- color:#f8fbfa;overflow:hidden
-}
-.privacy25-profile{height:105px;display:grid;grid-template-columns:72px 1fr auto;gap:17px;align-items:center;border-bottom:1px solid rgba(255,255,255,.10);padding:0 3px 14px}
-.privacy25-avatar,.mini-avatar{
- display:grid;place-items:center;border-radius:13px;color:#042326;font-weight:900;
- background:radial-gradient(circle at 50% 30%,#f3c9a4 0 17%,#73462f 18% 28%,#e8d9cb 29% 53%,#3fe0da 54% 56%,#0b3c3e 57%);
-}
-.privacy25-avatar{width:72px;height:72px;font-size:0}
-.privacy25-person strong,.privacy25-person span,.privacy25-person small{display:block}
-.privacy25-person strong{font-size:20px}.privacy25-person span{font-size:14px;margin-top:5px}.privacy25-person small{font-size:11px;color:#c4d3d0;margin-top:11px}
-.privacy25-open{display:flex;align-items:center;gap:12px;max-width:285px}
-.privacy25-open strong,.privacy25-open small{display:block}.privacy25-open strong{font-size:12px}.privacy25-open small{font-size:10px;color:#9db1ae;margin-top:5px}
-.privacy25-switch{width:51px;height:28px;border-radius:99px;background:#29ddd8;padding:3px;flex:0 0 auto;box-shadow:0 0 20px rgba(63,224,218,.20)}
-.privacy25-switch i{display:block;width:22px;height:22px;border-radius:50%;background:white;margin-left:23px}
+.id26-copy{position:absolute;z-index:5;left:3%;top:18%;width:34%}
+.id26-kicker{color:#45e8e2;font:800 11px/1 Inter,Arial,sans-serif;letter-spacing:.27em;margin-bottom:27px}
+.id26-copy h2{margin:0;color:#f8fbfa;font:800 clamp(52px,4.35vw,78px)/.98 Inter,Arial,sans-serif;letter-spacing:-.052em}
+.id26-copy h2 em{font-style:normal;color:#27e3de}
+.id26-copy p{margin:24px 0 0;color:#d3dfdd;font:400 17px/1.55 Inter,Arial,sans-serif}
+.id26-pillars{display:grid;grid-template-columns:repeat(3,1fr);width:88%;margin-top:48px}
+.id26-pillars>div{padding-right:20px}.id26-pillars>div+div{border-left:1px solid rgba(222,241,238,.32);padding-left:28px}
+.id26-pillars span{display:block;color:#e8f2f0;font-size:31px;line-height:1;margin-bottom:13px}.id26-pillars strong{color:#e6efed;font:500 13px/1.5 Inter,Arial,sans-serif}
 
-.privacy25-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;height:calc(100% - 106px);padding-top:14px}
-.privacy25-settings{padding-right:2px;border-right:1px solid rgba(255,255,255,.07)}
-.privacy25-settings h3,.privacy25-preview h3{font-size:18px;margin:0 0 5px}
-.privacy25-settings>p,.privacy25-preview>p{font-size:11px;color:#aabdb9;margin:0 0 12px}
-.privacy25-options{display:grid;gap:8px}
-.privacy25-option{min-height:68px;border:1px solid rgba(255,255,255,.10);border-radius:15px;display:grid;grid-template-columns:20px 30px 1fr;align-items:center;gap:9px;padding:8px 12px}
-.privacy25-option.selected{border-color:#3fe0da;background:rgba(63,224,218,.045);box-shadow:inset 0 0 22px rgba(63,224,218,.025)}
-.privacy25-option .radio{width:14px;height:14px;border:1px solid #58ddd8;border-radius:50%}
-.privacy25-option.selected .radio{box-shadow:inset 0 0 0 3px #06383a;background:#3fe0da}
-.option-icon{font-size:19px;color:#d6e4e2;text-align:center}.selected .option-icon{color:#3fe0da}
-.privacy25-option strong,.privacy25-option small{display:block}.privacy25-option strong{font-size:14px}.privacy25-option small{font-size:11px;color:#b7c8c5;margin-top:4px;line-height:1.35}
-.privacy25-option strong b{display:inline-block;font-size:9px;color:#3fe0da;background:rgba(63,224,218,.12);border-radius:99px;padding:5px 8px;margin-left:7px}
-.privacy25-block{padding-top:12px}.privacy25-block>strong{font-size:12px}.privacy25-block>div{display:flex;gap:7px;margin:9px 0}
-.privacy25-block button{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#e7f0ee;border-radius:99px;padding:7px 11px;font-size:10px}
-.privacy25-block button.add{border-color:#3fe0da;color:#3fe0da;background:transparent}.privacy25-block>small{font-size:9px;color:#819794}
+.id26-person{position:absolute;z-index:3;left:33.5%;top:2%;width:38%;height:82%}
+.id26-sofia{position:absolute;z-index:3;left:50%;bottom:0;transform:translateX(-50%);width:72%;height:88%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 24px 28px rgba(0,0,0,.35))}
+.id26-orbit{position:absolute;z-index:2;left:50%;top:47%;width:100%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
+.id26-orbit svg{width:100%;height:100%;overflow:visible}.id26-orbit .orb,.id26-orbit path{fill:none;stroke:#27e3de;stroke-width:1.15;opacity:.38;stroke-dasharray:3 6}
+.id26-orbit .o1{opacity:.55;stroke-dasharray:none}.id26-orbit .o3{opacity:.22}
+.id26-orbit .traveller{fill:#dffffd;filter:drop-shadow(0 0 5px #3fe0da) drop-shadow(0 0 11px #3fe0da)}
+.id26-signal{position:absolute;z-index:6;width:100px;min-height:91px;border:1px solid rgba(63,224,218,.35);border-radius:14px;background:linear-gradient(145deg,rgba(7,54,57,.82),rgba(3,31,34,.91));backdrop-filter:blur(9px);box-shadow:0 0 24px rgba(63,224,218,.08);display:grid;place-items:center;align-content:center;text-align:center;color:#fff}
+.id26-signal i{font-style:normal;color:#e8fffd;font-size:29px;line-height:1}.id26-signal span{font:700 10px/1.25 Inter,Arial,sans-serif;margin-top:8px}.id26-signal.s1{left:13%;top:18%}.id26-signal.s2{left:7%;top:39%}.id26-signal.s3{right:5%;top:24%}.id26-signal.s4{right:1%;top:43%}.id26-signal.s5{right:10%;top:65%}
 
-.privacy25-preview{padding-left:0}
-.privacy25-card{border:1px solid rgba(255,255,255,.11);border-radius:15px;padding:10px 12px;margin-bottom:9px;background:rgba(0,0,0,.08)}
-.privacy25-card.visible{border-color:rgba(63,224,218,.68)}
-.privacy25-cardtop{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#b8cac7;margin-bottom:9px}
-.privacy25-cardtop b{font-size:9px;padding:5px 9px;border-radius:99px;color:#43efb4;background:rgba(67,239,180,.15)}
-.blocked .privacy25-cardtop b{color:#ffd1d6;background:rgba(193,73,88,.35)}
-.privacy25-mini-profile{display:grid;grid-template-columns:48px 1fr;gap:10px;align-items:center}
-.mini-avatar{width:48px;height:48px;font-size:0}.privacy25-mini-profile strong,.privacy25-mini-profile small,.privacy25-mini-profile em{display:block}
-.privacy25-mini-profile strong{font-size:12px}.privacy25-mini-profile small{font-size:9px;color:#bacac7;margin-top:3px}.privacy25-mini-profile em{font-size:8px;color:#9db1ae;font-style:normal;margin-top:5px}
-.evidence-label{display:block;font-size:9px;margin:9px 0 6px;color:#b8cac7}
-.privacy25-evidence{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-.ev{height:42px;border-radius:7px;border:1px solid rgba(63,224,218,.18);background:linear-gradient(145deg,#123f40,#0a292b);display:grid;place-items:center;align-content:center;color:#58eee8;font-weight:800;font-size:13px}
-.ev small{display:block;color:#9eb5b1;font-size:6px;text-transform:uppercase;margin-top:2px}
-.privacy25-blur{display:grid;grid-template-columns:48px 1fr;gap:10px;align-items:center}.blur-avatar{height:48px;border-radius:9px;background:linear-gradient(135deg,#244447,#607779);filter:blur(3px);opacity:.6}
-.blur-lines{display:grid;gap:6px}.blur-lines i,.blur-evidence i{display:block;border-radius:99px;background:#345255;opacity:.58}.blur-lines i{height:7px}.blur-lines i:nth-child(1){width:65%}.blur-lines i:nth-child(2){width:85%}.blur-lines i:nth-child(3){width:50%}
-.blur-evidence{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:9px}.blur-evidence i{height:25px;border-radius:6px;filter:blur(1px)}
-.privacy25-note{padding:2px 2px 0;font-size:9px;color:#93a9a5}.privacy25-note strong,.privacy25-note span{display:block}.privacy25-note strong{color:#c5d4d1;margin-bottom:5px}
+.id26-profile{position:absolute;z-index:7;right:3%;top:19%;width:28%;max-width:470px;border:1px solid rgba(63,224,218,.42);border-radius:23px;background:linear-gradient(145deg,rgba(4,42,45,.89),rgba(2,28,31,.94));backdrop-filter:blur(16px);box-shadow:0 24px 65px rgba(0,0,0,.25),0 0 35px rgba(63,224,218,.05);padding:21px 23px}
+.id26-profile-head{display:flex;align-items:center;gap:14px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.15)}.id26-profile-head img{width:60px;height:60px;border-radius:50%;object-fit:cover;border:3px solid #f8fbfa}.id26-profile-head strong,.id26-profile-head span{display:block}.id26-profile-head strong{font:800 22px/1 Inter,Arial,sans-serif}.id26-profile-head strong b{color:#3fe0da;font-size:14px}.id26-profile-head span{margin-top:7px;color:#d4dfdd;font:400 12px/1 Inter,Arial,sans-serif}
+.id26-proof{display:grid;grid-template-columns:34px 1fr 1fr 15px;align-items:center;gap:10px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.09)}.id26-proof:last-child{border-bottom:0}.id26-proof>i{font-style:normal;font-size:25px;color:#e7f4f2}.id26-proof strong,.id26-proof small,.id26-proof div>b{display:block}.id26-proof strong,.id26-proof div>b{font:750 13px/1.2 Inter,Arial,sans-serif}.id26-proof div>b{color:#f1f7f6}.id26-proof small{margin-top:5px;color:#aebfbc;font:400 10px/1.2 Inter,Arial,sans-serif}.id26-proof>span{color:#3fe0da;font-size:27px}
 
-@media(max-width:1300px) and (min-width:901px){
- .privacy25-copy{left:3%;width:38%}.privacy25-copy h2{font-size:clamp(45px,3.8vw,61px)}
- .privacy25-panel{left:42%;right:2.5%;top:7%;bottom:18.5%;padding:16px 18px}
- .privacy25-profile{height:90px;grid-template-columns:58px 1fr auto}.privacy25-avatar{width:58px;height:58px}
- .privacy25-grid{height:calc(100% - 91px);gap:15px;padding-top:10px}.privacy25-option{min-height:58px}.privacy25-option small{font-size:9px}
- .privacy25-card{padding:8px 10px}.privacy25-block{padding-top:8px}
+.fy-id-v26 .id26-build{left:auto!important;right:4.5%!important;top:66.5%!important;width:320px!important}
+.fy-id-v26 .fy-final-home{z-index:30}
+.fy-id-v26 .fy-final-nav{z-index:30}
+
+/* prevent the old full-background image from ever showing on the rebuilt page */
+.fy-id-v26 .fy-pro-final-bg{display:none!important}
+
+@media(max-width:1200px){
+ .id26-copy{left:2.8%;width:36%}.id26-copy h2{font-size:55px}.id26-copy p{font-size:14px}
+ .id26-person{left:34%;width:37%}.id26-profile{right:2%;width:29%;padding:17px}.id26-profile-head img{width:50px;height:50px}
+ .id26-signal{transform:scale(.86)}.fy-id-v26 .id26-build{right:3%!important;width:270px!important}
 }
 @media(max-width:900px){
- .fy-privacy-v25{overflow:auto!important}.privacy25-shell{position:relative;min-height:1500px;padding:80px 5vw 170px;overflow:visible}
- .privacy25-copy{position:relative;left:auto;top:auto;width:100%;max-width:none}.privacy25-copy h2{font-size:48px}
- .privacy25-panel{position:relative;left:auto;right:auto;top:auto;bottom:auto;margin-top:35px;padding:18px;height:auto}
- .privacy25-profile{height:auto;grid-template-columns:58px 1fr}.privacy25-open{grid-column:1/-1}.privacy25-avatar{width:58px;height:58px}
- .privacy25-grid{display:block;height:auto}.privacy25-settings{border-right:0;padding-right:0}.privacy25-preview{margin-top:25px}
+ .fy-id-v26{overflow:auto!important}.id26-copy{left:6vw;top:12%;width:88%}.id26-copy h2{font-size:50px}.id26-pillars{margin-top:28px;width:100%}
+ .id26-person{left:4%;top:55%;width:92%;height:620px}.id26-profile{left:5%;right:auto;top:1220px;width:90%;max-width:none}
+ .fy-id-v26 .id26-build{left:6vw!important;right:auto!important;top:1120px!important}.fy-id-v26{min-height:1700px!important;height:1700px!important}
 }
+@media(prefers-reduced-motion:reduce){.id26-orbit .traveller{display:none}}
 </style>
 
 
-<style id="fyndset-v25-1-click-fix">
-/* Page 04 must never sit on top of the persistent home/nav controls. */
-.fy-privacy-v25 .privacy25-shell{
-  pointer-events:none !important;
+<style id="fyndset-v27-page1-polish">
+@media (min-width:1201px){
+  .id26-copy{left:3.2%!important;top:18.7%!important;width:32.5%!important}
+  .id26-copy h2{font-size:clamp(50px,3.95vw,70px)!important;line-height:.99!important}
+  .id26-copy p{max-width:520px!important;font-size:16px!important}
+  .id26-pillars{width:92%!important;margin-top:39px!important}
+  .id26-person{left:32.8%!important;top:1.5%!important;width:40.5%!important;height:83.5%!important}
+  .id26-sofia{width:82%!important;height:94%!important;bottom:-1%!important;object-fit:contain!important;object-position:center bottom!important;filter:drop-shadow(0 30px 30px rgba(0,0,0,.40)) drop-shadow(0 0 18px rgba(63,224,218,.09))!important}
+  .id26-signal{width:94px!important;min-height:86px!important;border-radius:16px!important}
+  .id26-signal.s1{left:15%!important;top:20%!important}.id26-signal.s2{left:9%!important;top:40%!important}
+  .id26-signal.s3{right:8%!important;top:25%!important}.id26-signal.s4{right:5%!important;top:44%!important}.id26-signal.s5{right:12%!important;top:64%!important}
+  .id26-profile{right:2.6%!important;top:17%!important;width:27.8%!important}
+  .fy-id-v26 .id26-build{right:4.1%!important;top:65.5%!important}
 }
-.fy-privacy-v25 .privacy25-copy .fy-primary{
-  pointer-events:auto !important;
-  position:relative;
-  z-index:3;
-}
-/* The right-side privacy UI is explanatory on this page, not a second navigation system. */
-.fy-privacy-v25 .privacy25-panel{
-  pointer-events:none !important;
-}
-#pro-story .fy-mode-home,
-#pro-story .fy-final-nav{
-  pointer-events:auto !important;
-  z-index:100 !important;
-}
+.id26-orbit{filter:drop-shadow(0 0 8px rgba(63,224,218,.08))}
+.id26-orbit .orb{stroke-width:1.05!important;stroke-dasharray:3 7!important}
+.id26-orbit .o1{stroke-dasharray:none!important;opacity:.48!important}
+.id26-orbit path{stroke:#3fe0da!important;stroke-width:1.25!important;opacity:.34!important;stroke-dasharray:4 8!important}
+.id26-orbit .traveller{fill:#efffff!important;stroke:#78fff9!important;stroke-width:1.2!important;filter:drop-shadow(0 0 3px #fff) drop-shadow(0 0 7px #3fe0da) drop-shadow(0 0 15px #3fe0da)!important}
+.id26-signal:after{content:"";position:absolute;inset:-1px;border-radius:inherit;border:1px solid rgba(84,255,248,0);pointer-events:none;animation:id26SignalPulse 5.2s ease-in-out infinite}
+.id26-signal.s2:after{animation-delay:.8s}.id26-signal.s3:after{animation-delay:1.7s}.id26-signal.s4:after{animation-delay:2.5s}.id26-signal.s5:after{animation-delay:3.4s}
+@keyframes id26SignalPulse{0%,72%,100%{border-color:rgba(84,255,248,0);box-shadow:0 0 0 rgba(63,224,218,0)}78%{border-color:rgba(84,255,248,.50);box-shadow:0 0 20px rgba(63,224,218,.17)}86%{border-color:rgba(84,255,248,.12);box-shadow:0 0 7px rgba(63,224,218,.05)}}
+.id26-person:before{content:"";position:absolute;z-index:1;left:50%;top:43%;width:58%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(63,224,218,.13) 0%,rgba(63,224,218,.045) 38%,transparent 70%);filter:blur(8px);pointer-events:none}
+.id26-person:after{content:"";position:absolute;z-index:2;left:50%;top:43%;width:45%;aspect-ratio:1;transform:translate(-50%,-50%);border:1px solid rgba(63,224,218,.18);border-radius:50%;box-shadow:0 0 45px rgba(63,224,218,.07),inset 0 0 38px rgba(63,224,218,.035);pointer-events:none}
+.fy-id-v26 .fy-final-home,.fy-id-v26 .fy-final-nav,.fy-id-v26 .id26-build{z-index:40!important;pointer-events:auto!important}
+.id26-profile{z-index:12!important}.id26-signal{z-index:9!important}
+@media(prefers-reduced-motion:reduce){.id26-signal:after{animation:none!important}}
 </style>
 
 </head><body>
@@ -949,28 +928,67 @@ body.fy-mode-pro #pro-story:has(.fy-pro-cinematic-final.active) > .fy-nav{opacit
 
 <section class="fy-audience fy-professional" id="pro-story"><button class="fy-mode-home" type="button" data-return-home>← Página principal</button>
   <div class="fy-stage">
-    <article class="fy-slide active fy-pro-final-page" data-slide="0">
-  <div class="fy-pro-final-bg" role="img" aria-label="Fyndset profissional — identidade"></div>
+    
+<article class="fy-slide active fy-pro-final-page fy-id-v26" data-slide="0">
+  <div class="id26-bg"></div>
 
   <button class="fy-final-home" type="button" data-final-home>← Página principal</button>
 
-  <button class="fy-final-build" type="button" data-open-profile>
+  <div class="id26-copy">
+    <div class="id26-kicker">PARA PROFISSIONAIS</div>
+    <h2>A tua carreira é<br>mais do que <em>um<br>cargo.</em></h2>
+    <p>O Fyndset mostra o que realmente sabes fazer,<br>onde já o demonstraste e o que procuras a seguir.</p>
+
+    <div class="id26-pillars">
+      <div><span>◇</span><strong>Competências<br>reais</strong></div>
+      <div><span>◎</span><strong>Evidência<br>no contexto</strong></div>
+      <div><span>▥</span><strong>Oportunidades<br>com sentido</strong></div>
+    </div>
+  </div>
+
+  <div class="id26-person">
+    <div class="id26-orbit" aria-hidden="true">
+      <svg viewBox="0 0 640 640">
+        <ellipse class="orb o1" cx="320" cy="320" rx="268" ry="235"/>
+        <ellipse class="orb o2" cx="320" cy="320" rx="222" ry="286" transform="rotate(34 320 320)"/>
+        <ellipse class="orb o3" cx="320" cy="320" rx="284" ry="180" transform="rotate(-18 320 320)"/>
+        <path id="id26path1" d="M61 285 C120 72 430 20 579 213 C657 314 583 514 387 575 C201 633 53 485 61 285Z"/>
+        <path id="id26path2" d="M108 463 C196 558 430 580 546 397 C625 273 519 104 353 79 C176 52 54 218 108 463Z"/>
+        <circle class="traveller t1" r="5"><animateMotion dur="5.2s" repeatCount="indefinite"><mpath href="#id26path1"/></animateMotion></circle>
+        <circle class="traveller t2" r="4"><animateMotion dur="4.1s" begin="-1.8s" repeatCount="indefinite"><mpath href="#id26path2"/></animateMotion></circle>
+        <circle class="traveller t3" r="3"><animateMotion dur="6.4s" begin="-3s" repeatCount="indefinite"><mpath href="#id26path1"/></animateMotion></circle>
+        <circle class="traveller t4" r="4"><animateMotion dur="5.8s" begin="-2.2s" repeatCount="indefinite"><mpath href="#id26path2"/></animateMotion></circle>
+      </svg>
+    </div>
+
+    <img class="id26-sofia" src="./sofia.png" alt="Sofia, Restaurant Manager">
+
+    <div class="id26-signal s1"><i>♙</i><span>Liderança</span></div>
+    <div class="id26-signal s2"><i>♧</i><span>Gestão<br>de equipas</span></div>
+    <div class="id26-signal s3"><i>↗</i><span>Progressão</span></div>
+    <div class="id26-signal s4"><i>♢</i><span>Ambiente</span></div>
+    <div class="id26-signal s5"><i>⌂</i><span>Objetivo</span></div>
+  </div>
+
+  <aside class="id26-profile">
+    <div class="id26-profile-head">
+      <img src="./sofia.png" alt="">
+      <div><strong>Sofia <b>✓</b></strong><span>Restaurant Manager · Portugal</span></div>
+    </div>
+    <div class="id26-proof"><i>♙</i><div><strong>Liderança</strong><small>Gestão de equipas</small></div><div><b>✓ &nbsp; Demonstrada</b><small>3 experiências</small></div><span>›</span></div>
+    <div class="id26-proof"><i>♨</i><div><strong>Fine dining</strong><small>Operações e serviço</small></div><div><b>✓ &nbsp; Demonstrada</b><small>4 anos</small></div><span>›</span></div>
+    <div class="id26-proof"><i>⌂</i><div><strong>Aberturas</strong><small>Novos conceitos</small></div><div><b>✓ &nbsp; Demonstrada</b><small>2 conceitos</small></div><span>›</span></div>
+  </aside>
+
+  <button class="fy-final-build id26-build" type="button" data-open-profile>
     <span>Construir o meu Fyndset</span><span aria-hidden="true">→</span>
   </button>
 
   <nav class="fy-final-nav" aria-label="Explorar o Fyndset">
-    <button class="fy-final-dot active" type="button" data-final-step="0">
-      <span class="fy-final-circle">♙</span><small>01</small><strong>Identidade</strong>
-    </button>
-    <button class="fy-final-dot" type="button" data-final-step="1">
-      <span class="fy-final-circle">⌬</span><small>02</small><strong>Fynd DNA</strong>
-    </button>
-    <button class="fy-final-dot" type="button" data-final-step="2">
-      <span class="fy-final-circle">▥</span><small>03</small><strong>Prova</strong>
-    </button>
-    <button class="fy-final-dot" type="button" data-final-step="3">
-      <span class="fy-final-circle">◇</span><small>04</small><strong>Privacidade</strong>
-    </button>
+    <button class="fy-final-dot active" type="button" data-final-step="0"><span class="fy-final-circle">♙</span><small>01</small><strong>Identidade</strong></button>
+    <button class="fy-final-dot" type="button" data-final-step="1"><span class="fy-final-circle">⌬</span><small>02</small><strong>Fynd DNA</strong></button>
+    <button class="fy-final-dot" type="button" data-final-step="2"><span class="fy-final-circle">▥</span><small>03</small><strong>Prova</strong></button>
+    <button class="fy-final-dot" type="button" data-final-step="3"><span class="fy-final-circle">◇</span><small>04</small><strong>Privacidade</strong></button>
   </nav>
 </article>
 <article class="fy-slide fy-dna-v18" data-slide="1">
@@ -1115,91 +1133,7 @@ body.fy-mode-pro #pro-story:has(.fy-pro-cinematic-final.active) > .fy-nav{opacit
         </div>
       </div>
     </article>
-    
-<article class="fy-slide fy-privacy-v25" data-slide="3">
-  <div class="privacy25-shell">
-    <div class="privacy25-copy">
-      <div class="fy-kicker">04 · PRIVACIDADE</div>
-      <h2>Não tens de estar<br>à procura para estar<br><em>aberto ao que vem<br>a seguir.</em></h2>
-      <p>Tu decides quem te pode descobrir — e o que cada empresa pode ver. O Fyndset foi pensado também para talento passivo e privado.</p>
-      <button class="fy-primary" data-open-profile>Construir o meu Fyndset <b>→</b></button>
-    </div>
-
-    <section class="privacy25-panel" aria-label="Exemplo de privacidade do Fyndset">
-      <header class="privacy25-profile">
-        <div class="privacy25-avatar">S</div>
-        <div class="privacy25-person">
-          <strong>Sofia Almeida</strong>
-          <span>Restaurant Manager</span>
-          <small>⌖ Lisboa &nbsp;&nbsp; ♙ Liderança &nbsp;&nbsp; ♨ Fine dining &nbsp;&nbsp; ★ 2 aberturas</small>
-        </div>
-        <div class="privacy25-open">
-          <span class="privacy25-switch on"><i></i></span>
-          <div><strong>Estou aberto a oportunidades</strong><small>Podes ajustar a qualquer momento.</small></div>
-        </div>
-      </header>
-
-      <div class="privacy25-grid">
-        <div class="privacy25-settings">
-          <h3>Visibilidade do perfil</h3>
-          <p>Escolhe o nível de visibilidade que faz mais sentido para ti.</p>
-
-          <div class="privacy25-options">
-            <div class="privacy25-option">
-              <span class="radio"></span><span class="option-icon">♟</span>
-              <div><strong>Aberto</strong><small>Empresas verificadas podem descobrir-te.</small></div>
-            </div>
-            <div class="privacy25-option selected">
-              <span class="radio"></span><span class="option-icon">◎</span>
-              <div><strong>Seletivo <b>Recomendado</b></strong><small>Só apareces quando existe uma oportunidade relevante.</small></div>
-            </div>
-            <div class="privacy25-option">
-              <span class="radio"></span><span class="option-icon">▣</span>
-              <div><strong>Privado</strong><small>Os teus sinais podem ser encontrados, mas a tua identidade fica protegida até aceitares uma apresentação.</small></div>
-            </div>
-          </div>
-
-          <div class="privacy25-block">
-            <strong>Não quero ser visto por <span>ⓘ</span></strong>
-            <div><button type="button">Empresa atual &nbsp;×</button><button class="add" type="button">＋ Adicionar empresa</button></div>
-            <small>▣ &nbsp; Estas empresas não verão o teu perfil nem os teus sinais.</small>
-          </div>
-        </div>
-
-        <div class="privacy25-preview">
-          <h3>Como o teu perfil aparece</h3>
-          <p>Exemplo de visualização para uma empresa relevante.</p>
-
-          <div class="privacy25-card visible">
-            <div class="privacy25-cardtop"><span>▦ &nbsp; Para uma empresa relevante</span><b>Visível</b></div>
-            <div class="privacy25-mini-profile">
-              <div class="mini-avatar">S</div>
-              <div><strong>Sofia Almeida</strong><small>Restaurant Manager</small><em>⌖ Lisboa &nbsp; ♙ Liderança &nbsp; ♨ Fine dining &nbsp; ★ 2 aberturas</em></div>
-            </div>
-            <small class="evidence-label">Evidências visíveis</small>
-            <div class="privacy25-evidence">
-              <span class="ev team">22<small>equipa</small></span>
-              <span class="ev room">02<small>aberturas</small></span>
-              <span class="ev ref">✓<small>referência</small></span>
-              <span class="ev doc">▤<small>formação</small></span>
-            </div>
-          </div>
-
-          <div class="privacy25-card blocked">
-            <div class="privacy25-cardtop"><span>◉ &nbsp; Para uma empresa bloqueada</span><b>Identidade protegida</b></div>
-            <div class="privacy25-blur">
-              <div class="blur-avatar"></div>
-              <div class="blur-lines"><i></i><i></i><i></i></div>
-            </div>
-            <div class="blur-evidence"><i></i><i></i><i></i><i></i></div>
-          </div>
-
-          <div class="privacy25-note"><strong>▣ &nbsp; Tu controlas quem te pode descobrir.</strong><span>Os teus sinais continuam visíveis, mesmo quando a tua identidade é protegida.</span></div>
-        </div>
-      </div>
-    </section>
-  </div>
-</article>
+    <article class="fy-slide" data-slide="3"><div class="fy-inner"><div class="fy-copy"><div class="fy-kicker">04 · PRIVACIDADE</div><h2>Não tens de estar<br>à procura para estar<br><em>aberto ao que vem a seguir.</em></h2><p>Tu decides como és descoberto. O Fyndset foi pensado também para talento passivo e privado.</p><button class="fy-primary" data-open-profile>Construir o meu Fyndset <b>→</b></button></div><div class="fy-visual"><div class="fy-glass fy-privacy"><h3>Visibilidade do perfil</h3><div class="fy-choice"><i></i><div><b>Totalmente visível</b><br><small>A empresas verificadas</small></div></div><div class="fy-choice active"><i></i><div><b>Visível para oportunidades relevantes</b><br><small>Recomendado</small></div></div><div class="fy-choice"><i></i><div><b>Apenas por convite</b><br><small>Quando houver compatibilidade</small></div></div><div class="fy-choice"><i></i><div><b>Privado</b><br><small>Ocultar empresas selecionadas</small></div></div></div></div></div></article>
     <div class="fy-nav" data-story-nav><button class="fy-dot active" data-go="0"><b>01</b><span>Identidade</span></button><button class="fy-dot" data-go="1"><b>02</b><span>Fynd DNA</span></button><button class="fy-dot" data-go="2"><b>03</b><span>Prova</span></button><button class="fy-dot" data-go="3"><b>04</b><span>Privacidade</span></button></div>
   </div>
 </section>
