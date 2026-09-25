@@ -1172,16 +1172,18 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
   <div class="id26-bg"></div>
 
   <!-- v46: validated RGBA transparent artwork; re-encoded PNG -->
-  <img
-    class="id42-hologram-art"
-    src="./fyndset-sofia-hologram-v47.png?v=47"
-    width="1586"
-    height="992"
-    alt=""
+  <video
+    class="id42-hologram-art id50-hologram-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
     aria-hidden="true"
-    decoding="async"
-    fetchpriority="high"
+    disablepictureinpicture
   >
+    <source src="./fyndset-sofia-hologram-v50.mp4?v=50" type="video/mp4">
+  </video>
 
   <!-- v48: uma única partícula em movimento contínuo sobre o holograma -->
   <div class="id48-orbit-motion" aria-hidden="true">
@@ -4216,5 +4218,32 @@ document.addEventListener('DOMContentLoaded',()=>{
   }
 }
 </style>
+
+
+<style id="fyndset-v50-sofia-video">
+/* PAGE 01 — Sofia/holograma agora é vídeo. Mantém exatamente a caixa/posição v49. */
+.fy-id-v26 .id50-hologram-video{
+  display:block!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:transparent!important;
+}
+/* O vídeo já contém movimento holográfico; evita duplicar a partícula v48. */
+.fy-id-v26 .id48-orbit-motion{display:none!important}
+@media(prefers-reduced-motion:reduce){
+  .fy-id-v26 .id50-hologram-video{animation:none!important}
+}
+</style>
+<script id="fyndset-v50-sofia-video-js">
+document.addEventListener('DOMContentLoaded',()=>{
+  const v=document.querySelector('.id50-hologram-video');
+  if(!v) return;
+  v.muted=true;
+  v.playsInline=true;
+  const tryPlay=()=>{ const p=v.play(); if(p&&p.catch) p.catch(()=>{}); };
+  tryPlay();
+  document.addEventListener('visibilitychange',()=>{ if(!document.hidden) tryPlay(); });
+});
+</script>
 
 </body></html>
