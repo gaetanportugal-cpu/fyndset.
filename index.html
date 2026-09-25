@@ -1183,6 +1183,42 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
     fetchpriority="high"
   >
 
+  <!-- v48: uma única partícula em movimento contínuo sobre o holograma -->
+  <div class="id48-orbit-motion" aria-hidden="true">
+    <svg viewBox="0 0 1000 625" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <filter id="id48-dot-glow" x="-300%" y="-300%" width="700%" height="700%">
+          <feGaussianBlur stdDeviation="7" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+        <path id="id48-orbit-path"
+          d="M 92 318
+             C 105 150, 300 70, 512 76
+             C 738 80, 914 160, 928 308
+             C 938 455, 756 548, 515 552
+             C 282 554, 100 468, 92 318 Z"/>
+      </defs>
+
+      <!-- halo muito discreto para a partícula parecer integrada na luz existente -->
+      <circle r="10" fill="rgba(63,224,218,.16)" filter="url(#id48-dot-glow)">
+        <animateMotion dur="7s" repeatCount="indefinite" rotate="auto">
+          <mpath href="#id48-orbit-path"/>
+        </animateMotion>
+      </circle>
+
+      <!-- partícula principal -->
+      <circle r="4.6" fill="#f4ffff" stroke="#3fe0da" stroke-width="2"
+              filter="url(#id48-dot-glow)">
+        <animateMotion dur="7s" repeatCount="indefinite" rotate="auto">
+          <mpath href="#id48-orbit-path"/>
+        </animateMotion>
+      </circle>
+    </svg>
+  </div>
+
   <button class="fy-final-home" type="button" data-final-home>← Página principal</button>
 
   <div class="id26-copy">
@@ -4107,4 +4143,78 @@ document.addEventListener('DOMContentLoaded',()=>{
 @media(max-width:1450px){.fy-id-v26 .id42-hologram-art{left:38.5%!important;top:10%!important;width:59%!important;max-height:64vh!important}}
 @media(max-width:900px){.fy-id-v26 .id42-hologram-art{left:3%!important;top:42%!important;width:94%!important;max-height:40vh!important}}
 </style>
+
+<style id="fyndset-v48-single-orbit-particle">
+/* PAGE 01 — apenas uma partícula móvel. Não altera Sofia, holograma, copy ou navegação. */
+.fy-id-v26 .id48-orbit-motion{
+  position:absolute!important;
+  z-index:9!important;
+  left:37.7%!important;
+  top:8.5%!important;
+  width:58.8%!important;
+  aspect-ratio:1586/992!important;
+  pointer-events:none!important;
+  overflow:visible!important;
+}
+.fy-id-v26 .id48-orbit-motion svg{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  overflow:visible!important;
+}
+@media(max-width:1450px){
+  .fy-id-v26 .id48-orbit-motion{
+    left:38.5%!important;
+    top:10%!important;
+    width:59%!important;
+  }
+}
+@media(max-width:900px){
+  .fy-id-v26 .id48-orbit-motion{
+    left:3%!important;
+    top:42%!important;
+    width:94%!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .fy-id-v26 .id48-orbit-motion{display:none!important}
+}
+</style>
+
+
+<style id="fyndset-v49-composition-polish">
+/* v49 — micro-polimento aprovado: sem redesenhar a página */
+@media (min-width: 901px){
+  /* Sofia/holograma: ligeiramente maior e mais baixo */
+  .fy-id-v26 .id26-sofia-art{
+    left:36.9%!important;
+    top:10.3%!important;
+    width:60.3%!important;
+  }
+
+  /* A partícula acompanha exatamente a mesma caixa visual da Sofia */
+  .fy-id-v26 .id48-orbit-motion{
+    left:36.9%!important;
+    top:10.3%!important;
+    width:60.3%!important;
+  }
+
+  /* Fecha o vazio entre o hero e a navegação */
+  .fy-id-v26 .fy-bottom-nav{
+    bottom:2.7%!important;
+  }
+}
+
+/* Em ecrãs 1920×1080 mantém o equilíbrio cinematográfico */
+@media (min-width: 1600px) and (min-height: 900px){
+  .fy-id-v26 .id26-sofia-art,
+  .fy-id-v26 .id48-orbit-motion{
+    top:10.7%!important;
+  }
+  .fy-id-v26 .fy-bottom-nav{
+    bottom:3.1%!important;
+  }
+}
+</style>
+
 </body></html>
