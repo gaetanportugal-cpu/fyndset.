@@ -4246,4 +4246,23 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 </script>
 
+
+<style id="fyndset-v51-video-background-match">
+/* PAGE 01 — background matched to the actual dark teal of the Luma video. */
+body.fy-mode-pro,
+body.fy-mode-pro #pro-story,
+body.fy-mode-pro #pro-story .fy-id-v26,
+body.fy-mode-pro #pro-story .fy-id-v26 .id26-bg{
+  background:#001a1f!important;
+}
+body.fy-mode-pro #pro-story .fy-id-v26 .id26-bg{
+  background-image:none!important;
+}
+/* Remove page-only texture/gradients so the video rectangle blends into the canvas. */
+body.fy-mode-pro #pro-story .fy-id-v26 .id26-bg::before,
+body.fy-mode-pro #pro-story .fy-id-v26 .id26-bg::after{
+  display:none!important;
+}
+</style>
+
 </body></html>
