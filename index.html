@@ -1007,6 +1007,85 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
 }
 </style>
 
+
+<style id="fyndset-v30-page01-polish">
+/* PAGE 01 — final refinement */
+
+/* Logo: aligned with the page content, never clipped. */
+.fy-pro-brand{left:3.05%!important;top:25px!important}
+
+/* Give the orbit a little more breathing room before the profile card. */
+.fy-id-v26 .id26-person{
+  transform:translateX(-2.1%) scale(.975);
+  transform-origin:center center;
+}
+.fy-id-v26 .id26-signal.s1{left:15%!important;top:20%!important}
+.fy-id-v26 .id26-signal.s2{left:9%!important;top:39%!important}
+.fy-id-v26 .id26-signal.s3{right:10.5%!important;top:24%!important}
+.fy-id-v26 .id26-signal.s4{right:9%!important;top:43%!important}
+.fy-id-v26 .id26-signal.s5{right:12%!important;top:61%!important}
+.fy-id-v26 .id26-signal b{font-size:11.5px!important}
+.fy-id-v26 .id26-signal small{font-size:8.6px!important}
+
+/* The profile card is information emerging from the scan, not a dashboard. */
+.fy-id-v26 .id26-profile{
+  background:linear-gradient(145deg,rgba(3,43,46,.73),rgba(2,27,30,.60))!important;
+  border-color:rgba(63,224,218,.32)!important;
+  backdrop-filter:blur(22px) saturate(1.12)!important;
+  box-shadow:0 28px 72px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.025)!important;
+}
+.fy-id-v26 .id26-profile-head{border-bottom-color:rgba(255,255,255,.065)!important}
+.fy-id-v26 .id26-proof{border-bottom-color:rgba(255,255,255,.055)!important}
+
+/* New line icons inside Sofia's card. */
+.id26-proof>i{
+  width:30px;height:30px;display:grid!important;place-items:center;
+  color:#c9f8f4!important;
+}
+.id26-proof>i svg{
+  width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.55;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.id26-proof>span{
+  width:24px;height:24px;display:grid;place-items:center;
+  border-radius:50%;border:1px solid rgba(63,224,218,.20);
+  font-size:18px!important;line-height:1;color:#55eee8!important;
+  transition:transform .22s ease,border-color .22s ease,background .22s ease;
+}
+.id26-proof:hover>span{
+  transform:translateX(2px);
+  border-color:rgba(63,224,218,.55);
+  background:rgba(63,224,218,.06);
+}
+
+/* Shared navigation: bespoke, modern symbols instead of character glyphs. */
+.fy-final-circle svg{
+  width:18px;height:18px;display:block;fill:none;stroke:currentColor;
+  stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round;
+}
+.fy-final-dot[data-final-step="1"] .fy-final-circle svg{width:19px;height:19px}
+.fy-final-dot.active .fy-final-circle svg{
+  filter:drop-shadow(0 0 5px rgba(63,224,218,.48));
+}
+
+/* Slightly cleaner navigation circles. */
+.fy-final-circle{
+  background:rgba(5,45,48,.46)!important;
+  border-color:rgba(181,241,237,.34)!important;
+}
+.fy-final-dot.active .fy-final-circle{
+  background:rgba(14,103,104,.50)!important;
+  border-color:#52eee8!important;
+}
+
+/* The role is deliberately Portuguese throughout the professional explainer. */
+.id26-profile-head span,.dna18-core>span{letter-spacing:0!important}
+
+@media(max-width:1100px){
+  .fy-id-v26 .id26-person{transform:translateX(-1%) scale(.94)}
+}
+</style>
+
 </head><body>
 <main class="hero"><video class="hero-video" autoplay muted loop playsinline preload="auto" poster="./fyndset-hero-bg.png" aria-hidden="true">
     <source src="./fyndset-hero.mp4" type="video/mp4">
@@ -1123,7 +1202,7 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
       </svg>
     </div>
 
-    <img class="id26-sofia" src="./sofia-professional.png" alt="Sofia, Restaurant Manager">
+    <img class="id26-sofia" src="./sofia-professional.png" alt="Sofia, Chefe de Sala">
 
     <div class="id26-signal s1"><i></i><span><b>Liderança</b><small>22 pessoas</small></span></div>
     <div class="id26-signal s2"><i></i><span><b>Gestão de equipas</b><small>Formação · serviço</small></span></div>
@@ -1135,11 +1214,11 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
   <aside class="id26-profile">
     <div class="id26-profile-head">
       <img src="./sofia.png" alt="">
-      <div><strong>Sofia <b>✓</b></strong><span>Restaurant Manager · Portugal</span></div>
+      <div><strong>Sofia <b>✓</b></strong><span>Chefe de Sala · Portugal</span></div>
     </div>
-    <div class="id26-proof"><i>♙</i><div><strong>Liderança</strong><small>Gestão de equipas</small></div><div><b>✓ &nbsp; Demonstrada</b><small>3 experiências</small></div><span>›</span></div>
-    <div class="id26-proof"><i>♨</i><div><strong>Fine dining</strong><small>Operações e serviço</small></div><div><b>✓ &nbsp; Demonstrada</b><small>4 anos</small></div><span>›</span></div>
-    <div class="id26-proof"><i>⌂</i><div><strong>Aberturas</strong><small>Novos conceitos</small></div><div><b>✓ &nbsp; Demonstrada</b><small>2 conceitos</small></div><span>›</span></div>
+    <div class="id26-proof"><i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="2.5"/><path d="M7.5 18v-1.2c0-2.4 1.8-4.3 4.5-4.3s4.5 1.9 4.5 4.3V18"/><path d="M4.5 15.5v-.7c0-1.7 1.2-3 3-3M19.5 15.5v-.7c0-1.7-1.2-3-3-3"/></svg></i><div><strong>Liderança</strong><small>Gestão de equipas</small></div><div><b>✓ &nbsp; Demonstrada</b><small>3 experiências</small></div><span>›</span></div>
+    <div class="id26-proof"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16.5h14"/><path d="M7 16.5a5 5 0 0 1 10 0"/><path d="M12 9.5V8"/><circle cx="12" cy="6.5" r="1"/><path d="M4 19h16"/></svg></i><div><strong>Fine dining</strong><small>Operações e serviço</small></div><div><b>✓ &nbsp; Demonstrada</b><small>4 anos</small></div><span>›</span></div>
+    <div class="id26-proof"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V7.5L12 4l7 3.5V19"/><path d="M8.5 19v-5h7v5"/><path d="M8 9h.01M12 9h.01M16 9h.01"/></svg></i><div><strong>Aberturas</strong><small>Novos conceitos</small></div><div><b>✓ &nbsp; Demonstrada</b><small>2 conceitos</small></div><span>›</span></div>
   </aside>
 
   <button class="fy-final-build id26-build" type="button" data-open-profile>
@@ -1147,10 +1226,10 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
   </button>
 
   <nav class="fy-final-nav" aria-label="Explorar o Fyndset">
-    <button class="fy-final-dot active" type="button" data-final-step="0"><span class="fy-final-circle">♙</span><small>01</small><strong>Identidade</strong></button>
-    <button class="fy-final-dot" type="button" data-final-step="1"><span class="fy-final-circle">⌬</span><small>02</small><strong>Fynd DNA</strong></button>
-    <button class="fy-final-dot" type="button" data-final-step="2"><span class="fy-final-circle">▥</span><small>03</small><strong>Prova</strong></button>
-    <button class="fy-final-dot" type="button" data-final-step="3"><span class="fy-final-circle">◇</span><small>04</small><strong>Privacidade</strong></button>
+    <button class="fy-final-dot active" type="button" data-final-step="0"><span class="fy-final-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12.2a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Z"/><path d="M5.8 19c.8-3 3-4.6 6.2-4.6s5.4 1.6 6.2 4.6"/></svg></span><small>01</small><strong>Identidade</strong></button>
+    <button class="fy-final-dot" type="button" data-final-step="1"><span class="fy-final-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5.5c2.8 0 7.2 13 10 13"/><path d="M17 5.5c-2.8 0-7.2 13-10 13"/><path d="M8.3 8h7.4M7.5 12h9M8.3 16h7.4"/></svg></span><small>02</small><strong>Fynd DNA</strong></button>
+    <button class="fy-final-dot" type="button" data-final-step="2"><span class="fy-final-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 4.5h11v15h-11z"/><path d="M9 8h6M9 11.5h6M9 15h3"/><path d="m13.8 15.8 1.4 1.4 3-3"/></svg></span><small>03</small><strong>Prova</strong></button>
+    <button class="fy-final-dot" type="button" data-final-step="3"><span class="fy-final-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 10.5h11v9h-11z"/><path d="M9 10.5V8a3 3 0 0 1 6 0v2.5"/><path d="M12 14v2"/></svg></span><small>04</small><strong>Privacidade</strong></button>
   </nav>
 </article>
 <article class="fy-slide fy-dna-v18" data-slide="1">
@@ -1205,7 +1284,7 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
 
     <div class="dna18-core dna21-core">
       <div class="dna18-photo"><img src="./sofia.png" alt="Sofia"></div>
-      <strong>Sofia</strong><span>Restaurant Manager · Portugal</span>
+      <strong>Sofia</strong><span>Chefe de Sala · Portugal</span>
     </div>
 
     <div class="dna18-card leadership dna21-card"><i class="dna18-icon">♟</i><div><b>LIDERANÇA</b><span>22 pessoas · formação</span><small>Cultura de serviço</small></div><em>›</em></div>
@@ -3450,6 +3529,73 @@ document.addEventListener('click',function(e){
   if(!brand) return;
   const existing=document.querySelector('[data-final-home], [data-return-home]');
   if(existing && existing!==brand){ existing.click(); }
+});
+</script>
+
+
+<style id="fyndset-v31-heartbeat-nav">
+/* v31 — living Fyndset navigation. Keeps all existing buttons/click handlers intact. */
+.fy-final-nav{overflow:visible!important;isolation:isolate}
+.fy-final-nav:before{display:none!important}
+.fy-final-nav .fy-heartbeat{
+  position:absolute;z-index:0;left:12.5%;right:12.5%;top:13px;height:38px;
+  width:75%;pointer-events:none;overflow:visible;
+}
+.fy-heartbeat .hb-base{fill:none;stroke:rgba(190,225,222,.20);stroke-width:1.25;vector-effect:non-scaling-stroke}
+.fy-heartbeat .hb-live{fill:none;stroke:#48ebe5;stroke-width:1.65;vector-effect:non-scaling-stroke;filter:url(#hbGlow);opacity:.82;stroke-linecap:round;stroke-linejoin:round}
+.fy-heartbeat .hb-tail{fill:none;stroke:url(#hbTail);stroke-width:3.1;vector-effect:non-scaling-stroke;filter:url(#hbGlow);opacity:.42;stroke-linecap:round}
+.fy-heartbeat .hb-runner{fill:#dffffd;filter:url(#hbGlow);r:2.7px}
+.fy-heartbeat .hb-ping{fill:none;stroke:#72f7f1;stroke-width:1;opacity:.7;transform-box:fill-box;transform-origin:center;animation:hbPing 1.45s ease-out infinite}
+@keyframes hbPing{0%{transform:scale(.45);opacity:.8}75%,100%{transform:scale(2.6);opacity:0}}
+
+/* The pulse grows with the professional journey: 01→02, 01→03, 01→04, then the whole signal breathes. */
+.fy-final-nav[data-hb-step="0"] .hb-live{stroke-dasharray:33 100;stroke-dashoffset:0}
+.fy-final-nav[data-hb-step="1"] .hb-live{stroke-dasharray:66 100;stroke-dashoffset:0}
+.fy-final-nav[data-hb-step="2"] .hb-live,.fy-final-nav[data-hb-step="3"] .hb-live{stroke-dasharray:100 100;stroke-dashoffset:0}
+
+.fy-final-nav[data-hb-step="0"] .hb-runner,.fy-final-nav[data-hb-step="0"] .hb-ping{offset-path:path("M 0 19 L 17 19 L 21 19 L 24 12 L 28 27 L 32 7 L 36 19 L 100 19");animation:hbRun01 2.65s cubic-bezier(.45,.02,.28,1) infinite}
+.fy-final-nav[data-hb-step="1"] .hb-runner,.fy-final-nav[data-hb-step="1"] .hb-ping{offset-path:path("M 0 19 L 17 19 L 21 19 L 24 12 L 28 27 L 32 7 L 36 19 L 50 19 L 54 19 L 57 13 L 61 25 L 65 9 L 69 19 L 100 19");animation:hbRun02 3.15s cubic-bezier(.45,.02,.28,1) infinite}
+.fy-final-nav[data-hb-step="2"] .hb-runner,.fy-final-nav[data-hb-step="2"] .hb-ping{offset-path:path("M 0 19 L 17 19 L 21 19 L 24 12 L 28 27 L 32 7 L 36 19 L 50 19 L 54 19 L 57 13 L 61 25 L 65 9 L 69 19 L 83 19 L 86 19 L 89 13 L 92 25 L 95 9 L 98 19 L 100 19");animation:hbRun03 3.65s cubic-bezier(.45,.02,.28,1) infinite}
+.fy-final-nav[data-hb-step="3"] .hb-runner,.fy-final-nav[data-hb-step="3"] .hb-ping{offset-path:path("M 0 19 L 17 19 L 21 19 L 24 12 L 28 27 L 32 7 L 36 19 L 50 19 L 54 19 L 57 13 L 61 25 L 65 9 L 69 19 L 83 19 L 86 19 L 89 13 L 92 25 L 95 9 L 98 19 L 100 19");animation:hbRun04 3.9s cubic-bezier(.45,.02,.28,1) infinite}
+@keyframes hbRun01{0%,9%{offset-distance:0%;opacity:0}14%{opacity:1}58%{offset-distance:33%;opacity:1}66%,100%{offset-distance:33%;opacity:0}}
+@keyframes hbRun02{0%,8%{offset-distance:0%;opacity:0}13%{opacity:1}64%{offset-distance:66%;opacity:1}72%,100%{offset-distance:66%;opacity:0}}
+@keyframes hbRun03{0%,7%{offset-distance:0%;opacity:0}12%{opacity:1}69%{offset-distance:100%;opacity:1}77%,100%{offset-distance:100%;opacity:0}}
+@keyframes hbRun04{0%,7%{offset-distance:0%;opacity:0}12%{opacity:1}72%{offset-distance:100%;opacity:1}80%,100%{offset-distance:100%;opacity:0}}
+
+/* Keep controls above the living line and make the active node react when the pulse arrives. */
+.fy-final-dot{z-index:3!important}
+.fy-final-dot.active .fy-final-circle{animation:hbNode 2.7s ease-in-out infinite}
+@keyframes hbNode{0%,62%,100%{box-shadow:0 0 0 5px rgba(63,224,218,.07),0 0 20px rgba(63,224,218,.28)}72%{box-shadow:0 0 0 7px rgba(63,224,218,.09),0 0 31px rgba(63,224,218,.55)}}
+
+/* Sofia's avatar fills the complete inner circle cleanly. */
+.fy-id-v26 .id26-profile-head img{object-fit:cover!important;object-position:center 24%!important;padding:0!important;background:transparent!important;transform:scale(1.04);clip-path:circle(47% at 50% 50%)}
+
+@media(max-width:900px){.fy-final-nav .fy-heartbeat{left:12%;right:12%;width:76%;top:11px;height:34px}}
+@media(prefers-reduced-motion:reduce){
+ .fy-heartbeat .hb-runner,.fy-heartbeat .hb-ping,.fy-final-dot.active .fy-final-circle{animation:none!important}
+ .fy-heartbeat .hb-runner,.fy-heartbeat .hb-ping{display:none!important}
+}
+</style>
+<script id="fyndset-v31-heartbeat-nav-js">
+document.addEventListener('DOMContentLoaded',()=>{
+ const pro=document.getElementById('pro-story'); if(!pro) return;
+ const nav=pro.querySelector('.fy-final-nav'); if(!nav) return;
+ if(!nav.querySelector('.fy-heartbeat')){
+   nav.insertAdjacentHTML('afterbegin',`<svg class="fy-heartbeat" viewBox="0 0 100 38" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <filter id="hbGlow" x="-80%" y="-200%" width="260%" height="500%"><feGaussianBlur stdDeviation="1.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <linearGradient id="hbTail" x1="0" x2="1"><stop offset="0" stop-color="#3fe0da" stop-opacity="0"/><stop offset=".72" stop-color="#3fe0da" stop-opacity=".15"/><stop offset="1" stop-color="#dffffd" stop-opacity=".9"/></linearGradient>
+    </defs>
+    <path class="hb-base" pathLength="100" d="M0 19H17 L21 19 L24 12 L28 27 L32 7 L36 19 H50 L54 19 L57 13 L61 25 L65 9 L69 19 H83 L86 19 L89 13 L92 25 L95 9 L98 19 H100"/>
+    <path class="hb-live" pathLength="100" d="M0 19H17 L21 19 L24 12 L28 27 L32 7 L36 19 H50 L54 19 L57 13 L61 25 L65 9 L69 19 H83 L86 19 L89 13 L92 25 L95 9 L98 19 H100"/>
+    <circle class="hb-ping" cx="0" cy="0" r="3.2"/><circle class="hb-runner" cx="0" cy="0" r="2.7"/>
+   </svg>`);
+ }
+ const dots=[...nav.querySelectorAll('.fy-final-dot')];
+ const sync=()=>{const i=Math.max(0,dots.findIndex(d=>d.classList.contains('active')));nav.dataset.hbStep=String(i)};
+ sync();
+ dots.forEach((d,i)=>d.addEventListener('click',()=>{nav.dataset.hbStep=String(i)},true));
+ new MutationObserver(sync).observe(nav,{subtree:true,attributes:true,attributeFilter:['class']});
 });
 </script>
 
