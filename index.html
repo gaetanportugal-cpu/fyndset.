@@ -1171,6 +1171,16 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
 </button>
   <div class="id26-bg"></div>
 
+  <!-- v42: real transparent artwork; no pseudo-element/background-image -->
+  <img
+    class="id42-hologram-art"
+    src="./fyndset-sofia-hologram-transparent.png?v=42"
+    alt=""
+    aria-hidden="true"
+    decoding="async"
+    fetchpriority="high"
+  >
+
   <button class="fy-final-home" type="button" data-final-home>← Página principal</button>
 
   <div class="id26-copy">
@@ -3861,207 +3871,76 @@ document.addEventListener('DOMContentLoaded',()=>{
 })();
 </script>
 
-
-<style id="fyndset-v37-single-hero-art">
-/* Page 01: all interface/text stays HTML. Only Sofia + holographic world is an image. */
-.fy-id-v26 .id35-scene{display:none!important}
-.fy-id-v26 .id26-profile{display:none!important}
-.fy-id-v26 .id26-copy{width:31.2%!important;z-index:20!important}
-.fy-id-v26:after{
-  content:"";position:absolute;z-index:5;pointer-events:none;
-  left:28.5%;right:1.2%;top:4.5%;bottom:12.5%;
-  background:url("./fyndset-sofia-hologram-transparent.png") center center/contain no-repeat;
-  filter:drop-shadow(0 22px 34px rgba(0,0,0,.26));
-}
-.fy-id-v26 .fy-pro-brand,.fy-id-v26 .fy-final-home,.fy-id-v26 .id26-copy,.fy-id-v26 .fy-final-nav{z-index:30!important}
-.fy-id-v26 .id26-build{display:none!important}
-@media(max-width:1200px){.fy-id-v26:after{left:30%;right:0;top:7%;bottom:14%}}
-@media(max-width:900px){
- .fy-id-v26:after{left:0;right:0;top:42%;bottom:12%;background-position:center top}
- .fy-id-v26 .id26-copy{width:92%!important}
-}
-</style>
-
-
-<style id="fyndset-v38-hero-position-fix">
-/* v38 — reserve a real text column and contain the artwork on the right. */
-.fy-id-v26{
-  overflow:hidden!important;
-}
-.fy-id-v26 .id26-copy{
-  width:33.5%!important;
-  max-width:620px!important;
-  z-index:40!important;
-}
-
-/* Artwork occupies only the right-hand stage. */
-.fy-id-v26:after{
-  left:35.5%!important;
-  right:2.0%!important;
-  top:6.5%!important;
-  bottom:15.5%!important;
-  background-position:center center!important;
-  background-size:contain!important;
-  filter:drop-shadow(0 22px 34px rgba(0,0,0,.22))!important;
-}
-
-/* Soft integration at the boundary; does not cover the copy. */
-.fy-id-v26:before{
-  content:"";
-  position:absolute;
-  z-index:6;
-  pointer-events:none;
-  left:33.8%;
-  top:5%;
-  bottom:14%;
-  width:8%;
-  background:linear-gradient(90deg,#031c1f 0%,rgba(3,28,31,.82) 24%,rgba(3,28,31,.28) 67%,transparent 100%);
-}
-
-/* Keep all real UI above the artwork. */
-.fy-id-v26 .fy-pro-brand,
-.fy-id-v26 .fy-final-home,
-.fy-id-v26 .id26-copy,
-.fy-id-v26 .fy-final-nav{
-  z-index:50!important;
-}
-.fy-id-v26 .fy-final-nav{
-  bottom:2.3%!important;
-}
-
-/* Laptop / narrower desktop */
-@media(max-width:1400px){
-  .fy-id-v26 .id26-copy{width:34%!important}
-  .fy-id-v26:after{
-    left:36.5%!important;
-    right:1%!important;
-    top:8%!important;
-    bottom:16.5%!important;
-  }
-  .fy-id-v26:before{left:34.5%;width:8.5%}
-}
-
-/* Tablet/mobile: stack the art below the copy instead of crossing it. */
-@media(max-width:900px){
-  .fy-id-v26 .id26-copy{
-    width:92%!important;
-    max-width:none!important;
-  }
-  .fy-id-v26:before{display:none!important}
-  .fy-id-v26:after{
-    left:5%!important;
-    right:5%!important;
-    top:43%!important;
-    bottom:13.5%!important;
-    background-position:center top!important;
-  }
-}
-</style>
-
-
-<style id="fyndset-v39-seamless-art">
-/* v39 — blend the photographic asset into the live Fyndset canvas. */
-.fy-id-v26{background:#031c1f!important;isolation:isolate!important}
-.fy-id-v26:after{
-  left:35.2%!important;right:1.2%!important;top:4.8%!important;bottom:14.5%!important;
-  background-image:url("./fyndset-sofia-hologram-transparent.png")!important;
-  background-position:center center!important;background-size:contain!important;background-repeat:no-repeat!important;
-  /* Feather all four edges so the raster never reads as a rectangle. */
-  -webkit-mask-image:
-    linear-gradient(to right,transparent 0%,#000 7%,#000 96%,transparent 100%),
-    linear-gradient(to bottom,transparent 0%,#000 6%,#000 92%,transparent 100%);
-  -webkit-mask-composite:source-in;
-  mask-image:
-    linear-gradient(to right,transparent 0%,#000 7%,#000 96%,transparent 100%),
-    linear-gradient(to bottom,transparent 0%,#000 6%,#000 92%,transparent 100%);
-  mask-composite:intersect;
-  filter:drop-shadow(0 20px 32px rgba(0,0,0,.16))!important;
-}
-/* Remove the old left-side cover: the artwork itself now fades naturally. */
-.fy-id-v26:before{display:none!important}
-@media(max-width:1400px){
- .fy-id-v26:after{left:36%!important;right:.5%!important;top:6.5%!important;bottom:15.5%!important}
-}
-@media(max-width:900px){
- .fy-id-v26:after{left:2%!important;right:2%!important;top:43%!important;bottom:13%!important;
-   -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 8%,#000 91%,transparent 100%);
-   mask-image:linear-gradient(to bottom,transparent 0%,#000 8%,#000 91%,transparent 100%)}
-}
-</style>
-
-
-<style id="fyndset-v40-transparent-art">
-/* v40 — Sofia/hologram is a true transparent PNG.
-   No rectangular image background and no CSS edge-mask workaround. */
+<style id="fyndset-v42-real-image-fix">
+/* PAGE 01 — Sofia + hologram is now a REAL <img>, not :after. */
 .fy-id-v26{
   background:#031c1f!important;
   overflow:hidden!important;
+  isolation:isolate!important;
 }
 
-/* Remove the old integration veil/fade. */
-.fy-id-v26:before{
+/* Kill every historical pseudo-element artwork/veil on this page. */
+.fy-id-v26::before,
+.fy-id-v26::after{
+  content:none!important;
+  display:none!important;
+  background:none!important;
+  mask:none!important;
+  -webkit-mask:none!important;
+}
+
+/* Keep the old experimental HTML scene and proof card out of page 01. */
+.fy-id-v26 .id35-scene,
+.fy-id-v26 .id26-profile{
   display:none!important;
 }
 
-/* Transparent artwork stage on the right. */
-.fy-id-v26:after{
-  content:""!important;
+/* The actual transparent PNG from GitHub. */
+.fy-id-v26 .id42-hologram-art{
   position:absolute!important;
   z-index:8!important;
-  pointer-events:none!important;
-  left:34.5%!important;
-  right:1.2%!important;
-  top:4.5%!important;
-  bottom:14.5%!important;
-  background-image:url("./fyndset-sofia-hologram-transparent.png")!important;
-  background-repeat:no-repeat!important;
-  background-position:center center!important;
-  background-size:contain!important;
+  left:34%!important;
+  top:3.5%!important;
+  width:65%!important;
+  height:82.5%!important;
+  display:block!important;
+  object-fit:contain!important;
+  object-position:center center!important;
   opacity:1!important;
-  filter:drop-shadow(0 0 20px rgba(63,224,218,.08))!important;
-  -webkit-mask-image:none!important;
-  mask-image:none!important;
+  visibility:visible!important;
+  pointer-events:none!important;
+  background:transparent!important;
+  border:0!important;
+  max-width:none!important;
+  filter:none!important;
 }
 
-/* Real UI always stays above the artwork. */
+/* Real interface remains above the artwork. */
 .fy-id-v26 .fy-pro-brand,
 .fy-id-v26 .fy-final-home,
 .fy-id-v26 .id26-copy,
 .fy-id-v26 .fy-final-nav{
-  position:relative;
   z-index:50!important;
 }
 
 @media(max-width:1400px){
-  .fy-id-v26:after{
-    left:35.5%!important;
-    right:.5%!important;
-    top:6%!important;
-    bottom:15.5%!important;
+  .fy-id-v26 .id42-hologram-art{
+    left:35%!important;
+    top:5%!important;
+    width:64.5%!important;
+    height:80%!important;
   }
 }
 
 @media(max-width:900px){
-  .fy-id-v26:after{
+  .fy-id-v26 .id42-hologram-art{
     left:3%!important;
-    right:3%!important;
     top:42%!important;
-    bottom:13.5%!important;
-    background-position:center top!important;
+    width:94%!important;
+    height:45%!important;
+    object-position:center top!important;
   }
 }
 </style>
 
-
-<style id="fyndset-v41-final-art">
-.fy-id-v26:before{display:none!important;}
-.fy-id-v26:after{
-  left:34%!important; right:1%!important; top:3.5%!important; bottom:13.5%!important;
-  background-image:url("./fyndset-sofia-hologram-transparent.png")!important;
-  background-size:contain!important; background-position:center center!important; background-repeat:no-repeat!important;
-  opacity:1!important; filter:none!important; -webkit-mask-image:none!important; mask-image:none!important;
-}
-@media(max-width:1400px){.fy-id-v26:after{left:35%!important;right:.5%!important;top:5%!important;bottom:15%!important;}}
-@media(max-width:900px){.fy-id-v26:after{left:3%!important;right:3%!important;top:42%!important;bottom:13%!important;background-position:center top!important;}}
-</style>
 </body></html>
