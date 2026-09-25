@@ -3871,191 +3871,223 @@ document.addEventListener('DOMContentLoaded',()=>{
 })();
 </script>
 
-<style id="fyndset-v44-approved-tech-pass">
+<style id="fyndset-v45-layout-corrected">
 :root{
-  --fynd-logo-cyan:#35e5df;
-  --fynd-logo-cyan-soft:rgba(53,229,223,.30);
-  --fynd-logo-cyan-faint:rgba(53,229,223,.10);
-  --fynd-petrol:#031c1f;
+ --fy-bg:#031c1f;
+ --fy-cyan:#39ded7;
+ --fy-cyan-hi:#6ff7ef;
+ --fy-line:rgba(57,222,215,.22);
+ --fy-muted:rgba(226,245,243,.66);
 }
 
-/* PAGE 01 — approved composition */
+/* PAGE 01 — one clean coordinate system */
 .fy-id-v26{
-  background:var(--fynd-petrol)!important;
-  overflow:hidden!important;
-  isolation:isolate!important;
+ position:relative!important;
+ min-height:100svh!important;
+ width:100%!important;
+ overflow:hidden!important;
+ background:var(--fy-bg)!important;
+ isolation:isolate!important;
+ padding:0!important;
 }
 .fy-id-v26::before,.fy-id-v26::after{content:none!important;display:none!important}
 .fy-id-v26 .id35-scene,.fy-id-v26 .id26-profile{display:none!important}
 
-/* Approved Sofia + hologram: deliberately smaller, same visual weight as mock-up */
+/* Restore safe left margin: nothing may start outside viewport */
+.fy-id-v26 .fy-pro-brand{
+ position:absolute!important;
+ z-index:60!important;
+ left:clamp(24px,2.1vw,42px)!important;
+ top:clamp(18px,2.1vh,28px)!important;
+ transform:none!important;
+ margin:0!important;
+}
+.fy-id-v26 .id26-copy{
+ position:absolute!important;
+ z-index:40!important;
+ left:clamp(30px,2.25vw,48px)!important;
+ top:clamp(125px,16vh,165px)!important;
+ width:min(32vw,610px)!important;
+ max-width:610px!important;
+ transform:none!important;
+ margin:0!important;
+}
+.fy-id-v26 .id26-kicker{color:var(--fy-cyan)!important}
+.fy-id-v26 .id26-copy em{color:var(--fy-cyan)!important}
+
+/* Sofia artwork: smaller, lower, breathing room around it.
+   No CSS masking tricks: if asset has real alpha it will float directly on petrol. */
 .fy-id-v26 .id42-hologram-art{
-  position:absolute!important;
-  z-index:8!important;
-  display:block!important;
-  left:39.2%!important;
-  top:7.2%!important;
-  width:56.5%!important;
-  height:auto!important;
-  max-width:none!important;
-  max-height:68vh!important;
-  object-fit:contain!important;
-  object-position:center center!important;
-  opacity:1!important;
-  visibility:visible!important;
-  pointer-events:none!important;
-  background:transparent!important;
-  border:0!important;
-  filter:none!important;
-  transform:none!important;
+ position:absolute!important;
+ z-index:8!important;
+ display:block!important;
+ left:37.7%!important;
+ top:8.5%!important;
+ width:58.8%!important;
+ height:auto!important;
+ max-width:none!important;
+ max-height:67vh!important;
+ object-fit:contain!important;
+ object-position:center!important;
+ opacity:1!important;
+ visibility:visible!important;
+ pointer-events:none!important;
+ border:0!important;
+ outline:0!important;
+ box-shadow:none!important;
+ filter:none!important;
+ transform:none!important;
+ clip-path:none!important;
+ mask:none!important;
+ -webkit-mask:none!important;
 }
 
-/* Bring the accent text into the exact same brand family as the logo/hologram. */
-.fy-id-v26 .id26-copy em,
-.fy-id-v26 .id26-copy strong,
-.fy-id-v26 .id26-kicker,
-.fy-id-v26 .id26-mini b{
-  text-shadow:0 0 18px rgba(53,229,223,.08);
+/* Three concepts remain in the left information hierarchy */
+.fy-id-v26 .id26-mini{
+ position:relative!important;
+ z-index:41!important;
 }
-.fy-id-v26 .id26-copy em{color:var(--fynd-logo-cyan)!important}
+.fy-id-v26 .id26-mini b{color:#fff!important}
 
-/* Shared bottom rail */
-.fy-final-nav{
-  overflow:visible!important;
-  border-color:rgba(53,229,223,.22)!important;
-  background:rgba(3,28,31,.84)!important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.025),
-    0 18px 50px rgba(0,0,0,.18)!important;
-  backdrop-filter:blur(16px)!important;
-  -webkit-backdrop-filter:blur(16px)!important;
-}
-
-/* Nodes: less SaaS circle, more digital/radar module */
-.fy-final-nav button,
-.fy-final-nav .fy-step,
-.fy-final-nav [data-pro-slide]{
-  position:relative!important;
-}
-.fy-final-nav button::before,
-.fy-final-nav .fy-step::before,
-.fy-final-nav [data-pro-slide]::before{
-  border-color:rgba(53,229,223,.34)!important;
-}
-.fy-final-nav button.active::before,
-.fy-final-nav .fy-step.active::before,
-.fy-final-nav [data-pro-slide].active::before{
-  border-color:var(--fynd-logo-cyan)!important;
-  box-shadow:
-    0 0 0 6px rgba(53,229,223,.055),
-    0 0 20px rgba(53,229,223,.38),
-    inset 0 0 14px rgba(53,229,223,.10)!important;
+/* Floating dock — more air, less neon */
+.fy-id-v26 .fy-final-nav{
+ position:absolute!important;
+ z-index:70!important;
+ left:6.2%!important;
+ right:6.2%!important;
+ bottom:clamp(24px,4.2vh,44px)!important;
+ width:auto!important;
+ min-height:112px!important;
+ margin:0!important;
+ transform:none!important;
+ overflow:visible!important;
+ border:1px solid rgba(57,222,215,.20)!important;
+ border-radius:32px!important;
+ background:rgba(3,28,31,.88)!important;
+ box-shadow:0 18px 50px rgba(0,0,0,.18),inset 0 1px rgba(255,255,255,.025)!important;
+ backdrop-filter:blur(16px)!important;
+ -webkit-backdrop-filter:blur(16px)!important;
 }
 
-/* Two rotating broken radar arcs on the active state */
-.fy-final-nav button.active::after,
-.fy-final-nav .fy-step.active::after,
-.fy-final-nav [data-pro-slide].active::after{
-  content:""!important;
-  position:absolute!important;
-  width:56px!important;
-  height:56px!important;
-  left:50%!important;
-  top:18px!important;
-  transform:translate(-50%,-50%)!important;
-  border-radius:50%!important;
-  border:1px solid transparent!important;
-  border-top-color:var(--fynd-logo-cyan)!important;
-  border-left-color:rgba(53,229,223,.38)!important;
-  filter:drop-shadow(0 0 5px rgba(53,229,223,.55))!important;
-  pointer-events:none!important;
-  animation:fyndRadar44 3.2s linear infinite!important;
+/* Kill the generic full-width travelling glint from previous versions */
+.fy-id-v26 .fy-final-nav::after{content:none!important}
+
+/* Future steps are deliberately quiet */
+.fy-id-v26 .fy-final-nav button,
+.fy-id-v26 .fy-final-nav .fy-step,
+.fy-id-v26 .fy-final-nav [data-pro-slide]{
+ color:rgba(224,242,240,.64)!important;
+ text-shadow:none!important;
+ filter:none!important;
+}
+.fy-id-v26 .fy-final-nav button:not(.active) svg,
+.fy-id-v26 .fy-final-nav .fy-step:not(.active) svg,
+.fy-id-v26 .fy-final-nav [data-pro-slide]:not(.active) svg{
+ opacity:.55!important;
+ filter:none!important;
+}
+.fy-id-v26 .fy-final-nav button:not(.active)::after,
+.fy-id-v26 .fy-final-nav .fy-step:not(.active)::after,
+.fy-id-v26 .fy-final-nav [data-pro-slide]:not(.active)::after{
+ content:none!important;
 }
 
-/* Existing ECG/progress line: recolour + stronger moving energy */
-.fy-final-nav svg path,
-.fy-final-nav .heartbeat,
-.fy-final-nav .pulse-line,
-.fy-final-nav .fy-heartline{
-  stroke:var(--fynd-logo-cyan)!important;
-  filter:drop-shadow(0 0 4px rgba(53,229,223,.65))!important;
+/* Active node only: controlled radar energy */
+.fy-id-v26 .fy-final-nav button.active,
+.fy-id-v26 .fy-final-nav .fy-step.active,
+.fy-id-v26 .fy-final-nav [data-pro-slide].active{
+ color:var(--fy-cyan-hi)!important;
 }
-.fy-final-nav svg circle{
-  fill:#eaffff!important;
-  filter:drop-shadow(0 0 5px rgba(53,229,223,.9))!important;
+.fy-id-v26 .fy-final-nav button.active::before,
+.fy-id-v26 .fy-final-nav .fy-step.active::before,
+.fy-id-v26 .fy-final-nav [data-pro-slide].active::before{
+ border-color:var(--fy-cyan)!important;
+ box-shadow:0 0 0 5px rgba(57,222,215,.045),0 0 17px rgba(57,222,215,.25),inset 0 0 10px rgba(57,222,215,.07)!important;
 }
-
-/* CTA gets the same energy, but remains premium rather than neon-heavy */
-.fy-final-nav .fy-build,
-.fy-final-nav .fy-cta,
-.fy-final-nav [data-open-profile]{
-  border-color:rgba(53,229,223,.72)!important;
-  box-shadow:
-    inset 0 0 22px rgba(53,229,223,.025),
-    0 0 22px rgba(53,229,223,.055)!important;
-  transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease!important;
-}
-.fy-final-nav .fy-build:hover,
-.fy-final-nav .fy-cta:hover,
-.fy-final-nav [data-open-profile]:hover{
-  border-color:var(--fynd-logo-cyan)!important;
-  box-shadow:
-    inset 0 0 25px rgba(53,229,223,.055),
-    0 0 28px rgba(53,229,223,.14)!important;
-  transform:translateY(-1px)!important;
+.fy-id-v26 .fy-final-nav button.active::after,
+.fy-id-v26 .fy-final-nav .fy-step.active::after,
+.fy-id-v26 .fy-final-nav [data-pro-slide].active::after{
+ content:""!important;
+ position:absolute!important;
+ width:52px!important;height:52px!important;
+ left:50%!important;top:18px!important;
+ border-radius:50%!important;
+ border:1px solid transparent!important;
+ border-top-color:rgba(111,247,239,.92)!important;
+ border-right-color:rgba(57,222,215,.20)!important;
+ transform:translate(-50%,-50%) rotate(0deg)!important;
+ filter:drop-shadow(0 0 4px rgba(57,222,215,.40))!important;
+ animation:fy45Radar 5s linear infinite!important;
+ pointer-events:none!important;
 }
 
-/* Tiny travelling glint across the rail, deliberately subtle. */
-.fy-final-nav::after{
-  content:""!important;
-  position:absolute!important;
-  z-index:2!important;
-  left:8%!important;
-  bottom:50%!important;
-  width:6px!important;
-  height:6px!important;
-  border-radius:50%!important;
-  background:#eaffff!important;
-  box-shadow:
-    0 0 6px #fff,
-    0 0 12px var(--fynd-logo-cyan),
-    0 0 22px rgba(53,229,223,.65)!important;
-  pointer-events:none!important;
-  opacity:0!important;
-  animation:fyndTravel44 3.2s ease-in-out infinite!important;
+/* ECG/progress: cyan only on the current portion, future rail neutral.
+   Existing SVG geometry is preserved; we only tame its visual weight. */
+.fy-id-v26 .fy-final-nav svg{overflow:visible!important}
+.fy-id-v26 .fy-final-nav svg path{
+ stroke:rgba(116,170,168,.26)!important;
+ filter:none!important;
+}
+.fy-id-v26 .fy-final-nav svg path:first-of-type{
+ stroke:var(--fy-cyan)!important;
+ filter:drop-shadow(0 0 3px rgba(57,222,215,.42))!important;
+}
+.fy-id-v26 .fy-final-nav svg circle{
+ fill:#eaffff!important;
+ filter:drop-shadow(0 0 4px rgba(57,222,215,.65))!important;
 }
 
-@keyframes fyndRadar44{
-  to{transform:translate(-50%,-50%) rotate(360deg)}
+/* CTA: same brand language, not a neon billboard */
+.fy-id-v26 .fy-final-nav .fy-build,
+.fy-id-v26 .fy-final-nav .fy-cta,
+.fy-id-v26 .fy-final-nav [data-open-profile]{
+ border-color:rgba(57,222,215,.64)!important;
+ background:rgba(3,28,31,.54)!important;
+ box-shadow:inset 0 0 20px rgba(57,222,215,.018),0 0 16px rgba(57,222,215,.035)!important;
 }
-@keyframes fyndTravel44{
-  0%,8%{left:8%;opacity:0}
-  15%{opacity:1}
-  42%{left:28%;opacity:.9}
-  55%,100%{left:28%;opacity:0}
+.fy-id-v26 .fy-final-nav .fy-build:hover,
+.fy-id-v26 .fy-final-nav .fy-cta:hover,
+.fy-id-v26 .fy-final-nav [data-open-profile]:hover{
+ border-color:var(--fy-cyan)!important;
+ box-shadow:inset 0 0 22px rgba(57,222,215,.04),0 0 22px rgba(57,222,215,.10)!important;
+ transform:translateY(-1px)!important;
 }
 
-@media (max-width:1400px){
-  .fy-id-v26 .id42-hologram-art{
-    left:39%!important;
-    top:9%!important;
-    width:58%!important;
-    max-height:65vh!important;
-  }
+@keyframes fy45Radar{
+ to{transform:translate(-50%,-50%) rotate(360deg)}
 }
-@media (max-width:900px){
-  .fy-id-v26 .id42-hologram-art{
-    left:5%!important;
-    top:39%!important;
-    width:90%!important;
-    max-height:39vh!important;
-  }
+
+/* Laptop / narrower desktop */
+@media(max-width:1450px){
+ .fy-id-v26 .id26-copy{
+   left:32px!important;top:132px!important;width:34vw!important;
+ }
+ .fy-id-v26 .id42-hologram-art{
+   left:38.5%!important;top:10%!important;width:59%!important;max-height:64vh!important;
+ }
+ .fy-id-v26 .fy-final-nav{left:5%!important;right:5%!important;bottom:24px!important}
 }
-@media (prefers-reduced-motion:reduce){
-  .fy-final-nav button.active::after,
-  .fy-final-nav .fy-step.active::after,
-  .fy-final-nav [data-pro-slide].active::after,
-  .fy-final-nav::after{animation:none!important}
+
+/* Mobile/tablet: stack rather than crop */
+@media(max-width:900px){
+ .fy-id-v26{min-height:1120px!important;overflow:hidden!important}
+ .fy-id-v26 .fy-pro-brand{left:20px!important;top:18px!important}
+ .fy-id-v26 .id26-copy{
+   left:22px!important;right:22px!important;top:105px!important;
+   width:auto!important;max-width:none!important;
+ }
+ .fy-id-v26 .id42-hologram-art{
+   left:3%!important;top:42%!important;width:94%!important;max-height:40vh!important;
+ }
+ .fy-id-v26 .fy-final-nav{
+   left:16px!important;right:16px!important;bottom:20px!important;
+   border-radius:24px!important;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ .fy-id-v26 .fy-final-nav button.active::after,
+ .fy-id-v26 .fy-final-nav .fy-step.active::after,
+ .fy-id-v26 .fy-final-nav [data-pro-slide].active::after{animation:none!important}
 }
 </style>
 
