@@ -1174,7 +1174,7 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
   <!-- v42: real transparent artwork; no pseudo-element/background-image -->
   <img
     class="id42-hologram-art"
-    src="./fyndset-sofia-hologram-transparent.png?v=42"
+    src="./fyndset-sofia-hologram-transparent.png?v=43"
     alt=""
     aria-hidden="true"
     decoding="async"
@@ -3871,74 +3871,71 @@ document.addEventListener('DOMContentLoaded',()=>{
 })();
 </script>
 
-<style id="fyndset-v42-real-image-fix">
-/* PAGE 01 — Sofia + hologram is now a REAL <img>, not :after. */
+<style id="fyndset-v43-exact-user-image">
+/* v43 — exact user-supplied 1586×992 transparent PNG. */
 .fy-id-v26{
   background:#031c1f!important;
   overflow:hidden!important;
   isolation:isolate!important;
 }
-
-/* Kill every historical pseudo-element artwork/veil on this page. */
 .fy-id-v26::before,
 .fy-id-v26::after{
   content:none!important;
   display:none!important;
-  background:none!important;
-  mask:none!important;
-  -webkit-mask:none!important;
 }
-
-/* Keep the old experimental HTML scene and proof card out of page 01. */
 .fy-id-v26 .id35-scene,
 .fy-id-v26 .id26-profile{
   display:none!important;
 }
 
-/* The actual transparent PNG from GitHub. */
+/* Preserve the source artwork exactly: no crop, no mask, no filter, no distortion. */
 .fy-id-v26 .id42-hologram-art{
   position:absolute!important;
   z-index:8!important;
-  left:34%!important;
-  top:3.5%!important;
-  width:65%!important;
-  height:82.5%!important;
   display:block!important;
+  left:35.2%!important;
+  top:2.6%!important;
+  width:63.8%!important;
+  height:auto!important;
+  max-width:none!important;
+  max-height:82.5vh!important;
   object-fit:contain!important;
-  object-position:center center!important;
+  object-position:center top!important;
   opacity:1!important;
   visibility:visible!important;
   pointer-events:none!important;
   background:transparent!important;
   border:0!important;
-  max-width:none!important;
   filter:none!important;
+  transform:none!important;
+  clip-path:none!important;
+  mask:none!important;
+  -webkit-mask:none!important;
 }
 
-/* Real interface remains above the artwork. */
+/* HTML interface stays interactive and above the artwork. */
 .fy-id-v26 .fy-pro-brand,
 .fy-id-v26 .fy-final-home,
 .fy-id-v26 .id26-copy,
 .fy-id-v26 .fy-final-nav{
+  position:relative;
   z-index:50!important;
 }
 
-@media(max-width:1400px){
+@media (max-width:1400px){
   .fy-id-v26 .id42-hologram-art{
-    left:35%!important;
-    top:5%!important;
-    width:64.5%!important;
-    height:80%!important;
+    left:35.5%!important;
+    top:4%!important;
+    width:64%!important;
+    max-height:80vh!important;
   }
 }
-
-@media(max-width:900px){
+@media (max-width:900px){
   .fy-id-v26 .id42-hologram-art{
-    left:3%!important;
-    top:42%!important;
-    width:94%!important;
-    height:45%!important;
-    object-position:center top!important;
+    left:2%!important;
+    top:41%!important;
+    width:96%!important;
+    max-height:43vh!important;
   }
 }
 </style>
