@@ -1174,7 +1174,7 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
   <!-- v42: real transparent artwork; no pseudo-element/background-image -->
   <img
     class="id42-hologram-art"
-    src="./fyndset-sofia-hologram-transparent.png?v=43"
+    src="./fyndset-sofia-hologram-logo-cyan.png?v=44"
     alt=""
     aria-hidden="true"
     decoding="async"
@@ -3871,36 +3871,36 @@ document.addEventListener('DOMContentLoaded',()=>{
 })();
 </script>
 
-<style id="fyndset-v43-exact-user-image">
-/* v43 — exact user-supplied 1586×992 transparent PNG. */
+<style id="fyndset-v44-approved-tech-pass">
+:root{
+  --fynd-logo-cyan:#35e5df;
+  --fynd-logo-cyan-soft:rgba(53,229,223,.30);
+  --fynd-logo-cyan-faint:rgba(53,229,223,.10);
+  --fynd-petrol:#031c1f;
+}
+
+/* PAGE 01 — approved composition */
 .fy-id-v26{
-  background:#031c1f!important;
+  background:var(--fynd-petrol)!important;
   overflow:hidden!important;
   isolation:isolate!important;
 }
-.fy-id-v26::before,
-.fy-id-v26::after{
-  content:none!important;
-  display:none!important;
-}
-.fy-id-v26 .id35-scene,
-.fy-id-v26 .id26-profile{
-  display:none!important;
-}
+.fy-id-v26::before,.fy-id-v26::after{content:none!important;display:none!important}
+.fy-id-v26 .id35-scene,.fy-id-v26 .id26-profile{display:none!important}
 
-/* Preserve the source artwork exactly: no crop, no mask, no filter, no distortion. */
+/* Approved Sofia + hologram: deliberately smaller, same visual weight as mock-up */
 .fy-id-v26 .id42-hologram-art{
   position:absolute!important;
   z-index:8!important;
   display:block!important;
-  left:35.2%!important;
-  top:2.6%!important;
-  width:63.8%!important;
+  left:39.2%!important;
+  top:7.2%!important;
+  width:56.5%!important;
   height:auto!important;
   max-width:none!important;
-  max-height:82.5vh!important;
+  max-height:68vh!important;
   object-fit:contain!important;
-  object-position:center top!important;
+  object-position:center center!important;
   opacity:1!important;
   visibility:visible!important;
   pointer-events:none!important;
@@ -3908,35 +3908,154 @@ document.addEventListener('DOMContentLoaded',()=>{
   border:0!important;
   filter:none!important;
   transform:none!important;
-  clip-path:none!important;
-  mask:none!important;
-  -webkit-mask:none!important;
 }
 
-/* HTML interface stays interactive and above the artwork. */
-.fy-id-v26 .fy-pro-brand,
-.fy-id-v26 .fy-final-home,
-.fy-id-v26 .id26-copy,
-.fy-id-v26 .fy-final-nav{
-  position:relative;
-  z-index:50!important;
+/* Bring the accent text into the exact same brand family as the logo/hologram. */
+.fy-id-v26 .id26-copy em,
+.fy-id-v26 .id26-copy strong,
+.fy-id-v26 .id26-kicker,
+.fy-id-v26 .id26-mini b{
+  text-shadow:0 0 18px rgba(53,229,223,.08);
+}
+.fy-id-v26 .id26-copy em{color:var(--fynd-logo-cyan)!important}
+
+/* Shared bottom rail */
+.fy-final-nav{
+  overflow:visible!important;
+  border-color:rgba(53,229,223,.22)!important;
+  background:rgba(3,28,31,.84)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.025),
+    0 18px 50px rgba(0,0,0,.18)!important;
+  backdrop-filter:blur(16px)!important;
+  -webkit-backdrop-filter:blur(16px)!important;
+}
+
+/* Nodes: less SaaS circle, more digital/radar module */
+.fy-final-nav button,
+.fy-final-nav .fy-step,
+.fy-final-nav [data-pro-slide]{
+  position:relative!important;
+}
+.fy-final-nav button::before,
+.fy-final-nav .fy-step::before,
+.fy-final-nav [data-pro-slide]::before{
+  border-color:rgba(53,229,223,.34)!important;
+}
+.fy-final-nav button.active::before,
+.fy-final-nav .fy-step.active::before,
+.fy-final-nav [data-pro-slide].active::before{
+  border-color:var(--fynd-logo-cyan)!important;
+  box-shadow:
+    0 0 0 6px rgba(53,229,223,.055),
+    0 0 20px rgba(53,229,223,.38),
+    inset 0 0 14px rgba(53,229,223,.10)!important;
+}
+
+/* Two rotating broken radar arcs on the active state */
+.fy-final-nav button.active::after,
+.fy-final-nav .fy-step.active::after,
+.fy-final-nav [data-pro-slide].active::after{
+  content:""!important;
+  position:absolute!important;
+  width:56px!important;
+  height:56px!important;
+  left:50%!important;
+  top:18px!important;
+  transform:translate(-50%,-50%)!important;
+  border-radius:50%!important;
+  border:1px solid transparent!important;
+  border-top-color:var(--fynd-logo-cyan)!important;
+  border-left-color:rgba(53,229,223,.38)!important;
+  filter:drop-shadow(0 0 5px rgba(53,229,223,.55))!important;
+  pointer-events:none!important;
+  animation:fyndRadar44 3.2s linear infinite!important;
+}
+
+/* Existing ECG/progress line: recolour + stronger moving energy */
+.fy-final-nav svg path,
+.fy-final-nav .heartbeat,
+.fy-final-nav .pulse-line,
+.fy-final-nav .fy-heartline{
+  stroke:var(--fynd-logo-cyan)!important;
+  filter:drop-shadow(0 0 4px rgba(53,229,223,.65))!important;
+}
+.fy-final-nav svg circle{
+  fill:#eaffff!important;
+  filter:drop-shadow(0 0 5px rgba(53,229,223,.9))!important;
+}
+
+/* CTA gets the same energy, but remains premium rather than neon-heavy */
+.fy-final-nav .fy-build,
+.fy-final-nav .fy-cta,
+.fy-final-nav [data-open-profile]{
+  border-color:rgba(53,229,223,.72)!important;
+  box-shadow:
+    inset 0 0 22px rgba(53,229,223,.025),
+    0 0 22px rgba(53,229,223,.055)!important;
+  transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease!important;
+}
+.fy-final-nav .fy-build:hover,
+.fy-final-nav .fy-cta:hover,
+.fy-final-nav [data-open-profile]:hover{
+  border-color:var(--fynd-logo-cyan)!important;
+  box-shadow:
+    inset 0 0 25px rgba(53,229,223,.055),
+    0 0 28px rgba(53,229,223,.14)!important;
+  transform:translateY(-1px)!important;
+}
+
+/* Tiny travelling glint across the rail, deliberately subtle. */
+.fy-final-nav::after{
+  content:""!important;
+  position:absolute!important;
+  z-index:2!important;
+  left:8%!important;
+  bottom:50%!important;
+  width:6px!important;
+  height:6px!important;
+  border-radius:50%!important;
+  background:#eaffff!important;
+  box-shadow:
+    0 0 6px #fff,
+    0 0 12px var(--fynd-logo-cyan),
+    0 0 22px rgba(53,229,223,.65)!important;
+  pointer-events:none!important;
+  opacity:0!important;
+  animation:fyndTravel44 3.2s ease-in-out infinite!important;
+}
+
+@keyframes fyndRadar44{
+  to{transform:translate(-50%,-50%) rotate(360deg)}
+}
+@keyframes fyndTravel44{
+  0%,8%{left:8%;opacity:0}
+  15%{opacity:1}
+  42%{left:28%;opacity:.9}
+  55%,100%{left:28%;opacity:0}
 }
 
 @media (max-width:1400px){
   .fy-id-v26 .id42-hologram-art{
-    left:35.5%!important;
-    top:4%!important;
-    width:64%!important;
-    max-height:80vh!important;
+    left:39%!important;
+    top:9%!important;
+    width:58%!important;
+    max-height:65vh!important;
   }
 }
 @media (max-width:900px){
   .fy-id-v26 .id42-hologram-art{
-    left:2%!important;
-    top:41%!important;
-    width:96%!important;
-    max-height:43vh!important;
+    left:5%!important;
+    top:39%!important;
+    width:90%!important;
+    max-height:39vh!important;
   }
+}
+@media (prefers-reduced-motion:reduce){
+  .fy-final-nav button.active::after,
+  .fy-final-nav .fy-step.active::after,
+  .fy-final-nav [data-pro-slide].active::after,
+  .fy-final-nav::after{animation:none!important}
 }
 </style>
 
