@@ -1247,8 +1247,6 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
       </div>
       <div class="fynd-proof32-detail"><div class="fynd-thumbs32"><span class="t3"></span><span class="t1"></span><span class="t2"></span></div><small>Inclui:</small><div class="fynd-chips32"><b>Pré-abertura</b><b>Processos</b><b>Equipas de raiz</b><b>+1</b></div></div>
     </div>
-
-    <button class="fynd-card32-cta" type="button" data-open-profile><svg viewBox="0 0 36 18" aria-hidden="true"><path d="M1 9h8l3-6 5 12 5-10 4 4h9"/></svg><span>Ver o meu Fyndset completo</span><b>→</b></button>
   </aside>
 
   <button class="fy-final-build id26-build" type="button" data-open-profile>
@@ -1260,6 +1258,10 @@ body.fy-mode-pro #pro-story .fy-id-v26{position:fixed!important;inset:0!importan
     <button class="fy-final-dot" type="button" data-final-step="1"><span class="fy-final-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5.5c2.8 0 7.2 13 10 13"/><path d="M17 5.5c-2.8 0-7.2 13-10 13"/><path d="M8.3 8h7.4M7.5 12h9M8.3 16h7.4"/></svg></span><small>02</small><strong>Fynd DNA</strong></button>
     <button class="fy-final-dot" type="button" data-final-step="2"><span class="fy-final-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 4.5h11v15h-11z"/><path d="M9 8h6M9 11.5h6M9 15h3"/><path d="m13.8 15.8 1.4 1.4 3-3"/></svg></span><small>03</small><strong>Prova</strong></button>
     <button class="fy-final-dot" type="button" data-final-step="3"><span class="fy-final-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 10.5h11v9h-11z"/><path d="M9 10.5V8a3 3 0 0 1 6 0v2.5"/><path d="M12 14v2"/></svg></span><small>04</small><strong>Privacidade</strong></button>
+    <span class="fy-nav-divider33" aria-hidden="true"></span>
+    <button class="fy-nav-cta33" type="button" data-open-profile>
+      <i aria-hidden="true"></i><span>Cria o teu Fyndset</span><b aria-hidden="true">→</b>
+    </button>
   </nav>
 </article>
 <article class="fy-slide fy-dna-v18" data-slide="1">
@@ -3614,5 +3616,138 @@ document.addEventListener('DOMContentLoaded',()=>{
  new MutationObserver(sync).observe(nav,{subtree:true,attributes:true,attributeFilter:['class']});
 });
 </script>
+
+
+<style id="fyndset-v33-reference-match">
+/* v33 — page 01 follows the approved reference: narrower card + CTA in journey rail. */
+.fy-id-v26 .fynd-card32{
+  right:3.05%!important;
+  top:11.2%!important;
+  width:26.15%!important;
+  max-width:475px!important;
+  padding:15px 16px 13px!important;
+  border-radius:25px!important;
+}
+.fynd-card32-head{
+  grid-template-columns:58px 1fr 34px!important;
+  gap:12px!important;
+  padding-bottom:12px!important;
+}
+.fynd-avatar32{width:56px!important;height:56px!important}
+.fynd-card32-identity strong{font-size:22px!important}
+.fynd-card32-identity>span{font-size:10px!important}
+.fynd-tags32{gap:5px!important;margin-top:8px!important}
+.fynd-tags32 em{font-size:7.5px!important;padding:4px 8px!important}
+.fynd-proof32{padding:10px 0 9px!important}
+.fynd-proof32-main{grid-template-columns:35px 1fr 104px 31px!important;gap:8px!important}
+.fynd-icon32{width:34px!important;height:34px!important}
+.fynd-icon32 svg{width:23px!important;height:23px!important}
+.fynd-proof32-title strong{font-size:12.5px!important}
+.fynd-proof32-title small{font-size:8px!important}
+.fynd-evidence32{grid-template-columns:29px 1fr!important;column-gap:7px!important}
+.fynd-evidence32>i{height:23px!important}
+.fynd-evidence32>i b{width:5px!important}
+.fynd-evidence32 strong{font-size:10px!important}
+.fynd-evidence32 small{font-size:7.5px!important}
+.fynd-arrow32{width:29px!important;height:29px!important;font-size:22px!important}
+.fynd-proof32-detail{height:28px!important;margin-top:7px!important;padding:3px 6px!important}
+.fynd-thumbs32 span{width:25px!important;height:20px!important}
+.fynd-chips32 b{font-size:6.3px!important;padding:4px 6px!important}
+.fynd-proof32-detail>small{font-size:6.7px!important}
+.fynd-card32-cta{display:none!important}
+
+/* Keep the reference copy clean: no decorative underline. */
+.fy-id-v26 .id26-copy p,
+.fy-id-v26 .id26-copy p *,
+.fy-id-v26 .id26-copy u{
+  text-decoration:none!important;
+  border-bottom:0!important;
+  background-image:none!important;
+}
+
+/* Journey rail + CTA, matching the approved reference. */
+.fy-final-nav{
+  width:min(1490px,84vw)!important;
+  height:104px!important;
+  bottom:12px!important;
+  padding:11px 26px 8px!important;
+  grid-template-columns:repeat(4,minmax(120px,1fr)) 1px minmax(300px,1.42fr)!important;
+  column-gap:9px!important;
+  align-items:start!important;
+  border-radius:28px!important;
+  background:linear-gradient(100deg,rgba(3,28,31,.94),rgba(7,43,44,.88))!important;
+  box-shadow:0 18px 54px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.025)!important;
+}
+.fy-final-nav .fy-heartbeat32{
+  left:2.8%!important;
+  top:20px!important;
+  width:64.5%!important;
+  height:32px!important;
+}
+.fy-final-dot{padding-top:0!important}
+.fy-final-circle{width:43px!important;height:43px!important}
+.fy-final-dot small{font-size:9px!important}
+.fy-final-dot strong{font-size:10.5px!important}
+.fy-nav-divider33{
+  width:1px;height:66px;margin-top:8px;align-self:start;
+  background:linear-gradient(transparent,rgba(92,232,226,.34) 16%,rgba(92,232,226,.34) 84%,transparent);
+}
+.fy-nav-cta33{
+  position:relative;z-index:4;align-self:center;
+  width:100%;height:58px;margin-top:7px;padding:0 20px;
+  display:grid;grid-template-columns:20px 1fr 24px;align-items:center;gap:10px;
+  border:1px solid rgba(81,241,234,.86);border-radius:999px;
+  background:linear-gradient(90deg,rgba(5,53,56,.74),rgba(2,30,33,.76));
+  color:#f8ffff;font:800 15px/1 Inter,Arial,sans-serif;
+  cursor:pointer;
+  box-shadow:0 0 0 1px rgba(63,224,218,.04),0 0 28px rgba(63,224,218,.15),inset 0 0 24px rgba(63,224,218,.025);
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.fy-nav-cta33 i{
+  width:8px;height:8px;border-radius:50%;background:#55f4ed;
+  box-shadow:0 0 7px #55f4ed,0 0 18px rgba(85,244,237,.62);
+  animation:fyCtaPulse33 2.4s ease-in-out infinite;
+}
+.fy-nav-cta33 span{text-align:center;white-space:nowrap}
+.fy-nav-cta33 b{justify-self:end;color:#70f7f1;font:400 22px/1 Arial,sans-serif}
+.fy-nav-cta33:hover{
+  transform:translateY(-1px);
+  border-color:#a2fffb;
+  box-shadow:0 0 34px rgba(63,224,218,.26),inset 0 0 28px rgba(63,224,218,.045);
+}
+@keyframes fyCtaPulse33{
+  0%,65%,100%{opacity:.7;transform:scale(.82)}
+  78%{opacity:1;transform:scale(1.25)}
+}
+
+/* On page 01 the live heartbeat ends at 02. Other pages progressively extend it. */
+.fy-final-nav[data-hb-step="0"] .hb32-s1{display:block!important}
+.fy-final-nav[data-hb-step="0"] .hb32-r1{display:block!important}
+.fy-final-nav[data-hb-step="0"] .hb32-s2,
+.fy-final-nav[data-hb-step="0"] .hb32-s3,
+.fy-final-nav[data-hb-step="0"] .hb32-r2,
+.fy-final-nav[data-hb-step="0"] .hb32-r3{display:none!important}
+
+@media(max-width:1200px){
+  .fy-id-v26 .fynd-card32{width:28%!important;right:1.8%!important}
+  .fy-final-nav{
+    width:94vw!important;
+    grid-template-columns:repeat(4,1fr) 1px minmax(235px,1.25fr)!important;
+    padding-left:16px!important;padding-right:16px!important;
+  }
+  .fy-nav-cta33{font-size:12px!important;height:52px!important}
+}
+@media(max-width:900px){
+  .fy-id-v26 .fynd-card32{left:5%!important;right:auto!important;top:980px!important;width:90%!important;max-width:none!important}
+  .fy-final-nav{
+    width:94vw!important;height:82px!important;
+    grid-template-columns:repeat(4,1fr)!important;
+    padding:8px!important;
+  }
+  .fy-nav-divider33,.fy-nav-cta33{display:none!important}
+  .fy-final-nav .fy-heartbeat32{left:0!important;width:100%!important;top:16px!important}
+}
+@media(prefers-reduced-motion:reduce){.fy-nav-cta33 i{animation:none!important}}
+</style>
 
 </body></html>
