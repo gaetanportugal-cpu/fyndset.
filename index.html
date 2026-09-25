@@ -3882,4 +3882,80 @@ document.addEventListener('DOMContentLoaded',()=>{
 }
 </style>
 
+
+<style id="fyndset-v38-hero-position-fix">
+/* v38 — reserve a real text column and contain the artwork on the right. */
+.fy-id-v26{
+  overflow:hidden!important;
+}
+.fy-id-v26 .id26-copy{
+  width:33.5%!important;
+  max-width:620px!important;
+  z-index:40!important;
+}
+
+/* Artwork occupies only the right-hand stage. */
+.fy-id-v26:after{
+  left:35.5%!important;
+  right:2.0%!important;
+  top:6.5%!important;
+  bottom:15.5%!important;
+  background-position:center center!important;
+  background-size:contain!important;
+  filter:drop-shadow(0 22px 34px rgba(0,0,0,.22))!important;
+}
+
+/* Soft integration at the boundary; does not cover the copy. */
+.fy-id-v26:before{
+  content:"";
+  position:absolute;
+  z-index:6;
+  pointer-events:none;
+  left:33.8%;
+  top:5%;
+  bottom:14%;
+  width:8%;
+  background:linear-gradient(90deg,#031c1f 0%,rgba(3,28,31,.82) 24%,rgba(3,28,31,.28) 67%,transparent 100%);
+}
+
+/* Keep all real UI above the artwork. */
+.fy-id-v26 .fy-pro-brand,
+.fy-id-v26 .fy-final-home,
+.fy-id-v26 .id26-copy,
+.fy-id-v26 .fy-final-nav{
+  z-index:50!important;
+}
+.fy-id-v26 .fy-final-nav{
+  bottom:2.3%!important;
+}
+
+/* Laptop / narrower desktop */
+@media(max-width:1400px){
+  .fy-id-v26 .id26-copy{width:34%!important}
+  .fy-id-v26:after{
+    left:36.5%!important;
+    right:1%!important;
+    top:8%!important;
+    bottom:16.5%!important;
+  }
+  .fy-id-v26:before{left:34.5%;width:8.5%}
+}
+
+/* Tablet/mobile: stack the art below the copy instead of crossing it. */
+@media(max-width:900px){
+  .fy-id-v26 .id26-copy{
+    width:92%!important;
+    max-width:none!important;
+  }
+  .fy-id-v26:before{display:none!important}
+  .fy-id-v26:after{
+    left:5%!important;
+    right:5%!important;
+    top:43%!important;
+    bottom:13.5%!important;
+    background-position:center top!important;
+  }
+}
+</style>
+
 </body></html>
