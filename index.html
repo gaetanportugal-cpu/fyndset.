@@ -3870,7 +3870,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 .fy-id-v26:after{
   content:"";position:absolute;z-index:5;pointer-events:none;
   left:28.5%;right:1.2%;top:4.5%;bottom:12.5%;
-  background:url("./fyndset-sofia-hologram.png") center center/contain no-repeat;
+  background:url("./fyndset-sofia-hologram-v2.png") center center/contain no-repeat;
   filter:drop-shadow(0 22px 34px rgba(0,0,0,.26));
 }
 .fy-id-v26 .fy-pro-brand,.fy-id-v26 .fy-final-home,.fy-id-v26 .id26-copy,.fy-id-v26 .fy-final-nav{z-index:30!important}
@@ -3955,6 +3955,37 @@ document.addEventListener('DOMContentLoaded',()=>{
     bottom:13.5%!important;
     background-position:center top!important;
   }
+}
+</style>
+
+
+<style id="fyndset-v39-seamless-art">
+/* v39 — blend the photographic asset into the live Fyndset canvas. */
+.fy-id-v26{background:#031c1f!important;isolation:isolate!important}
+.fy-id-v26:after{
+  left:35.2%!important;right:1.2%!important;top:4.8%!important;bottom:14.5%!important;
+  background-image:url("./fyndset-sofia-hologram-v2.png")!important;
+  background-position:center center!important;background-size:contain!important;background-repeat:no-repeat!important;
+  /* Feather all four edges so the raster never reads as a rectangle. */
+  -webkit-mask-image:
+    linear-gradient(to right,transparent 0%,#000 7%,#000 96%,transparent 100%),
+    linear-gradient(to bottom,transparent 0%,#000 6%,#000 92%,transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:
+    linear-gradient(to right,transparent 0%,#000 7%,#000 96%,transparent 100%),
+    linear-gradient(to bottom,transparent 0%,#000 6%,#000 92%,transparent 100%);
+  mask-composite:intersect;
+  filter:drop-shadow(0 20px 32px rgba(0,0,0,.16))!important;
+}
+/* Remove the old left-side cover: the artwork itself now fades naturally. */
+.fy-id-v26:before{display:none!important}
+@media(max-width:1400px){
+ .fy-id-v26:after{left:36%!important;right:.5%!important;top:6.5%!important;bottom:15.5%!important}
+}
+@media(max-width:900px){
+ .fy-id-v26:after{left:2%!important;right:2%!important;top:43%!important;bottom:13%!important;
+   -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 8%,#000 91%,transparent 100%);
+   mask-image:linear-gradient(to bottom,transparent 0%,#000 8%,#000 91%,transparent 100%)}
 }
 </style>
 
