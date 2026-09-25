@@ -3870,7 +3870,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 .fy-id-v26:after{
   content:"";position:absolute;z-index:5;pointer-events:none;
   left:28.5%;right:1.2%;top:4.5%;bottom:12.5%;
-  background:url("./fyndset-sofia-hologram-v2.png") center center/contain no-repeat;
+  background:url("./fyndset-sofia-hologram-final.png") center center/contain no-repeat;
   filter:drop-shadow(0 22px 34px rgba(0,0,0,.26));
 }
 .fy-id-v26 .fy-pro-brand,.fy-id-v26 .fy-final-home,.fy-id-v26 .id26-copy,.fy-id-v26 .fy-final-nav{z-index:30!important}
@@ -3964,7 +3964,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 .fy-id-v26{background:#031c1f!important;isolation:isolate!important}
 .fy-id-v26:after{
   left:35.2%!important;right:1.2%!important;top:4.8%!important;bottom:14.5%!important;
-  background-image:url("./fyndset-sofia-hologram-v2.png")!important;
+  background-image:url("./fyndset-sofia-hologram-final.png")!important;
   background-position:center center!important;background-size:contain!important;background-repeat:no-repeat!important;
   /* Feather all four edges so the raster never reads as a rectangle. */
   -webkit-mask-image:
@@ -3989,4 +3989,79 @@ document.addEventListener('DOMContentLoaded',()=>{
 }
 </style>
 
+
+<style id="fyndset-v40-transparent-art">
+/* v40 — Sofia/hologram is a true transparent PNG.
+   No rectangular image background and no CSS edge-mask workaround. */
+.fy-id-v26{
+  background:#031c1f!important;
+  overflow:hidden!important;
+}
+
+/* Remove the old integration veil/fade. */
+.fy-id-v26:before{
+  display:none!important;
+}
+
+/* Transparent artwork stage on the right. */
+.fy-id-v26:after{
+  content:""!important;
+  position:absolute!important;
+  z-index:8!important;
+  pointer-events:none!important;
+  left:34.5%!important;
+  right:1.2%!important;
+  top:4.5%!important;
+  bottom:14.5%!important;
+  background-image:url("./fyndset-sofia-hologram-final.png")!important;
+  background-repeat:no-repeat!important;
+  background-position:center center!important;
+  background-size:contain!important;
+  opacity:1!important;
+  filter:drop-shadow(0 0 20px rgba(63,224,218,.08))!important;
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
+}
+
+/* Real UI always stays above the artwork. */
+.fy-id-v26 .fy-pro-brand,
+.fy-id-v26 .fy-final-home,
+.fy-id-v26 .id26-copy,
+.fy-id-v26 .fy-final-nav{
+  position:relative;
+  z-index:50!important;
+}
+
+@media(max-width:1400px){
+  .fy-id-v26:after{
+    left:35.5%!important;
+    right:.5%!important;
+    top:6%!important;
+    bottom:15.5%!important;
+  }
+}
+
+@media(max-width:900px){
+  .fy-id-v26:after{
+    left:3%!important;
+    right:3%!important;
+    top:42%!important;
+    bottom:13.5%!important;
+    background-position:center top!important;
+  }
+}
+</style>
+
+
+<style id="fyndset-v41-final-art">
+.fy-id-v26:before{display:none!important;}
+.fy-id-v26:after{
+  left:34%!important; right:1%!important; top:3.5%!important; bottom:13.5%!important;
+  background-image:url("./fyndset-sofia-hologram-final.png")!important;
+  background-size:contain!important; background-position:center center!important; background-repeat:no-repeat!important;
+  opacity:1!important; filter:none!important; -webkit-mask-image:none!important; mask-image:none!important;
+}
+@media(max-width:1400px){.fy-id-v26:after{left:35%!important;right:.5%!important;top:5%!important;bottom:15%!important;}}
+@media(max-width:900px){.fy-id-v26:after{left:3%!important;right:3%!important;top:42%!important;bottom:13%!important;background-position:center top!important;}}
+</style>
 </body></html>
